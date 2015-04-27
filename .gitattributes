@@ -1,0 +1,15 @@
+* text=auto
+
+*.css text
+*.diff text
+*.htm* text
+*.java text
+*.js text
+*.patch text
+*.xml text
+
+*.gif binary
+*.jpg binary
+*.png binary
+*.psp binary
+*.vsd binary
