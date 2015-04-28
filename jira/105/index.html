@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html class="mozilla"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>[XSTR-105] TreeUnmarshaller does not correctly implement currentObject() - jira.codehaus.org</title>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+>
+
+
+
+<link rel="shortcut icon" href="index_files/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://jira.codehaus.org/osd.jsp" title="[XSTR-105] TreeUnmarshaller does not correctly implement currentObject() - jira.codehaus.org">
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link type="text/css" rel="stylesheet" href="index_files/batch.css" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="index_files/batch-1.css" media="all">
+<script type="text/javascript" src="index_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="index_files/batch-1.js"></script>
+<script type="text/javascript" src="index_files/jira.webresources_calendar-en.js"></script>
+<script type="text/javascript" src="index_files/com.atlassian.administraticksearch-webresources.js"></script>
+
+<script type="text/javascript" src="index_files/shortcuts.js"></script>
+
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Advanced+Searching">
+    
+</head>
+<body data-aui-version="5.1.8" id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.1.6">
+<div id="page">
+    <header id="header" style="display:none" role="banner">
+        
+
+
+
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input title="tzdetect.pref.tzid" value="America/Chicago" type="hidden">
+    <input title="tzdetect.pref.tzname" value="(GMT-06:00) Chicago" type="hidden">
+    <input title="tzdetect.pref.tzoffset" value="(GMT-06:00)" type="hidden">
+    <input title="tzdetect.pref.tzdst" value="true" type="hidden">
+    <input title="tzdetect.pref.nothanks" value="" type="hidden">
+</fieldset>
+<nav data-aui-responsive="true" class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul class="nav-links"><li class="nav-link nav-link-local"><a href="https://jira.codehaus.org/" class="aui-dropdown2-radio interactive checked" title="https://jira.codehaus.org/"><span class="nav-link-label">jira.codehaus.org</span></a></li><li class="nav-link"><a href="http://jira.sonarsource.com/" class="aui-dropdown2-radio interactive" title="http://jira.sonarsource.com/"><span class="nav-link-label">SonarSource</span></a></li><li class="nav-link"><a href="http://docs.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://docs.codehaus.org/"><span class="nav-link-label">Codehaus</span></a></li><li class="nav-link"><a href="http://xircles.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://xircles.codehaus.org"><span class="nav-link-label">Xircles</span></a></li></ul></div></div><script><!--
+/* Script removed by snapshot save */
+--></script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.codehaus.org/secure/MyJiraHome.jspa"><img data-aui-responsive-header-index="0" src="urn:download-error:http://www.codehaus.org/codehaus-small.gif" alt="jira.codehaus.org"></a></h1><ul style="width: auto;" class="aui-nav">
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/Dashboard.jspa" id="home_link" accesskey="d" title="View and manage your dashboards" aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="/Old_XStream_Issues/index.html" id="browse_link" accesskey="p" title="View recent projects and browse a list of projects" aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/IssueNavigator.jspa" id="find_link" accesskey="i" title="Search for issues and view recent issues" aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li>
+<li style="display: none;"><a id="aui-responsive-header-dropdown-trigger-0" class="aui-dropdown2-trigger" aria-owns="aui-responsive-header-dropdown-content-0" aria-haspopup="true" href="#">More<span class="icon aui-icon-dropdown"></span></a><div id="aui-responsive-header-dropdown-content-0" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul id="aui-responsive-header-dropdown-list-0"></ul></div></div></li></ul></div><div class="aui-header-secondary"><ul class="aui-nav"><li>
+    <form action="https://jira.codehaus.org/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" title="Quick Search ( Type '/' )" placeholder="Quick Search" name="searchString" accesskey="q" type="text">
+        <input class="hidden" value="Search" type="submit">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank" title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="view_help" class="interactive" title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank">Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="interactive" title="Get more information about JIRA's Keyboard Shortcuts ( Type '?' )" href="https://jira.codehaus.org/secure/ViewKeyboardShortcuts%21default.jspa" target="_blank">Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="interactive" title="Get more information about JIRA" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="interactive" title="See who did what" href="https://jira.codehaus.org/secure/JiraCreditsPage%21default.jspa" target="_blank">JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a id="whats-new-menu-link" class="interactive" href="https://docs.atlassian.com/jira/docs-061/whatsnew/iframe">What?s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a class="aui-nav-link login-link" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-105">Log In</a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+<div id="announcement-banner" class="alertHeader">
+    <div style="position: absolute; right: 20em; top: -2em">
+  <a href="https://xircles.codehaus.org/signup">Signup</a>
+</div>
+</div>
+
+
+    <section id="content" role="main">
+        
+    
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="10230" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="XStream" src="index_files/projectavatar.png"></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/Old_XStream_Issues/index.html">XStream</a></li><li><a class="issue-link" data-issue-key="XSTR-105" href="#" id="key-val" rel="16994">XSTR-105</a></li></ol><h1 id="summary-val">TreeUnmarshaller does not correctly implement currentObject()</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-ops-login-lnk_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="ops-login-lnk" style="display:none" title="Log In" class="toolbar-trigger" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-105"><span class="trigger-label">Log In</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" style="display:none" class="toolbar-group pluggable-ops"><li class="toolbar-item toolbar-dropdown"><div><a href="#" id="viewissue-export" title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown"><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-xml/XSTR-105/XSTR-105.xml" class="aui-list-item-link" id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-word/XSTR-105/XSTR-105.doc" class="aui-list-item-link" id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-html/XSTR-105/XSTR-105.html" class="aui-list-item-link" id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id="details-module" class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img alt="Bug" src="index_files/bug.png" title="Bug - A problem which impairs or prevents the functions of the product." height="16" width="16"> Bug
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+            </span>
+                    </div>
+    </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved">
+                                     Won't Fix
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-16994-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+</div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>TreeUnmarshaller does not currently implement the currentObject() method. It always returns "root" (which is always null...) It should keep a stack of objects, so that when users call </p>
+
+<p>Object newChild = context.convertAnother(thisParent, valueType);</p>
+
+<p>in the "parent" unmarshaller, the child unmarshaller can do the following:</p>
+
+<p>Object myParent = context.currentObject();</p>
+
+<p>Have fixed this, however. This required creating a new class (ObjectStack - it is identical to ClassStack, but substituting type Object for type Class), and then adding the stack operations to TreeUnmarshaller.</p>
+
+<p>The new class is included here:<br>
+=====================================================================<br>
+package com.thoughtworks.xstream.core.util;</p>
+
+<p>public final class ObjectStack {</p>
+
+<p>    private Object[] stack;<br>
+    private int pointer;</p>
+
+<p>    public ObjectStack(int initialCapacity) </p>
+{
+        stack = new Object[initialCapacity];
+    }
+
+<p>    public void push(Object value) {<br>
+        if (pointer + 1 &gt;= stack.length) </p>
+{
+            resizeStack(stack.length * 2);
+        }
+<p>        stack<span class="error">[pointer++]</span> = value;<br>
+    }</p>
+
+<p>    public void popSilently() </p>
+{
+        pointer--;
+    }
+
+<p>    public Object pop() </p>
+{
+        return stack[--pointer];
+    }
+
+<p>    public Object peek() </p>
+{
+        return pointer == 0 ? null : stack[pointer - 1];
+    }
+
+<p>    public int size() </p>
+{
+        return pointer;
+    }
+
+<p>    public Object get(int i) </p>
+{
+        return stack[i];
+    }
+
+<p>    private void resizeStack(int newCapacity) </p>
+{
+        Object[] newStack = new Object[newCapacity];
+        System.arraycopy(stack, 0, newStack, 0, Math.min(stack.length, newCapacity));
+        stack = newStack;
+    }
+<p>}</p>
+
+<p>=====================================================================</p>
+
+
+<p>The MODIFIED version of TreeUnmarshaller is included here (sorry, no diff)<br>
+=====================================================================<br>
+package com.thoughtworks.xstream.core;</p>
+
+<p>import com.thoughtworks.xstream.alias.ClassMapper;<br>
+import com.thoughtworks.xstream.converters.*;<br>
+import com.thoughtworks.xstream.core.util.ClassStack;<br>
+import com.thoughtworks.xstream.core.util.ObjectStack;<br>
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;</p>
+
+<p>public class TreeUnmarshaller implements UnmarshallingContext {</p>
+
+<p>    private Object root;<br>
+    protected HierarchicalStreamReader reader;<br>
+    private ConverterLookup converterLookup;<br>
+    private ClassMapper classMapper;<br>
+    private String classAttributeIdentifier;<br>
+    private ClassStack types = new ClassStack(16);</p>
+
+<p>    private ObjectStack currentObjects = new ObjectStack(16);</p>
+
+
+<p>    public TreeUnmarshaller(Object root, HierarchicalStreamReader reader,<br>
+                            ConverterLookup converterLookup, ClassMapper classMapper,<br>
+                            String classAttributeIdentifier) </p>
+{
+        this.root = root;
+        this.reader = reader;
+        this.converterLookup = converterLookup;
+        this.classMapper = classMapper;
+        this.classAttributeIdentifier = classAttributeIdentifier;
+    }
+
+<p>    public Object convertAnother(Object current, Class type) {<br>
+        try </p>
+{
+            Converter converter = converterLookup.lookupConverterForType(type);
+            types.push(type);
+            currentObjects.push(current);
+            Object result = converter.unmarshal(reader, this);
+            currentObjects.popSilently();
+            types.popSilently();
+            return result;
+        }
+<p> catch (ConversionException conversionException) </p>
+{
+            addInformationTo(conversionException, type);
+            throw conversionException;
+        }
+<p> catch (RuntimeException e) </p>
+{
+            ConversionException conversionException = new ConversionException(e);
+            addInformationTo(conversionException, type);
+            throw conversionException;
+        }
+<p>    }</p>
+
+<p>    private void addInformationTo(ErrorWriter errorWriter, Class type) </p>
+{
+        errorWriter.add("class", type.getName());
+        errorWriter.add("required-type", getRequiredType().getName());
+        reader.appendErrors(errorWriter);
+    }
+
+<p>    public Object currentObject() </p>
+{
+        return currentObjects.peek();
+    }
+
+<p>    public Class getRequiredType() </p>
+{
+        return types.peek();
+    }
+
+<p>    public Object start() {<br>
+        String classAttribute = reader.getAttribute(classAttributeIdentifier);<br>
+        Class type;<br>
+        if (classAttribute == null) </p>
+{
+            type = classMapper.lookupType(reader.getNodeName());
+        }
+<p> else </p>
+{
+            type = classMapper.lookupType(classAttribute);
+        }
+<p>        return convertAnother(root, type);<br>
+    }</p>
+
+<p>}<br>
+=====================================================================</p>
+            </div>
+</div>
+</div></div><div id="attachmentmodule" class="module toggle-wrap"><div id="attachmentmodule_heading" class="mod-header"><ul class="ops"><li class="drop"><div class="aui-dd-parent"><a href="#" class="icon drop-menu js-default-dropdown" title="Options"><span>Options</span></a><div class="aui-dropdown-content aui-list"><ul id="attachment-sorting-options" class="aui-list-section aui-first"><li class="aui-list-item"><a id="attachment-sort-key-name" href="/Old_XStream_Issues/105?attachmentSortBy=fileName#attachmentmodule" class="aui-list-checked aui-checked aui-list-item-link" title="viewissue.subtasks.tab.show.all.name"><span>Sort By Name</span></a></li><li class="aui-list-item"><a id="attachment-sort-key-date" href="/Old_XStream_Issues/105?attachmentSortBy=dateTime#attachmentmodule" class="aui-list-checked aui-list-item-link" title="Sort By Date"><span>Sort By Date</span></a></li></ul><ul id="attachment-sorting-order-options" class="aui-list-section"><li class="aui-list-item"><a id="attachment-sort-direction-asc" href="/Old_XStream_Issues/105?attachmentOrder=asc#attachmentmodule" class="aui-list-checked aui-checked aui-list-item-link" title="Ascending"><span>Ascending</span></a></li><li class="aui-list-item"><a id="attachment-sort-direction-desc" href="/Old_XStream_Issues/105?attachmentOrder=desc#attachmentmodule" class="aui-list-checked aui-list-item-link" title="Descending"><span>Descending</span></a></li></ul><ul id="attachment-manage-options" class="aui-list-section aui-last"><li class="aui-list-item"><a id="aszip" href="https://jira.codehaus.org/secure/attachmentzip/16994.zip" class="aui-list-checked aui-list-item-link" title="Download all attachments as a ZIP file"><span>Download All</span></a></li></ul></div></div></li></ul><h2 class="toggle-title">Attachments</h2></div><div class="mod-content">
+            <ol id="file_attachments" class="item-attachments">
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/12750/ObjectStack.java" draggable="true" data-downloadurl="text/plain:ObjectStack.java:https://jira.codehaus.org/secure/attachment/12750/ObjectStack.java">
+                                    <img src="index_files/java.gif" alt="Java Source File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/12750/ObjectStack.java" title="Latest  05/Aug/04 6:06 PM - James Schopp" draggable="true" data-downloadurl="text/plain:ObjectStack.java:https://jira.codehaus.org/secure/attachment/12750/ObjectStack.java">ObjectStack.java
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2004-08-05T18:06-0500">05/Aug/04 6:06 PM</time></dd>
+    <dd class="attachment-size">1.0 kB</dd>
+    <dd class="attachment-author">James Schopp</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/12749/TreeUnmarshaller.java" draggable="true" data-downloadurl="text/plain:TreeUnmarshaller.java:https://jira.codehaus.org/secure/attachment/12749/TreeUnmarshaller.java">
+                                    <img src="index_files/java.gif" alt="Java Source File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/12749/TreeUnmarshaller.java" title="Latest  05/Aug/04 6:05 PM - James Schopp" draggable="true" data-downloadurl="text/plain:TreeUnmarshaller.java:https://jira.codehaus.org/secure/attachment/12749/TreeUnmarshaller.java">TreeUnmarshaller.java
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2004-08-05T18:05-0500">05/Aug/04 6:05 PM</time></dd>
+    <dd class="attachment-size">3 kB</dd>
+    <dd class="attachment-author">James Schopp</dd>
+                        </dl>
+                                    </li>
+                    </ol>
+        </div></div><div id="linkingmodule" class="module toggle-wrap"><div id="linkingmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Issue Links</h2></div><div class="mod-content">
+
+
+
+
+
+
+        <dl class="links-list ">
+        <dt title="is duplicated by">is duplicated by</dt>
+                    <dd id="internal-64268_10000">
+            <div class="link-content">
+                                    
+
+
+
+<p>
+            <img src="index_files/bug.png" title="Bug - A problem which impairs or prevents the functions of the product." alt="Bug - A problem which impairs or prevents the functions of the product." height="16" width="16">
+        <span title="XSTR-482: CLONE -TreeUnmarshaller does not correctly implement currentObject()">
+        <a href="/Old_XStream_Issues/482" data-issue-key="XSTR-482" class="issue-link link-title resolution">XSTR-482</a>
+        <span class="link-summary">CLONE -TreeUnmarshaller does not correctly implement currentObject()</span>
+    </span>
+</p>
+<ul class="link-snapshot">
+                        <li class="status">        <img src="index_files/closed.png" title="Closed - The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened." alt="Closed - The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened." height="16" width="16">
+    </li>
+            </ul>
+                            </div>
+                    </dd>
+            </dl>
+        
+    <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+</div></div><div id="view-subtasks" class="module toggle-wrap"><div id="view-subtasks_heading" class="mod-header"><ul class="ops"><li class="drop"><div class="aui-dd-parent"><a href="#" class="icon drop-menu js-default-dropdown" title="Options"><span>Options</span></a><div class="aui-dropdown-content aui-list"><ul id="subtask-view-options" class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a id="subtasks-show-all" href="/Old_XStream_Issues/105?subTaskView=all#issuetable" class="aui-list-checked aui-checked aui-list-item-link" title="Show All"><span>Show All</span></a></li><li class="aui-list-item"><a id="subtasks-show-open" href="/Old_XStream_Issues/105?subTaskView=unresolved#issuetable" class="aui-list-checked aui-list-item-link" title="Show Open"><span>Show Open</span></a></li></ul></div></div></li></ul><h2 class="toggle-title">Sub-Tasks</h2></div><div class="mod-content"><div class="mod-content intform subtask-table-container">
+                
+
+
+                                        <table id="issuetable">
+            
+
+                <tbody><tr id="issuerow64269" rel="64269" data-issuekey="XSTR-483" class="issuerow focused">
+                                            <td class="nav stsequence"><div style="padding: 0 18px 0 0; background-image: url( urn:not-loaded:https://jira.codehaus.org/browse/%27../images/icons/accept.png%27 ); background-repeat: no-repeat; background-position: 100% 50%;">1.</div></td>
+                                            <td class="nav stsummary"><a class="issue-link" data-issue-key="XSTR-483" href="/Old_XStream_Issues/483">Need to access the parent object while unmarshalling</a></td>
+                                            <td class="nav issuetype">    <a class="issue-link" data-issue-key="XSTR-483" href="/Old_XStream_Issues/483"> <img src="index_files/subtask_alternate.png" alt="Sub-task" title="Sub-task - The sub-task of the issue" height="16" align="absmiddle" border="0" width="16"></a></td>
+                                            <td class="nav status">
+                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+    </td>
+                                            <td class="nav assignee">            <span class="tinylink">        <a class="user-hover" rel="joehni" id="assignee_joehni" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni">Jörg Schaible</a></span>
+    </td>
+                                            <td class="nav streorder"><div class="subtask-reorder"> </div></td>
+                    </tr>
+                </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            
+    </div>
+</div></div><div id="activitymodule" class="module toggle-wrap collapsed"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2" style="display:none">
+                    <div class="sortwrap">
+                                    <a class="icon icon-sort-down ajax-activity-content" rel="nofollow" href="/Old_XStream_Issues/105?actionOrder=desc" title="Ascending order - Click to sort in descending order"><span>Ascending order - Click to sort in descending order</span></a>
+                            </div>
+                <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-105">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/Old_XStream_Issues/105"><strong>All</strong></a>
+                        </li>
+                                
+            <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-105">
+                            <strong>Comments</strong>
+                        </li>
+                                
+            <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-105">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/Old_XStream_Issues/105"><strong>History</strong></a>
+                        </li>
+                                
+            <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-105">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/Old_XStream_Issues/105"><strong>Activity</strong></a>
+                        </li>
+                </ul>
+    </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    
+
+
+<div id="comment-22787" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=22787&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-22787" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jamesschopp" id="commentauthor_22787_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jamesschopp"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> James Schopp</a>
+ added a comment  - <span class="commentdate_22787_verbose subText"><span class="date user-tz" title="05/Aug/04 6:05 PM"><time class="livestamp" datetime="2004-08-05T18:05-0500">05/Aug/04 6:05 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>I downloaded that latest version of TreeUnmarshaller (v1.6 I believe) and applied the changes I mentioned in the issue desc. Assuming there have been no changes since then (doubtful), this version should work as is...(don't forget the new ObjectStack class too...)</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jamesschopp" id="commentauthor_22787_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jamesschopp"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> James Schopp</a>
+ added a comment  - <span class="commentdate_22787_concise subText"><span class="date user-tz" title="05/Aug/04 6:05 PM"><time class="livestamp" datetime="2004-08-05T18:05-0500">05/Aug/04 6:05 PM</time></span></span>                    I downloaded that latest version of TreeUnmarshaller (v1.6 I believe) and applied the changes I mentioned in the issue desc. Assuming there have been no changes since then (doubtful), this version should work as is...(don't forget the new ObjectStack class too...)              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-22788" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=22788&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-22788" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jamesschopp" id="commentauthor_22788_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jamesschopp"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> James Schopp</a>
+ added a comment  - <span class="commentdate_22788_verbose subText"><span class="date user-tz" title="05/Aug/04 6:06 PM"><time class="livestamp" datetime="2004-08-05T18:06-0500">05/Aug/04 6:06 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>The new ObjectStack class....</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jamesschopp" id="commentauthor_22788_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jamesschopp"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> James Schopp</a>
+ added a comment  - <span class="commentdate_22788_concise subText"><span class="date user-tz" title="05/Aug/04 6:06 PM"><time class="livestamp" datetime="2004-08-05T18:06-0500">05/Aug/04 6:06 PM</time></span></span>                    The new ObjectStack class....              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-22789" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=22789&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-22789" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jamesschopp" id="commentauthor_22789_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jamesschopp"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> James Schopp</a>
+ added a comment  - <span class="commentdate_22789_verbose subText"><span class="date user-tz" title="05/Aug/04 6:07 PM"><time class="livestamp" datetime="2004-08-05T18:07-0500">05/Aug/04 6:07 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>I have downloaded the latest code from CVS and updated it. The new version is attached to this issue now. Thanks...</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jamesschopp" id="commentauthor_22789_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jamesschopp"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> James Schopp</a>
+ added a comment  - <span class="commentdate_22789_concise subText"><span class="date user-tz" title="05/Aug/04 6:07 PM"><time class="livestamp" datetime="2004-08-05T18:07-0500">05/Aug/04 6:07 PM</time></span></span>                    I have downloaded the latest code from CVS and updated it. The new version is attached to this issue now. Thanks...              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-28193" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=28193&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-28193" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_28193_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+ added a comment  - <span class="commentdate_28193_verbose subText"><span class="date user-tz" title="19/Dec/04 2:09 PM"><time class="livestamp" datetime="2004-12-19T14:09-0600">19/Dec/04 2:09 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Hi James, can you please attach a patch for TreeUnmarshaller?<br>
+In Eclipse, Team &gt; Create patch ...<br>
+Any CVS client will allow you to do cvs diff -u.<br>
+It makes so much easy to pick up the changes. <br>
+If you also have a test case that you've tested this change<br>
+against, it'd be very welcomed!<br>
+Thanks!</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_28193_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+ added a comment  - <span class="commentdate_28193_concise subText"><span class="date user-tz" title="19/Dec/04 2:09 PM"><time class="livestamp" datetime="2004-12-19T14:09-0600">19/Dec/04 2:09 PM</time></span></span>                    Hi James, can you please attach a patch for TreeUnmarshaller? 
+In Eclipse, Team &gt; Create patch ... 
+Any CVS client will allow you to do cvs diff -u. 
+It makes so much easy to pick up the changes.  
+If you also have a test case that you've tested this change 
+against, it'd be very welcomed! 
+Thanks!              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-28301" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=28301&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-28301" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_28301_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+ added a comment  - <span class="commentdate_28301_verbose subText"><span class="date user-tz" title="22/Dec/04 10:07 PM"><time class="livestamp" datetime="2004-12-22T22:07-0600">22/Dec/04 10:07 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Hi James, I've tried applying your patch but unfortunately<br>
+there are a number of unit tests that do not pass. <br>
+We need to ensure that all unit tests pass when applying<br>
+a change. Can you please check that you run <br>
+$ant clean test<br>
+and that that xstream/build/test-reports/html/index.html<br>
+shows no failures.<br>
+Thanks, Mauro</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_28301_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+ added a comment  - <span class="commentdate_28301_concise subText"><span class="date user-tz" title="22/Dec/04 10:07 PM"><time class="livestamp" datetime="2004-12-22T22:07-0600">22/Dec/04 10:07 PM</time></span></span>                    Hi James, I've tried applying your patch but unfortunately 
+there are a number of unit tests that do not pass.  
+We need to ensure that all unit tests pass when applying 
+a change. Can you please check that you run  
+$ant clean test 
+and that that xstream/build/test-reports/html/index.html 
+shows no failures. 
+Thanks, Mauro              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-59845" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=59845&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-59845" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_59845_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_59845_verbose subText"><span class="date user-tz" title="01/Mar/06 5:24 PM"><time class="livestamp" datetime="2006-03-01T17:24-0600">01/Mar/06 5:24 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>The problem with James' solution is, that it does make false assumptions. The current object is created within converter.unmarshal() and it is not equal to the parent (don't get confused by the code above, James renamed the parameter to convertAnother from "parent" to "current"). The purpose of currentObject is the injection of custom created objects before calling the marshaller. To provide the parent to an arbitrary converter, we would need to enhance UnmarshallerContext for a method like currentParent(). For this we should have at least a proper use case.</p>
+
+<p>BTW: The ObjectStack from above is already there: FastStack.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_59845_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_59845_concise subText"><span class="date user-tz" title="01/Mar/06 5:24 PM"><time class="livestamp" datetime="2006-03-01T17:24-0600">01/Mar/06 5:24 PM</time></span></span>                    The problem with James' solution is, that it does make false assumptions. The current object is created within converter.unmarshal() and it is not equal to the parent (don't get confused by the code above, James renamed the parameter to convertAnother from "parent" to "current"). The purpose of currentObject is the injection of custom created objects before calling the marshaller. To provide the parent to an arbitrary converter, we would need to enhance UnmarshallerContext for a method like currentParent(). For this we should have at least a proper use case. 
+
+ BTW: The ObjectStack from above is already there: FastStack.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-59973" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=59973&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-59973" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_59973_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_59973_verbose subText"><span class="date user-tz" title="03/Mar/06 1:48 AM"><time class="livestamp" datetime="2006-03-03T01:48-0600">03/Mar/06 1:48 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>The complete issue is somewhat invalid, caused by the fact, that the complete interface is not documented. The UnmarshallContext.currentObject() method is used to support the injection of the root node into XStream. Therefore the method only returns this root object at the top nesting level. It does not and shall not provide the parent/current object for deeper nesting levels.</p>
+
+<p>James, if you still need a functionality to access the <b>parent</b> object in your converter, we might add such a functionality using a FastStack, but we won't do it without a valid use case. Please reopen the issue in this case.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_59973_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_59973_concise subText"><span class="date user-tz" title="03/Mar/06 1:48 AM"><time class="livestamp" datetime="2006-03-03T01:48-0600">03/Mar/06 1:48 AM</time></span></span>                    The complete issue is somewhat invalid, caused by the fact, that the complete interface is not documented. The UnmarshallContext.currentObject() method is used to support the injection of the root node into XStream. Therefore the method only returns this root object at the top nesting level. It does not and shall not provide the parent/current object for deeper nesting levels. 
+
+ James, if you still need a functionality to access the  parent  object in your converter, we might add such a functionality using a FastStack, but we won't do it without a valid use case. Please reopen the issue in this case.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-162395" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/105?focusedCommentId=162395&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-162395" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="aeyr" id="commentauthor_162395_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=aeyr"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Chris Kohnert</a>
+ added a comment  - <span class="commentdate_162395_verbose subText"><span class="date user-tz" title="25/Jan/09 1:25 AM"><time class="livestamp" datetime="2009-01-25T01:25-0600">25/Jan/09 1:25 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>I have run across a similar use for a UnmarshallContext.currentParent() type of functionality (in fact, I interpreted currentObject as James did at first and wondered why it always returned null).</p>
+
+<p>As a use case, nested structures that use a factory pattern to create child objects require this:</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java"><span class="code-keyword">public</span> class Parent
+{
+   List&lt;Child&gt; children = <span class="code-keyword">new</span> ArrayList&lt;Child&gt;();
+   
+   <span class="code-keyword">public</span> Child createChild()
+   {
+      Child c = <span class="code-keyword">new</span> Child(<span class="code-keyword">this</span>);
+      children.add(c);
+      <span class="code-keyword">return</span> c;
+   } 
+}
+
+<span class="code-keyword">public</span> class Child
+{
+   Parent parent;
+   Child(Parent parent)
+   {
+      <span class="code-keyword">this</span>.parent = parent;
+   }
+}
+
+Example:
+Parent p = Parent();
+Child c = p.createChild();
+</pre>
+</div></div>
+
+<p>You can work around this by exposing or changing the API for your classes, but this isn't always an option (nor desirable) (e.g. when working with a third party library). </p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="aeyr" id="commentauthor_162395_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=aeyr"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Chris Kohnert</a>
+ added a comment  - <span class="commentdate_162395_concise subText"><span class="date user-tz" title="25/Jan/09 1:25 AM"><time class="livestamp" datetime="2009-01-25T01:25-0600">25/Jan/09 1:25 AM</time></span></span>                    I have run across a similar use for a UnmarshallContext.currentParent() type of functionality (in fact, I interpreted currentObject as James did at first and wondered why it always returned null). 
+
+ As a use case, nested structures that use a factory pattern to create child objects require this: 
+
+  
+ 
+ public  class Parent
+{
+   List&lt;Child&gt; children =  new  ArrayList&lt;Child&gt;();
+   
+    public  Child createChild()
+   {
+      Child c =  new  Child( this );
+      children.add(c);
+       return  c;
+   } 
+}
+
+ public  class Child
+{
+   Parent parent;
+   Child(Parent parent)
+   {
+       this .parent = parent;
+   }
+}
+
+Example:
+Parent p = Parent();
+Child c = p.createChild();
+ 
+  
+
+ You can work around this by exposing or changing the API for your classes, but this isn't always an option (nor desirable) (e.g. when working with a third party library).               </div>
+        </div>
+    </div>
+</div>
+                             </div>
+    </div>
+</div></div></div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id="peoplemodule" class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+    <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+    Unassigned
+</span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_jamesschopp" rel="jamesschopp">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-2.png"></span></span>
+            James Schopp
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                        
+                                                                                                        <span id="vote-label" title="You have to be logged in to vote for an issue.">Vote for this issue</span>
+                                            </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <span id="watcher-data" class="aui-badge watch-state-off">1</span>
+                        
+                                                                                <span id="watch-label" title="You have to be logged in to watch an issue.">Start watching this issue</span>
+                                            </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id="datesmodule" class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz" title="05/Aug/04 5:44 PM">
+
+                <span data-name="Created" id="create-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2004-08-05T17:44-0500">05/Aug/04 5:44 PM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz" title="25/Jan/09 1:25 AM">
+
+                <span data-name="Updated" id="updated-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2009-01-25T01:25-0600">25/Jan/09 1:25 AM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz" title="03/Mar/06 1:48 AM">
+
+                <span data-name="Resolved" id="resolved-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-03-03T01:48-0600">03/Mar/06 1:48 AM</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input title="autocompleteEnabled" value="true" type="hidden">
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+
+
+<div class="footer-body">
+    <ul>
+        <li>
+                        <a href="http://www.atlassian.com/software/jira">Atlassian JIRA</a>
+
+                                                    
+                        
+            <span id="footer-build-information">(v6.1.6#6162-<span title="7af547ce7c84dbb7c1e345a65437ed7b85efffa2" data-commit-id="7af547ce7c84dbb7c1e345a65437ed7b85efffa2}">sha1:7af547c</span>)</span>
+        </li>
+        <li>
+            <a id="about-link" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+        </li>
+        <li>
+                                    <a id="footer-report-problem-link" href="https://jira.codehaus.org/secure/CreateIssue%21default.jspa">Report a problem</a>
+        </li>
+    </ul>
+            <ul>
+            <li class="licensemessage">
+                                    Powered by a free Atlassian <a href="http://www.atlassian.com/software/jira">JIRA</a> open source license for Codehaus. Try JIRA - <a href="http://www.atlassian.com/software/jira">bug tracking software</a> for <i>your</i> team.
+
+                            </li>
+        </ul>
+    </div>
+
+<form id="jira_request_timing_info" class="dont-default-focus">
+	<fieldset class="parameters hidden">
+
+
+
+
+		<input title="jira.session.expiry.in.mins" value="299" type="hidden">
+
+	</fieldset>
+</form>
+<!--
+	                 
+	          
+	               
+	                 
+	        CONCURRENT REQUESTS : 4
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input title="loggedInUser" value="" type="hidden">
+    <input title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation." type="hidden">
+    <input title="JiraVersion" value="6.1.6" type="hidden">
+    <input title="ajaxUnauthorised" value="You are not authorised to perform this operation.  Please log in." type="hidden">
+    <input title="baseURL" value="https://jira.codehaus.org:443" type="hidden">
+    <input title="ajaxCommsError" value="The JIRA server could not be contacted.  This may be a temporary glitch or the server may be down." type="hidden">
+    <input title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation." type="hidden">
+    <input title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser" type="hidden">
+    <input title="ajaxErrorDialogHeading" value="Communications Breakdown" type="hidden">
+
+    <input title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost." type="hidden">
+    <input title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog." type="hidden">
+    <input title="keyType" value="Type" type="hidden">
+    <input title="keyThen" value="then" type="hidden">
+    <input title="dblClickToExpand" value="Double click to expand" type="hidden">
+    <input title="actions" value="Actions" type="hidden">
+    <input title="removeItem" value="Remove" type="hidden">
+    <input title="workflow" value="Workflow" type="hidden">
+    <input title="labelNew" value="New Label" type="hidden">
+    <input title="issueActionsHint" value="Begin typing for available operations or press down to see all" type="hidden">
+    <input title="closelink" value="Close" type="hidden">
+    <input title="dotOperations" value="Operations" type="hidden">
+    <input title="dotLoading" value="Loading..." type="hidden">
+    <input title="frotherSuggestions" value="Suggestions" type="hidden">
+    <input title="frotherNomatches" value="No Matches" type="hidden">
+    <input title="multiselectVersionsError" value="{0} is not a valid version." type="hidden">
+    <input title="multiselectComponentsError" value="{0} is not a valid component." type="hidden">
+    <input title="multiselectGenericError" value="The value {0} is invalid." type="hidden">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:void(0);" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:void(0);" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div class="navigator-sidebar collapsed ui-popout ui-popout-detached ui-popout-collapsed" id="navigator-sidebar"><a class="toggle-filter-panel" href="#" title="Dock the filters panel ([)"></a></div><div style="display: none;" class="jira-dialog box-shadow" id="edit-issue-dialog"><div class="jira-dialog-content"></div></div><div style="display: none;" class="jira-dialog box-shadow" id="create-subtask-dialog"><div class="jira-dialog-content"></div></div></body></html>

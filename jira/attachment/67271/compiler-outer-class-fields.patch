@@ -1,0 +1,228 @@
+Index: xstream/src/java/com/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter.java
+===================================================================
+--- xstream/src/java/com/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter.java	(revision 2354)
++++ xstream/src/java/com/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter.java	(working copy)
+@@ -220,7 +220,9 @@
+                     }
+ 
+                     final Field defaultField = (Field)defaultFieldDefinition.get(fieldName);
+-                    if (defaultField.getDeclaringClass() != definedIn) {
++                    if (defaultField.getDeclaringClass() != definedIn ||
++                    		//force defined-in attribute for outer class fields
++                    		fieldName.startsWith("this$")) {
+                         String attributeName = mapper.aliasForSystemAttribute("defined-in");
+                         if (attributeName != null) {
+                             writer.addAttribute(
+Index: xstream/src/test/com/thoughtworks/xstream/core/CompilerIndependentOuterClassMapper.java
+===================================================================
+--- xstream/src/test/com/thoughtworks/xstream/core/CompilerIndependentOuterClassMapper.java	(revision 0)
++++ xstream/src/test/com/thoughtworks/xstream/core/CompilerIndependentOuterClassMapper.java	(working copy)
+@@ -0,0 +1,71 @@
++/*
++ * Copyright (C) 2006 Joe Walnes.
++ * Copyright (C) 2006, 2007 XStream Committers.
++ * All rights reserved.
++ *
++ * The software in this package is published under the terms of the BSD
++ * style license a copy of which has been included with this distribution in
++ * the LICENSE.txt file.
++ * 
++ * Created on 06. March 2004 by Mauro Talevi
++ */
++package com.thoughtworks.xstream.core;
++
++import java.lang.reflect.Field;
++
++import com.thoughtworks.xstream.mapper.Mapper;
++import com.thoughtworks.xstream.mapper.MapperWrapper;
++
++public class CompilerIndependentOuterClassMapper extends MapperWrapper {
++    private final String alias;
++
++    public CompilerIndependentOuterClassMapper(Mapper wrapped) {
++        this(wrapped, "outer-class");
++    }
++
++    public CompilerIndependentOuterClassMapper(Mapper wrapped, String alias) {
++        super(wrapped);
++        this.alias = alias;
++    }
++
++    public String serializedMember(Class type, String memberName) {
++        if (memberName.equals("this$0")) {
++            return alias;
++        } else {
++            return super.serializedMember(type, memberName);
++        }
++    }
++
++    public String realMember(Class type, String serialized) {
++    	String serializedFieldName;
++        if (serialized.equals(alias)) {
++        	serializedFieldName = "this$0";
++        } else {
++        	serializedFieldName = super.realMember(type, serialized);
++        }
++        
++        //Completely ignore the name coming from XML and find the actual
++        //field name from the type. Only works if we have defined-in attribute 
++        //for all such fields. How to check if the XML is not coming from 
++        // a previous version without a defined-in attribute?
++        String fieldName = findFirstOuterClassFieldName(type);
++        if (fieldName != null) {
++        	return fieldName;
++        } else {
++        	return serializedFieldName;
++        }
++    }
++    
++    private String findFirstOuterClassFieldName(Class<?> type) {
++        for (Field field : type.getDeclaredFields()) {
++            if (field.isSynthetic()) {
++                return field.getName();
++            }
++        }
++        if (type.getSuperclass() != null) {
++        	return findFirstOuterClassFieldName(type.getSuperclass());
++        } else {
++        	return null;
++        }
++    }
++}
+Index: xstream/src/test/com/thoughtworks/xstream/core/OuterClassFieldsTest.java
+===================================================================
+--- xstream/src/test/com/thoughtworks/xstream/core/OuterClassFieldsTest.java	(revision 0)
++++ xstream/src/test/com/thoughtworks/xstream/core/OuterClassFieldsTest.java	(working copy)
+@@ -0,0 +1,132 @@
++/*
++ * Copyright (C) 2006 Joe Walnes.
++ * Copyright (C) 2006, 2007 XStream Committers.
++ * All rights reserved.
++ *
++ * The software in this package is published under the terms of the BSD
++ * style license a copy of which has been included with this distribution in
++ * the LICENSE.txt file.
++ * 
++ * Created on 06. March 2004 by Mauro Talevi
++ */
++package com.thoughtworks.xstream.core;
++
++import com.thoughtworks.acceptance.AbstractAcceptanceTest;
++import com.thoughtworks.xstream.XStream;
++import com.thoughtworks.xstream.core.OuterClassFieldsTest.TestClasses.Level2.Dynamic1;
++import com.thoughtworks.xstream.core.OuterClassFieldsTest.TestClasses.Level2.Dynamic1.Dynamic2;
++import com.thoughtworks.xstream.core.OuterClassFieldsTest.TestClasses.Level2.Dynamic3;
++import com.thoughtworks.xstream.mapper.MapperWrapper;
++
++public class OuterClassFieldsTest  extends AbstractAcceptanceTest {
++	public static class TestClasses {
++		public Level2 level2 = new Level2();
++		public Dynamic1 dynamic1 = level2.new Dynamic1();
++		public Dynamic2 dynamic2 = dynamic1.new Dynamic2();
++		public Dynamic3 dynamic3 = level2.new Dynamic3(dynamic1);
++		
++		public static class Level2 {
++			public class Dynamic1 {
++				public class Dynamic2 {}
++			}
++			public class Dynamic3 extends Dynamic2 {
++				public Dynamic3(Dynamic1 outer) {
++					outer.super();
++				}
++			}
++		}
++	}
++	
++    protected transient XStream xstreamFixed = createXStreamFixed();
++    
++    protected XStream createXStreamFixed() {
++        XStream xstream = new XStream(createDriver()) {
++			@Override
++			protected MapperWrapper wrapMapper(MapperWrapper next) {
++				return new CompilerIndependentOuterClassMapper(super.wrapMapper(next));
++			}
++        };
++        setupSecurity(xstream);
++        return xstream;
++    }
++
++	// One of the next couple of tests will fail,
++	// depending on which compiler was used.
++	// If compiled and run from Eclipse IDE the first one will be green.
++	// If compiled and run from Maven, the second one will be green.
++	
++	public void testOuterClassFieldUnmarshalEclipse() {
++		String xml = 
++			"<com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>\n" +
++			"  <level2/>\n" +
++			"  <dynamic1>\n" +
++			"    <this_-2 reference=\"../../level2\"/>\n" +
++			"  </dynamic1>\n" +
++			"  <dynamic2>\n" +
++			"    <this_-3 reference=\"../../dynamic1\"/>\n" +
++			"  </dynamic2>\n" +
++			"  <dynamic3>\n" +
++		    "    <this_-3 reference=\"../../dynamic1\"/>\n" +
++			"    <this_-2 reference=\"../../level2\"/>\n" +
++			"  </dynamic3>\n" +
++			"</com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>";
++		xstream.fromXML(xml);
++	}
++	
++	public void testOuterClassFieldUnmarshalFromOracle() {
++		String xml =
++			"<com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>\n" +
++			"  <level2/>\n" +
++			"  <dynamic1>\n" +
++			"    <outer-class reference=\"../../level2\"/>\n" +
++			"  </dynamic1>\n" +
++			"  <dynamic2>\n" +
++			"    <this_-1 reference=\"../../dynamic1\"/>\n" +
++			"  </dynamic2>\n" +
++			"  <dynamic3>\n" +
++		    "    <this_-1 reference=\"../../dynamic1\"/>\n" +
++			"    <outer-class reference=\"../../level2\"/>\n" +
++			"  </dynamic3>\n" +
++			"</com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>";
++		xstream.fromXML(xml);
++	}
++	
++	public void testFixedOuterClassFieldUnmarshalEclipse() {
++		System.out.println(toXML(new TestClasses()));
++		String xml = 
++		"<com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>\n" +
++		"  <level2/>\n" +
++		"  <dynamic1>\n" +
++		"    <this_-2 defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic1\" reference=\"../../level2\"/>\n" +
++		"  </dynamic1>\n" +
++		"  <dynamic2>\n" +
++		"    <this_-3 defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic1$Dynamic2\" reference=\"../../dynamic1\"/>\n" +
++		"  </dynamic2>\n" +
++		"  <dynamic3>\n" +
++		"    <this_-3 defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic1$Dynamic2\" reference=\"../../dynamic1\"/>\n" +
++		"    <this_-2 defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic3\" reference=\"../../level2\"/>\n" +
++		"  </dynamic3>\n" +
++		"</com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>";
++		xstreamFixed.fromXML(xml);
++	}
++	
++	public void testFixedOuterClassFieldUnmarshalFromOracle() {
++		String xml =
++		"<com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>\n" +
++		"  <level2/>\n" +
++		"  <dynamic1>\n" +
++		"    <outer-class defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic1\" reference=\"../../level2\"/>\n" +
++		"  </dynamic1>\n" +
++		"  <dynamic2>\n" +
++		"    <this_-1 defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic1$Dynamic2\" reference=\"../../dynamic1\"/>\n" +
++		"  </dynamic2>\n" +
++		"  <dynamic3>\n" +
++		"    <this_-1 defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic1$Dynamic2\" reference=\"../../dynamic1\"/>\n" +
++		"    <outer-class defined-in=\"com.thoughtworks.xstream.core.OuterClassFieldsTest$TestClasses$Level2$Dynamic3\" reference=\"../../level2\"/>\n" +
++		"  </dynamic3>\n" +
++		"</com.thoughtworks.xstream.core.OuterClassFieldsTest_-TestClasses>";
++		xstreamFixed.fromXML(xml);
++	}
++	
++	
++}

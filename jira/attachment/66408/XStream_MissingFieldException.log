@@ -1,0 +1,39 @@
+Exception in thread "main" com.thoughtworks.xstream.converters.ConversionException: Could not call tomas.staruch.ConcurrentHashMapTest$1.readObject() : No field 'segmentMask' found in class 'tomas.staruch.ConcurrentHashMapTest$1'
+---- Debugging information ----
+message             : Could not call tomas.staruch.ConcurrentHashMapTest$1.readObject()
+cause-exception     : com.thoughtworks.xstream.converters.reflection.MissingFieldException
+cause-message       : No field 'segmentMask' found in class 'tomas.staruch.ConcurrentHashMapTest$1'
+class               : tomas.staruch.ConcurrentHashMapTest$1
+required-type       : tomas.staruch.ConcurrentHashMapTest$1
+converter-type      : com.thoughtworks.xstream.converters.reflection.SerializableConverter
+path                : /tomas.staruch.ConcurrentHashMapTest$1/concurrent-hash-map/default/segmentMask
+line number         : 5
+version             : 1.4.7
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadObject(SerializationMethodInvoker.java:119)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter.doUnmarshal(SerializableConverter.java:454)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.unmarshal(AbstractReflectionConverter.java:257)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:72)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:66)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:50)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:134)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1185)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1169)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1040)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1031)
+	at tomas.staruch.ConcurrentHashMapTest.main(ConcurrentHashMapTest.java:16)
+Caused by: com.thoughtworks.xstream.converters.reflection.MissingFieldException: No field 'segmentMask' found in class 'tomas.staruch.ConcurrentHashMapTest$1'
+	at com.thoughtworks.xstream.converters.reflection.FieldDictionary.field(FieldDictionary.java:94)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.getFieldType(PureJavaReflectionProvider.java:159)
+	at com.thoughtworks.xstream.converters.reflection.ReflectionProviderWrapper.getFieldType(ReflectionProviderWrapper.java:45)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter$2.defaultReadObject(SerializableConverter.java:410)
+	at com.thoughtworks.xstream.core.util.CustomObjectInputStream.defaultReadObject(CustomObjectInputStream.java:116)
+	at java.util.concurrent.ConcurrentHashMap.readObject(ConcurrentHashMap.java:1438)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callReadObject(SerializationMethodInvoker.java:113)
+	... 13 more

@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html class="mozilla"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>[XSTR-28] Serialize object graph to small binary form - jira.codehaus.org</title>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+>
+
+
+
+<link rel="shortcut icon" href="index_files/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://jira.codehaus.org/osd.jsp" title="[XSTR-28] Serialize object graph to small binary form - jira.codehaus.org">
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link type="text/css" rel="stylesheet" href="index_files/batch.css" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="index_files/batch-1.css" media="all">
+<script type="text/javascript" src="index_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="index_files/batch-1.js"></script>
+<script type="text/javascript" src="index_files/jira.webresources_calendar-en.js"></script>
+<script type="text/javascript" src="index_files/com.atlassian.administraticksearch-webresources.js"></script>
+
+<script type="text/javascript" src="index_files/shortcuts.js"></script>
+
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Advanced+Searching">
+    
+</head>
+<body data-aui-version="5.1.8" id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.1.6">
+<div id="page">
+    <header id="header" style="display:none" role="banner">
+        
+
+
+
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input title="tzdetect.pref.tzid" value="America/Chicago" type="hidden">
+    <input title="tzdetect.pref.tzname" value="(GMT-06:00) Chicago" type="hidden">
+    <input title="tzdetect.pref.tzoffset" value="(GMT-06:00)" type="hidden">
+    <input title="tzdetect.pref.tzdst" value="true" type="hidden">
+    <input title="tzdetect.pref.nothanks" value="" type="hidden">
+</fieldset>
+<nav data-aui-responsive="true" class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul class="nav-links"><li class="nav-link nav-link-local"><a href="https://jira.codehaus.org/" class="aui-dropdown2-radio interactive checked" title="https://jira.codehaus.org/"><span class="nav-link-label">jira.codehaus.org</span></a></li><li class="nav-link"><a href="http://jira.sonarsource.com/" class="aui-dropdown2-radio interactive" title="http://jira.sonarsource.com/"><span class="nav-link-label">SonarSource</span></a></li><li class="nav-link"><a href="http://docs.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://docs.codehaus.org/"><span class="nav-link-label">Codehaus</span></a></li><li class="nav-link"><a href="http://xircles.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://xircles.codehaus.org"><span class="nav-link-label">Xircles</span></a></li></ul></div></div><script><!--
+/* Script removed by snapshot save */
+--></script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.codehaus.org/secure/MyJiraHome.jspa"><img data-aui-responsive-header-index="0" src="urn:download-error:http://www.codehaus.org/codehaus-small.gif" alt="jira.codehaus.org"></a></h1><ul style="width: auto;" class="aui-nav">
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/Dashboard.jspa" id="home_link" accesskey="d" title="View and manage your dashboards" aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="/Old_XStream_Issues/index.html" id="browse_link" accesskey="p" title="View recent projects and browse a list of projects" aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/IssueNavigator.jspa" id="find_link" accesskey="i" title="Search for issues and view recent issues" aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li>
+<li style="display: none;"><a id="aui-responsive-header-dropdown-trigger-0" class="aui-dropdown2-trigger" aria-owns="aui-responsive-header-dropdown-content-0" aria-haspopup="true" href="#">More<span class="icon aui-icon-dropdown"></span></a><div id="aui-responsive-header-dropdown-content-0" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul id="aui-responsive-header-dropdown-list-0"></ul></div></div></li></ul></div><div class="aui-header-secondary"><ul class="aui-nav"><li>
+    <form action="https://jira.codehaus.org/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" title="Quick Search ( Type '/' )" placeholder="Quick Search" name="searchString" accesskey="q" type="text">
+        <input class="hidden" value="Search" type="submit">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank" title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="view_help" class="interactive" title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank">Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="interactive" title="Get more information about JIRA's Keyboard Shortcuts ( Type '?' )" href="https://jira.codehaus.org/secure/ViewKeyboardShortcuts%21default.jspa" target="_blank">Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="interactive" title="Get more information about JIRA" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="interactive" title="See who did what" href="https://jira.codehaus.org/secure/JiraCreditsPage%21default.jspa" target="_blank">JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a id="whats-new-menu-link" class="interactive" href="https://docs.atlassian.com/jira/docs-061/whatsnew/iframe">What?s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a class="aui-nav-link login-link" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-28">Log In</a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+<div id="announcement-banner" class="alertHeader">
+    <div style="position: absolute; right: 20em; top: -2em">
+  <a href="https://xircles.codehaus.org/signup">Signup</a>
+</div>
+</div>
+
+
+    <section id="content" role="main">
+        
+    
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="10230" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="XStream" src="index_files/projectavatar.png"></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/Old_XStream_Issues/index.html">XStream</a></li><li><a class="issue-link" data-issue-key="XSTR-28" href="#" id="key-val" rel="13985">XSTR-28</a></li></ol><h1 id="summary-val">Serialize object graph to small binary form</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-ops-login-lnk_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="ops-login-lnk" style="display:none" title="Log In" class="toolbar-trigger" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-28"><span class="trigger-label">Log In</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" style="display:none" class="toolbar-group pluggable-ops"><li class="toolbar-item toolbar-dropdown"><div><a href="#" id="viewissue-export" title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown"><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-xml/XSTR-28/XSTR-28.xml" class="aui-list-item-link" id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-word/XSTR-28/XSTR-28.doc" class="aui-list-item-link" id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-html/XSTR-28/XSTR-28.html" class="aui-list-item-link" id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id="details-module" class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img alt="New Feature" src="index_files/newfeature.png" title="New Feature - A new feature of the product, which has yet to be developed." height="16" width="16"> New Feature
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+            </span>
+                    </div>
+    </li>
+            <li class="item">
+            <div class="wrap">
+                <strong class="name">Priority:</strong>
+                <span id="priority-val" class="value">
+                                        <img alt="Major" src="index_files/major.png" title="Major - Major loss of function." height="16" width="16"> Major
+                </span>
+            </div>
+        </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved">
+                                     Fixed
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="versions-field">
+                                                            <span title="0.1 ">0.1</span>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="fixVersions-field">
+                                                            <a href="/Old_XStream_Issues/index.html/fixforversion/10743" title="1.2 Major release">1.2</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="components-field">
+                                                            <a href="/Old_XStream_Issues/index.html/component/10670" title="IO ">IO</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-13985-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+</div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>Create a reader/writer pair that can write the heirarchy to a clean and compact binary form. This is designed to be the leanest form of serialized objects, making a viable alternative to standard Java persistence for networking and persistence.</p>
+
+<p>It must be as compact as possible!</p>
+            </div>
+</div>
+</div></div><div id="linkingmodule" class="module toggle-wrap"><div id="linkingmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Issue Links</h2></div><div class="mod-content">
+
+
+
+
+
+
+        <dl class="links-list ">
+        <dt title="is depended upon by">is depended upon by</dt>
+                    <dd id="internal-37086_10001">
+            <div class="link-content">
+                                    
+
+
+
+<p>
+            <img src="index_files/task.png" title="Task - A task that needs to be done." alt="Task - A task that needs to be done." height="16" width="16">
+        <span title="XSTR-317: XStream 1.2 release coordination.">
+        <a href="/Old_XStream_Issues/317" data-issue-key="XSTR-317" class="issue-link link-title resolution">XSTR-317</a>
+        <span class="link-summary">XStream 1.2 release coordination.</span>
+    </span>
+</p>
+<ul class="link-snapshot">
+                        <li class="status">        <img src="index_files/closed.png" title="Closed - The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened." alt="Closed - The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened." height="16" width="16">
+    </li>
+            </ul>
+                            </div>
+                    </dd>
+            </dl>
+        
+    <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+</div></div><div id="activitymodule" class="module toggle-wrap collapsed"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2" style="display:none">
+                    <div class="sortwrap">
+                                    <a class="icon icon-sort-down ajax-activity-content" rel="nofollow" href="/Old_XStream_Issues/28?actionOrder=desc" title="Ascending order - Click to sort in descending order"><span>Ascending order - Click to sort in descending order</span></a>
+                            </div>
+                <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-28">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/Old_XStream_Issues/28"><strong>All</strong></a>
+                        </li>
+                                
+            <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-28">
+                            <strong>Comments</strong>
+                        </li>
+                                
+            <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-28">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/Old_XStream_Issues/28"><strong>History</strong></a>
+                        </li>
+                                
+            <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-28">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/Old_XStream_Issues/28"><strong>Activity</strong></a>
+                        </li>
+                </ul>
+    </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    
+
+
+<div id="comment-23283" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/28?focusedCommentId=23283&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-23283" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jstrachan" id="commentauthor_23283_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jstrachan"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> james strachan</a>
+ added a comment  - <span class="commentdate_23283_verbose subText"><span class="date user-tz" title="20/Aug/04 5:21 AM"><time class="livestamp" datetime="2004-08-20T05:21-0500">20/Aug/04 5:21 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Being a pure Java serialization you can use the Java class names as a reference to the 'schema' and so don't have to send around schema objects.</p>
+
+<p>However to handle a super small &amp; fast binary schema, which survives version changes in classes, it might be nice to introduce a binary schema format.</p>
+
+<p>Then the binary serialization can just include the data and not schema information. We can write the schema version first.</p>
+
+<p>--------<br>
+<a href="http://localhost/schema/com/acme/CheeseSchema/1.0/3" class="external-link" rel="nofollow">http://localhost/schema/com/acme/CheeseSchema/1.0/3</a><br>
+binaryCrapGoesHere<br>
+--------</p>
+
+<p>The overhead of a single schema URL is pretty small; then after that everyone knows the exact schema &amp; can parse it nicely. We can then support</p>
+
+<ul>
+	<li>different classpaths &amp; versions of the Java classes</li>
+	<li>have a reader/writer for .Net or Ruby etc</li>
+</ul>
+
+
+
+<p>For 'generic' serialization where you can shove anything you like into a List, the schema may be pretty big (e.g. the whole of your classpath <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16">. However its only loaded once, so it doesn't matter if its huge.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jstrachan" id="commentauthor_23283_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jstrachan"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> james strachan</a>
+ added a comment  - <span class="commentdate_23283_concise subText"><span class="date user-tz" title="20/Aug/04 5:21 AM"><time class="livestamp" datetime="2004-08-20T05:21-0500">20/Aug/04 5:21 AM</time></span></span>                    Being a pure Java serialization you can use the Java class names as a reference to the 'schema' and so don't have to send around schema objects. 
+
+ However to handle a super small &amp; fast binary schema, which survives version changes in classes, it might be nice to introduce a binary schema format. 
+
+ Then the binary serialization can just include the data and not schema information. We can write the schema version first. 
+
+ -------- 
+ http://localhost/schema/com/acme/CheeseSchema/1.0/3  
+binaryCrapGoesHere 
+-------- 
+
+ The overhead of a single schema URL is pretty small; then after that everyone knows the exact schema &amp; can parse it nicely. We can then support 
+
+ 
+	 different classpaths &amp; versions of the Java classes 
+	 have a reader/writer for .Net or Ruby etc 
+ 
+
+
+
+ For 'generic' serialization where you can shove anything you like into a List, the schema may be pretty big (e.g. the whole of your classpath  . However its only loaded once, so it doesn't matter if its huge.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-29134" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/28?focusedCommentId=29134&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-29134" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="citibob" id="commentauthor_29134_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=citibob"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Bob Fischer</a>
+ added a comment  - <span class="commentdate_29134_verbose subText"><span class="date user-tz" title="21/Jan/05 2:27 PM"><time class="livestamp" datetime="2005-01-21T14:27-0600">21/Jan/05 2:27 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Here is a proposal I have for doing it with a simplified kind of schema.  Basically, for a particular data stream with a particular set of serialized classes, you give each tag a 1-byte (or 2-byte, for large schema) representation.  You also have to know which tags contain primitive types, i.e. integers and strings, because (binary) end-tags are eliminated in those cases.  With just that information, you can parse anything.</p>
+
+<p>It would also be possible to extend this idea so that even unexpected types, not part of the schema, could be properly serialized and later parsed (without the benefit of schema compression).</p>
+
+<p>The biggest problem I see here is that XStream's converters and stuff seem to be oriented toward writing Strings (Unicode), rather than byte arrays (which are appropriate for binary formats).  I'm not sure how big of a problem that is, how deep in the XStream code one would have to hack to make it work well with binary data streams.</p>
+
+<p>In any case, I share here the binary proposal for review.  If nothing happens on this issue in the next couple of months, I am likely to implement this proposal (or something like it) for my job.</p>
+
+<p>Sincerely,<br>
+– Bob</p>
+
+<p>Proposed binary format for tree-structured data.  This will be a binary analog to the XML currently produced by XStream.</p>
+
+<p>The current format is an XML tree with simplified syntax:<br>
+ 1. No attributes to nodes, just simple nodes like "&lt;head&gt;", etc.<br>
+ 2. A node has either children (interior node) or data (leaf node), but not both.</p>
+
+<p>Here is an example:</p>
+
+<p>&lt;Xtest-Person&gt;<br>
+  &lt;nums&gt;<br>
+    &lt;int&gt;17&lt;/int&gt;<br>
+    &lt;int&gt;18&lt;/int&gt;<br>
+    &lt;int&gt;26&lt;/int&gt;<br>
+    &lt;int&gt;44&lt;/int&gt;<br>
+  &lt;/nums&gt;<br>
+  &lt;objInt&gt;17&lt;/objInt&gt;<br>
+  &lt;firstname&gt;Sally&lt;/firstname&gt;<br>
+  &lt;lastname&gt;Jones&lt;/lastname&gt;<br>
+  &lt;phone&gt;<br>
+    &lt;code&gt;203&lt;/code&gt;<br>
+    &lt;number&gt;333-4444&lt;/number&gt;<br>
+  &lt;/phone&gt;<br>
+&lt;/Xtest-Person&gt;</p>
+
+<p>This encoding takes 252 bytes.  Whitespace uses 53 of those bytes, so it would be trivial to encode using 199 bytes.  Assuming 2-byte integers (typical for our application), the "actual data" takes up 31 bytes.  Thus, we say our "control overhead" for this format is 199-31 = 168 bytes.</p>
+
+<p>Now how to compress it by recoding:</p>
+
+<p>Single-Byte Tags<br>
+================</p>
+
+<p>First, let's get rid of the overhead in the tags.  A given XML schema uses only a finite number of node types.  Let's assume it's less than 256, which is likely the case for our needs with SMART.  Then, every node type can be represented by a 1-byte binary tag:</p>
+
+<p>#define XTEST_PERSON 1<br>
+#define NUMS 2<br>
+#define INT 3<br>
+#define OBJINT 4<br>
+#define FIRSTNAME 5<br>
+#define LASTNAME 6<br>
+#define PHONE 7<br>
+#define CODE 8<br>
+#define NUMBER 9</p>
+
+<p>We will have to define this TAG SET separately for every type of data stream we wish to use in our protocol.  That's OK.  We can also have a special marker for tags not found in the tag set:</p>
+
+<p>#define UNDEFINED 0</p>
+
+<p>We also have an "end tag" marker, which is used to represent the &lt;/xxx&gt; XML tags:</p>
+
+<p>#define ENDTAG 255</p>
+
+<p>Using this scheme, we can immediately produce a semi-binary representation of the above XML (bytes are separated by whitespace; items in quotes are translated in the ACTUAL binary representation by their ASCII values).  Basically, we have replaced each XML tag by a single-byte sequence.  In addition, we have added an end-of-string marker to the strings contained in the leaf nodes:</p>
+
+<p>1<br>
+    2<br>
+        3 "17\0" 255<br>
+        3 "18\0" 255<br>
+        3 "26\0" 255<br>
+        3 "44\0" 255<br>
+    255<br>
+    4 "17\0" 255<br>
+    5 "Sally\0" 255<br>
+    6 "Jones\0" 255<br>
+    7<br>
+        8 "203\0" 255<br>
+        9 "333-4444\0" 255<br>
+    255<br>
+255</p>
+
+<p>Bytes used for this format are:<br>
+    data            31<br>
+    end-of-string    9<br>
+    tags            24<br>
+Our control overhead is now down to 33 bytes.  A big improvement for a simple idea.</p>
+
+<p>Binary Representations<br>
+======================</p>
+
+<p>Next, we can use binary representations for our non-String data (which is a much of what we use in SMART).  This has many advantages:<br>
+ 1. It's often more compact than an ASCII representation for numbers.<br>
+ 2. ASCII representation for floating point requires dual conversion, which is bad.<br>
+ 3. It requires less work to parse on the iPaq, no string-to-int conversions are needed.<br>
+ 4. Some fields will now be fixed-length, eliminating the end-of-tag marker in these cases.</p>
+
+<p>Using this idea, our representation is now as follows (using little-endian integer formats):</p>
+
+<p>1<br>
+    2<br>
+        3 0 17<br>
+        3 0 18<br>
+        3 0 26<br>
+        3 0 44<br>
+    255<br>
+    4 0 17<br>
+    5 "Sally\0" 255<br>
+    6 "Jones\0" 255<br>
+    7<br>
+        8 "203\0" 255<br>
+        9 "333-4444\0" 255<br>
+    255<br>
+255</p>
+
+<p>We have saved (in this case) two bytes per integer.  Our representation now uses:<br>
+    data            31<br>
+    end-of-string    4<br>
+    tags            19<br>
+Control overhead is down to 23 bytes.</p>
+
+<p>Redundant End-Of-Tag Markers<br>
+============================</p>
+
+<p>We can also eliminate the end-of-tag markers on our string nodes, since they are redundant.  Using this, we save another 4 bytes, with control overhead down to 19 bytes.</p>
+
+<p>1<br>
+    2<br>
+        3 0 17<br>
+        3 0 18<br>
+        3 0 26<br>
+        3 0 44<br>
+    255<br>
+    4 0 17<br>
+    5 "Sally\0"<br>
+    6 "Jones\0"<br>
+    7<br>
+        8 "203\0"<br>
+        9 "333-4444\0"<br>
+    255<br>
+255</p>
+
+<p>Counted Arrays<br>
+==============</p>
+
+<p>Finally, the &lt;int&gt; (3) tags for the array of integers are redundant.  It would be better to explicitely represent (1-D) arrays of primitive types as an array-type tag, with a count.  Going back to the original XML, we would replace:<br>
+  &lt;nums&gt;<br>
+    &lt;int&gt;17&lt;/int&gt;<br>
+    &lt;int&gt;18&lt;/int&gt;<br>
+    &lt;int&gt;26&lt;/int&gt;<br>
+    &lt;int&gt;44&lt;/int&gt;<br>
+  &lt;/nums&gt;</p>
+
+<p>with something like:<br>
+  &lt;nums count=4&gt;17 18 26 44&lt;/nums&gt;</p>
+
+<p>This translates in our binary format to something like:</p>
+
+<p>    2               // Parser knows an INTARRAY is coming now<br>
+        0 4         // Little-endian length of the array<br>
+        0 17        // Now our data<br>
+        0 18<br>
+        0 26<br>
+        0 44<br>
+                    // End tag not needed because array is counted.</p>
+
+<p>In this case, we have saved an addition 4 bytes, resulting in 15 byte control overhead.</p>
+
+<p>Summary<br>
+=======</p>
+
+<p>This binary format provides for a general level of flexibility and ease-of-use that comes with XML.  In fact, it is homomorphic to XML and can be converted to such relatively easily.  It is still easily parsed, like XML.</p>
+
+<p>Thus, this format is suitable for modern serialization systems such as XStream.  Although XStream generates XML by default, it has hooks that would allow it to create (and read) this format in a clean manner.</p>
+
+<p>This format is compact.  Maybe not quite as compact as an (implied) fixed-record format.  However, it is much easier to code and work with, and it produces self-documenting serialized object streams.</p>
+
+<p>It is also language-independent.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="citibob" id="commentauthor_29134_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=citibob"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Bob Fischer</a>
+ added a comment  - <span class="commentdate_29134_concise subText"><span class="date user-tz" title="21/Jan/05 2:27 PM"><time class="livestamp" datetime="2005-01-21T14:27-0600">21/Jan/05 2:27 PM</time></span></span>                    Here is a proposal I have for doing it with a simplified kind of schema.  Basically, for a particular data stream with a particular set of serialized classes, you give each tag a 1-byte (or 2-byte, for large schema) representation.  You also have to know which tags contain primitive types, i.e. integers and strings, because (binary) end-tags are eliminated in those cases.  With just that information, you can parse anything. 
+
+ It would also be possible to extend this idea so that even unexpected types, not part of the schema, could be properly serialized and later parsed (without the benefit of schema compression). 
+
+ The biggest problem I see here is that XStream's converters and stuff seem to be oriented toward writing Strings (Unicode), rather than byte arrays (which are appropriate for binary formats).  I'm not sure how big of a problem that is, how deep in the XStream code one would have to hack to make it work well with binary data streams. 
+
+ In any case, I share here the binary proposal for review.  If nothing happens on this issue in the next couple of months, I am likely to implement this proposal (or something like it) for my job. 
+
+ Sincerely, 
+– Bob 
+
+ Proposed binary format for tree-structured data.  This will be a binary analog to the XML currently produced by XStream. 
+
+ The current format is an XML tree with simplified syntax: 
+ 1. No attributes to nodes, just simple nodes like "&lt;head&gt;", etc. 
+ 2. A node has either children (interior node) or data (leaf node), but not both. 
+
+ Here is an example: 
+
+ &lt;Xtest-Person&gt; 
+  &lt;nums&gt; 
+    &lt;int&gt;17&lt;/int&gt; 
+    &lt;int&gt;18&lt;/int&gt; 
+    &lt;int&gt;26&lt;/int&gt; 
+    &lt;int&gt;44&lt;/int&gt; 
+  &lt;/nums&gt; 
+  &lt;objInt&gt;17&lt;/objInt&gt; 
+  &lt;firstname&gt;Sally&lt;/firstname&gt; 
+  &lt;lastname&gt;Jones&lt;/lastname&gt; 
+  &lt;phone&gt; 
+    &lt;code&gt;203&lt;/code&gt; 
+    &lt;number&gt;333-4444&lt;/number&gt; 
+  &lt;/phone&gt; 
+&lt;/Xtest-Person&gt; 
+
+ This encoding takes 252 bytes.  Whitespace uses 53 of those bytes, so it would be trivial to encode using 199 bytes.  Assuming 2-byte integers (typical for our application), the "actual data" takes up 31 bytes.  Thus, we say our "control overhead" for this format is 199-31 = 168 bytes. 
+
+ Now how to compress it by recoding: 
+
+ Single-Byte Tags 
+================ 
+
+ First, let's get rid of the overhead in the tags.  A given XML schema uses only a finite number of node types.  Let's assume it's less than 256, which is likely the case for our needs with SMART.  Then, every node type can be represented by a 1-byte binary tag: 
+
+ #define XTEST_PERSON 1 
+#define NUMS 2 
+#define INT 3 
+#define OBJINT 4 
+#define FIRSTNAME 5 
+#define LASTNAME 6 
+#define PHONE 7 
+#define CODE 8 
+#define NUMBER 9 
+
+ We will have to define this TAG SET separately for every type of data stream we wish to use in our protocol.  That's OK.  We can also have a special marker for tags not found in the tag set: 
+
+ #define UNDEFINED 0 
+
+ We also have an "end tag" marker, which is used to represent the &lt;/xxx&gt; XML tags: 
+
+ #define ENDTAG 255 
+
+ Using this scheme, we can immediately produce a semi-binary representation of the above XML (bytes are separated by whitespace; items in quotes are translated in the ACTUAL binary representation by their ASCII values).  Basically, we have replaced each XML tag by a single-byte sequence.  In addition, we have added an end-of-string marker to the strings contained in the leaf nodes: 
+
+ 1 
+    2 
+        3 "17\0" 255 
+        3 "18\0" 255 
+        3 "26\0" 255 
+        3 "44\0" 255 
+    255 
+    4 "17\0" 255 
+    5 "Sally\0" 255 
+    6 "Jones\0" 255 
+    7 
+        8 "203\0" 255 
+        9 "333-4444\0" 255 
+    255 
+255 
+
+ Bytes used for this format are: 
+    data            31 
+    end-of-string    9 
+    tags            24 
+Our control overhead is now down to 33 bytes.  A big improvement for a simple idea. 
+
+ Binary Representations 
+====================== 
+
+ Next, we can use binary representations for our non-String data (which is a much of what we use in SMART).  This has many advantages: 
+ 1. It's often more compact than an ASCII representation for numbers. 
+ 2. ASCII representation for floating point requires dual conversion, which is bad. 
+ 3. It requires less work to parse on the iPaq, no string-to-int conversions are needed. 
+ 4. Some fields will now be fixed-length, eliminating the end-of-tag marker in these cases. 
+
+ Using this idea, our representation is now as follows (using little-endian integer formats): 
+
+ 1 
+    2 
+        3 0 17 
+        3 0 18 
+        3 0 26 
+        3 0 44 
+    255 
+    4 0 17 
+    5 "Sally\0" 255 
+    6 "Jones\0" 255 
+    7 
+        8 "203\0" 255 
+        9 "333-4444\0" 255 
+    255 
+255 
+
+ We have saved (in this case) two bytes per integer.  Our representation now uses: 
+    data            31 
+    end-of-string    4 
+    tags            19 
+Control overhead is down to 23 bytes. 
+
+ Redundant End-Of-Tag Markers 
+============================ 
+
+ We can also eliminate the end-of-tag markers on our string nodes, since they are redundant.  Using this, we save another 4 bytes, with control overhead down to 19 bytes. 
+
+ 1 
+    2 
+        3 0 17 
+        3 0 18 
+        3 0 26 
+        3 0 44 
+    255 
+    4 0 17 
+    5 "Sally\0" 
+    6 "Jones\0" 
+    7 
+        8 "203\0" 
+        9 "333-4444\0" 
+    255 
+255 
+
+ Counted Arrays 
+============== 
+
+ Finally, the &lt;int&gt; (3) tags for the array of integers are redundant.  It would be better to explicitely represent (1-D) arrays of primitive types as an array-type tag, with a count.  Going back to the original XML, we would replace: 
+  &lt;nums&gt; 
+    &lt;int&gt;17&lt;/int&gt; 
+    &lt;int&gt;18&lt;/int&gt; 
+    &lt;int&gt;26&lt;/int&gt; 
+    &lt;int&gt;44&lt;/int&gt; 
+  &lt;/nums&gt; 
+
+ with something like: 
+  &lt;nums count=4&gt;17 18 26 44&lt;/nums&gt; 
+
+ This translates in our binary format to something like: 
+
+     2               // Parser knows an INTARRAY is coming now 
+        0 4         // Little-endian length of the array 
+        0 17        // Now our data 
+        0 18 
+        0 26 
+        0 44 
+                    // End tag not needed because array is counted. 
+
+ In this case, we have saved an addition 4 bytes, resulting in 15 byte control overhead. 
+
+ Summary 
+======= 
+
+ This binary format provides for a general level of flexibility and ease-of-use that comes with XML.  In fact, it is homomorphic to XML and can be converted to such relatively easily.  It is still easily parsed, like XML. 
+
+ Thus, this format is suitable for modern serialization systems such as XStream.  Although XStream generates XML by default, it has hooks that would allow it to create (and read) this format in a clean manner. 
+
+ This format is compact.  Maybe not quite as compact as an (implied) fixed-record format.  However, it is much easier to code and work with, and it produces self-documenting serialized object streams. 
+
+ It is also language-independent.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-71067" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/28?focusedCommentId=71067&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-71067" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="guilherme silveira" id="commentauthor_71067_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=guilherme+silveira"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Guilherme Silveira</a>
+ added a comment  - <span class="commentdate_71067_verbose subText"><span class="date user-tz" title="28/Jul/06 6:40 PM"><time class="livestamp" datetime="2006-07-28T18:40-0500">28/Jul/06 6:40 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>resolved but missing docs</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="guilherme silveira" id="commentauthor_71067_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=guilherme+silveira"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Guilherme Silveira</a>
+ added a comment  - <span class="commentdate_71067_concise subText"><span class="date user-tz" title="28/Jul/06 6:40 PM"><time class="livestamp" datetime="2006-07-28T18:40-0500">28/Jul/06 6:40 PM</time></span></span>                    resolved but missing docs              </div>
+        </div>
+    </div>
+</div>
+                             </div>
+    </div>
+</div></div></div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id="peoplemodule" class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_assignee_jwalnes1" rel="jwalnes1">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+            Joe Walnes
+        </span>
+    </span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_jwalnes1" rel="jwalnes1">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+            Joe Walnes
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                        
+                                                                                                        <span id="vote-label" title="You have to be logged in to vote for an issue.">Vote for this issue</span>
+                                            </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <span id="watcher-data" class="aui-badge watch-state-off">3</span>
+                        
+                                                                                <span id="watch-label" title="You have to be logged in to watch an issue.">Start watching this issue</span>
+                                            </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id="datesmodule" class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz" title="07/Mar/04 7:33 AM">
+
+                <span data-name="Created" id="create-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2004-03-07T07:33-0600">07/Mar/04 7:33 AM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz" title="28/Jul/06 6:40 PM">
+
+                <span data-name="Updated" id="updated-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-07-28T18:40-0500">28/Jul/06 6:40 PM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz" title="28/Jul/06 6:40 PM">
+
+                <span data-name="Resolved" id="resolved-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-07-28T18:40-0500">28/Jul/06 6:40 PM</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input title="autocompleteEnabled" value="true" type="hidden">
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+
+
+<div class="footer-body">
+    <ul>
+        <li>
+                        <a href="http://www.atlassian.com/software/jira">Atlassian JIRA</a>
+
+                                                    
+                        
+            <span id="footer-build-information">(v6.1.6#6162-<span title="7af547ce7c84dbb7c1e345a65437ed7b85efffa2" data-commit-id="7af547ce7c84dbb7c1e345a65437ed7b85efffa2}">sha1:7af547c</span>)</span>
+        </li>
+        <li>
+            <a id="about-link" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+        </li>
+        <li>
+                                    <a id="footer-report-problem-link" href="https://jira.codehaus.org/secure/CreateIssue%21default.jspa">Report a problem</a>
+        </li>
+    </ul>
+            <ul>
+            <li class="licensemessage">
+                                    Powered by a free Atlassian <a href="http://www.atlassian.com/software/jira">JIRA</a> open source license for Codehaus. Try JIRA - <a href="http://www.atlassian.com/software/jira">bug tracking software</a> for <i>your</i> team.
+
+                            </li>
+        </ul>
+    </div>
+
+<form id="jira_request_timing_info" class="dont-default-focus">
+	<fieldset class="parameters hidden">
+
+
+
+
+		<input title="jira.session.expiry.in.mins" value="299" type="hidden">
+
+	</fieldset>
+</form>
+<!--
+	                 
+	          
+	               
+	                 
+	        CONCURRENT REQUESTS : 5
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input title="loggedInUser" value="" type="hidden">
+    <input title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation." type="hidden">
+    <input title="JiraVersion" value="6.1.6" type="hidden">
+    <input title="ajaxUnauthorised" value="You are not authorised to perform this operation.  Please log in." type="hidden">
+    <input title="baseURL" value="https://jira.codehaus.org:443" type="hidden">
+    <input title="ajaxCommsError" value="The JIRA server could not be contacted.  This may be a temporary glitch or the server may be down." type="hidden">
+    <input title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation." type="hidden">
+    <input title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser" type="hidden">
+    <input title="ajaxErrorDialogHeading" value="Communications Breakdown" type="hidden">
+
+    <input title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost." type="hidden">
+    <input title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog." type="hidden">
+    <input title="keyType" value="Type" type="hidden">
+    <input title="keyThen" value="then" type="hidden">
+    <input title="dblClickToExpand" value="Double click to expand" type="hidden">
+    <input title="actions" value="Actions" type="hidden">
+    <input title="removeItem" value="Remove" type="hidden">
+    <input title="workflow" value="Workflow" type="hidden">
+    <input title="labelNew" value="New Label" type="hidden">
+    <input title="issueActionsHint" value="Begin typing for available operations or press down to see all" type="hidden">
+    <input title="closelink" value="Close" type="hidden">
+    <input title="dotOperations" value="Operations" type="hidden">
+    <input title="dotLoading" value="Loading..." type="hidden">
+    <input title="frotherSuggestions" value="Suggestions" type="hidden">
+    <input title="frotherNomatches" value="No Matches" type="hidden">
+    <input title="multiselectVersionsError" value="{0} is not a valid version." type="hidden">
+    <input title="multiselectComponentsError" value="{0} is not a valid component." type="hidden">
+    <input title="multiselectGenericError" value="The value {0} is invalid." type="hidden">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:void(0);" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:void(0);" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div class="navigator-sidebar collapsed ui-popout ui-popout-detached ui-popout-collapsed" id="navigator-sidebar"><a class="toggle-filter-panel" href="#" title="Dock the filters panel ([)"></a></div><div style="display: none;" class="jira-dialog box-shadow" id="edit-issue-dialog"><div class="jira-dialog-content"></div></div><div style="display: none;" class="jira-dialog box-shadow" id="create-subtask-dialog"><div class="jira-dialog-content"></div></div></body></html>

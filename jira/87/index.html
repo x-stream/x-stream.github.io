@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html class="mozilla"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>[XSTR-87] Field names cannot contain $ chars - jira.codehaus.org</title>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+>
+
+
+
+<link rel="shortcut icon" href="index_files/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://jira.codehaus.org/osd.jsp" title="[XSTR-87] Field names cannot contain $ chars - jira.codehaus.org">
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link type="text/css" rel="stylesheet" href="index_files/batch.css" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="index_files/batch-1.css" media="all">
+<script type="text/javascript" src="index_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="index_files/batch-1.js"></script>
+<script type="text/javascript" src="index_files/jira.webresources_calendar-en.js"></script>
+<script type="text/javascript" src="index_files/com.atlassian.administraticksearch-webresources.js"></script>
+
+<script type="text/javascript" src="index_files/shortcuts.js"></script>
+
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Advanced+Searching">
+    
+</head>
+<body data-aui-version="5.1.8" id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.1.6">
+<div id="page">
+    <header id="header" style="display:none" role="banner">
+        
+
+
+
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input title="tzdetect.pref.tzid" value="America/Chicago" type="hidden">
+    <input title="tzdetect.pref.tzname" value="(GMT-06:00) Chicago" type="hidden">
+    <input title="tzdetect.pref.tzoffset" value="(GMT-06:00)" type="hidden">
+    <input title="tzdetect.pref.tzdst" value="true" type="hidden">
+    <input title="tzdetect.pref.nothanks" value="" type="hidden">
+</fieldset>
+<nav data-aui-responsive="true" class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul class="nav-links"><li class="nav-link nav-link-local"><a href="https://jira.codehaus.org/" class="aui-dropdown2-radio interactive checked" title="https://jira.codehaus.org/"><span class="nav-link-label">jira.codehaus.org</span></a></li><li class="nav-link"><a href="http://jira.sonarsource.com/" class="aui-dropdown2-radio interactive" title="http://jira.sonarsource.com/"><span class="nav-link-label">SonarSource</span></a></li><li class="nav-link"><a href="http://docs.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://docs.codehaus.org/"><span class="nav-link-label">Codehaus</span></a></li><li class="nav-link"><a href="http://xircles.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://xircles.codehaus.org"><span class="nav-link-label">Xircles</span></a></li></ul></div></div><script><!--
+/* Script removed by snapshot save */
+--></script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.codehaus.org/secure/MyJiraHome.jspa"><img data-aui-responsive-header-index="0" src="urn:download-error:http://www.codehaus.org/codehaus-small.gif" alt="jira.codehaus.org"></a></h1><ul style="width: auto;" class="aui-nav">
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/Dashboard.jspa" id="home_link" accesskey="d" title="View and manage your dashboards" aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="/Old_XStream_Issues/index.html" id="browse_link" accesskey="p" title="View recent projects and browse a list of projects" aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/IssueNavigator.jspa" id="find_link" accesskey="i" title="Search for issues and view recent issues" aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li>
+<li style="display: none;"><a id="aui-responsive-header-dropdown-trigger-0" class="aui-dropdown2-trigger" aria-owns="aui-responsive-header-dropdown-content-0" aria-haspopup="true" href="#">More<span class="icon aui-icon-dropdown"></span></a><div id="aui-responsive-header-dropdown-content-0" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul id="aui-responsive-header-dropdown-list-0"></ul></div></div></li></ul></div><div class="aui-header-secondary"><ul class="aui-nav"><li>
+    <form action="https://jira.codehaus.org/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" title="Quick Search ( Type '/' )" placeholder="Quick Search" name="searchString" accesskey="q" type="text">
+        <input class="hidden" value="Search" type="submit">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank" title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="view_help" class="interactive" title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank">Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="interactive" title="Get more information about JIRA's Keyboard Shortcuts ( Type '?' )" href="https://jira.codehaus.org/secure/ViewKeyboardShortcuts%21default.jspa" target="_blank">Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="interactive" title="Get more information about JIRA" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="interactive" title="See who did what" href="https://jira.codehaus.org/secure/JiraCreditsPage%21default.jspa" target="_blank">JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a id="whats-new-menu-link" class="interactive" href="https://docs.atlassian.com/jira/docs-061/whatsnew/iframe">What?s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a class="aui-nav-link login-link" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-87">Log In</a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+<div id="announcement-banner" class="alertHeader">
+    <div style="position: absolute; right: 20em; top: -2em">
+  <a href="https://xircles.codehaus.org/signup">Signup</a>
+</div>
+</div>
+
+
+    <section id="content" role="main">
+        
+    
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="10230" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="XStream" src="index_files/projectavatar.png"></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/Old_XStream_Issues/index.html">XStream</a></li><li><a class="issue-link" data-issue-key="XSTR-87" href="#" id="key-val" rel="15721">XSTR-87</a></li></ol><h1 id="summary-val">Field names cannot contain $ chars</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-ops-login-lnk_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="ops-login-lnk" style="display:none" title="Log In" class="toolbar-trigger" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-87"><span class="trigger-label">Log In</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" style="display:none" class="toolbar-group pluggable-ops"><li class="toolbar-item toolbar-dropdown"><div><a href="#" id="viewissue-export" title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown"><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-xml/XSTR-87/XSTR-87.xml" class="aui-list-item-link" id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-word/XSTR-87/XSTR-87.doc" class="aui-list-item-link" id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-html/XSTR-87/XSTR-87.html" class="aui-list-item-link" id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id="details-module" class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img alt="Bug" src="index_files/bug.png" title="Bug - A problem which impairs or prevents the functions of the product." height="16" width="16"> Bug
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+            </span>
+                    </div>
+    </li>
+            <li class="item">
+            <div class="wrap">
+                <strong class="name">Priority:</strong>
+                <span id="priority-val" class="value">
+                                        <img alt="Major" src="index_files/major.png" title="Major - Major loss of function." height="16" width="16"> Major
+                </span>
+            </div>
+        </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved">
+                                     Fixed
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="fixVersions-field">
+                                                            <a href="/Old_XStream_Issues/index.html/fixforversion/10790" title="1.0.2 ">1.0.2</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="components-field">
+                                                            <a href="/Old_XStream_Issues/index.html/component/10671" title="Converters ">Converters</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-15721-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+</div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>Below is the thread from the mailing list.</p>
+
+<p>----------<br>
+Hi,</p>
+
+<p>I fixed, in a way</p>
+
+<p>please let me know about new release or something<br>
+I'd like to see standard xstream working</p>
+
+<p>thank you,<br>
+Slavic</p>
+
+
+<p>Veaceslav Chicu wrote:</p>
+
+<p>&gt; XppReader.read()<br>
+&gt; here, we can decode<br>
+&gt;<br>
+&gt;<br>
+&gt; PrettyPrintWriter.startNode<br>
+&gt; here we can encode<br>
+&gt;<br>
+&gt; the problem is Basic class like<br>
+&gt;<br>
+&gt; class Person</p>
+{
+&gt; private String first_name = "Slavic";
+&gt; private String last_name = "Chicu";
+&gt; }
+<p>&gt;<br>
+&gt; doesn't work <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16"> so bug is major<br>
+&gt;<br>
+&gt;<br>
+&gt; any idea?<br>
+&gt;<br>
+&gt;<br>
+&gt; best regards,<br>
+&gt; Slavic<br>
+&gt;<br>
+&gt;<br>
+&gt; Veaceslav Chicu wrote:<br>
+&gt;<br>
+&gt;&gt; <a href="http://www.w3.org/TR/2000/REC-xml-20001006#sec-starttags" class="external-link" rel="nofollow">http://www.w3.org/TR/2000/REC-xml-20001006#sec-starttags</a><br>
+&gt;&gt; so "$" is not allowed for name attribute<br>
+&gt;&gt;<br>
+&gt;&gt; <a href="http://java.sun.com/docs/books/jls/second_edition/html/lexical.doc.html#40625" class="external-link" rel="nofollow">http://java.sun.com/docs/books/jls/second_edition/html/lexical.doc.html#40625</a><br>
+&gt;&gt; identifier can be "$"<br>
+&gt;&gt;<br>
+&gt;&gt; so, maybe the best is to translate characters in xml writer/reader?<br>
+&gt;&gt;<br>
+&gt;&gt; the list is active? or not?<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt; best regards,<br>
+&gt;&gt; Slavic<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt; Veaceslav Chicu wrote:<br>
+&gt;&gt;<br>
+&gt;&gt;&gt; it's xpp3 parser, he doesn't accept  "$" in tag name<br>
+&gt;&gt;&gt; the problem is I have a field with "$" in name <img class="emoticon" src="index_files/sad.gif" alt="" height="16" align="absmiddle" border="0" width="16"><br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt; maybe xstream should encode/decode field names? from java allowed chars alphabet to xml tag name allowed chars alphabet?<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt; any suggestion?<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt; thank you,<br>
+&gt;&gt;&gt; Slavic<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt; Veaceslav Chicu wrote:<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; Hi,<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; I have an error importing a class,<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; xml fragment:<br>
+&gt;&gt;&gt;&gt; &lt;CGLIB$CALLBACK_0 class="net.sf.hibernate.proxy.CGLIBLazyInitializer"&gt;<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; it's because of "$"<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; any suggestion, workaround, what can I do with this?<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; I exported like this:<br>
+&gt;&gt;&gt;&gt; XStream xstream = new XStream();<br>
+&gt;&gt;&gt;&gt; String xml = xstream.toXML(lst);<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&gt; Thank you,<br>
+&gt;&gt;&gt;&gt; Slavic<br>
+&gt;&gt;&gt;&gt; P.S<br>
+&gt;&gt;&gt;&gt; com.thoughtworks.xstream.converters.ConversionException: start tag unexpected character $ (position: TEXT seen ...ic.jqbe.modele.Domaine-<del>EnhancerByCGLIB</del>-213a5c8c"&gt;        &lt;CGLIB$... @1:12225)<br>
+&gt;&gt;&gt;&gt; ---- Debugging information ----<br>
+&gt;&gt;&gt;&gt; required-type       : fr.infologic.jqbe.modele.Domaine$$EnhancerByCGLIB$$213a5c8c<br>
+&gt;&gt;&gt;&gt; cause-message       : start tag unexpected character $ (position: TEXT seen ...ic.jqbe.modele.Domaine-<del>EnhancerByCGLIB</del>-213a5c8c"&gt; &lt;CGLIB$... @1:12225)<br>
+&gt;&gt;&gt;&gt; class               : java.util.List<br>
+&gt;&gt;&gt;&gt; message             : start tag unexpected character $ (position: TEXT seen ...ic.jqbe.modele.Domaine-<del>EnhancerByCGLIB</del>-213a5c8c"&gt; &lt;CGLIB$... @1:12225)<br>
+&gt;&gt;&gt;&gt; line number         : 1<br>
+&gt;&gt;&gt;&gt; path                : /list/fr.infologic.jqbe.modele.Consultation-array/fr.infologic.jqbe.modele.Consultation/domaine<br>
+&gt;&gt;&gt;&gt; cause-exception     : com.thoughtworks.xstream.io.StreamException<br>
+&gt;&gt;&gt;&gt; -------------------------------<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.ReferenceByXPathUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.converters.reflection.ReflectionConverter.unmarshal(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.ReferenceByXPathUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.converters.collections.ArrayConverter.unmarshal(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.ReferenceByXPathUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.converters.collections.CollectionConverter.populateCollection(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.converters.collections.CollectionConverter.unmarshal(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.ReferenceByXPathUnmarshaller.convertAnother(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.TreeUnmarshaller.start(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy.unmarshal(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.XStream.unmarshal(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.XStream.fromXML(Unknown Source)<br>
+&gt;&gt;&gt;&gt;     at com.thoughtworks.xstream.XStream.fromXML(Unknown Source)<br>
+&gt;&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;<br>
+&gt;</p>
+
+
+
+<p>package com.thoughtworks.xstream.core.util;<br>
+public class EncodeDecodeHelper {<br>
+	private final static String REPLACE_A = "AA";<br>
+	private final static String REPLACE_$ = "AD";</p>
+
+<p>	public static String encodeIdentifier2XML(String identifier) </p>
+{
+		return identifier.replaceAll("A", REPLACE_A).replaceAll("\\$", REPLACE_$);
+	}
+
+<p>	public static String decodeIdentifierFromXML(String identifier) {<br>
+		String res = identifier;<br>
+		int idx = res.indexOf(REPLACE_$);<br>
+		while (idx &gt; 0) {<br>
+			int c = 0;<br>
+			for (int i = idx - 1; i &gt;= 0; i--) {<br>
+				if (res.charAt<img class="emoticon" src="index_files/information.gif" alt="" height="16" align="absmiddle" border="0" width="16"> == 'A')<br>
+					c++;<br>
+				else if (c % 2 == 0) </p>
+{
+					res = res.substring(0, idx) + "$" + res.substring(idx + 2);
+					break;
+				}
+<p>			}<br>
+			idx = res.indexOf(REPLACE_$, idx);<br>
+		}<br>
+		res = res.replaceAll(REPLACE_A, "A");<br>
+		return res;<br>
+	}<br>
+}</p>
+
+
+
+<p>package com.thoughtworks.xstream.io.xml;</p>
+
+<p>import com.thoughtworks.xstream.converters.ErrorWriter;<br>
+import com.thoughtworks.xstream.core.util.EncodeDecodeHelper;<br>
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;<br>
+import org.dom4j.Document;<br>
+import org.dom4j.Element;</p>
+
+<p>import java.util.LinkedList;</p>
+
+<p>public class Dom4JReader implements HierarchicalStreamReader {</p>
+
+<p>    private Element currentElement;<br>
+    private LinkedList pointers = new LinkedList();</p>
+
+<p>    public Dom4JReader(Element rootElement) </p>
+{
+        currentElement = rootElement;
+        pointers.addLast(new Pointer());
+    }
+
+<p>    public Dom4JReader(Document document) </p>
+{
+        currentElement = document.getRootElement();
+        pointers.addLast(new Pointer());
+    }
+
+<p>    public String getNodeName() </p>
+{
+        return EncodeDecodeHelper.decodeIdentifierFromXML(currentElement.getName());
+    }
+
+<p>    public String getValue() </p>
+{
+        return currentElement.getText();
+    }
+
+<p>    public String getAttribute(String name) </p>
+{
+        return currentElement.attributeValue(name);
+    }
+
+<p>    public Object peekUnderlyingNode() </p>
+{
+        return currentElement;
+    }<br>
+<br>
+    private class Pointer {
+        public int v;
+    }<br>
+<br>
+    public boolean hasMoreChildren() {<br>
+        Pointer pointer = (Pointer) pointers.getLast();<br>
+<br>
+        if (pointer.v &lt; currentElement.elements().size()) {
+            return true;
+        } else {
+            return false;
+        }<br>
+    }<br>
+<br>
+    public void moveUp() {
+        currentElement = currentElement.getParent();
+        pointers.removeLast();
+    }<br>
+<br>
+    public void moveDown() {
+        Pointer pointer = (Pointer) pointers.getLast();
+        pointers.addLast(new Pointer());
+
+        currentElement = (Element) currentElement.elements().get(pointer.v);
+
+        pointer.v++;
+    }<br>
+<br>
+    public void appendErrors(ErrorWriter errorWriter) {
+        errorWriter.add("xpath", currentElement.getPath());
+    }<br>
+<br>
+}<br>
+<br>
+<br>
+<br>
+package com.thoughtworks.xstream.io.xml;<br>
+<br>
+import com.thoughtworks.xstream.converters.ErrorWriter;<br>
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;<br>
+import org.w3c.dom.*;<br>
+<br>
+import java.util.ArrayList;<br>
+import java.util.LinkedList;<br>
+import java.util.List;<br>
+<br>
+public class DomReader implements HierarchicalStreamReader {<br>
+<br>
+    private Element currentElement;<br>
+    private StringBuffer textBuffer;<br>
+    private NodeList childNodes;<br>
+    private LinkedList pointers = new LinkedList();<br>
+    private List childElements;<br>
+<br>
+    public DomReader(Element rootElement) {
+        textBuffer = new StringBuffer(180);
+        pointers.addLast(new Pointer());
+        setCurrent(rootElement);
+    }<br>
+<br>
+    public DomReader(Document document) {
+        textBuffer = new StringBuffer(180);
+        pointers.addLast(new Pointer());
+        setCurrent(document.getDocumentElement());
+    }<br>
+<br>
+    public String getNodeName() {
+        return currentElement.getTagName();
+    }<br>
+<br>
+    public String getValue() {<br>
+        NodeList childNodes = currentElement.getChildNodes();<br>
+        textBuffer.setLength(0);<br>
+        int length = childNodes.getLength();<br>
+        for (int i = 0; i &lt; length; i++) {<br>
+            Node childNode = childNodes.item<img class="emoticon" src="index_files/information.gif" alt="" height="16" align="absmiddle" border="0" width="16">;<br>
+            if (childNode instanceof Text) {
+                Text text = (Text) childNode;
+                textBuffer.append(text.getData());
+            }<br>
+        }<br>
+        return textBuffer.toString();<br>
+    }<br>
+<br>
+    public String getAttribute(String name) {
+        Attr attribute = currentElement.getAttributeNode(name);
+        return attribute == null ? null : attribute.getValue();
+    }<br>
+<br>
+    public Object peekUnderlyingNode() {        return currentElement;    }
+
+<p>    private void setCurrent(Object currentElementObj) {<br>
+        this.currentElement = (Element) currentElementObj;<br>
+        childNodes = currentElement.getChildNodes();<br>
+        childElements = new ArrayList();<br>
+        for (int i = 0; i &lt; childNodes.getLength(); i++) {<br>
+            Node node = childNodes.item<img class="emoticon" src="index_files/information.gif" alt="" height="16" align="absmiddle" border="0" width="16">;<br>
+            if (node instanceof Element) </p>
+{
+                childElements.add(node);
+            }
+<p>        }<br>
+    }</p>
+
+<p>    private class Pointer </p>
+{
+        public int v;
+    }
+
+<p>    public boolean hasMoreChildren() {<br>
+        Pointer pointer = (Pointer) pointers.getLast();</p>
+
+<p>        if (pointer.v &lt; childElements.size()) </p>
+{
+            return true;
+        }
+<p> else </p>
+{
+            return false;
+        }
+<p>    }</p>
+
+<p>    public void moveUp() </p>
+{
+        setCurrent(currentElement.getParentNode());
+        pointers.removeLast();
+    }
+
+<p>    public void moveDown() </p>
+{
+        Pointer pointer = (Pointer) pointers.getLast();
+        pointers.addLast(new Pointer());
+
+        setCurrent(childElements.get(pointer.v));
+
+        pointer.v++;
+
+    }
+
+<p>    public void appendErrors(ErrorWriter errorWriter) {<br>
+    }<br>
+}</p>
+
+
+
+<p>package com.thoughtworks.xstream.io.xml;<br>
+import com.thoughtworks.xstream.converters.ErrorWriter;<br>
+import com.thoughtworks.xstream.core.util.EncodeDecodeHelper;<br>
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;<br>
+import com.thoughtworks.xstream.io.xml.xppdom.Xpp3Dom;<br>
+import java.util.LinkedList;<br>
+/**</p>
+<ul>
+	<li>@author &lt;a href="mailto:jason@maven.org"&gt;Jason van Zyl&lt;/a&gt;</li>
+	<li>@version $Id: XppDomReader.java,v 1.2 2004/05/08 17:51:19 joe Exp $<br>
+ */<br>
+public class XppDomReader implements HierarchicalStreamReader {<br>
+	private Xpp3Dom current;<br>
+	private LinkedList pointers = new LinkedList();<br>
+	public XppDomReader(Xpp3Dom xpp3Dom) 
+{
+		current = xpp3Dom;
+		pointers.addLast(new Pointer());
+	}
+<p>	public String getNodeName() </p>
+{
+		return EncodeDecodeHelper.decodeIdentifierFromXML(current.getName());
+	}
+<p>	public String getValue() </p>
+<div class="error"><span class="error">Unknown macro: {		String text = null;		try {
+			text = current.getValue();
+		} catch (Exception e) {
+			// do nothing.
+		}<br>
+		return text == null ? "" : text;<br>
+	}<br>
+	public String getAttribute(String attributeName) {<br>
+		String text = null;<br>
+		try {
+			text = current.getAttribute(attributeName);
+		} catch (Exception e) {			// do nothing.		}		return text;	}</span> </div>
+<p>	public Object peekUnderlyingNode() </p>
+{
+		return current;
+	}
+<p>	private class Pointer </p>
+{
+		public int v;
+	}
+<p>	public boolean hasMoreChildren() </p>
+<div class="error"><span class="error">Unknown macro: {		Pointer pointer = (Pointer) pointers.getLast();		if (pointer.v &lt; current.getChildCount()) {
+			return true;
+		} else {
+			return false;
+		}	}</span> </div>
+<p>	public void moveUp() </p>
+{
+		current = current.getParent();
+		pointers.removeLast();
+	}
+<p>	public void moveDown() </p>
+{
+		Pointer pointer = (Pointer) pointers.getLast();
+		pointers.addLast(new Pointer());
+		current = current.getChild(pointer.v);
+		pointer.v++;
+	}
+<p>	public void appendErrors(ErrorWriter errorWriter) {}<br>
+}</p></li>
+</ul>
+
+
+
+
+<p>package com.thoughtworks.xstream.io.xml;<br>
+import com.thoughtworks.xstream.converters.ErrorWriter;<br>
+import com.thoughtworks.xstream.core.util.EncodeDecodeHelper;<br>
+import com.thoughtworks.xstream.core.util.IntQueue;<br>
+import com.thoughtworks.xstream.core.util.StringStack;<br>
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;<br>
+import com.thoughtworks.xstream.io.StreamException;<br>
+import org.xmlpull.mxp1.MXParser;<br>
+import org.xmlpull.v1.XmlPullParser;<br>
+import org.xmlpull.v1.XmlPullParserException;<br>
+import java.io.BufferedReader;<br>
+import java.io.IOException;<br>
+import java.io.Reader;<br>
+public class XppReader implements HierarchicalStreamReader {<br>
+	private final XmlPullParser parser;<br>
+	private final StringStack elementStack = new StringStack(16);<br>
+	private final IntQueue lookaheadQueue = new IntQueue(4);<br>
+	public XppReader(Reader reader) {<br>
+		try </p>
+{
+			parser = createParser();
+			parser.setInput(new BufferedReader(reader));
+			moveDown();
+		}
+<p> catch (XmlPullParserException e) </p>
+{
+			throw new StreamException(e);
+		}<br>
+	}<br>
+	protected XmlPullParser createParser() {
+		// WARNING, read comment in getValue() before switching
+		// to a different parser.
+		return new MXParser();
+	}<br>
+	public boolean hasMoreChildren() {<br>
+		while (true) {<br>
+			switch (lookahead()) {
+				case XmlPullParser.START_TAG :
+					return true;
+				case XmlPullParser.END_TAG :
+				case XmlPullParser.END_DOCUMENT :
+					return false;
+				default :
+					continue;
+			}<br>
+		}<br>
+	}<br>
+	private int lookahead() {<br>
+		try {
+			int event = parser.next();
+			lookaheadQueue.write(event);
+			return event;
+		} catch (XmlPullParserException e) {			throw new StreamException(e);		}
+<p> catch (IOException e) </p>
+{
+			throw new StreamException(e);
+		}
+<p>	}<br>
+	private int next() {<br>
+		if (!lookaheadQueue.isEmpty()) </p>
+{
+			return lookaheadQueue.read();
+		}
+<p> else {<br>
+			try </p>
+{
+				return parser.next();
+			}
+<p> catch (XmlPullParserException e) </p>
+{
+				throw new StreamException(e);
+			} catch (IOException e) {				throw new StreamException(e);			}
+<p>		}<br>
+	}<br>
+	public void moveDown() {<br>
+		int currentDepth = elementStack.size();<br>
+		while (elementStack.size() &lt;= currentDepth) {<br>
+			read();<br>
+			if (elementStack.size() &lt; currentDepth) </p>
+{
+				throw new RuntimeException(); // sanity check
+			}
+<p>		}<br>
+	}<br>
+	public void moveUp() {<br>
+		int currentDepth = elementStack.size();<br>
+		while (elementStack.size() &gt;= currentDepth) </p>
+{
+			read();
+		}
+<p>	}<br>
+	public String getNodeName() </p>
+{
+		return elementStack.peek();
+	}
+<p>	public String getValue() {<br>
+		// MXP1 (pull parser) collapses all text into a single<br>
+		// text event. This allows us to only need to lookahead<br>
+		// one step. However if using a different pull parser<br>
+		// impl, you may need to look ahead further.<br>
+		if (lookahead() == XmlPullParser.TEXT) </p>
+{
+			String text = parser.getText();
+			return text == null ? "" : text;
+		}
+<p> else </p>
+{
+			return "";
+		}
+<p>	}<br>
+	public String getAttribute(String name) </p>
+{
+		return parser.getAttributeValue(null, name);
+	}
+<p>	public Object peekUnderlyingNode() </p>
+{
+		throw new UnsupportedOperationException();
+	}
+<p>	private void read() {<br>
+		switch (next()) </p>
+{
+			case XmlPullParser.START_TAG :
+				elementStack.push(EncodeDecodeHelper.decodeIdentifierFromXML(parser.getName()));
+				break;
+			case XmlPullParser.END_TAG :
+			case XmlPullParser.END_DOCUMENT :
+				elementStack.pop();
+				break;
+		}
+<p>	}<br>
+	public void appendErrors(ErrorWriter errorWriter) </p>
+{
+		errorWriter.add("line number", String.valueOf(parser.getLineNumber()));
+	}
+<p>}</p>
+
+
+
+<p>package com.thoughtworks.xstream.io.xml;<br>
+import com.thoughtworks.xstream.core.util.EncodeDecodeHelper;<br>
+import com.thoughtworks.xstream.core.util.QuickWriter;<br>
+import com.thoughtworks.xstream.core.util.StringStack;<br>
+import com.thoughtworks.xstream.io.HierarchicalStreamWriter;<br>
+import java.io.PrintWriter;<br>
+import java.io.Writer;<br>
+public class PrettyPrintWriter implements HierarchicalStreamWriter {<br>
+	private final QuickWriter writer;<br>
+	private final StringStack elementStack = new StringStack(16);<br>
+	private final char[] lineIndenter;<br>
+	private boolean tagInProgress;<br>
+	private int depth;<br>
+	private boolean readyForNewLine;<br>
+	private boolean tagIsEmpty;<br>
+	private static final char[] AMP = </p>
+{ '&amp;', 'a', 'm', 'p', ';' }
+<p>;<br>
+	private static final char[] LT = </p>
+{ '&amp;', 'l', 't', ';' }
+<p>;<br>
+	private static final char[] GT = </p>
+{ '&amp;', 'g', 't', ';' }
+<p>;<br>
+	private static final char[] CLOSE = </p>
+{ '&lt;', '/' }
+<p>;<br>
+	public PrettyPrintWriter(Writer writer, char[] lineIndenter) </p>
+{
+		this.writer = new QuickWriter(writer);
+		this.lineIndenter = lineIndenter;
+	}
+<p>	public PrettyPrintWriter(Writer writer, String lineIndenter) </p>
+{
+		this(writer, lineIndenter.toCharArray());
+	}
+<p>	public PrettyPrintWriter(PrintWriter writer) {<br>
+		this(writer, new char[] </p>
+{ ' ', ' ' }
+<p>);<br>
+	}<br>
+	public PrettyPrintWriter(Writer writer) </p>
+{
+		this(new PrintWriter(writer));
+	}
+<p>	public void startNode(String name) </p>
+{
+		name = EncodeDecodeHelper.encodeIdentifier2XML(name);
+		tagIsEmpty = false;
+		finishTag();
+		writer.write('&lt;');
+		writer.write(name);
+		elementStack.push(name);
+		tagInProgress = true;
+		depth++;
+		readyForNewLine = true;
+		tagIsEmpty = true;
+	}
+<p>	public void setValue(String text) {<br>
+		readyForNewLine = false;<br>
+		tagIsEmpty = false;<br>
+		finishTag();<br>
+		// Profiler said this was a bottleneck<br>
+		final char[] chars = text.toCharArray();<br>
+		final int length = chars.length;<br>
+		for (int i = 0; i &lt; length; i++) {<br>
+			final char c = chars<span class="error">[i]</span>;<br>
+			switch (c) </p>
+{
+				case '&amp;' :
+					writer.write(AMP);
+					break;
+				case '&lt;' :
+					writer.write(LT);
+					break;
+				case '&gt;' :
+					writer.write(GT);
+					break;
+				default :
+					writer.write(c);
+			}
+<p>		}<br>
+		// end bottleneck<br>
+	}<br>
+	public void addAttribute(String key, String value) </p>
+{
+		writer.write(' ');
+		writer.write(key);
+		writer.write('=');
+		writer.write('\"');
+		writer.write(value);
+		writer.write('\"');
+	}
+<p>	public void endNode() {<br>
+		depth--;<br>
+		if (tagIsEmpty) </p>
+{
+			writer.write('/');
+			readyForNewLine = false;
+			finishTag();
+			elementStack.popSilently();
+		}
+<p> else </p>
+{
+			finishTag();
+			writer.write(CLOSE);
+			writer.write(elementStack.pop());
+			writer.write('&gt;');
+		}
+<p>		readyForNewLine = true;<br>
+		writer.flush();<br>
+	}<br>
+	private void finishTag() {<br>
+		if (tagInProgress) </p>
+{
+			writer.write('&gt;');
+		}
+<p>		tagInProgress = false;<br>
+		if (readyForNewLine) </p>
+{
+			endOfLine();
+		}
+<p>		readyForNewLine = false;<br>
+		tagIsEmpty = false;<br>
+	}<br>
+	protected void endOfLine() {<br>
+		writer.write('\n');<br>
+		for (int i = 0; i &lt; depth; i++) </p>
+{
+			writer.write(lineIndenter);
+		}
+<p>	}<br>
+}</p>
+            </div>
+</div>
+</div></div><div id="activitymodule" class="module toggle-wrap collapsed"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2" style="display:none">
+                <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-87">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/Old_XStream_Issues/87"><strong>All</strong></a>
+                        </li>
+                                
+            <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-87">
+                            <strong>Comments</strong>
+                        </li>
+                                
+            <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-87">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/Old_XStream_Issues/87"><strong>History</strong></a>
+                        </li>
+                                
+            <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-87">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/Old_XStream_Issues/87"><strong>Activity</strong></a>
+                        </li>
+                </ul>
+    </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    <div class="message-container">
+    There are no comments yet on this issue.
+</div>                             </div>
+    </div>
+</div></div></div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id="peoplemodule" class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+    <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span>
+    Unassigned
+</span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_jwalnes1" rel="jwalnes1">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+            Joe Walnes
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                        
+                                                                                                        <span id="vote-label" title="You have to be logged in to vote for an issue.">Vote for this issue</span>
+                                            </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <span id="watcher-data" class="aui-badge watch-state-off">0</span>
+                        
+                                                                                <span id="watch-label" title="You have to be logged in to watch an issue.">Start watching this issue</span>
+                                            </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id="datesmodule" class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz" title="15/Jun/04 6:30 AM">
+
+                <span data-name="Created" id="create-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2004-06-15T06:30-0500">15/Jun/04 6:30 AM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz" title="22/Jul/04 2:54 PM">
+
+                <span data-name="Updated" id="updated-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2004-07-22T14:54-0500">22/Jul/04 2:54 PM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz" title="22/Jul/04 2:54 PM">
+
+                <span data-name="Resolved" id="resolved-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2004-07-22T14:54-0500">22/Jul/04 2:54 PM</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input title="autocompleteEnabled" value="true" type="hidden">
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+
+
+<div class="footer-body">
+    <ul>
+        <li>
+                        <a href="http://www.atlassian.com/software/jira">Atlassian JIRA</a>
+
+                                                    
+                        
+            <span id="footer-build-information">(v6.1.6#6162-<span title="7af547ce7c84dbb7c1e345a65437ed7b85efffa2" data-commit-id="7af547ce7c84dbb7c1e345a65437ed7b85efffa2}">sha1:7af547c</span>)</span>
+        </li>
+        <li>
+            <a id="about-link" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+        </li>
+        <li>
+                                    <a id="footer-report-problem-link" href="https://jira.codehaus.org/secure/CreateIssue%21default.jspa">Report a problem</a>
+        </li>
+    </ul>
+            <ul>
+            <li class="licensemessage">
+                                    Powered by a free Atlassian <a href="http://www.atlassian.com/software/jira">JIRA</a> open source license for Codehaus. Try JIRA - <a href="http://www.atlassian.com/software/jira">bug tracking software</a> for <i>your</i> team.
+
+                            </li>
+        </ul>
+    </div>
+
+<form id="jira_request_timing_info" class="dont-default-focus">
+	<fieldset class="parameters hidden">
+
+
+
+
+		<input title="jira.session.expiry.in.mins" value="299" type="hidden">
+
+	</fieldset>
+</form>
+<!--
+	                 
+	          
+	               
+	                 
+	        CONCURRENT REQUESTS : 4
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input title="loggedInUser" value="" type="hidden">
+    <input title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation." type="hidden">
+    <input title="JiraVersion" value="6.1.6" type="hidden">
+    <input title="ajaxUnauthorised" value="You are not authorised to perform this operation.  Please log in." type="hidden">
+    <input title="baseURL" value="https://jira.codehaus.org:443" type="hidden">
+    <input title="ajaxCommsError" value="The JIRA server could not be contacted.  This may be a temporary glitch or the server may be down." type="hidden">
+    <input title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation." type="hidden">
+    <input title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser" type="hidden">
+    <input title="ajaxErrorDialogHeading" value="Communications Breakdown" type="hidden">
+
+    <input title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost." type="hidden">
+    <input title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog." type="hidden">
+    <input title="keyType" value="Type" type="hidden">
+    <input title="keyThen" value="then" type="hidden">
+    <input title="dblClickToExpand" value="Double click to expand" type="hidden">
+    <input title="actions" value="Actions" type="hidden">
+    <input title="removeItem" value="Remove" type="hidden">
+    <input title="workflow" value="Workflow" type="hidden">
+    <input title="labelNew" value="New Label" type="hidden">
+    <input title="issueActionsHint" value="Begin typing for available operations or press down to see all" type="hidden">
+    <input title="closelink" value="Close" type="hidden">
+    <input title="dotOperations" value="Operations" type="hidden">
+    <input title="dotLoading" value="Loading..." type="hidden">
+    <input title="frotherSuggestions" value="Suggestions" type="hidden">
+    <input title="frotherNomatches" value="No Matches" type="hidden">
+    <input title="multiselectVersionsError" value="{0} is not a valid version." type="hidden">
+    <input title="multiselectComponentsError" value="{0} is not a valid component." type="hidden">
+    <input title="multiselectGenericError" value="The value {0} is invalid." type="hidden">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:void(0);" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:void(0);" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div class="navigator-sidebar collapsed ui-popout ui-popout-detached ui-popout-collapsed" id="navigator-sidebar"><a class="toggle-filter-panel" href="#" title="Dock the filters panel ([)"></a></div><div style="display: none;" class="jira-dialog box-shadow" id="edit-issue-dialog"><div class="jira-dialog-content"></div></div><div style="display: none;" class="jira-dialog box-shadow" id="create-subtask-dialog"><div class="jira-dialog-content"></div></div></body></html>

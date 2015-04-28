@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html class="mozilla"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>[XSTR-524] Conversion of an object causes StackOverflowError - jira.codehaus.org</title>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+>
+
+
+
+<link rel="shortcut icon" href="index_files/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://jira.codehaus.org/osd.jsp" title="[XSTR-524] Conversion of an object causes StackOverflowError - jira.codehaus.org">
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link type="text/css" rel="stylesheet" href="index_files/batch.css" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="index_files/batch-1.css" media="all">
+<script type="text/javascript" src="index_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="index_files/batch-1.js"></script>
+<script type="text/javascript" src="index_files/jira.webresources_calendar-en.js"></script>
+<script type="text/javascript" src="index_files/com.atlassian.administraticksearch-webresources.js"></script>
+
+<script type="text/javascript" src="index_files/shortcuts.js"></script>
+
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Advanced+Searching">
+    
+</head>
+<body data-aui-version="5.1.8" id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.1.6">
+<div id="page">
+    <header id="header" style="display:none" role="banner">
+        
+
+
+
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input title="tzdetect.pref.tzid" value="America/Chicago" type="hidden">
+    <input title="tzdetect.pref.tzname" value="(GMT-06:00) Chicago" type="hidden">
+    <input title="tzdetect.pref.tzoffset" value="(GMT-06:00)" type="hidden">
+    <input title="tzdetect.pref.tzdst" value="true" type="hidden">
+    <input title="tzdetect.pref.nothanks" value="" type="hidden">
+</fieldset>
+<nav data-aui-responsive="true" class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul class="nav-links"><li class="nav-link nav-link-local"><a href="https://jira.codehaus.org/" class="aui-dropdown2-radio interactive checked" title="https://jira.codehaus.org/"><span class="nav-link-label">jira.codehaus.org</span></a></li><li class="nav-link"><a href="http://jira.sonarsource.com/" class="aui-dropdown2-radio interactive" title="http://jira.sonarsource.com/"><span class="nav-link-label">SonarSource</span></a></li><li class="nav-link"><a href="http://docs.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://docs.codehaus.org/"><span class="nav-link-label">Codehaus</span></a></li><li class="nav-link"><a href="http://xircles.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://xircles.codehaus.org"><span class="nav-link-label">Xircles</span></a></li></ul></div></div><script><!--
+/* Script removed by snapshot save */
+--></script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.codehaus.org/secure/MyJiraHome.jspa"><img data-aui-responsive-header-index="0" src="urn:download-error:http://www.codehaus.org/codehaus-small.gif" alt="jira.codehaus.org"></a></h1><ul style="width: auto;" class="aui-nav">
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/Dashboard.jspa" id="home_link" accesskey="d" title="View and manage your dashboards" aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="/Old_XStream_Issues/index.html" id="browse_link" accesskey="p" title="View recent projects and browse a list of projects" aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/IssueNavigator.jspa" id="find_link" accesskey="i" title="Search for issues and view recent issues" aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li>
+<li style="display: none;"><a id="aui-responsive-header-dropdown-trigger-0" class="aui-dropdown2-trigger" aria-owns="aui-responsive-header-dropdown-content-0" aria-haspopup="true" href="#">More<span class="icon aui-icon-dropdown"></span></a><div id="aui-responsive-header-dropdown-content-0" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul id="aui-responsive-header-dropdown-list-0"></ul></div></div></li></ul></div><div class="aui-header-secondary"><ul class="aui-nav"><li>
+    <form action="https://jira.codehaus.org/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" title="Quick Search ( Type '/' )" placeholder="Quick Search" name="searchString" accesskey="q" type="text">
+        <input class="hidden" value="Search" type="submit">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank" title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="view_help" class="interactive" title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank">Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="interactive" title="Get more information about JIRA's Keyboard Shortcuts ( Type '?' )" href="https://jira.codehaus.org/secure/ViewKeyboardShortcuts%21default.jspa" target="_blank">Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="interactive" title="Get more information about JIRA" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="interactive" title="See who did what" href="https://jira.codehaus.org/secure/JiraCreditsPage%21default.jspa" target="_blank">JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a id="whats-new-menu-link" class="interactive" href="https://docs.atlassian.com/jira/docs-061/whatsnew/iframe">What?s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a class="aui-nav-link login-link" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-524">Log In</a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+<div id="announcement-banner" class="alertHeader">
+    <div style="position: absolute; right: 20em; top: -2em">
+  <a href="https://xircles.codehaus.org/signup">Signup</a>
+</div>
+</div>
+
+
+    <section id="content" role="main">
+        
+    
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="10230" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="XStream" src="index_files/projectavatar.png"></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/Old_XStream_Issues/index.html">XStream</a></li><li><a class="issue-link" data-issue-key="XSTR-524" href="#" id="key-val" rel="74559">XSTR-524</a></li></ol><h1 id="summary-val">Conversion of an object causes StackOverflowError</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-ops-login-lnk_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="ops-login-lnk" style="display:none" title="Log In" class="toolbar-trigger" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-524"><span class="trigger-label">Log In</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" style="display:none" class="toolbar-group pluggable-ops"><li class="toolbar-item toolbar-dropdown"><div><a href="#" id="viewissue-export" title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown"><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-xml/XSTR-524/XSTR-524.xml" class="aui-list-item-link" id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-word/XSTR-524/XSTR-524.doc" class="aui-list-item-link" id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-html/XSTR-524/XSTR-524.html" class="aui-list-item-link" id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id="details-module" class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img alt="Bug" src="index_files/bug.png" title="Bug - A problem which impairs or prevents the functions of the product." height="16" width="16"> Bug
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+            </span>
+                    </div>
+    </li>
+            <li class="item">
+            <div class="wrap">
+                <strong class="name">Priority:</strong>
+                <span id="priority-val" class="value">
+                                        <img alt="Critical" src="index_files/critical.png" title="Critical - Crashes, loss of data, severe memory leak." height="16" width="16"> Critical
+                </span>
+            </div>
+        </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved">
+                                     Fixed
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="versions-field">
+                                                            <span title="1.3 Major release">1.3</span>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="fixVersions-field">
+                                                            <a href="/Old_XStream_Issues/index.html/fixforversion/14744" title="1.3.1 Maintenance release">1.3.1</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            <span style="height: auto;" class="shorten" id="components-field">
+                                                            <a href="/Old_XStream_Issues/index.html/component/10671" title="Converters ">Converters</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-74559-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+<div id="customfieldmodule">
+    <div class="aui-tabs horizontal-tabs" id="customfield-tabs">
+                    <div id="customfield-panel-1" class="tabs-pane active-pane">
+                        <ul class="property-list">
+                                                <li id="rowForcustomfield_10070" class="item">
+                        <div class="wrap">
+                            <strong title="JDK version and platform" class="name">JDK version and platform:</strong>
+                            <div id="customfield_10070-val" class="value type-textfield" data-fieldtype="textfield" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:textfield">
+                                      1.5.0_15 on Linux for the debugger, 1.5.0_11 on Solaris for the debugged application
+  
+                            </div>
+                        </div>
+                    </li>
+                                        </ul>
+        </div>
+        </div></div>
+</div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>I am using XStream to debug a hard to reproduce problem. The goal for me was to quickly dump an XML representation of the some of the internal state of the application.<br>
+I attach my debugger and evaluate something like</p>
+
+<p>new XStream().toXML( myObject );</p>
+
+<p>Unfortunately this causes a StackOverflowError while converting the object. Because of my particular use case I am not able to give you a test case to reproduce the problem.</p>
+
+<p>I am also not able to debug the xstream evaluation while debugging the state of the program. I could maybe achieve it by placing the xstream dumping code inside the program being debugged.</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">Connected to the target VM, address: '10.201.201.66:9000', transport: 'socket'
+com.thoughtworks.xstream.converters.ConversionException: Could not call java.util.concurrent.ConcurrentHashMap.writeObject() : <span class="code-keyword">null</span>
+---- Debugging information ----
+message             : Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+cause-exception     : java.lang.StackOverflowError
+cause-message       : <span class="code-keyword">null</span>
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteObject(SerializationMethodInvoker.java:103)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter.doMarshal(SerializableConverter.java:205)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:63)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:63)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:55)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:145)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:137)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:113)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:129)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:95)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:54)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:65)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:78)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:63)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:98)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.marshal(AbstractTreeMarshallingStrategy.java:38)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:845)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:834)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:815)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:805)
+	at com.edb.logging.log4j.XStreamDailyRollingFileAppender.toXML(XStreamDailyRollingFileAppender.java:29)
+	at com.edb.logging.log4j.XStreamDailyRollingFileAppender.append(XStreamDailyRollingFileAppender.java:22)
+	at org.apache.log4j.AppenderSkeleton.doAppend(AppenderSkeleton.java:221)
+	at org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:57)
+	at org.apache.log4j.Category.callAppenders(Category.java:187)
+	at org.apache.log4j.Category.forcedLog(Category.java:372)
+	at org.apache.log4j.Category.debug(Category.java:241)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:346)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:260)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:944)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:868)
+	at com.edb.b2b.integration.util.LoggingRunnable.run(CustomMessageListenerContainer.java:65)
+	at java.lang.<span class="code-object">Thread</span>.run(<span class="code-object">Thread</span>.java:595)
+Disconnected from the target VM, address: '10.201.201.66:9000', transport: 'socket'
+</pre>
+</div></div>
+
+
+<p>I will:</p>
+<ul>
+	<li>try xstream 1.2.2</li>
+	<li>try to place the XStream program outside of the debugger, as to be able to debug it</li>
+	<li>try to use another library  to do the conversion</li>
+	<li>or try to modify xstream to add more contextual information to the exception: i.e. more information about the current state of the conversion</li>
+</ul>
+
+            </div>
+</div>
+</div></div><div id="attachmentmodule" class="module toggle-wrap"><div id="attachmentmodule_heading" class="mod-header"><ul class="ops"><li class="drop"><div class="aui-dd-parent"><a href="#" class="icon drop-menu js-default-dropdown" title="Options"><span>Options</span></a><div class="aui-dropdown-content aui-list"><ul id="attachment-sorting-options" class="aui-list-section aui-first"><li class="aui-list-item"><a id="attachment-sort-key-name" href="/Old_XStream_Issues/524?attachmentSortBy=fileName#attachmentmodule" class="aui-list-checked aui-checked aui-list-item-link" title="viewissue.subtasks.tab.show.all.name"><span>Sort By Name</span></a></li><li class="aui-list-item"><a id="attachment-sort-key-date" href="/Old_XStream_Issues/524?attachmentSortBy=dateTime#attachmentmodule" class="aui-list-checked aui-list-item-link" title="Sort By Date"><span>Sort By Date</span></a></li></ul><ul id="attachment-sorting-order-options" class="aui-list-section"><li class="aui-list-item"><a id="attachment-sort-direction-asc" href="/Old_XStream_Issues/524?attachmentOrder=asc#attachmentmodule" class="aui-list-checked aui-checked aui-list-item-link" title="Ascending"><span>Ascending</span></a></li><li class="aui-list-item"><a id="attachment-sort-direction-desc" href="/Old_XStream_Issues/524?attachmentOrder=desc#attachmentmodule" class="aui-list-checked aui-list-item-link" title="Descending"><span>Descending</span></a></li></ul><ul id="attachment-manage-options" class="aui-list-section aui-last"><li class="aui-list-item"><a id="aszip" href="https://jira.codehaus.org/secure/attachmentzip/74559.zip" class="aui-list-checked aui-list-item-link" title="Download all attachments as a ZIP file"><span>Download All</span></a></li></ul></div></div></li></ul><h2 class="toggle-title">Attachments</h2></div><div class="mod-content">
+            <ol id="file_attachments" class="item-attachments">
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/37415/0001-Add-contextual-writer-information-to-XStream-upon-co.patch" draggable="true" data-downloadurl="${fileAttachment.mimetype}:0001-Add-contextual-writer-information-to-XStream-upon-co.patch:https://jira.codehaus.org/secure/attachment/37415/0001-Add-contextual-writer-information-to-XStream-upon-co.patch">
+                                    <img src="index_files/text.gif" alt="Text File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/37415/0001-Add-contextual-writer-information-to-XStream-upon-co.patch" title="Latest  07/Oct/08 5:18 AM - Jerome Lacoste" draggable="true" data-downloadurl="${attachment.mimetype}:0001-Add-contextual-writer-information-to-XStream-upon-co.patch:https://jira.codehaus.org/secure/attachment/37415/0001-Add-contextual-writer-information-to-XStream-upon-co.patch">0001-Add-contextual-writer-information-to-XStream-upon-co.patch
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2008-10-07T05:18-0500">07/Oct/08 5:18 AM</time></dd>
+    <dd class="attachment-size">3 kB</dd>
+    <dd class="attachment-author">Jerome Lacoste</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/37416/0002-Allow-for-quick-dirty-debugging.patch" draggable="true" data-downloadurl="${fileAttachment.mimetype}:0002-Allow-for-quick-dirty-debugging.patch:https://jira.codehaus.org/secure/attachment/37416/0002-Allow-for-quick-dirty-debugging.patch">
+                                    <img src="index_files/text.gif" alt="Text File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/37416/0002-Allow-for-quick-dirty-debugging.patch" title="Latest  07/Oct/08 5:18 AM - Jerome Lacoste" draggable="true" data-downloadurl="${attachment.mimetype}:0002-Allow-for-quick-dirty-debugging.patch:https://jira.codehaus.org/secure/attachment/37416/0002-Allow-for-quick-dirty-debugging.patch">0002-Allow-for-quick-dirty-debugging.patch
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2008-10-07T05:18-0500">07/Oct/08 5:18 AM</time></dd>
+    <dd class="attachment-size">3 kB</dd>
+    <dd class="attachment-author">Jerome Lacoste</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/37417/0004-When-debugging-just-dump-XML-to-output.patch" draggable="true" data-downloadurl="${fileAttachment.mimetype}:0004-When-debugging-just-dump-XML-to-output.patch:https://jira.codehaus.org/secure/attachment/37417/0004-When-debugging-just-dump-XML-to-output.patch">
+                                    <img src="index_files/text.gif" alt="Text File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/37417/0004-When-debugging-just-dump-XML-to-output.patch" title="Latest  07/Oct/08 5:18 AM - Jerome Lacoste" draggable="true" data-downloadurl="${attachment.mimetype}:0004-When-debugging-just-dump-XML-to-output.patch:https://jira.codehaus.org/secure/attachment/37417/0004-When-debugging-just-dump-XML-to-output.patch">0004-When-debugging-just-dump-XML-to-output.patch
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2008-10-07T05:18-0500">07/Oct/08 5:18 AM</time></dd>
+    <dd class="attachment-size">1 kB</dd>
+    <dd class="attachment-author">Jerome Lacoste</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/37418/SkipClassConverter.java" draggable="true" data-downloadurl="text/plain:SkipClassConverter.java:https://jira.codehaus.org/secure/attachment/37418/SkipClassConverter.java">
+                                    <img src="index_files/java.gif" alt="Java Source File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/37418/SkipClassConverter.java" title="Latest  07/Oct/08 5:21 AM - Jerome Lacoste" draggable="true" data-downloadurl="text/plain:SkipClassConverter.java:https://jira.codehaus.org/secure/attachment/37418/SkipClassConverter.java">SkipClassConverter.java
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2008-10-07T05:21-0500">07/Oct/08 5:21 AM</time></dd>
+    <dd class="attachment-size">3 kB</dd>
+    <dd class="attachment-author">Jerome Lacoste</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="https://jira.codehaus.org/secure/attachment/37419/SkipClassConverterTest.java" draggable="true" data-downloadurl="text/plain:SkipClassConverterTest.java:https://jira.codehaus.org/secure/attachment/37419/SkipClassConverterTest.java">
+                                    <img src="index_files/java.gif" alt="Java Source File" height="16" border="0" width="16">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="https://jira.codehaus.org/secure/attachment/37419/SkipClassConverterTest.java" title="Latest  07/Oct/08 5:21 AM - Jerome Lacoste" draggable="true" data-downloadurl="text/plain:SkipClassConverterTest.java:https://jira.codehaus.org/secure/attachment/37419/SkipClassConverterTest.java">SkipClassConverterTest.java
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2008-10-07T05:21-0500">07/Oct/08 5:21 AM</time></dd>
+    <dd class="attachment-size">1 kB</dd>
+    <dd class="attachment-author">Jerome Lacoste</dd>
+                        </dl>
+                                    </li>
+                    </ol>
+        </div></div><div id="activitymodule" class="module toggle-wrap collapsed"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2" style="display:none">
+                    <div class="sortwrap">
+                                    <a class="icon icon-sort-down ajax-activity-content" rel="nofollow" href="/Old_XStream_Issues/524?actionOrder=desc" title="Ascending order - Click to sort in descending order"><span>Ascending order - Click to sort in descending order</span></a>
+                            </div>
+                <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-524">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/Old_XStream_Issues/524"><strong>All</strong></a>
+                        </li>
+                                
+            <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-524">
+                            <strong>Comments</strong>
+                        </li>
+                                
+            <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-524">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/Old_XStream_Issues/524"><strong>History</strong></a>
+                        </li>
+                                
+            <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-524">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/Old_XStream_Issues/524"><strong>Activity</strong></a>
+                        </li>
+                </ul>
+    </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    
+
+
+<div id="comment-149985" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=149985&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-149985" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_149985_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_149985_verbose subText"><span class="date user-tz" title="06/Oct/08 2:48 AM"><time class="livestamp" datetime="2008-10-06T02:48-0500">06/Oct/08 2:48 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Same problem with 1.2.2</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">Connected to the target VM, address: '10.201.201.66:9000', transport: 'socket'
+com.thoughtworks.xstream.converters.ConversionException: Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+---- Debugging information ----
+message             : Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+cause-exception     : java.lang.StackOverflowError
+cause-message       : <span class="code-keyword">null</span>
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteObject(SerializationMethodInvoker.java:92)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter.doMarshal(SerializableConverter.java:188)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:52)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:44)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:73)
+	at com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy.marshal(ReferenceByXPathMarshallingStrategy.java:34)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:765)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:754)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:735)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:725)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:346)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:260)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:944)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:868)
+	at com.edb.b2b.integration.util.LoggingRunnable.run(CustomMessageListenerContainer.java:65)
+	at java.lang.<span class="code-object">Thread</span>.run(<span class="code-object">Thread</span>.java:595)
+com.thoughtworks.xstream.converters.ConversionException: Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+---- Debugging information ----
+message             : Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+cause-exception     : java.lang.StackOverflowError
+cause-message       : <span class="code-keyword">null</span>
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteObject(SerializationMethodInvoker.java:92)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter.doMarshal(SerializableConverter.java:188)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:52)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:44)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:73)
+	at com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy.marshal(ReferenceByXPathMarshallingStrategy.java:34)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:765)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:754)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:735)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:725)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:346)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:260)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:944)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:868)
+        [...]
+	at java.lang.<span class="code-object">Thread</span>.run(<span class="code-object">Thread</span>.java:595)
+</pre>
+</div></div> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_149985_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_149985_concise subText"><span class="date user-tz" title="06/Oct/08 2:48 AM"><time class="livestamp" datetime="2008-10-06T02:48-0500">06/Oct/08 2:48 AM</time></span></span>                    Same problem with 1.2.2 
+
+  
+ 
+Connected to the target VM, address: '10.201.201.66:9000', transport: 'socket'
+com.thoughtworks.xstream.converters.ConversionException: Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+---- Debugging information ----
+message             : Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+cause-exception     : java.lang.StackOverflowError
+cause-message       :  null 
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteObject(SerializationMethodInvoker.java:92)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter.doMarshal(SerializableConverter.java:188)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:52)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:44)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:73)
+	at com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy.marshal(ReferenceByXPathMarshallingStrategy.java:34)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:765)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:754)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:735)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:725)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:346)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:260)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:944)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:868)
+	at com.edb.b2b.integration.util.LoggingRunnable.run(CustomMessageListenerContainer.java:65)
+	at java.lang. Thread .run( Thread .java:595)
+com.thoughtworks.xstream.converters.ConversionException: Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+---- Debugging information ----
+message             : Could not call java.util.concurrent.ConcurrentHashMap.writeObject()
+cause-exception     : java.lang.StackOverflowError
+cause-message       :  null 
+-------------------------------
+	at com.thoughtworks.xstream.converters.reflection.SerializationMethodInvoker.callWriteObject(SerializationMethodInvoker.java:92)
+	at com.thoughtworks.xstream.converters.reflection.SerializableConverter.doMarshal(SerializableConverter.java:188)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:52)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:44)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.annotations.AnnotationReflectionConverter.marshallField(AnnotationReflectionConverter.java:46)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:112)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.visit(AbstractReflectionConverter.java:88)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:117)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:73)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:55)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:50)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:73)
+	at com.thoughtworks.xstream.core.ReferenceByXPathMarshallingStrategy.marshal(ReferenceByXPathMarshallingStrategy.java:34)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:765)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:754)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:735)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:725)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:346)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:260)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:944)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:868)
+        [...]
+	at java.lang. Thread .run( Thread .java:595)
+ 
+               </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-150015" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=150015&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-150015" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_150015_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_150015_verbose subText"><span class="date user-tz" title="06/Oct/08 7:05 AM"><time class="livestamp" datetime="2008-10-06T07:05-0500">06/Oct/08 7:05 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Object that causes the recursion and thus the stack overflow is a a Syb class loader. Something with NIO to do.</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">[...]
+&lt;loaders&gt;
+  &lt;sun.misc.URLClassPath_-JarLoader&gt;
+    &lt;base&gt;jar:file:/usr/jdk/instances/jdk1.5.0/jre/lib/ext/dnsns.jar!/&lt;/base&gt;
+    &lt;jar&gt;
+      &lt;jzfile&gt;135758376&lt;/jzfile&gt;
+      &lt;name&gt;/usr/jdk/instances/jdk1.5.0/jre/lib/ext/dnsns.jar&lt;/name&gt;
+      &lt;total&gt;14&lt;/total&gt;
+      &lt;mappedBuffer class=<span class="code-quote">"java.nio.DirectByteBuffer"</span>&gt;
+        &lt;mark&gt;-1&lt;/mark&gt;
+        &lt;position&gt;0&lt;/position&gt;
+        &lt;limit&gt;8162&lt;/limit&gt;
+        &lt;capacity&gt;8162&lt;/capacity&gt;
+        &lt;address&gt;-884473856&lt;/address&gt;
+        &lt;offset&gt;0&lt;/offset&gt;
+        &lt;isReadOnly&gt;<span class="code-keyword">false</span>&lt;/isReadOnly&gt;
+        &lt;bigEndian&gt;<span class="code-keyword">true</span>&lt;/bigEndian&gt;
+        &lt;nativeByteOrder&gt;<span class="code-keyword">false</span>&lt;/nativeByteOrder&gt;
+        &lt;isAMappedBuffer&gt;<span class="code-keyword">true</span>&lt;/isAMappedBuffer&gt;
+        &lt;cleaner&gt;
+          &lt;referent class=<span class="code-quote">"java.nio.DirectByteBuffer"</span> reference=<span class="code-quote">"../.."</span>/&gt;
+          &lt;queue&gt;
+            &lt;lock/&gt;
+            &lt;queueLength&gt;0&lt;/queueLength&gt;
+          &lt;/queue&gt;
+          &lt;prev&gt;
+            &lt;referent class=<span class="code-quote">"java.nio.DirectByteBuffer"</span>&gt;
+              &lt;mark&gt;-1&lt;/mark&gt;
+              &lt;position&gt;0&lt;/position&gt;
+              &lt;limit&gt;803846&lt;/limit&gt;
+              &lt;capacity&gt;803846&lt;/capacity&gt;
+              &lt;address&gt;-932220928&lt;/address&gt;
+              &lt;offset&gt;0&lt;/offset&gt;
+              &lt;isReadOnly&gt;<span class="code-keyword">false</span>&lt;/isReadOnly&gt;
+              &lt;bigEndian&gt;<span class="code-keyword">true</span>&lt;/bigEndian&gt;
+              &lt;nativeByteOrder&gt;<span class="code-keyword">false</span>&lt;/nativeByteOrder&gt;
+              &lt;isAMappedBuffer&gt;<span class="code-keyword">true</span>&lt;/isAMappedBuffer&gt;
+              &lt;cleaner reference=<span class="code-quote">"../.."</span>/&gt;
+            &lt;/referent&gt;
+            &lt;queue reference=<span class="code-quote">"../../queue"</span>/&gt;
+            &lt;next reference=<span class="code-quote">"../.."</span>/&gt;
+            &lt;prev&gt;
+              &lt;referent class=<span class="code-quote">"java.nio.DirectByteBuffer"</span>&gt;
+                &lt;mark&gt;-1&lt;/mark&gt;
+                &lt;position&gt;0&lt;/position&gt;
+                &lt;limit&gt;158417&lt;/limit&gt;
+                &lt;capacity&gt;158417&lt;/capacity&gt;
+                &lt;address&gt;-932388864&lt;/address&gt;
+                &lt;offset&gt;0&lt;/offset&gt;
+                &lt;isReadOnly&gt;<span class="code-keyword">false</span>&lt;/isReadOnly&gt;
+                &lt;bigEndian&gt;<span class="code-keyword">true</span>&lt;/bigEndian&gt;
+                &lt;nativeByteOrder&gt;<span class="code-keyword">false</span>&lt;/nativeByteOrder&gt;
+                &lt;isAMappedBuffer&gt;<span class="code-keyword">true</span>&lt;/isAMappedBuffer&gt;
+                &lt;cleaner reference=<span class="code-quote">"../.."</span>/&gt;
+              &lt;/referent&gt;
+              &lt;queue reference=<span class="code-quote">"../../../queue"</span>/&gt;
+              &lt;next reference=<span class="code-quote">"../.."</span>/&gt;
+              &lt;prev&gt;
+                &lt;referent class=<span class="code-quote">"java.nio.DirectByteBuffer"</span>&gt;
+                  &lt;mark&gt;-1&lt;/mark&gt;
+                  &lt;position&gt;0&lt;/position&gt;
+                  &lt;limit&gt;175811&lt;/limit&gt;
+                  &lt;capacity&gt;175811&lt;/capacity&gt;
+                  &lt;address&gt;-932573184&lt;/address&gt;
+                  &lt;offset&gt;0&lt;/offset&gt;
+                  &lt;isReadOnly&gt;<span class="code-keyword">false</span>&lt;/isReadOnly&gt;
+                  &lt;bigEndian&gt;<span class="code-keyword">true</span>&lt;/bigEndian&gt;
+                  &lt;nativeByteOrder&gt;<span class="code-keyword">false</span>&lt;/nativeByteOrder&gt;
+                  &lt;isAMappedBuffer&gt;<span class="code-keyword">true</span>&lt;/isAMappedBuffer&gt;
+                  &lt;cleaner reference=<span class="code-quote">"../.."</span>/&gt;
+                &lt;/referent&gt;
+                &lt;queue reference=<span class="code-quote">"../../../../queue"</span>/&gt;
+                &lt;next reference=<span class="code-quote">"../.."</span>/&gt;
+[...]
+</pre>
+</div></div> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_150015_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_150015_concise subText"><span class="date user-tz" title="06/Oct/08 7:05 AM"><time class="livestamp" datetime="2008-10-06T07:05-0500">06/Oct/08 7:05 AM</time></span></span>                    Object that causes the recursion and thus the stack overflow is a a Syb class loader. Something with NIO to do. 
+
+  
+ 
+[...]
+&lt;loaders&gt;
+  &lt;sun.misc.URLClassPath_-JarLoader&gt;
+    &lt;base&gt;jar:file:/usr/jdk/instances/jdk1.5.0/jre/lib/ext/dnsns.jar!/&lt;/base&gt;
+    &lt;jar&gt;
+      &lt;jzfile&gt;135758376&lt;/jzfile&gt;
+      &lt;name&gt;/usr/jdk/instances/jdk1.5.0/jre/lib/ext/dnsns.jar&lt;/name&gt;
+      &lt;total&gt;14&lt;/total&gt;
+      &lt;mappedBuffer class= "java.nio.DirectByteBuffer" &gt;
+        &lt;mark&gt;-1&lt;/mark&gt;
+        &lt;position&gt;0&lt;/position&gt;
+        &lt;limit&gt;8162&lt;/limit&gt;
+        &lt;capacity&gt;8162&lt;/capacity&gt;
+        &lt;address&gt;-884473856&lt;/address&gt;
+        &lt;offset&gt;0&lt;/offset&gt;
+        &lt;isReadOnly&gt; false &lt;/isReadOnly&gt;
+        &lt;bigEndian&gt; true &lt;/bigEndian&gt;
+        &lt;nativeByteOrder&gt; false &lt;/nativeByteOrder&gt;
+        &lt;isAMappedBuffer&gt; true &lt;/isAMappedBuffer&gt;
+        &lt;cleaner&gt;
+          &lt;referent class= "java.nio.DirectByteBuffer"  reference= "../.." /&gt;
+          &lt;queue&gt;
+            &lt;lock/&gt;
+            &lt;queueLength&gt;0&lt;/queueLength&gt;
+          &lt;/queue&gt;
+          &lt;prev&gt;
+            &lt;referent class= "java.nio.DirectByteBuffer" &gt;
+              &lt;mark&gt;-1&lt;/mark&gt;
+              &lt;position&gt;0&lt;/position&gt;
+              &lt;limit&gt;803846&lt;/limit&gt;
+              &lt;capacity&gt;803846&lt;/capacity&gt;
+              &lt;address&gt;-932220928&lt;/address&gt;
+              &lt;offset&gt;0&lt;/offset&gt;
+              &lt;isReadOnly&gt; false &lt;/isReadOnly&gt;
+              &lt;bigEndian&gt; true &lt;/bigEndian&gt;
+              &lt;nativeByteOrder&gt; false &lt;/nativeByteOrder&gt;
+              &lt;isAMappedBuffer&gt; true &lt;/isAMappedBuffer&gt;
+              &lt;cleaner reference= "../.." /&gt;
+            &lt;/referent&gt;
+            &lt;queue reference= "../../queue" /&gt;
+            &lt;next reference= "../.." /&gt;
+            &lt;prev&gt;
+              &lt;referent class= "java.nio.DirectByteBuffer" &gt;
+                &lt;mark&gt;-1&lt;/mark&gt;
+                &lt;position&gt;0&lt;/position&gt;
+                &lt;limit&gt;158417&lt;/limit&gt;
+                &lt;capacity&gt;158417&lt;/capacity&gt;
+                &lt;address&gt;-932388864&lt;/address&gt;
+                &lt;offset&gt;0&lt;/offset&gt;
+                &lt;isReadOnly&gt; false &lt;/isReadOnly&gt;
+                &lt;bigEndian&gt; true &lt;/bigEndian&gt;
+                &lt;nativeByteOrder&gt; false &lt;/nativeByteOrder&gt;
+                &lt;isAMappedBuffer&gt; true &lt;/isAMappedBuffer&gt;
+                &lt;cleaner reference= "../.." /&gt;
+              &lt;/referent&gt;
+              &lt;queue reference= "../../../queue" /&gt;
+              &lt;next reference= "../.." /&gt;
+              &lt;prev&gt;
+                &lt;referent class= "java.nio.DirectByteBuffer" &gt;
+                  &lt;mark&gt;-1&lt;/mark&gt;
+                  &lt;position&gt;0&lt;/position&gt;
+                  &lt;limit&gt;175811&lt;/limit&gt;
+                  &lt;capacity&gt;175811&lt;/capacity&gt;
+                  &lt;address&gt;-932573184&lt;/address&gt;
+                  &lt;offset&gt;0&lt;/offset&gt;
+                  &lt;isReadOnly&gt; false &lt;/isReadOnly&gt;
+                  &lt;bigEndian&gt; true &lt;/bigEndian&gt;
+                  &lt;nativeByteOrder&gt; false &lt;/nativeByteOrder&gt;
+                  &lt;isAMappedBuffer&gt; true &lt;/isAMappedBuffer&gt;
+                  &lt;cleaner reference= "../.." /&gt;
+                &lt;/referent&gt;
+                &lt;queue reference= "../../../../queue" /&gt;
+                &lt;next reference= "../.." /&gt;
+[...]
+ 
+               </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-150185" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=150185&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-150185" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_150185_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_150185_verbose subText"><span class="date user-tz" title="07/Oct/08 5:18 AM"><time class="livestamp" datetime="2008-10-07T05:18-0500">07/Oct/08 5:18 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>I've fixed my problem by filtering out the instances of objects I didn't want to be marshalled.</p>
+
+<p>The following patches helped me to troubleshoot what went wrong.</p>
+
+<p>I also created a SkipClassConverter class that I  will attach in case anyone's interested.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_150185_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_150185_concise subText"><span class="date user-tz" title="07/Oct/08 5:18 AM"><time class="livestamp" datetime="2008-10-07T05:18-0500">07/Oct/08 5:18 AM</time></span></span>                    I've fixed my problem by filtering out the instances of objects I didn't want to be marshalled. 
+
+ The following patches helped me to troubleshoot what went wrong. 
+
+ I also created a SkipClassConverter class that I  will attach in case anyone's interested.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-150186" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=150186&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-150186" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_150186_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_150186_verbose subText"><span class="date user-tz" title="07/Oct/08 5:21 AM"><time class="livestamp" datetime="2008-10-07T05:21-0500">07/Oct/08 5:21 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>The classes I've used to parse out some instances.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="lacostej" id="commentauthor_150186_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=lacostej"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jerome Lacoste</a>
+ added a comment  - <span class="commentdate_150186_concise subText"><span class="date user-tz" title="07/Oct/08 5:21 AM"><time class="livestamp" datetime="2008-10-07T05:21-0500">07/Oct/08 5:21 AM</time></span></span>                    The classes I've used to parse out some instances.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-151524" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=151524&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-151524" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_151524_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_151524_verbose subText"><span class="date user-tz" title="21/Oct/08 1:18 PM"><time class="livestamp" datetime="2008-10-21T13:18-0500">21/Oct/08 1:18 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Hi Jerome,</p>
+
+<p>normally I request such reports on the user's list, but your provided code contains some interesting ideas and enhancements. Basically there are some objects that cannot be marshalled in reality like Thread, ThreadLocal, ClassLoader and the like. It simply does not make sense to put all data gathered by reflection into XML (as you have noticed) nor can any useful object deserialized using plain reflection. In a standard situation you will always need some kind of cutom converter if you really want to do something useful with such an object. However, for your use case your solution is completely OK. I'd like to apply some of your changes to XStream. Can you state here that the provided source for the classes SkipClassConverter and SkipClassConverterTest can be added also with BSD license? In their current form they do not make any license statement.</p>
+
+<p>Thanks a lot,<br>
+Jörg</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_151524_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_151524_concise subText"><span class="date user-tz" title="21/Oct/08 1:18 PM"><time class="livestamp" datetime="2008-10-21T13:18-0500">21/Oct/08 1:18 PM</time></span></span>                    Hi Jerome, 
+
+ normally I request such reports on the user's list, but your provided code contains some interesting ideas and enhancements. Basically there are some objects that cannot be marshalled in reality like Thread, ThreadLocal, ClassLoader and the like. It simply does not make sense to put all data gathered by reflection into XML (as you have noticed) nor can any useful object deserialized using plain reflection. In a standard situation you will always need some kind of cutom converter if you really want to do something useful with such an object. However, for your use case your solution is completely OK. I'd like to apply some of your changes to XStream. Can you state here that the provided source for the classes SkipClassConverter and SkipClassConverterTest can be added also with BSD license? In their current form they do not make any license statement. 
+
+ Thanks a lot, 
+Jörg              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-153468" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=153468&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-153468" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153468_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_153468_verbose subText"><span class="date user-tz" title="07/Nov/08 2:25 PM"><time class="livestamp" datetime="2008-11-07T14:25-0600">07/Nov/08 2:25 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Hi Jerome,</p>
+
+<p>I've applied some of your patches. I did not take the DEBUG mode, because it is quite easy to feed a TeeWriter from outside. However, your main contribution of the SkipClassConverter I cannot take as long as you have not made any statement, that you publish this code under BSD license terms.</p>
+
+<p>Regads,<br>
+Jörg</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153468_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_153468_concise subText"><span class="date user-tz" title="07/Nov/08 2:25 PM"><time class="livestamp" datetime="2008-11-07T14:25-0600">07/Nov/08 2:25 PM</time></span></span>                    Hi Jerome, 
+
+ I've applied some of your patches. I did not take the DEBUG mode, because it is quite easy to feed a TeeWriter from outside. However, your main contribution of the SkipClassConverter I cannot take as long as you have not made any statement, that you publish this code under BSD license terms. 
+
+ Regads, 
+Jörg              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-156114" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=156114&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-156114" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156114_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_156114_verbose subText"><span class="date user-tz" title="01/Dec/08 4:15 PM"><time class="livestamp" datetime="2008-12-01T16:15-0600">01/Dec/08 4:15 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Set correct fix version.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156114_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_156114_concise subText"><span class="date user-tz" title="01/Dec/08 4:15 PM"><time class="livestamp" datetime="2008-12-01T16:15-0600">01/Dec/08 4:15 PM</time></span></span>                    Set correct fix version.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-156148" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/524?focusedCommentId=156148&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-156148" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156148_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_156148_verbose subText"><span class="date user-tz" title="01/Dec/08 4:16 PM"><time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Fixed for upcoming release.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156148_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_156148_concise subText"><span class="date user-tz" title="01/Dec/08 4:16 PM"><time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time></span></span>                    Fixed for upcoming release.              </div>
+        </div>
+    </div>
+</div>
+                             </div>
+    </div>
+</div></div></div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id="peoplemodule" class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+            Jörg Schaible
+        </span>
+    </span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_lacostej" rel="lacostej">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+            Jerome Lacoste
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                        
+                                                                                                        <span id="vote-label" title="You have to be logged in to vote for an issue.">Vote for this issue</span>
+                                            </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <span id="watcher-data" class="aui-badge watch-state-off">0</span>
+                        
+                                                                                <span id="watch-label" title="You have to be logged in to watch an issue.">Start watching this issue</span>
+                                            </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id="datesmodule" class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz" title="03/Oct/08 10:19 AM">
+
+                <span data-name="Created" id="create-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2008-10-03T10:19-0500">03/Oct/08 10:19 AM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz" title="01/Dec/08 4:16 PM">
+
+                <span data-name="Updated" id="updated-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz" title="07/Nov/08 2:25 PM">
+
+                <span data-name="Resolved" id="resolved-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2008-11-07T14:25-0600">07/Nov/08 2:25 PM</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input title="autocompleteEnabled" value="true" type="hidden">
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+
+
+<div class="footer-body">
+    <ul>
+        <li>
+                        <a href="http://www.atlassian.com/software/jira">Atlassian JIRA</a>
+
+                                                    
+                        
+            <span id="footer-build-information">(v6.1.6#6162-<span title="7af547ce7c84dbb7c1e345a65437ed7b85efffa2" data-commit-id="7af547ce7c84dbb7c1e345a65437ed7b85efffa2}">sha1:7af547c</span>)</span>
+        </li>
+        <li>
+            <a id="about-link" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+        </li>
+        <li>
+                                    <a id="footer-report-problem-link" href="https://jira.codehaus.org/secure/CreateIssue%21default.jspa">Report a problem</a>
+        </li>
+    </ul>
+            <ul>
+            <li class="licensemessage">
+                                    Powered by a free Atlassian <a href="http://www.atlassian.com/software/jira">JIRA</a> open source license for Codehaus. Try JIRA - <a href="http://www.atlassian.com/software/jira">bug tracking software</a> for <i>your</i> team.
+
+                            </li>
+        </ul>
+    </div>
+
+<form id="jira_request_timing_info" class="dont-default-focus">
+	<fieldset class="parameters hidden">
+
+
+
+
+		<input title="jira.session.expiry.in.mins" value="299" type="hidden">
+
+	</fieldset>
+</form>
+<!--
+	                 
+	          
+	               
+	                 
+	        CONCURRENT REQUESTS : 7
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input title="loggedInUser" value="" type="hidden">
+    <input title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation." type="hidden">
+    <input title="JiraVersion" value="6.1.6" type="hidden">
+    <input title="ajaxUnauthorised" value="You are not authorised to perform this operation.  Please log in." type="hidden">
+    <input title="baseURL" value="https://jira.codehaus.org:443" type="hidden">
+    <input title="ajaxCommsError" value="The JIRA server could not be contacted.  This may be a temporary glitch or the server may be down." type="hidden">
+    <input title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation." type="hidden">
+    <input title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser" type="hidden">
+    <input title="ajaxErrorDialogHeading" value="Communications Breakdown" type="hidden">
+
+    <input title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost." type="hidden">
+    <input title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog." type="hidden">
+    <input title="keyType" value="Type" type="hidden">
+    <input title="keyThen" value="then" type="hidden">
+    <input title="dblClickToExpand" value="Double click to expand" type="hidden">
+    <input title="actions" value="Actions" type="hidden">
+    <input title="removeItem" value="Remove" type="hidden">
+    <input title="workflow" value="Workflow" type="hidden">
+    <input title="labelNew" value="New Label" type="hidden">
+    <input title="issueActionsHint" value="Begin typing for available operations or press down to see all" type="hidden">
+    <input title="closelink" value="Close" type="hidden">
+    <input title="dotOperations" value="Operations" type="hidden">
+    <input title="dotLoading" value="Loading..." type="hidden">
+    <input title="frotherSuggestions" value="Suggestions" type="hidden">
+    <input title="frotherNomatches" value="No Matches" type="hidden">
+    <input title="multiselectVersionsError" value="{0} is not a valid version." type="hidden">
+    <input title="multiselectComponentsError" value="{0} is not a valid component." type="hidden">
+    <input title="multiselectGenericError" value="The value {0} is invalid." type="hidden">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:void(0);" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:void(0);" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div class="navigator-sidebar collapsed ui-popout ui-popout-detached ui-popout-collapsed" id="navigator-sidebar"><a class="toggle-filter-panel" href="#" title="Dock the filters panel ([)"></a></div><div style="display: none;" class="jira-dialog box-shadow" id="edit-issue-dialog"><div class="jira-dialog-content"></div></div><div style="display: none;" class="jira-dialog box-shadow" id="create-subtask-dialog"><div class="jira-dialog-content"></div></div></body></html>

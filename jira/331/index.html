@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html class="mozilla"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>[XSTR-331] Cannot deserialize a class that extends GregorianCalendar - jira.codehaus.org</title>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+>
+
+
+
+<link rel="shortcut icon" href="index_files/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://jira.codehaus.org/osd.jsp" title="[XSTR-331] Cannot deserialize a class that extends GregorianCalendar - jira.codehaus.org">
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link type="text/css" rel="stylesheet" href="index_files/batch.css" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="index_files/batch-1.css" media="all">
+<script type="text/javascript" src="index_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="index_files/batch-1.js"></script>
+<script type="text/javascript" src="index_files/jira.webresources_calendar-en.js"></script>
+<script type="text/javascript" src="index_files/com.atlassian.administraticksearch-webresources.js"></script>
+
+<script type="text/javascript" src="index_files/shortcuts.js"></script>
+
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Advanced+Searching">
+    
+</head>
+<body data-aui-version="5.1.8" id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.1.6">
+<div id="page">
+    <header id="header" style="display:none" role="banner">
+        
+
+
+
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input title="tzdetect.pref.tzid" value="America/Chicago" type="hidden">
+    <input title="tzdetect.pref.tzname" value="(GMT-06:00) Chicago" type="hidden">
+    <input title="tzdetect.pref.tzoffset" value="(GMT-06:00)" type="hidden">
+    <input title="tzdetect.pref.tzdst" value="true" type="hidden">
+    <input title="tzdetect.pref.nothanks" value="" type="hidden">
+</fieldset>
+<nav data-aui-responsive="true" class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul class="nav-links"><li class="nav-link nav-link-local"><a href="https://jira.codehaus.org/" class="aui-dropdown2-radio interactive checked" title="https://jira.codehaus.org/"><span class="nav-link-label">jira.codehaus.org</span></a></li><li class="nav-link"><a href="http://jira.sonarsource.com/" class="aui-dropdown2-radio interactive" title="http://jira.sonarsource.com/"><span class="nav-link-label">SonarSource</span></a></li><li class="nav-link"><a href="http://docs.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://docs.codehaus.org/"><span class="nav-link-label">Codehaus</span></a></li><li class="nav-link"><a href="http://xircles.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://xircles.codehaus.org"><span class="nav-link-label">Xircles</span></a></li></ul></div></div><script><!--
+/* Script removed by snapshot save */
+--></script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.codehaus.org/secure/MyJiraHome.jspa"><img data-aui-responsive-header-index="0" src="urn:download-error:http://www.codehaus.org/codehaus-small.gif" alt="jira.codehaus.org"></a></h1><ul style="width: auto;" class="aui-nav">
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/Dashboard.jspa" id="home_link" accesskey="d" title="View and manage your dashboards" aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="/Old_XStream_Issues/index.html" id="browse_link" accesskey="p" title="View recent projects and browse a list of projects" aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/IssueNavigator.jspa" id="find_link" accesskey="i" title="Search for issues and view recent issues" aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li>
+<li style="display: none;"><a id="aui-responsive-header-dropdown-trigger-0" class="aui-dropdown2-trigger" aria-owns="aui-responsive-header-dropdown-content-0" aria-haspopup="true" href="#">More<span class="icon aui-icon-dropdown"></span></a><div id="aui-responsive-header-dropdown-content-0" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul id="aui-responsive-header-dropdown-list-0"></ul></div></div></li></ul></div><div class="aui-header-secondary"><ul class="aui-nav"><li>
+    <form action="https://jira.codehaus.org/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" title="Quick Search ( Type '/' )" placeholder="Quick Search" name="searchString" accesskey="q" type="text">
+        <input class="hidden" value="Search" type="submit">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank" title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="view_help" class="interactive" title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank">Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="interactive" title="Get more information about JIRA's Keyboard Shortcuts ( Type '?' )" href="https://jira.codehaus.org/secure/ViewKeyboardShortcuts%21default.jspa" target="_blank">Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="interactive" title="Get more information about JIRA" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="interactive" title="See who did what" href="https://jira.codehaus.org/secure/JiraCreditsPage%21default.jspa" target="_blank">JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a id="whats-new-menu-link" class="interactive" href="https://docs.atlassian.com/jira/docs-061/whatsnew/iframe">What?s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a class="aui-nav-link login-link" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-331">Log In</a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+<div id="announcement-banner" class="alertHeader">
+    <div style="position: absolute; right: 20em; top: -2em">
+  <a href="https://xircles.codehaus.org/signup">Signup</a>
+</div>
+</div>
+
+
+    <section id="content" role="main">
+        
+    
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="10230" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="XStream" src="index_files/projectavatar.png"></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/Old_XStream_Issues/index.html">XStream</a></li><li><a class="issue-link" data-issue-key="XSTR-331" href="#" id="key-val" rel="40222">XSTR-331</a></li></ol><h1 id="summary-val">Cannot deserialize a class that extends GregorianCalendar</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-ops-login-lnk_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="ops-login-lnk" style="display:none" title="Log In" class="toolbar-trigger" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-331"><span class="trigger-label">Log In</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" style="display:none" class="toolbar-group pluggable-ops"><li class="toolbar-item toolbar-dropdown"><div><a href="#" id="viewissue-export" title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown"><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-xml/XSTR-331/XSTR-331.xml" class="aui-list-item-link" id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-word/XSTR-331/XSTR-331.doc" class="aui-list-item-link" id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-html/XSTR-331/XSTR-331.html" class="aui-list-item-link" id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id="details-module" class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img alt="Bug" src="index_files/bug.png" title="Bug - A problem which impairs or prevents the functions of the product." height="16" width="16"> Bug
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+            </span>
+                    </div>
+    </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved">
+                                     Won't Fix
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-40222-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+<div id="customfieldmodule">
+    <div class="aui-tabs horizontal-tabs" id="customfield-tabs">
+                    <div id="customfield-panel-1" class="tabs-pane active-pane">
+                        <ul class="property-list">
+                                                <li id="rowForcustomfield_10070" class="item">
+                        <div class="wrap">
+                            <strong title="JDK version and platform" class="name">JDK version and platform:</strong>
+                            <div id="customfield_10070-val" class="value type-textfield" data-fieldtype="textfield" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:textfield">
+                                      JSE5 with Eclipse 3.2
+  
+                            </div>
+                        </div>
+                    </li>
+                                        </ul>
+        </div>
+        </div></div>
+</div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>If you instanceate an object of the class below, it will write a stream of itselfe into a file.<br>
+This stream is basically the GregorianCalendar.<br>
+Unfortunatly XStream writes way too many lines of XML (Attached at the end):<br>
+This stream is then no longer deserializable and throws an exception.</p>
+
+<p>class	XStreamTest extends GregorianCalendar<br>
+{<br>
+	public	XStreamTest() throws IllegalArgumentException, IllegalAccessException, IOException</p>
+	{
+			writeToFile();
+	}
+<p>	public void writeToFile() throws IllegalArgumentException, IllegalAccessException, IOException</p>
+	{
+			XStream _xstream = new XStream();
+			ObjectOutputStream out = _xstream.createObjectOutputStream( new FileWriter( "XmlStream.xml" ));
+			out.writeObject( this );
+			out.close();
+	}
+<p>};</p>
+
+<p>Outcome:<br>
+&lt;object-stream&gt;<br>
+  &lt;com.abdalla.bushnaq.rac.configuration.Hallo serialization="custom"&gt;<br>
+    &lt;gregorian-calendar&gt;<br>
+      &lt;default&gt;<br>
+        &lt;areFieldsSet&gt;true&lt;/areFieldsSet&gt;<br>
+        &lt;firstDayOfWeek&gt;2&lt;/firstDayOfWeek&gt;<br>
+        &lt;isTimeSet&gt;true&lt;/isTimeSet&gt;<br>
+        &lt;lenient&gt;true&lt;/lenient&gt;<br>
+        &lt;minimalDaysInFirstWeek&gt;4&lt;/minimalDaysInFirstWeek&gt;<br>
+        &lt;nextStamp&gt;2&lt;/nextStamp&gt;<br>
+        &lt;serialVersionOnStream&gt;1&lt;/serialVersionOnStream&gt;<br>
+        &lt;time&gt;1155123829984&lt;/time&gt;<br>
+        &lt;fields&gt;<br>
+          &lt;int&gt;1&lt;/int&gt;<br>
+          &lt;int&gt;2006&lt;/int&gt;<br>
+          &lt;int&gt;7&lt;/int&gt;<br>
+          &lt;int&gt;32&lt;/int&gt;<br>
+          &lt;int&gt;2&lt;/int&gt;<br>
+          &lt;int&gt;9&lt;/int&gt;<br>
+          &lt;int&gt;221&lt;/int&gt;<br>
+          &lt;int&gt;4&lt;/int&gt;<br>
+          &lt;int&gt;2&lt;/int&gt;<br>
+          &lt;int&gt;1&lt;/int&gt;<br>
+          &lt;int&gt;1&lt;/int&gt;<br>
+          &lt;int&gt;13&lt;/int&gt;<br>
+          &lt;int&gt;43&lt;/int&gt;<br>
+          &lt;int&gt;49&lt;/int&gt;<br>
+          &lt;int&gt;984&lt;/int&gt;<br>
+          &lt;int&gt;3600000&lt;/int&gt;<br>
+          &lt;int&gt;3600000&lt;/int&gt;<br>
+        &lt;/fields&gt;<br>
+        &lt;isSet&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+          &lt;boolean&gt;true&lt;/boolean&gt;<br>
+        &lt;/isSet&gt;<br>
+        &lt;zone class="java.util.SimpleTimeZone" serialization="custom"&gt;<br>
+          &lt;java.util.TimeZone&gt;<br>
+            &lt;default&gt;<br>
+              &lt;ID&gt;Europe/Berlin&lt;/ID&gt;<br>
+            &lt;/default&gt;<br>
+          &lt;/java.util.TimeZone&gt;<br>
+          &lt;java.util.SimpleTimeZone&gt;<br>
+            &lt;default&gt;<br>
+              &lt;dstSavings&gt;3600000&lt;/dstSavings&gt;<br>
+              &lt;endDay&gt;-1&lt;/endDay&gt;<br>
+              &lt;endDayOfWeek&gt;1&lt;/endDayOfWeek&gt;<br>
+              &lt;endMode&gt;2&lt;/endMode&gt;<br>
+              &lt;endMonth&gt;9&lt;/endMonth&gt;<br>
+              &lt;endTime&gt;10800000&lt;/endTime&gt;<br>
+              &lt;endTimeMode&gt;2&lt;/endTimeMode&gt;<br>
+              &lt;rawOffset&gt;3600000&lt;/rawOffset&gt;<br>
+              &lt;serialVersionOnStream&gt;2&lt;/serialVersionOnStream&gt;<br>
+              &lt;startDay&gt;-1&lt;/startDay&gt;<br>
+              &lt;startDayOfWeek&gt;1&lt;/startDayOfWeek&gt;<br>
+              &lt;startMode&gt;2&lt;/startMode&gt;<br>
+              &lt;startMonth&gt;2&lt;/startMonth&gt;<br>
+              &lt;startTime&gt;7200000&lt;/startTime&gt;<br>
+              &lt;startTimeMode&gt;2&lt;/startTimeMode&gt;<br>
+              &lt;startYear&gt;0&lt;/startYear&gt;<br>
+              &lt;useDaylight&gt;true&lt;/useDaylight&gt;<br>
+              &lt;monthLength&gt;HxwfHh8eHx8eHx4f&lt;/monthLength&gt;<br>
+            &lt;/default&gt;<br>
+            &lt;int&gt;6&lt;/int&gt;<br>
+            &lt;byte-array&gt;/wH/AQIC&lt;/byte-array&gt;<br>
+            &lt;int-array&gt;<br>
+              &lt;int&gt;3600000&lt;/int&gt;<br>
+              &lt;int&gt;3600000&lt;/int&gt;<br>
+            &lt;/int-array&gt;<br>
+          &lt;/java.util.SimpleTimeZone&gt;<br>
+        &lt;/zone&gt;<br>
+      &lt;/default&gt;<br>
+      &lt;sun.util.calendar.ZoneInfo serialization="custom"&gt;<br>
+        &lt;java.util.TimeZone&gt;<br>
+          &lt;default&gt;<br>
+            &lt;ID&gt;Europe/Berlin&lt;/ID&gt;<br>
+          &lt;/default&gt;<br>
+        &lt;/java.util.TimeZone&gt;<br>
+        &lt;sun.util.calendar.ZoneInfo&gt;<br>
+          &lt;default&gt;<br>
+            &lt;checksum&gt;-300950473&lt;/checksum&gt;<br>
+            &lt;dstSavings&gt;3600000&lt;/dstSavings&gt;<br>
+            &lt;rawOffset&gt;3600000&lt;/rawOffset&gt;<br>
+            &lt;rawOffsetDiff&gt;0&lt;/rawOffsetDiff&gt;<br>
+            &lt;willGMTOffsetChange&gt;false&lt;/willGMTOffsetChange&gt;<br>
+            &lt;offsets&gt;<br>
+              &lt;int&gt;3600000&lt;/int&gt;<br>
+              &lt;int&gt;7200000&lt;/int&gt;<br>
+              &lt;int&gt;3600000&lt;/int&gt;<br>
+              &lt;int&gt;10800000&lt;/int&gt;<br>
+            &lt;/offsets&gt;<br>
+            &lt;simpleTimeZoneParams&gt;<br>
+              &lt;int&gt;2&lt;/int&gt;<br>
+              &lt;int&gt;-1&lt;/int&gt;<br>
+              &lt;int&gt;1&lt;/int&gt;<br>
+              &lt;int&gt;3600000&lt;/int&gt;<br>
+              &lt;int&gt;2&lt;/int&gt;<br>
+              &lt;int&gt;9&lt;/int&gt;<br>
+              &lt;int&gt;-1&lt;/int&gt;<br>
+              &lt;int&gt;1&lt;/int&gt;<br>
+              &lt;int&gt;3600000&lt;/int&gt;<br>
+              &lt;int&gt;2&lt;/int&gt;<br>
+            &lt;/simpleTimeZoneParams&gt;<br>
+            &lt;transitions&gt;<br>
+              &lt;long&gt;-9048018124800000&lt;/long&gt;<br>
+              &lt;long&gt;-6937421414399967&lt;/long&gt;<br>
+              &lt;long&gt;-6883260825600000&lt;/long&gt;<br>
+              &lt;long&gt;-6813514137599967&lt;/long&gt;<br>
+              &lt;long&gt;-6759014400000000&lt;/long&gt;<br>
+              &lt;long&gt;-6684696575999967&lt;/long&gt;<br>
+              &lt;long&gt;-6630196838400000&lt;/long&gt;<br>
+              &lt;long&gt;-3845755699199967&lt;/long&gt;<br>
+              &lt;long&gt;-3511325491200000&lt;/long&gt;<br>
+              &lt;long&gt;-3459303014399967&lt;/long&gt;<br>
+              &lt;long&gt;-3392416972800000&lt;/long&gt;<br>
+              &lt;long&gt;-3328008191999967&lt;/long&gt;<br>
+              &lt;long&gt;-3263599411200000&lt;/long&gt;<br>
+              &lt;long&gt;-3199190630399967&lt;/long&gt;<br>
+              &lt;long&gt;-3180802867199981&lt;/long&gt;<br>
+              &lt;long&gt;-3137273855999967&lt;/long&gt;<br>
+              &lt;long&gt;-3117794918400000&lt;/long&gt;<br>
+              &lt;long&gt;-3065772441599967&lt;/long&gt;<br>
+              &lt;long&gt;-3003487027200000&lt;/long&gt;<br>
+              &lt;long&gt;-2939432140799967&lt;/long&gt;<br>
+              &lt;long&gt;-2927045836799981&lt;/long&gt;<br>
+              &lt;long&gt;-2909719756799967&lt;/long&gt;<br>
+              &lt;long&gt;-2875023360000000&lt;/long&gt;<br>
+              &lt;long&gt;-2805660057599967&lt;/long&gt;<br>
+              &lt;long&gt;-2746205798400000&lt;/long&gt;<br>
+              &lt;long&gt;-2679319756799967&lt;/long&gt;<br>
+              &lt;long&gt;-2617388236800000&lt;/long&gt;<br>
+              &lt;long&gt;1326410956800033&lt;/long&gt;<br>
+              &lt;long&gt;1388342476800000&lt;/long&gt;<br>
+              &lt;long&gt;1452751257600033&lt;/long&gt;<br>
+              &lt;long&gt;1517160038400000&lt;/long&gt;<br>
+              &lt;long&gt;1581568819200033&lt;/long&gt;<br>
+              &lt;long&gt;1645977600000000&lt;/long&gt;<br>
+              &lt;long&gt;1710386380800033&lt;/long&gt;<br>
+              &lt;long&gt;1774795161600000&lt;/long&gt;<br>
+              &lt;long&gt;1839203942400033&lt;/long&gt;<br>
+              &lt;long&gt;1906089984000000&lt;/long&gt;<br>
+              &lt;long&gt;1970498764800033&lt;/long&gt;<br>
+              &lt;long&gt;2034907545600000&lt;/long&gt;<br>
+              &lt;long&gt;2099316326400033&lt;/long&gt;<br>
+              &lt;long&gt;2163725107200000&lt;/long&gt;<br>
+              &lt;long&gt;2228133888000033&lt;/long&gt;<br>
+              &lt;long&gt;2292542668800000&lt;/long&gt;<br>
+              &lt;long&gt;2356951449600033&lt;/long&gt;<br>
+              &lt;long&gt;2421360230400000&lt;/long&gt;<br>
+              &lt;long&gt;2485769011200033&lt;/long&gt;<br>
+              &lt;long&gt;2550177792000000&lt;/long&gt;<br>
+              &lt;long&gt;2614586572800033&lt;/long&gt;<br>
+              &lt;long&gt;2681472614400000&lt;/long&gt;<br>
+              &lt;long&gt;2745881395200033&lt;/long&gt;<br>
+              &lt;long&gt;2810290176000000&lt;/long&gt;<br>
+              &lt;long&gt;2874698956800033&lt;/long&gt;<br>
+              &lt;long&gt;2939107737600000&lt;/long&gt;<br>
+              &lt;long&gt;3003516518400033&lt;/long&gt;<br>
+              &lt;long&gt;3067925299200000&lt;/long&gt;<br>
+              &lt;long&gt;3132334080000033&lt;/long&gt;<br>
+              &lt;long&gt;3196742860800000&lt;/long&gt;<br>
+              &lt;long&gt;3261151641600033&lt;/long&gt;<br>
+              &lt;long&gt;3325560422400000&lt;/long&gt;<br>
+              &lt;long&gt;3392446464000033&lt;/long&gt;<br>
+              &lt;long&gt;3466764288000000&lt;/long&gt;<br>
+              &lt;long&gt;3521264025600033&lt;/long&gt;<br>
+              &lt;long&gt;3595581849600000&lt;/long&gt;<br>
+              &lt;long&gt;3650081587200033&lt;/long&gt;<br>
+              &lt;long&gt;3724399411200000&lt;/long&gt;<br>
+              &lt;long&gt;3778899148800033&lt;/long&gt;<br>
+              &lt;long&gt;3855694233600000&lt;/long&gt;<br>
+              &lt;long&gt;3907716710400033&lt;/long&gt;<br>
+              &lt;long&gt;3984511795200000&lt;/long&gt;<br>
+              &lt;long&gt;4036534272000033&lt;/long&gt;<br>
+              &lt;long&gt;4113329356800000&lt;/long&gt;<br>
+              &lt;long&gt;4167829094400033&lt;/long&gt;<br>
+              &lt;long&gt;4242146918400000&lt;/long&gt;<br>
+              &lt;long&gt;4296646656000033&lt;/long&gt;<br>
+              &lt;long&gt;4370964480000000&lt;/long&gt;<br>
+              &lt;long&gt;4425464217600033&lt;/long&gt;<br>
+              &lt;long&gt;4502259302400000&lt;/long&gt;<br>
+              &lt;long&gt;4554281779200033&lt;/long&gt;<br>
+              &lt;long&gt;4631076864000000&lt;/long&gt;<br>
+              &lt;long&gt;4683099340800033&lt;/long&gt;<br>
+              &lt;long&gt;4759894425600000&lt;/long&gt;<br>
+              &lt;long&gt;4811916902400033&lt;/long&gt;<br>
+              &lt;long&gt;4888711987200000&lt;/long&gt;<br>
+              &lt;long&gt;4943211724800033&lt;/long&gt;<br>
+              &lt;long&gt;5017529548800000&lt;/long&gt;<br>
+              &lt;long&gt;5072029286400033&lt;/long&gt;<br>
+              &lt;long&gt;5146347110400000&lt;/long&gt;<br>
+              &lt;long&gt;5200846848000033&lt;/long&gt;<br>
+              &lt;long&gt;5277641932800000&lt;/long&gt;<br>
+              &lt;long&gt;5329664409600033&lt;/long&gt;<br>
+              &lt;long&gt;5406459494400000&lt;/long&gt;<br>
+              &lt;long&gt;5458481971200033&lt;/long&gt;<br>
+              &lt;long&gt;5535277056000000&lt;/long&gt;<br>
+              &lt;long&gt;5589776793600033&lt;/long&gt;<br>
+              &lt;long&gt;5664094617600000&lt;/long&gt;<br>
+              &lt;long&gt;5718594355200033&lt;/long&gt;<br>
+              &lt;long&gt;5792912179200000&lt;/long&gt;<br>
+              &lt;long&gt;5847411916800033&lt;/long&gt;<br>
+              &lt;long&gt;5921729740800000&lt;/long&gt;<br>
+              &lt;long&gt;5976229478400033&lt;/long&gt;<br>
+              &lt;long&gt;6053024563200000&lt;/long&gt;<br>
+              &lt;long&gt;6105047040000033&lt;/long&gt;<br>
+              &lt;long&gt;6181842124800000&lt;/long&gt;<br>
+              &lt;long&gt;6233864601600033&lt;/long&gt;<br>
+              &lt;long&gt;6310659686400000&lt;/long&gt;<br>
+              &lt;long&gt;6365159424000033&lt;/long&gt;<br>
+              &lt;long&gt;6439477248000000&lt;/long&gt;<br>
+              &lt;long&gt;6493976985600033&lt;/long&gt;<br>
+              &lt;long&gt;6568294809600000&lt;/long&gt;<br>
+              &lt;long&gt;6622794547200033&lt;/long&gt;<br>
+              &lt;long&gt;6699589632000000&lt;/long&gt;<br>
+              &lt;long&gt;6751612108800033&lt;/long&gt;<br>
+              &lt;long&gt;6828407193600000&lt;/long&gt;<br>
+              &lt;long&gt;6880429670400033&lt;/long&gt;<br>
+              &lt;long&gt;6957224755200000&lt;/long&gt;<br>
+              &lt;long&gt;7011724492800033&lt;/long&gt;<br>
+              &lt;long&gt;7086042316800000&lt;/long&gt;<br>
+              &lt;long&gt;7140542054400033&lt;/long&gt;<br>
+              &lt;long&gt;7214859878400000&lt;/long&gt;<br>
+              &lt;long&gt;7269359616000033&lt;/long&gt;<br>
+              &lt;long&gt;7343677440000000&lt;/long&gt;<br>
+              &lt;long&gt;7398177177600033&lt;/long&gt;<br>
+              &lt;long&gt;7474972262400000&lt;/long&gt;<br>
+              &lt;long&gt;7526994739200033&lt;/long&gt;<br>
+              &lt;long&gt;7603789824000000&lt;/long&gt;<br>
+              &lt;long&gt;7655812300800033&lt;/long&gt;<br>
+              &lt;long&gt;7732607385600000&lt;/long&gt;<br>
+              &lt;long&gt;7787107123200033&lt;/long&gt;<br>
+              &lt;long&gt;7861424947200000&lt;/long&gt;<br>
+              &lt;long&gt;7915924684800033&lt;/long&gt;<br>
+              &lt;long&gt;7990242508800000&lt;/long&gt;<br>
+              &lt;long&gt;8044742246400033&lt;/long&gt;<br>
+              &lt;long&gt;8121537331200000&lt;/long&gt;<br>
+              &lt;long&gt;8173559808000033&lt;/long&gt;<br>
+              &lt;long&gt;8250354892800000&lt;/long&gt;<br>
+              &lt;long&gt;8302377369600033&lt;/long&gt;<br>
+              &lt;long&gt;8379172454400000&lt;/long&gt;<br>
+              &lt;long&gt;8431194931200033&lt;/long&gt;<br>
+              &lt;long&gt;8507990016000000&lt;/long&gt;<br>
+              &lt;long&gt;8562489753600033&lt;/long&gt;<br>
+              &lt;long&gt;8636807577600000&lt;/long&gt;<br>
+              &lt;long&gt;8691307315200033&lt;/long&gt;<br>
+              &lt;long&gt;8765625139200000&lt;/long&gt;<br>
+            &lt;/transitions&gt;<br>
+          &lt;/default&gt;<br>
+        &lt;/sun.util.calendar.ZoneInfo&gt;<br>
+      &lt;/sun.util.calendar.ZoneInfo&gt;<br>
+    &lt;/gregorian-calendar&gt;<br>
+    &lt;gregorian-calendar&gt;<br>
+      &lt;default&gt;<br>
+        &lt;gregorianCutover&gt;-12219292800000&lt;/gregorianCutover&gt;<br>
+      &lt;/default&gt;<br>
+    &lt;/gregorian-calendar&gt;<br>
+  &lt;/com.abdalla.bushnaq.rac.configuration.Hallo&gt;<br>
+&lt;/object-stream&gt;</p>
+            </div>
+</div>
+</div></div><div id="activitymodule" class="module toggle-wrap collapsed"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2" style="display:none">
+                <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-331">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/Old_XStream_Issues/331"><strong>All</strong></a>
+                        </li>
+                                
+            <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-331">
+                            <strong>Comments</strong>
+                        </li>
+                                
+            <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-331">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/Old_XStream_Issues/331"><strong>History</strong></a>
+                        </li>
+                                
+            <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-331">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/Old_XStream_Issues/331"><strong>Activity</strong></a>
+                        </li>
+                </ul>
+    </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    
+
+
+<div id="comment-71911" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/331?focusedCommentId=71911&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-71911" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_71911_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_71911_verbose subText"><span class="date user-tz" title="09/Aug/06 7:19 AM"><time class="livestamp" datetime="2006-08-09T07:19-0500">09/Aug/06 7:19 AM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>XStream comes with a GregorianCalendarConverter. If you derive from a GregorianCalendar you must create a custom Converter on your own, which is in your case quite easy:</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">class YourGregorianCalendarConverter <span class="code-keyword">extends</span> GregorianCalendarConverter {
+  <span class="code-keyword">public</span> <span class="code-object">boolean</span> canConvert(<span class="code-object">Class</span> type) {
+     <span class="code-keyword">return</span> YourGregorianCalendar.class.equals(type);
+  }   
+}
+</pre>
+</div></div>
+
+<p>We cannot simply hande any derived GregorianCalendars on our own, since we do not know, if the derived class introduces new elements. OTOH we don't want to create special converters for com.sun.* classes, that might not be portable.</p>
+
+<p>Please, ask the next time on the user's list first.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_71911_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_71911_concise subText"><span class="date user-tz" title="09/Aug/06 7:19 AM"><time class="livestamp" datetime="2006-08-09T07:19-0500">09/Aug/06 7:19 AM</time></span></span>                    XStream comes with a GregorianCalendarConverter. If you derive from a GregorianCalendar you must create a custom Converter on your own, which is in your case quite easy: 
+
+  
+ 
+class YourGregorianCalendarConverter  extends  GregorianCalendarConverter {
+   public   boolean  canConvert( Class  type) {
+      return  YourGregorianCalendar.class.equals(type);
+  }   
+}
+ 
+  
+
+ We cannot simply hande any derived GregorianCalendars on our own, since we do not know, if the derived class introduces new elements. OTOH we don't want to create special converters for com.sun.* classes, that might not be portable. 
+
+ Please, ask the next time on the user's list first.              </div>
+        </div>
+    </div>
+</div>
+                             </div>
+    </div>
+</div></div></div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id="peoplemodule" class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+    <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+    Unassigned
+</span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_bushnaq" rel="bushnaq">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-2.png"></span></span>
+            Abdalla Bushnaq
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                        
+                                                                                                        <span id="vote-label" title="You have to be logged in to vote for an issue.">Vote for this issue</span>
+                                            </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <span id="watcher-data" class="aui-badge watch-state-off">0</span>
+                        
+                                                                                <span id="watch-label" title="You have to be logged in to watch an issue.">Start watching this issue</span>
+                                            </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id="datesmodule" class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz" title="09/Aug/06 7:10 AM">
+
+                <span data-name="Created" id="create-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-08-09T07:10-0500">09/Aug/06 7:10 AM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz" title="09/Nov/06 4:51 PM">
+
+                <span data-name="Updated" id="updated-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-11-09T16:51-0600">09/Nov/06 4:51 PM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz" title="09/Aug/06 7:19 AM">
+
+                <span data-name="Resolved" id="resolved-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-08-09T07:19-0500">09/Aug/06 7:19 AM</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input title="autocompleteEnabled" value="true" type="hidden">
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+
+
+<div class="footer-body">
+    <ul>
+        <li>
+                        <a href="http://www.atlassian.com/software/jira">Atlassian JIRA</a>
+
+                                                    
+                        
+            <span id="footer-build-information">(v6.1.6#6162-<span title="7af547ce7c84dbb7c1e345a65437ed7b85efffa2" data-commit-id="7af547ce7c84dbb7c1e345a65437ed7b85efffa2}">sha1:7af547c</span>)</span>
+        </li>
+        <li>
+            <a id="about-link" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+        </li>
+        <li>
+                                    <a id="footer-report-problem-link" href="https://jira.codehaus.org/secure/CreateIssue%21default.jspa">Report a problem</a>
+        </li>
+    </ul>
+            <ul>
+            <li class="licensemessage">
+                                    Powered by a free Atlassian <a href="http://www.atlassian.com/software/jira">JIRA</a> open source license for Codehaus. Try JIRA - <a href="http://www.atlassian.com/software/jira">bug tracking software</a> for <i>your</i> team.
+
+                            </li>
+        </ul>
+    </div>
+
+<form id="jira_request_timing_info" class="dont-default-focus">
+	<fieldset class="parameters hidden">
+
+
+
+
+		<input title="jira.session.expiry.in.mins" value="299" type="hidden">
+
+	</fieldset>
+</form>
+<!--
+	                 
+	          
+	               
+	                 
+	        CONCURRENT REQUESTS : 5
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input title="loggedInUser" value="" type="hidden">
+    <input title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation." type="hidden">
+    <input title="JiraVersion" value="6.1.6" type="hidden">
+    <input title="ajaxUnauthorised" value="You are not authorised to perform this operation.  Please log in." type="hidden">
+    <input title="baseURL" value="https://jira.codehaus.org:443" type="hidden">
+    <input title="ajaxCommsError" value="The JIRA server could not be contacted.  This may be a temporary glitch or the server may be down." type="hidden">
+    <input title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation." type="hidden">
+    <input title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser" type="hidden">
+    <input title="ajaxErrorDialogHeading" value="Communications Breakdown" type="hidden">
+
+    <input title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost." type="hidden">
+    <input title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog." type="hidden">
+    <input title="keyType" value="Type" type="hidden">
+    <input title="keyThen" value="then" type="hidden">
+    <input title="dblClickToExpand" value="Double click to expand" type="hidden">
+    <input title="actions" value="Actions" type="hidden">
+    <input title="removeItem" value="Remove" type="hidden">
+    <input title="workflow" value="Workflow" type="hidden">
+    <input title="labelNew" value="New Label" type="hidden">
+    <input title="issueActionsHint" value="Begin typing for available operations or press down to see all" type="hidden">
+    <input title="closelink" value="Close" type="hidden">
+    <input title="dotOperations" value="Operations" type="hidden">
+    <input title="dotLoading" value="Loading..." type="hidden">
+    <input title="frotherSuggestions" value="Suggestions" type="hidden">
+    <input title="frotherNomatches" value="No Matches" type="hidden">
+    <input title="multiselectVersionsError" value="{0} is not a valid version." type="hidden">
+    <input title="multiselectComponentsError" value="{0} is not a valid component." type="hidden">
+    <input title="multiselectGenericError" value="The value {0} is invalid." type="hidden">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:void(0);" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:void(0);" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div class="navigator-sidebar collapsed ui-popout ui-popout-detached ui-popout-collapsed" id="navigator-sidebar"><a class="toggle-filter-panel" href="#" title="Dock the filters panel ([)"></a></div><div style="display: none;" class="jira-dialog box-shadow" id="edit-issue-dialog"><div class="jira-dialog-content"></div></div><div style="display: none;" class="jira-dialog box-shadow" id="create-subtask-dialog"><div class="jira-dialog-content"></div></div></body></html>

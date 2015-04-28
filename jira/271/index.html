@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html class="mozilla"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>[XSTR-271] Cannot overload PrettyPrintWriter#setValue - jira.codehaus.org</title>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+>
+
+
+
+<link rel="shortcut icon" href="index_files/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://jira.codehaus.org/osd.jsp" title="[XSTR-271] Cannot overload PrettyPrintWriter#setValue - jira.codehaus.org">
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link type="text/css" rel="stylesheet" href="index_files/batch.css" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+8" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="index_files/batch-1.css" media="all">
+<script type="text/javascript" src="index_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-huda6k-1988229788/6162/7/6/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="index_files/batch-1.js"></script>
+<script type="text/javascript" src="index_files/jira.webresources_calendar-en.js"></script>
+<script type="text/javascript" src="index_files/com.atlassian.administraticksearch-webresources.js"></script>
+
+<script type="text/javascript" src="index_files/shortcuts.js"></script>
+
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-061/Advanced+Searching">
+    
+</head>
+<body data-aui-version="5.1.8" id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.1.6">
+<div id="page">
+    <header id="header" style="display:none" role="banner">
+        
+
+
+
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input title="tzdetect.pref.tzid" value="America/Chicago" type="hidden">
+    <input title="tzdetect.pref.tzname" value="(GMT-06:00) Chicago" type="hidden">
+    <input title="tzdetect.pref.tzoffset" value="(GMT-06:00)" type="hidden">
+    <input title="tzdetect.pref.tzdst" value="true" type="hidden">
+    <input title="tzdetect.pref.nothanks" value="" type="hidden">
+</fieldset>
+<nav data-aui-responsive="true" class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul class="nav-links"><li class="nav-link nav-link-local"><a href="https://jira.codehaus.org/" class="aui-dropdown2-radio interactive checked" title="https://jira.codehaus.org/"><span class="nav-link-label">jira.codehaus.org</span></a></li><li class="nav-link"><a href="http://jira.sonarsource.com/" class="aui-dropdown2-radio interactive" title="http://jira.sonarsource.com/"><span class="nav-link-label">SonarSource</span></a></li><li class="nav-link"><a href="http://docs.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://docs.codehaus.org/"><span class="nav-link-label">Codehaus</span></a></li><li class="nav-link"><a href="http://xircles.codehaus.org/" class="aui-dropdown2-radio interactive" title="http://xircles.codehaus.org"><span class="nav-link-label">Xircles</span></a></li></ul></div></div><script><!--
+/* Script removed by snapshot save */
+--></script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.codehaus.org/secure/MyJiraHome.jspa"><img data-aui-responsive-header-index="0" src="urn:download-error:http://www.codehaus.org/codehaus-small.gif" alt="jira.codehaus.org"></a></h1><ul style="width: auto;" class="aui-nav">
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/Dashboard.jspa" id="home_link" accesskey="d" title="View and manage your dashboards" aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="/Old_XStream_Issues/index.html" id="browse_link" accesskey="p" title="View recent projects and browse a list of projects" aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger " href="https://jira.codehaus.org/secure/IssueNavigator.jspa" id="find_link" accesskey="i" title="Search for issues and view recent issues" aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li>
+<li style="display: none;"><a id="aui-responsive-header-dropdown-trigger-0" class="aui-dropdown2-trigger" aria-owns="aui-responsive-header-dropdown-content-0" aria-haspopup="true" href="#">More<span class="icon aui-icon-dropdown"></span></a><div id="aui-responsive-header-dropdown-content-0" class="aui-dropdown2 aui-style-default"><div class="aui-dropdown2-section"><ul id="aui-responsive-header-dropdown-list-0"></ul></div></div></li></ul></div><div class="aui-header-secondary"><ul class="aui-nav"><li>
+    <form action="https://jira.codehaus.org/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" title="Quick Search ( Type '/' )" placeholder="Quick Search" name="searchString" accesskey="q" type="text">
+        <input class="hidden" value="Search" type="submit">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank" title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="view_help" class="interactive" title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-061/JIRA+Documentation" target="_blank">Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="interactive" title="Get more information about JIRA's Keyboard Shortcuts ( Type '?' )" href="https://jira.codehaus.org/secure/ViewKeyboardShortcuts%21default.jspa" target="_blank">Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="interactive" title="Get more information about JIRA" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="interactive" title="See who did what" href="https://jira.codehaus.org/secure/JiraCreditsPage%21default.jspa" target="_blank">JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a id="whats-new-menu-link" class="interactive" href="https://docs.atlassian.com/jira/docs-061/whatsnew/iframe">What?s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a class="aui-nav-link login-link" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-271">Log In</a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+<div id="announcement-banner" class="alertHeader">
+    <div style="position: absolute; right: 20em; top: -2em">
+  <a href="https://xircles.codehaus.org/signup">Signup</a>
+</div>
+</div>
+
+
+    <section id="content" role="main">
+        
+    
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="10230" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="XStream" src="index_files/projectavatar.png"></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/Old_XStream_Issues/index.html">XStream</a></li><li><a class="issue-link" data-issue-key="XSTR-271" href="#" id="key-val" rel="33643">XSTR-271</a></li></ol><h1 id="summary-val">Cannot overload PrettyPrintWriter#setValue</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-ops-login-lnk_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="ops-login-lnk" style="display:none" title="Log In" class="toolbar-trigger" href="https://jira.codehaus.org/login.jsp?os_destination=%2Fbrowse%2FXSTR-271"><span class="trigger-label">Log In</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" style="display:none" class="toolbar-group pluggable-ops"><li class="toolbar-item toolbar-dropdown"><div><a href="#" id="viewissue-export" title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown"><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-xml/XSTR-271/XSTR-271.xml" class="aui-list-item-link" id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-word/XSTR-271/XSTR-271.doc" class="aui-list-item-link" id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a href="https://jira.codehaus.org/si/jira.issueviews:issue-html/XSTR-271/XSTR-271.html" class="aui-list-item-link" id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id="details-module" class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img alt="Improvement" src="index_files/improvement.png" title="Improvement - An improvement or enhancement to an existing feature or task." height="16" width="16"> Improvement
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                
+
+<img src="index_files/closed.png" alt="Closed" title="Closed - The issue is considered finished, the resolution is correct. Issues which are closed can be reopened." height="16" width="16"> Closed
+            </span>
+                    </div>
+    </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved">
+                                     Fixed
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-33643-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+</div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>I'd like to be able to have XStream.toXML (Object, Writer) use my own PrettyPrintWriter extension.</p>
+
+<p>There are two problems, though.</p>
+
+<p>1. XStream#toXML (Object, Writer) uses a hard-wired PrettyPrintWriter in that method.<br>
+2. PrettyPrintWriter#setValue uses private booleans and methods, not accessible to sub-classes.</p>
+
+<p>My suggestion is to be able to write this:</p>
+
+<p>public class MyPrettyPrintWriter extends PrettyPrintWriter<br>
+{<br>
+....</p>
+
+<p>    public void setValue (String text)<br>
+    {<br>
+        readyForNewLine = false;<br>
+        tagIsEmpty = false;<br>
+        finishTag ();</p>
+
+<p>        boolean hasXml = false;</p>
+
+<p>        if (text.indexOf ('&lt;') != -1) </p>
+{
+            hasXml = true;
+            writer.write ("&lt;[CDATA[");
+        }
+
+<p>        writer.write (text);</p>
+
+<p>        if (hasXml) </p>
+{
+            writer.write ("]]&gt;");
+        }
+<p>    }<br>
+}</p>
+
+<p>But, I have to duplicate quite a bit of code to achieve this; in other words, copy PrettyPrintWriter.java to MyPrettyPrintWriter.java, just to overload #setValue(), that's excessive.<br>
+And I still have to overwrite XStream#toXML (Object, Writer).</p>
+
+<p>It would be better if the properties / methods in PrettyPrintWriter mentioned above were protected.<br>
+And, it be really cool if there was a XStream#toXml (Object, HierarchicalStreamWriter).</p>
+
+<p>That would be proper Object Orientation.</p>
+
+<p>Thanks</p>
+            </div>
+</div>
+</div></div><div id="activitymodule" class="module toggle-wrap collapsed"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2" style="display:none">
+                    <div class="sortwrap">
+                                    <a class="icon icon-sort-down ajax-activity-content" rel="nofollow" href="/Old_XStream_Issues/271?actionOrder=desc" title="Ascending order - Click to sort in descending order"><span>Ascending order - Click to sort in descending order</span></a>
+                            </div>
+                <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-271">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/Old_XStream_Issues/271"><strong>All</strong></a>
+                        </li>
+                                
+            <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-271">
+                            <strong>Comments</strong>
+                        </li>
+                                
+            <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-271">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/Old_XStream_Issues/271"><strong>History</strong></a>
+                        </li>
+                                
+            <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-271">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/Old_XStream_Issues/271"><strong>Activity</strong></a>
+                        </li>
+                </ul>
+    </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    
+
+
+<div id="comment-61484" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/271?focusedCommentId=61484&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-61484" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61484_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_61484_verbose subText"><span class="date user-tz" title="19/Mar/06 2:43 PM"><time class="livestamp" datetime="2006-03-19T14:43-0600">19/Mar/06 2:43 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>The quickest way to implement your CDATA requirement would have been:</p>
+
+
+<p>XStream xstream = new XStream(<br>
+    new XppDriver() {<br>
+        public HierarchicalStreamWriter createWriter(Writer out) {<br>
+            return new PrettyPrintWriter(out) {<br>
+                protected void writeText(QuickWriter writer, String text) </p>
+{
+                    writer.write("&lt;[CDATA[");
+                    writer.write(text);
+                    writer.write("]]&gt;");
+                }
+<p>            }<br>
+        }<br>
+    }<br>
+);</p>
+
+<p>I agree, that it is not too obvious, but there are a quite lot of XML output options, that we could take into account. To support any case with some kind of parameter, XStream would become even more difficult. Please comment, if this does not work for you or you have special arguments for a direct CDATA support (that would have to be implemented for any supported XML writer).</p>
+
+<ul class="alternate" type="square">
+	<li>Jörg</li>
+</ul>
+ </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61484_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+ added a comment  - <span class="commentdate_61484_concise subText"><span class="date user-tz" title="19/Mar/06 2:43 PM"><time class="livestamp" datetime="2006-03-19T14:43-0600">19/Mar/06 2:43 PM</time></span></span>                    The quickest way to implement your CDATA requirement would have been: 
+
+
+ XStream xstream = new XStream( 
+    new XppDriver() { 
+        public HierarchicalStreamWriter createWriter(Writer out) { 
+            return new PrettyPrintWriter(out) { 
+                protected void writeText(QuickWriter writer, String text)  
+{
+                    writer.write("&lt;[CDATA[");
+                    writer.write(text);
+                    writer.write("]]&gt;");
+                }
+             } 
+        } 
+    } 
+); 
+
+ I agree, that it is not too obvious, but there are a quite lot of XML output options, that we could take into account. To support any case with some kind of parameter, XStream would become even more difficult. Please comment, if this does not work for you or you have special arguments for a direct CDATA support (that would have to be implemented for any supported XML writer). 
+
+ 
+	 Jörg 
+ 
+             </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-229675" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/Old_XStream_Issues/271?focusedCommentId=229675&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-229675" title="A permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="champagnetony" id="commentauthor_229675_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=champagnetony"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Tony Lauro</a>
+ added a comment  - <span class="commentdate_229675_verbose subText"><span class="date user-tz" title="23/Jul/10 1:19 PM"><time class="livestamp" datetime="2010-07-23T13:19-0500">23/Jul/10 1:19 PM</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>I know this was closed but I have had some similar issues with CDATA. I understand your solution but it puts CDATA on every single element, and I want more control over when the CDATA tag is used. The bug reporter's code which checks for a '&lt;' and then adds CDATA is a nice addition as a little insurance but as I mentioned, I want more fine grained control. This is what I have done - I created a CdataConverter which can be annotated onto a field with the @XSteamConverter annotation and then modified PrettyPrintWriter to include CDATA handling. I also added the insurance check as well. I also made a modification for to allow single quotes for attributes set with a boolean flag. </p>
+
+<p>Here is the code written in groovy: </p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java"><span class="code-keyword">package</span> xxx
+
+<span class="code-keyword">import</span> com.thoughtworks.xstream.converters.Converter;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.converters.MarshallingContext;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.converters.UnmarshallingContext;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.io.HierarchicalStreamReader;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+
+/**
+ * @author
+ *
+ */
+class CdataConverter <span class="code-keyword">implements</span> Converter {
+
+    /* (non-Javadoc)
+     * @see com.thoughtworks.xstream.converters.Converter#marshal(java.lang.<span class="code-object">Object</span>, com.thoughtworks.xstream.io.HierarchicalStreamWriter, com.thoughtworks.xstream.converters.MarshallingContext)
+     */
+    @Override
+    <span class="code-keyword">public</span> void marshal ( <span class="code-object">Object</span> text, HierarchicalStreamWriter writer, MarshallingContext context ) {
+        MyPrettyPrintWriter cdataWriter = (MyPrettyPrintWriter)writer.underlyingWriter()
+        cdataWriter.setUseCdata <span class="code-keyword">true</span>
+        writer.setValue((<span class="code-object">String</span>)text)
+        cdataWriter.setUseCdata <span class="code-keyword">false</span>
+    }
+
+    /* (non-Javadoc)
+     * @see com.thoughtworks.xstream.converters.Converter#unmarshal(com.thoughtworks.xstream.io.HierarchicalStreamReader, com.thoughtworks.xstream.converters.UnmarshallingContext)
+     */
+    @Override
+    <span class="code-keyword">public</span> <span class="code-object">Object</span> unmarshal ( HierarchicalStreamReader reader, UnmarshallingContext context ) {
+        <span class="code-keyword">return</span> reader.getValue()
+    }
+
+    /* (non-Javadoc)
+     * @see com.thoughtworks.xstream.converters.ConverterMatcher#canConvert(java.lang.<span class="code-object">Class</span>)
+     */
+    @Override
+    <span class="code-keyword">public</span> <span class="code-object">boolean</span> canConvert ( <span class="code-object">Class</span> clazz ) {
+        <span class="code-keyword">return</span> clazz == <span class="code-object">String</span>.class
+    }
+
+}
+</pre>
+</div></div>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">/*
+ * Copyright (C) 2004, 2005, 2006 Joe Walnes.
+ * Copyright (C) 2006, 2007, 2008 XStream Committers.
+ * All rights reserved.
+ *
+ * The software in <span class="code-keyword">this</span> <span class="code-keyword">package</span> is published under the terms of the BSD
+ * style license a copy of which has been included with <span class="code-keyword">this</span> distribution in
+ * the LICENSE.txt file.
+ * 
+ * Created on 07. March 2004 by Joe Walnes
+ */
+<span class="code-keyword">package</span> xxx
+
+<span class="code-keyword">import</span> java.io.Writer;
+
+<span class="code-keyword">import</span> com.thoughtworks.xstream.core.util.FastStack;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.core.util.QuickWriter;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.io.StreamException;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.io.xml.AbstractXmlWriter;
+<span class="code-keyword">import</span> com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer;
+
+/**
+ * Copied code from xstream 1.3.1 PrettyPrintWriter
+ * I have altered the code to allow <span class="code-keyword">for</span> CDATA handling
+ * and single or <span class="code-object">double</span> quotes. If PrettyPrintWriter had 
+ * allowed me to overwrite the writeText method to add single 
+ * quoting, I would not have needed to copy the whole class. 
+ * I am submitting <span class="code-keyword">this</span> change to the xstream maintainers.
+ */
+
+/**
+ * A simple writer that outputs XML in a pretty-printed indented stream.
+ * &lt;p&gt;
+ * By <span class="code-keyword">default</span>, the chars &lt;code&gt;&lt;pre&gt;
+ * &amp;amp; &amp;lt; &amp;gt; &amp;quot; ' \r
+ * &lt;/pre&gt;&lt;/code&gt; are escaped and replaced with a suitable XML entity. To alter <span class="code-keyword">this</span> behavior, override
+ * the the {@link #writeText(com.thoughtworks.xstream.core.util.QuickWriter, <span class="code-object">String</span>)} and
+ * {@link #writeAttributeValue(com.thoughtworks.xstream.core.util.QuickWriter, <span class="code-object">String</span>)} methods.
+ * &lt;/p&gt;
+ * &lt;p&gt;
+ * Note: Depending on the XML version some characters cannot be written. Especially a 0
+ * character is never valid in XML, neither directly nor as entity nor within CDATA. However, <span class="code-keyword">this</span> writer
+ * works by <span class="code-keyword">default</span> in a quirks mode, where it will write any character at least as character entity (even
+ * a <span class="code-keyword">null</span> character). You may <span class="code-keyword">switch</span> into XML_1_1 mode (which supports most characters) or XML_1_0
+ * that does only support a very limited number of control characters. See XML specification <span class="code-keyword">for</span> version
+ * &lt;a href=<span class="code-quote">"http:<span class="code-comment">//www.w3.org/TR/2006/REC-xml-20060816/#charsets"</span>&gt;1.0&lt;/a&gt; or
+</span> * &lt;a href=<span class="code-quote">"http:<span class="code-comment">//www.w3.org/TR/2006/REC-xml11-20060816/#charsets"</span>&gt;1.1&lt;/a&gt;. If a character is 
+</span> * not supported, a {@link StreamException} is thrown. Select a proper parser implementation that
+ * respects the version in the XML header (the Xpp3 parser will also read character entities of normally
+ * invalid characters).
+ * &lt;/p&gt;
+ * 
+ * @author Joe Walnes
+ * @author J&amp;ouml;rg Schaible
+ */
+<span class="code-keyword">public</span> class BroadHopPrettyPrintWriter <span class="code-keyword">extends</span> AbstractXmlWriter {
+
+    <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-object">int</span> XML_QUIRKS = -1;
+    <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-object">int</span> XML_1_0 = 0;
+    <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-object">int</span> XML_1_1 = 1;
+
+    <span class="code-keyword">private</span> <span class="code-keyword">final</span> QuickWriter writer;
+    <span class="code-keyword">private</span> <span class="code-keyword">final</span> FastStack elementStack = <span class="code-keyword">new</span> FastStack(16);
+    <span class="code-keyword">private</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] lineIndenter;
+    <span class="code-keyword">private</span> <span class="code-keyword">final</span> <span class="code-object">int</span> mode;
+
+    <span class="code-keyword">private</span> <span class="code-object">boolean</span> tagInProgress;
+    <span class="code-keyword">protected</span> <span class="code-object">int</span> depth;
+    <span class="code-keyword">private</span> <span class="code-object">boolean</span> readyForNewLine;
+    <span class="code-keyword">private</span> <span class="code-object">boolean</span> tagIsEmpty;
+    <span class="code-keyword">private</span> <span class="code-object">String</span> newLine;
+    <span class="code-keyword">private</span> <span class="code-object">boolean</span> useSingleQuote = <span class="code-keyword">false</span>;
+    <span class="code-keyword">private</span> <span class="code-object">String</span> CDATA_START = <span class="code-quote">"&lt;![CDATA["</span>;
+    <span class="code-keyword">private</span> <span class="code-object">String</span> CDATA_END = <span class="code-quote">"]]&gt;"</span>;
+    <span class="code-keyword">private</span> <span class="code-object">boolean</span> useCdata;
+
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] NULL = <span class="code-quote">"&amp;#x0;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] AMP = <span class="code-quote">"&amp;amp;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] LT = <span class="code-quote">"&amp;lt;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] GT = <span class="code-quote">"&amp;gt;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] CR = <span class="code-quote">"&amp;#xd;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] QUOT = <span class="code-quote">"&amp;quot;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] APOS = <span class="code-quote">"&amp;apos;"</span>.toCharArray();
+    <span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">final</span> <span class="code-object">char</span>[] CLOSE = <span class="code-quote">"&lt;/"</span>.toCharArray();
+
+    <span class="code-keyword">private</span> MyPrettyPrintWriter(
+        Writer writer, <span class="code-object">int</span> mode, <span class="code-object">char</span>[] lineIndenter, XmlFriendlyReplacer replacer,
+        <span class="code-object">String</span> newLine) {
+        <span class="code-keyword">super</span>(replacer);
+        <span class="code-keyword">this</span>.writer = <span class="code-keyword">new</span> QuickWriter(writer);
+        <span class="code-keyword">this</span>.lineIndenter = lineIndenter;
+        <span class="code-keyword">this</span>.newLine = newLine;
+        <span class="code-keyword">this</span>.mode = mode;
+        <span class="code-keyword">if</span> (mode &lt; XML_QUIRKS || mode &gt; XML_1_1) {
+            <span class="code-keyword">throw</span> <span class="code-keyword">new</span> IllegalArgumentException(<span class="code-quote">"Not a valid XML mode"</span>);
+        }
+    }
+
+    /**
+     * @since 1.2
+     * @deprecated since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(
+        Writer writer, <span class="code-object">char</span>[] lineIndenter, <span class="code-object">String</span> newLine, XmlFriendlyReplacer replacer) {
+        <span class="code-keyword">this</span>(writer, XML_QUIRKS, lineIndenter, replacer, newLine);
+    }
+
+    /**
+     * @since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(
+        Writer writer, <span class="code-object">int</span> mode, <span class="code-object">char</span>[] lineIndenter, XmlFriendlyReplacer replacer) {
+        <span class="code-keyword">this</span>(writer, mode, lineIndenter, replacer, <span class="code-quote">"\n"</span>);
+    }
+
+    /**
+     * @deprecated since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">char</span>[] lineIndenter, <span class="code-object">String</span> newLine) {
+        <span class="code-keyword">this</span>(writer, lineIndenter, newLine, <span class="code-keyword">new</span> XmlFriendlyReplacer());
+    }
+
+    /**
+     * @since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">int</span> mode, <span class="code-object">char</span>[] lineIndenter) {
+        <span class="code-keyword">this</span>(writer, mode, lineIndenter, <span class="code-keyword">new</span> XmlFriendlyReplacer());
+    }
+
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">char</span>[] lineIndenter) {
+        <span class="code-keyword">this</span>(writer, lineIndenter, <span class="code-quote">"\n"</span>);
+    }
+
+    /**
+     * @deprecated since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">String</span> lineIndenter, <span class="code-object">String</span> newLine) {
+        <span class="code-keyword">this</span>(writer, lineIndenter.toCharArray(), newLine);
+    }
+
+    /**
+     * @since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">int</span> mode, <span class="code-object">String</span> lineIndenter) {
+        <span class="code-keyword">this</span>(writer, mode, lineIndenter.toCharArray());
+    }
+
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">String</span> lineIndenter) {
+        <span class="code-keyword">this</span>(writer, lineIndenter.toCharArray());
+    }
+
+    /**
+     * @since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">int</span> mode, XmlFriendlyReplacer replacer) {
+        <span class="code-keyword">this</span>(writer, mode, <span class="code-keyword">new</span> <span class="code-object">char</span>[]{' ', ' '}, replacer);
+    }
+
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, XmlFriendlyReplacer replacer) {
+        <span class="code-keyword">this</span>(writer, <span class="code-keyword">new</span> <span class="code-object">char</span>[]{' ', ' '}, <span class="code-quote">"\n"</span>, replacer);
+    }
+
+    /**
+     * @since 1.3
+     */
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer, <span class="code-object">int</span> mode) {
+        <span class="code-keyword">this</span>(writer, mode, <span class="code-keyword">new</span> <span class="code-object">char</span>[]{' ', ' '});
+    }
+
+    <span class="code-keyword">public</span> MyPrettyPrintWriter(Writer writer) {
+        <span class="code-keyword">this</span>(writer, <span class="code-keyword">new</span> <span class="code-object">char</span>[]{' ', ' '});
+    }
+
+    <span class="code-keyword">public</span> void startNode(<span class="code-object">String</span> name) {
+        <span class="code-object">String</span> escapedName = escapeXmlName(name);
+        tagIsEmpty = <span class="code-keyword">false</span>;
+        finishTag();
+        writer.write('&lt;');
+        writer.write(escapedName);
+        elementStack.push(escapedName);
+        tagInProgress = <span class="code-keyword">true</span>;
+        depth++ ;
+        readyForNewLine = <span class="code-keyword">true</span>;
+        tagIsEmpty = <span class="code-keyword">true</span>;
+    }
+
+    <span class="code-keyword">public</span> void startNode(<span class="code-object">String</span> name, <span class="code-object">Class</span> clazz) {
+        startNode(name);
+    }
+
+    <span class="code-keyword">public</span> void setValue(<span class="code-object">String</span> text) {
+        readyForNewLine = <span class="code-keyword">false</span>;
+        tagIsEmpty = <span class="code-keyword">false</span>;
+        finishTag();
+
+        <span class="code-keyword">if</span> (text.indexOf ('&lt;') != -1) { useCdata = <span class="code-keyword">true</span>; }
+        writeText(writer, text);
+        useCdata = <span class="code-keyword">false</span>;        
+    }
+
+    /*<span class="code-keyword">public</span> void addAttribute(<span class="code-object">String</span> key, <span class="code-object">String</span> value) {
+        writer.write(' ');
+        writer.write(escapeXmlName(key));
+        writer.write('=');
+        writer.write('\"');
+        writeAttributeValue(writer, value);
+        writer.write('\"');
+    }*/
+
+    <span class="code-keyword">public</span> void addAttribute(<span class="code-object">String</span> key, <span class="code-object">String</span> value) {
+        writer.write(' ');
+        writer.write(escapeXmlName(key));
+        writer.write('=');
+        <span class="code-keyword">if</span>(useSingleQuote) {
+            writer.write(<span class="code-quote">"'"</span>);
+        }
+        <span class="code-keyword">else</span> {
+            writer.write('\"');
+        }
+        writeAttributeValue(writer, value);
+        <span class="code-keyword">if</span>(useSingleQuote) {
+            writer.write(<span class="code-quote">"'"</span>);
+        }
+        <span class="code-keyword">else</span> {
+            writer.write('\"');
+        }
+    }
+
+    <span class="code-keyword">protected</span> void writeAttributeValue(QuickWriter writer, <span class="code-object">String</span> text) {
+        writeText(text);
+    }
+
+    <span class="code-keyword">protected</span> void writeText(QuickWriter writer, <span class="code-object">String</span> text) {
+        <span class="code-keyword">if</span> (!useCdata) {
+            writeText(text);
+        } <span class="code-keyword">else</span> {
+            writer.write(CDATA_START);
+            writer.write(validateCdata(text)); 
+            writer.write(CDATA_END);
+        }
+    }
+    
+    <span class="code-keyword">protected</span> <span class="code-object">String</span> validateCdata(<span class="code-object">String</span> text) {
+        <span class="code-keyword">if</span>(text.contains(CDATA_END))
+            <span class="code-keyword">throw</span> <span class="code-keyword">new</span> StreamException(<span class="code-quote">"invalid character sequence <span class="code-keyword">for</span> CDATA: ]]&gt;"</span>);
+        
+        <span class="code-keyword">return</span> text;
+    }
+
+    /*
+    <span class="code-keyword">protected</span> void writeText(QuickWriter writer, <span class="code-object">String</span> text) {
+        writeText(text);
+    }
+    */
+
+    <span class="code-keyword">private</span> void writeText(<span class="code-object">String</span> text) {
+        <span class="code-object">int</span> length = text.length();
+        <span class="code-keyword">for</span> (<span class="code-object">int</span> i = 0; i &lt; length; i++ ) {
+            <span class="code-object">char</span> c = text.charAt(i);
+            <span class="code-keyword">switch</span> (c) {
+            <span class="code-keyword">case</span> '\0':
+                <span class="code-keyword">if</span> (mode == XML_QUIRKS) {
+                    <span class="code-keyword">this</span>.writer.write(NULL);
+                } <span class="code-keyword">else</span> {
+                    <span class="code-keyword">throw</span> <span class="code-keyword">new</span> StreamException(<span class="code-quote">"Invalid character 0x0 in XML stream"</span>);
+                }
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '&amp;':
+                <span class="code-keyword">this</span>.writer.write(AMP);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '&lt;':
+                <span class="code-keyword">this</span>.writer.write(LT);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '&gt;':
+                <span class="code-keyword">this</span>.writer.write(GT);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '"':
+                <span class="code-keyword">this</span>.writer.write(QUOT);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '\'':
+                <span class="code-keyword">this</span>.writer.write(APOS);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '\r':
+                <span class="code-keyword">this</span>.writer.write(CR);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">case</span> '\t':
+            <span class="code-keyword">case</span> '\n':
+                <span class="code-keyword">this</span>.writer.write(c);
+                <span class="code-keyword">break</span>;
+            <span class="code-keyword">default</span>:
+                <span class="code-keyword">if</span> (<span class="code-object">Character</span>.isDefined(c) &amp;&amp; !<span class="code-object">Character</span>.isISOControl(c)) {
+                    <span class="code-keyword">if</span> (mode != XML_QUIRKS) {
+                        <span class="code-keyword">if</span> (c &gt; '\ud7ff' &amp;&amp; c &lt; '\ue000') {
+                            <span class="code-keyword">throw</span> <span class="code-keyword">new</span> StreamException(<span class="code-quote">"Invalid character 0x"</span>
+                                + <span class="code-object">Integer</span>.toHexString(c)
+                                + <span class="code-quote">" in XML stream"</span>);
+                        }
+                    }
+                    <span class="code-keyword">this</span>.writer.write(c);
+                } <span class="code-keyword">else</span> {
+                    <span class="code-keyword">if</span> (mode == XML_1_0) {
+                        <span class="code-keyword">if</span> (c &lt; 9
+                            || c == '\u000b'
+                            || c == '\u000c'
+                            || c == '\u000e'
+                            || c == '\u000f') {
+                            <span class="code-keyword">throw</span> <span class="code-keyword">new</span> StreamException(<span class="code-quote">"Invalid character 0x"</span>
+                                + <span class="code-object">Integer</span>.toHexString(c)
+                                + <span class="code-quote">" in XML 1.0 stream"</span>);
+                        }
+                    }
+                    <span class="code-keyword">if</span> (mode != XML_QUIRKS) {
+                        <span class="code-keyword">if</span> (c == '\ufffe' || c == '\uffff') {
+                            <span class="code-keyword">throw</span> <span class="code-keyword">new</span> StreamException(<span class="code-quote">"Invalid character 0x"</span>
+                                + <span class="code-object">Integer</span>.toHexString(c)
+                                + <span class="code-quote">" in XML stream"</span>);
+                        }
+                    }
+                    <span class="code-keyword">this</span>.writer.write(<span class="code-quote">"&amp;#x"</span>);
+                    <span class="code-keyword">this</span>.writer.write(<span class="code-object">Integer</span>.toHexString(c));
+                    <span class="code-keyword">this</span>.writer.write(';');
+                }
+            }
+        }
+    }
+
+    <span class="code-keyword">public</span> void endNode() {
+        depth-- ;
+        <span class="code-keyword">if</span> (tagIsEmpty) {
+            writer.write('/');
+            readyForNewLine = <span class="code-keyword">false</span>;
+            finishTag();
+            elementStack.popSilently();
+        } <span class="code-keyword">else</span> {
+            finishTag();
+            writer.write(CLOSE);
+            writer.write((<span class="code-object">String</span>)elementStack.pop());
+            writer.write('&gt;');
+        }
+        readyForNewLine = <span class="code-keyword">true</span>;
+        <span class="code-keyword">if</span> (depth == 0) {
+            writer.flush();
+        }
+    }
+
+    <span class="code-keyword">private</span> void finishTag() {
+        <span class="code-keyword">if</span> (tagInProgress) {
+            writer.write('&gt;');
+        }
+        tagInProgress = <span class="code-keyword">false</span>;
+        <span class="code-keyword">if</span> (readyForNewLine) {
+            endOfLine();
+        }
+        readyForNewLine = <span class="code-keyword">false</span>;
+        tagIsEmpty = <span class="code-keyword">false</span>;
+    }
+
+    <span class="code-keyword">protected</span> void endOfLine() {
+        writer.write(getNewLine());
+        <span class="code-keyword">for</span> (<span class="code-object">int</span> i = 0; i &lt; depth; i++ ) {
+            writer.write(lineIndenter);
+        }
+    }
+
+    <span class="code-keyword">public</span> void flush() {
+        writer.flush();
+    }
+
+    <span class="code-keyword">public</span> void close() {
+        writer.close();
+    }
+
+    <span class="code-keyword">protected</span> <span class="code-object">String</span> getNewLine() {
+        <span class="code-keyword">return</span> newLine;
+    }
+
+    <span class="code-keyword">public</span> <span class="code-object">boolean</span> useSingleQuote() {
+        <span class="code-keyword">return</span> useSingleQuote;
+    }
+
+    <span class="code-keyword">public</span> void setUseSingleQuote(<span class="code-object">boolean</span> useSingleQuote) {
+        <span class="code-keyword">this</span>.useSingleQuote = useSingleQuote;
+    }
+    
+    <span class="code-keyword">public</span> <span class="code-object">boolean</span> useCdata() {
+        <span class="code-keyword">return</span> useCdata;
+    }
+
+    <span class="code-keyword">public</span> void setUseCdata(<span class="code-object">boolean</span> useSingleQuote) {
+        <span class="code-keyword">this</span>.useCdata = useSingleQuote;
+    }
+}
+</pre>
+</div></div> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="champagnetony" id="commentauthor_229675_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=champagnetony"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Tony Lauro</a>
+ added a comment  - <span class="commentdate_229675_concise subText"><span class="date user-tz" title="23/Jul/10 1:19 PM"><time class="livestamp" datetime="2010-07-23T13:19-0500">23/Jul/10 1:19 PM</time></span></span>                    I know this was closed but I have had some similar issues with CDATA. I understand your solution but it puts CDATA on every single element, and I want more control over when the CDATA tag is used. The bug reporter's code which checks for a '&lt;' and then adds CDATA is a nice addition as a little insurance but as I mentioned, I want more fine grained control. This is what I have done - I created a CdataConverter which can be annotated onto a field with the @XSteamConverter annotation and then modified PrettyPrintWriter to include CDATA handling. I also added the insurance check as well. I also made a modification for to allow single quotes for attributes set with a boolean flag.  
+
+ Here is the code written in groovy:  
+
+  
+ 
+ package  xxx
+
+ import  com.thoughtworks.xstream.converters.Converter;
+ import  com.thoughtworks.xstream.converters.MarshallingContext;
+ import  com.thoughtworks.xstream.converters.UnmarshallingContext;
+ import  com.thoughtworks.xstream.io.HierarchicalStreamReader;
+ import  com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+
+/**
+ * @author
+ *
+ */
+class CdataConverter  implements  Converter {
+
+    /* (non-Javadoc)
+     * @see com.thoughtworks.xstream.converters.Converter#marshal(java.lang. Object , com.thoughtworks.xstream.io.HierarchicalStreamWriter, com.thoughtworks.xstream.converters.MarshallingContext)
+     */
+    @Override
+     public  void marshal (  Object  text, HierarchicalStreamWriter writer, MarshallingContext context ) {
+        MyPrettyPrintWriter cdataWriter = (MyPrettyPrintWriter)writer.underlyingWriter()
+        cdataWriter.setUseCdata  true 
+        writer.setValue(( String )text)
+        cdataWriter.setUseCdata  false 
+    }
+
+    /* (non-Javadoc)
+     * @see com.thoughtworks.xstream.converters.Converter#unmarshal(com.thoughtworks.xstream.io.HierarchicalStreamReader, com.thoughtworks.xstream.converters.UnmarshallingContext)
+     */
+    @Override
+     public   Object  unmarshal ( HierarchicalStreamReader reader, UnmarshallingContext context ) {
+         return  reader.getValue()
+    }
+
+    /* (non-Javadoc)
+     * @see com.thoughtworks.xstream.converters.ConverterMatcher#canConvert(java.lang. Class )
+     */
+    @Override
+     public   boolean  canConvert (  Class  clazz ) {
+         return  clazz ==  String .class
+    }
+
+}
+ 
+  
+
+  
+ 
+/*
+ * Copyright (C) 2004, 2005, 2006 Joe Walnes.
+ * Copyright (C) 2006, 2007, 2008 XStream Committers.
+ * All rights reserved.
+ *
+ * The software in  this   package  is published under the terms of the BSD
+ * style license a copy of which has been included with  this  distribution in
+ * the LICENSE.txt file.
+ * 
+ * Created on 07. March 2004 by Joe Walnes
+ */
+ package  xxx
+
+ import  java.io.Writer;
+
+ import  com.thoughtworks.xstream.core.util.FastStack;
+ import  com.thoughtworks.xstream.core.util.QuickWriter;
+ import  com.thoughtworks.xstream.io.StreamException;
+ import  com.thoughtworks.xstream.io.xml.AbstractXmlWriter;
+ import  com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer;
+
+/**
+ * Copied code from xstream 1.3.1 PrettyPrintWriter
+ * I have altered the code to allow  for  CDATA handling
+ * and single or  double  quotes. If PrettyPrintWriter had 
+ * allowed me to overwrite the writeText method to add single 
+ * quoting, I would not have needed to copy the whole class. 
+ * I am submitting  this  change to the xstream maintainers.
+ */
+
+/**
+ * A simple writer that outputs XML in a pretty-printed indented stream.
+ * &lt;p&gt;
+ * By  default , the chars &lt;code&gt;&lt;pre&gt;
+ * &amp;amp; &amp;lt; &amp;gt; &amp;quot; ' \r
+ * &lt;/pre&gt;&lt;/code&gt; are escaped and replaced with a suitable XML entity. To alter  this  behavior, override
+ * the the {@link #writeText(com.thoughtworks.xstream.core.util.QuickWriter,  String )} and
+ * {@link #writeAttributeValue(com.thoughtworks.xstream.core.util.QuickWriter,  String )} methods.
+ * &lt;/p&gt;
+ * &lt;p&gt;
+ * Note: Depending on the XML version some characters cannot be written. Especially a 0
+ * character is never valid in XML, neither directly nor as entity nor within CDATA. However,  this  writer
+ * works by  default  in a quirks mode, where it will write any character at least as character entity (even
+ * a  null  character). You may  switch  into XML_1_1 mode (which supports most characters) or XML_1_0
+ * that does only support a very limited number of control characters. See XML specification  for  version
+ * &lt;a href= "http: //www.w3.org/TR/2006/REC-xml-20060816/#charsets" &gt;1.0&lt;/a&gt; or
+  * &lt;a href= "http: //www.w3.org/TR/2006/REC-xml11-20060816/#charsets" &gt;1.1&lt;/a&gt;. If a character is 
+  * not supported, a {@link StreamException} is thrown. Select a proper parser implementation that
+ * respects the version in the XML header (the Xpp3 parser will also read character entities of normally
+ * invalid characters).
+ * &lt;/p&gt;
+ * 
+ * @author Joe Walnes
+ * @author J&amp;ouml;rg Schaible
+ */
+ public  class BroadHopPrettyPrintWriter  extends  AbstractXmlWriter {
+
+     public   static   int  XML_QUIRKS = -1;
+     public   static   int  XML_1_0 = 0;
+     public   static   int  XML_1_1 = 1;
+
+     private   final  QuickWriter writer;
+     private   final  FastStack elementStack =  new  FastStack(16);
+     private   final   char [] lineIndenter;
+     private   final   int  mode;
+
+     private   boolean  tagInProgress;
+     protected   int  depth;
+     private   boolean  readyForNewLine;
+     private   boolean  tagIsEmpty;
+     private   String  newLine;
+     private   boolean  useSingleQuote =  false ;
+     private   String  CDATA_START =  "&lt;![CDATA[" ;
+     private   String  CDATA_END =  "]]&gt;" ;
+     private   boolean  useCdata;
+
+     private   static   final   char [] NULL =  "&amp;#x0;" .toCharArray();
+     private   static   final   char [] AMP =  "&amp;amp;" .toCharArray();
+     private   static   final   char [] LT =  "&amp;lt;" .toCharArray();
+     private   static   final   char [] GT =  "&amp;gt;" .toCharArray();
+     private   static   final   char [] CR =  "&amp;#xd;" .toCharArray();
+     private   static   final   char [] QUOT =  "&amp;quot;" .toCharArray();
+     private   static   final   char [] APOS =  "&amp;apos;" .toCharArray();
+     private   static   final   char [] CLOSE =  "&lt;/" .toCharArray();
+
+     private  MyPrettyPrintWriter(
+        Writer writer,  int  mode,  char [] lineIndenter, XmlFriendlyReplacer replacer,
+         String  newLine) {
+         super (replacer);
+         this .writer =  new  QuickWriter(writer);
+         this .lineIndenter = lineIndenter;
+         this .newLine = newLine;
+         this .mode = mode;
+         if  (mode &lt; XML_QUIRKS || mode &gt; XML_1_1) {
+             throw   new  IllegalArgumentException( "Not a valid XML mode" );
+        }
+    }
+
+    /**
+     * @since 1.2
+     * @deprecated since 1.3
+     */
+     public  MyPrettyPrintWriter(
+        Writer writer,  char [] lineIndenter,  String  newLine, XmlFriendlyReplacer replacer) {
+         this (writer, XML_QUIRKS, lineIndenter, replacer, newLine);
+    }
+
+    /**
+     * @since 1.3
+     */
+     public  MyPrettyPrintWriter(
+        Writer writer,  int  mode,  char [] lineIndenter, XmlFriendlyReplacer replacer) {
+         this (writer, mode, lineIndenter, replacer,  "\n" );
+    }
+
+    /**
+     * @deprecated since 1.3
+     */
+     public  MyPrettyPrintWriter(Writer writer,  char [] lineIndenter,  String  newLine) {
+         this (writer, lineIndenter, newLine,  new  XmlFriendlyReplacer());
+    }
+
+    /**
+     * @since 1.3
+     */
+     public  MyPrettyPrintWriter(Writer writer,  int  mode,  char [] lineIndenter) {
+         this (writer, mode, lineIndenter,  new  XmlFriendlyReplacer());
+    }
+
+     public  MyPrettyPrintWriter(Writer writer,  char [] lineIndenter) {
+         this (writer, lineIndenter,  "\n" );
+    }
+
+    /**
+     * @deprecated since 1.3
+     */
+     public  MyPrettyPrintWriter(Writer writer,  String  lineIndenter,  String  newLine) {
+         this (writer, lineIndenter.toCharArray(), newLine);
+    }
+
+    /**
+     * @since 1.3
+     */
+     public  MyPrettyPrintWriter(Writer writer,  int  mode,  String  lineIndenter) {
+         this (writer, mode, lineIndenter.toCharArray());
+    }
+
+     public  MyPrettyPrintWriter(Writer writer,  String  lineIndenter) {
+         this (writer, lineIndenter.toCharArray());
+    }
+
+    /**
+     * @since 1.3
+     */
+     public  MyPrettyPrintWriter(Writer writer,  int  mode, XmlFriendlyReplacer replacer) {
+         this (writer, mode,  new   char []{' ', ' '}, replacer);
+    }
+
+     public  MyPrettyPrintWriter(Writer writer, XmlFriendlyReplacer replacer) {
+         this (writer,  new   char []{' ', ' '},  "\n" , replacer);
+    }
+
+    /**
+     * @since 1.3
+     */
+     public  MyPrettyPrintWriter(Writer writer,  int  mode) {
+         this (writer, mode,  new   char []{' ', ' '});
+    }
+
+     public  MyPrettyPrintWriter(Writer writer) {
+         this (writer,  new   char []{' ', ' '});
+    }
+
+     public  void startNode( String  name) {
+         String  escapedName = escapeXmlName(name);
+        tagIsEmpty =  false ;
+        finishTag();
+        writer.write('&lt;');
+        writer.write(escapedName);
+        elementStack.push(escapedName);
+        tagInProgress =  true ;
+        depth++ ;
+        readyForNewLine =  true ;
+        tagIsEmpty =  true ;
+    }
+
+     public  void startNode( String  name,  Class  clazz) {
+        startNode(name);
+    }
+
+     public  void setValue( String  text) {
+        readyForNewLine =  false ;
+        tagIsEmpty =  false ;
+        finishTag();
+
+         if  (text.indexOf ('&lt;') != -1) { useCdata =  true ; }
+        writeText(writer, text);
+        useCdata =  false ;        
+    }
+
+    /* public  void addAttribute( String  key,  String  value) {
+        writer.write(' ');
+        writer.write(escapeXmlName(key));
+        writer.write('=');
+        writer.write('\"');
+        writeAttributeValue(writer, value);
+        writer.write('\"');
+    }*/
+
+     public  void addAttribute( String  key,  String  value) {
+        writer.write(' ');
+        writer.write(escapeXmlName(key));
+        writer.write('=');
+         if (useSingleQuote) {
+            writer.write( "'" );
+        }
+         else  {
+            writer.write('\"');
+        }
+        writeAttributeValue(writer, value);
+         if (useSingleQuote) {
+            writer.write( "'" );
+        }
+         else  {
+            writer.write('\"');
+        }
+    }
+
+     protected  void writeAttributeValue(QuickWriter writer,  String  text) {
+        writeText(text);
+    }
+
+     protected  void writeText(QuickWriter writer,  String  text) {
+         if  (!useCdata) {
+            writeText(text);
+        }  else  {
+            writer.write(CDATA_START);
+            writer.write(validateCdata(text)); 
+            writer.write(CDATA_END);
+        }
+    }
+    
+     protected   String  validateCdata( String  text) {
+         if (text.contains(CDATA_END))
+             throw   new  StreamException( "invalid character sequence  for  CDATA: ]]&gt;" );
+        
+         return  text;
+    }
+
+    /*
+     protected  void writeText(QuickWriter writer,  String  text) {
+        writeText(text);
+    }
+    */
+
+     private  void writeText( String  text) {
+         int  length = text.length();
+         for  ( int  i = 0; i &lt; length; i++ ) {
+             char  c = text.charAt(i);
+             switch  (c) {
+             case  '\0':
+                 if  (mode == XML_QUIRKS) {
+                     this .writer.write(NULL);
+                }  else  {
+                     throw   new  StreamException( "Invalid character 0x0 in XML stream" );
+                }
+                 break ;
+             case  '&amp;':
+                 this .writer.write(AMP);
+                 break ;
+             case  '&lt;':
+                 this .writer.write(LT);
+                 break ;
+             case  '&gt;':
+                 this .writer.write(GT);
+                 break ;
+             case  '"':
+                 this .writer.write(QUOT);
+                 break ;
+             case  '\'':
+                 this .writer.write(APOS);
+                 break ;
+             case  '\r':
+                 this .writer.write(CR);
+                 break ;
+             case  '\t':
+             case  '\n':
+                 this .writer.write(c);
+                 break ;
+             default :
+                 if  ( Character .isDefined(c) &amp;&amp; ! Character .isISOControl(c)) {
+                     if  (mode != XML_QUIRKS) {
+                         if  (c &gt; '\ud7ff' &amp;&amp; c &lt; '\ue000') {
+                             throw   new  StreamException( "Invalid character 0x" 
+                                +  Integer .toHexString(c)
+                                +  " in XML stream" );
+                        }
+                    }
+                     this .writer.write(c);
+                }  else  {
+                     if  (mode == XML_1_0) {
+                         if  (c &lt; 9
+                            || c == '\u000b'
+                            || c == '\u000c'
+                            || c == '\u000e'
+                            || c == '\u000f') {
+                             throw   new  StreamException( "Invalid character 0x" 
+                                +  Integer .toHexString(c)
+                                +  " in XML 1.0 stream" );
+                        }
+                    }
+                     if  (mode != XML_QUIRKS) {
+                         if  (c == '\ufffe' || c == '\uffff') {
+                             throw   new  StreamException( "Invalid character 0x" 
+                                +  Integer .toHexString(c)
+                                +  " in XML stream" );
+                        }
+                    }
+                     this .writer.write( "&amp;#x" );
+                     this .writer.write( Integer .toHexString(c));
+                     this .writer.write(';');
+                }
+            }
+        }
+    }
+
+     public  void endNode() {
+        depth-- ;
+         if  (tagIsEmpty) {
+            writer.write('/');
+            readyForNewLine =  false ;
+            finishTag();
+            elementStack.popSilently();
+        }  else  {
+            finishTag();
+            writer.write(CLOSE);
+            writer.write(( String )elementStack.pop());
+            writer.write('&gt;');
+        }
+        readyForNewLine =  true ;
+         if  (depth == 0) {
+            writer.flush();
+        }
+    }
+
+     private  void finishTag() {
+         if  (tagInProgress) {
+            writer.write('&gt;');
+        }
+        tagInProgress =  false ;
+         if  (readyForNewLine) {
+            endOfLine();
+        }
+        readyForNewLine =  false ;
+        tagIsEmpty =  false ;
+    }
+
+     protected  void endOfLine() {
+        writer.write(getNewLine());
+         for  ( int  i = 0; i &lt; depth; i++ ) {
+            writer.write(lineIndenter);
+        }
+    }
+
+     public  void flush() {
+        writer.flush();
+    }
+
+     public  void close() {
+        writer.close();
+    }
+
+     protected   String  getNewLine() {
+         return  newLine;
+    }
+
+     public   boolean  useSingleQuote() {
+         return  useSingleQuote;
+    }
+
+     public  void setUseSingleQuote( boolean  useSingleQuote) {
+         this .useSingleQuote = useSingleQuote;
+    }
+    
+     public   boolean  useCdata() {
+         return  useCdata;
+    }
+
+     public  void setUseCdata( boolean  useSingleQuote) {
+         this .useCdata = useSingleQuote;
+    }
+}
+ 
+               </div>
+        </div>
+    </div>
+</div>
+                             </div>
+    </div>
+</div></div></div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id="peoplemodule" class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+    <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
+    Unassigned
+</span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_catull" rel="catull">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-2.png"></span></span>
+            Carlo Dapor
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                        
+                                                                                                        <span id="vote-label" title="You have to be logged in to vote for an issue.">Vote for this issue</span>
+                                            </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <span id="watcher-data" class="aui-badge watch-state-off">1</span>
+                        
+                                                                                <span id="watch-label" title="You have to be logged in to watch an issue.">Start watching this issue</span>
+                                            </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id="datesmodule" class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz" title="13/Feb/06 7:16 AM">
+
+                <span data-name="Created" id="create-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-02-13T07:16-0600">13/Feb/06 7:16 AM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz" title="23/Jul/10 1:19 PM">
+
+                <span data-name="Updated" id="updated-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2010-07-23T13:19-0500">23/Jul/10 1:19 PM</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz" title="19/Mar/06 2:43 PM">
+
+                <span data-name="Resolved" id="resolved-date" data-fieldtype="datetime">
+                                                                        <time class="livestamp" datetime="2006-03-19T14:43-0600">19/Mar/06 2:43 PM</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input title="autocompleteEnabled" value="true" type="hidden">
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+
+
+<div class="footer-body">
+    <ul>
+        <li>
+                        <a href="http://www.atlassian.com/software/jira">Atlassian JIRA</a>
+
+                                                    
+                        
+            <span id="footer-build-information">(v6.1.6#6162-<span title="7af547ce7c84dbb7c1e345a65437ed7b85efffa2" data-commit-id="7af547ce7c84dbb7c1e345a65437ed7b85efffa2}">sha1:7af547c</span>)</span>
+        </li>
+        <li>
+            <a id="about-link" href="https://jira.codehaus.org/secure/AboutPage.jspa">About JIRA</a>
+        </li>
+        <li>
+                                    <a id="footer-report-problem-link" href="https://jira.codehaus.org/secure/CreateIssue%21default.jspa">Report a problem</a>
+        </li>
+    </ul>
+            <ul>
+            <li class="licensemessage">
+                                    Powered by a free Atlassian <a href="http://www.atlassian.com/software/jira">JIRA</a> open source license for Codehaus. Try JIRA - <a href="http://www.atlassian.com/software/jira">bug tracking software</a> for <i>your</i> team.
+
+                            </li>
+        </ul>
+    </div>
+
+<form id="jira_request_timing_info" class="dont-default-focus">
+	<fieldset class="parameters hidden">
+
+
+
+
+		<input title="jira.session.expiry.in.mins" value="299" type="hidden">
+
+	</fieldset>
+</form>
+<!--
+	                 
+	          
+	               
+	                 
+	        CONCURRENT REQUESTS : 4
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input title="loggedInUser" value="" type="hidden">
+    <input title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation." type="hidden">
+    <input title="JiraVersion" value="6.1.6" type="hidden">
+    <input title="ajaxUnauthorised" value="You are not authorised to perform this operation.  Please log in." type="hidden">
+    <input title="baseURL" value="https://jira.codehaus.org:443" type="hidden">
+    <input title="ajaxCommsError" value="The JIRA server could not be contacted.  This may be a temporary glitch or the server may be down." type="hidden">
+    <input title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation." type="hidden">
+    <input title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser" type="hidden">
+    <input title="ajaxErrorDialogHeading" value="Communications Breakdown" type="hidden">
+
+    <input title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost." type="hidden">
+    <input title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog." type="hidden">
+    <input title="keyType" value="Type" type="hidden">
+    <input title="keyThen" value="then" type="hidden">
+    <input title="dblClickToExpand" value="Double click to expand" type="hidden">
+    <input title="actions" value="Actions" type="hidden">
+    <input title="removeItem" value="Remove" type="hidden">
+    <input title="workflow" value="Workflow" type="hidden">
+    <input title="labelNew" value="New Label" type="hidden">
+    <input title="issueActionsHint" value="Begin typing for available operations or press down to see all" type="hidden">
+    <input title="closelink" value="Close" type="hidden">
+    <input title="dotOperations" value="Operations" type="hidden">
+    <input title="dotLoading" value="Loading..." type="hidden">
+    <input title="frotherSuggestions" value="Suggestions" type="hidden">
+    <input title="frotherNomatches" value="No Matches" type="hidden">
+    <input title="multiselectVersionsError" value="{0} is not a valid version." type="hidden">
+    <input title="multiselectComponentsError" value="{0} is not a valid component." type="hidden">
+    <input title="multiselectGenericError" value="The value {0} is invalid." type="hidden">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:void(0);" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:void(0);" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div class="navigator-sidebar collapsed ui-popout ui-popout-detached ui-popout-collapsed" id="navigator-sidebar"><a class="toggle-filter-panel" href="#" title="Dock the filters panel ([)"></a></div><div style="display: none;" class="jira-dialog box-shadow" id="edit-issue-dialog"><div class="jira-dialog-content"></div></div><div style="display: none;" class="jira-dialog box-shadow" id="create-subtask-dialog"><div class="jira-dialog-content"></div></div></body></html>

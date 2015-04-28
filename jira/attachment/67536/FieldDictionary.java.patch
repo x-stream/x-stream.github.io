@@ -1,0 +1,179 @@
+Index: src/java/com/thoughtworks/xstream/converters/reflection/FieldDictionary.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/converters/reflection/FieldDictionary.java	(revision 2361)
++++ src/java/com/thoughtworks/xstream/converters/reflection/FieldDictionary.java	(working copy)
+@@ -2,11 +2,9 @@
+  * Copyright (C) 2004, 2005, 2006 Joe Walnes.
+  * Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014 XStream Committers.
+  * All rights reserved.
+- *
+  * The software in this package is published under the terms of the BSD
+  * style license a copy of which has been included with this distribution in
+  * the LICENSE.txt file.
+- * 
+  * Created on 14. May 2004 by Joe Walnes
+  */
+ package com.thoughtworks.xstream.converters.reflection;
+@@ -13,19 +11,18 @@
+ 
+ import java.lang.reflect.Field;
+ import java.lang.reflect.Modifier;
+-import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.Iterator;
+ import java.util.LinkedHashMap;
+-import java.util.List;
++import java.util.LinkedList;
+ import java.util.Map;
+ import java.util.Set;
++import java.util.concurrent.ConcurrentHashMap;
+ 
+ import com.thoughtworks.xstream.core.Caching;
+ import com.thoughtworks.xstream.core.JVM;
+ 
+-
+ /**
+  * A field dictionary instance caches information about classes fields.
+  * 
+@@ -49,8 +46,9 @@
+     }
+ 
+     private void init() {
+-        keyedByFieldNameCache = new HashMap<Class<?>, Map<String, Field>>();
+-        keyedByFieldKeyCache = new HashMap<Class<?>, Map<FieldKey, Field>>();
++        // ConcurrentHashMap is needed to guarantee happens-before semantics
++        keyedByFieldNameCache = new ConcurrentHashMap<Class<?>, Map<String, Field>>();
++        keyedByFieldKeyCache = new ConcurrentHashMap<Class<?>, Map<FieldKey, Field>>();
+         keyedByFieldNameCache.put(Object.class, Collections.<String, Field>emptyMap());
+         keyedByFieldKeyCache.put(Object.class, Collections.<FieldKey, Field>emptyMap());
+     }
+@@ -98,67 +96,74 @@
+      */
+     public Field fieldOrNull(final Class<?> cls, final String name, final Class<?> definedIn) {
+         final Map<?, Field> fields = buildMap(cls, definedIn != null);
+-        final Field field = fields.get(definedIn != null ? (Object)new FieldKey(name, definedIn, -1) : (Object)name);
++        final Field field = fields.get(definedIn != null ? (Object) new FieldKey(name, definedIn, -1) : (Object) name);
+         return field;
+     }
+ 
+     private Map<?, Field> buildMap(final Class<?> type, final boolean tupleKeyed) {
+-        Class<?> cls = type;
+-        synchronized (this) {
+-            if (!keyedByFieldNameCache.containsKey(type)) {
+-                final List<Class<?>> superClasses = new ArrayList<Class<?>>();
+-                while (!Object.class.equals(cls) && cls != null) {
+-                    superClasses.add(0, cls);
++        // try to retrieve value without synchronization
++        Map<?, Field> result = tupleKeyed ? keyedByFieldKeyCache.get(type) : keyedByFieldNameCache.get(type);
++        if (result == null) {
++            synchronized (this) {
++                Class<?> cls = type;
++                final LinkedList<Class<?>> superClasses = new LinkedList<Class<?>>();
++                // implicit double checked locking because the following code does nothing if cache entries were found
++                Map<String, Field> lastKeyedByFieldName = keyedByFieldNameCache.get(cls);
++                Map<FieldKey, Field> lastKeyedByFieldKey = keyedByFieldKeyCache.get(cls);
++                // stop going up in hierarchy if cache entry is found
++                while (lastKeyedByFieldName == null) { // cls == Object.class is found in cache, cls == null has special treatment
++                    superClasses.addFirst(cls);
+                     cls = cls.getSuperclass();
++                    if (cls == null) {
++                        lastKeyedByFieldName = Collections.emptyMap();
++                        lastKeyedByFieldKey = Collections.emptyMap();
++                    } else {
++                        lastKeyedByFieldName = keyedByFieldNameCache.get(cls);
++                        lastKeyedByFieldKey = keyedByFieldKeyCache.get(cls);
++                    }
+                 }
+-                Map<String, Field> lastKeyedByFieldName = Collections.emptyMap();
+-                Map<FieldKey, Field> lastKeyedByFieldKey = Collections.emptyMap();
+-                for (final Class<?> element : superClasses) {
+-                    cls = element;
+-                    if (!keyedByFieldNameCache.containsKey(cls)) {
+-                        final Map<String, Field> keyedByFieldName = new HashMap<String, Field>(lastKeyedByFieldName);
+-                        final Map<FieldKey, Field> keyedByFieldKey = new LinkedHashMap<FieldKey, Field>(
+-                            lastKeyedByFieldKey);
+-                        final Field[] fields = cls.getDeclaredFields();
+-                        if (JVM.reverseFieldDefinition()) {
+-                            for (int i = fields.length >> 1; i-- > 0;) {
+-                                final int idx = fields.length - i - 1;
+-                                final Field field = fields[i];
+-                                fields[i] = fields[idx];
+-                                fields[idx] = field;
+-                            }
++                // go down hierarchy again and fill up cache
++                cls = superClasses.poll();
++                while (cls != null) {
++                    final Map<String, Field> keyedByFieldName = new HashMap<String, Field>(lastKeyedByFieldName);
++                    final Map<FieldKey, Field> keyedByFieldKey = new LinkedHashMap<FieldKey, Field>(lastKeyedByFieldKey);
++                    final Field[] fields = cls.getDeclaredFields();
++                    if (JVM.reverseFieldDefinition()) {
++                        for (int i = fields.length >> 1; i-- > 0;) {
++                            final int idx = fields.length - i - 1;
++                            final Field field = fields[i];
++                            fields[i] = fields[idx];
++                            fields[idx] = field;
+                         }
+-                        for (int i = 0; i < fields.length; i++) {
+-                            final Field field = fields[i];
+-                            if (!field.isAccessible()) {
+-                                field.setAccessible(true);
+-                            }
+-                            final FieldKey fieldKey = new FieldKey(field.getName(), field.getDeclaringClass(), i);
+-                            final Field existent = keyedByFieldName.get(field.getName());
+-                            if (existent == null
+-                            // do overwrite statics
++                    }
++                    for (int i = 0; i < fields.length; i++) {
++                        final Field field = fields[i];
++                        if (!field.isAccessible()) {
++                            field.setAccessible(true);
++                        }
++                        final FieldKey fieldKey = new FieldKey(field.getName(), field.getDeclaringClass(), i);
++                        final Field existent = keyedByFieldName.get(field.getName());
++                        if (existent == null
++                                // do overwrite statics
+                                 || (existent.getModifiers() & Modifier.STATIC) != 0
+                                 // overwrite non-statics with non-statics only
+                                 || existent != null
+                                 && (field.getModifiers() & Modifier.STATIC) == 0) {
+-                                keyedByFieldName.put(field.getName(), field);
+-                            }
+-                            keyedByFieldKey.put(fieldKey, field);
++                            keyedByFieldName.put(field.getName(), field);
+                         }
+-                        final Map<FieldKey, Field> sortedFieldKeys = sorter.sort(cls, keyedByFieldKey);
+-                        keyedByFieldNameCache.put(cls, keyedByFieldName);
+-                        keyedByFieldKeyCache.put(cls, sortedFieldKeys);
+-                        lastKeyedByFieldName = keyedByFieldName;
+-                        lastKeyedByFieldKey = sortedFieldKeys;
+-                    } else {
+-                        lastKeyedByFieldName = keyedByFieldNameCache.get(cls);
+-                        lastKeyedByFieldKey = keyedByFieldKeyCache.get(cls);
++                        keyedByFieldKey.put(fieldKey, field);
+                     }
++                    final Map<FieldKey, Field> sortedFieldKeys = sorter.sort(cls, keyedByFieldKey);
++                    keyedByFieldNameCache.put(cls, keyedByFieldName);
++                    keyedByFieldKeyCache.put(cls, sortedFieldKeys);
++                    lastKeyedByFieldName = keyedByFieldName;
++                    lastKeyedByFieldKey = sortedFieldKeys;
++                    cls = superClasses.poll();
+                 }
+-                return tupleKeyed ? lastKeyedByFieldKey : lastKeyedByFieldName;
++                result = tupleKeyed ? lastKeyedByFieldKey : lastKeyedByFieldName;
+             }
+         }
+-        return tupleKeyed ? keyedByFieldKeyCache.get(type) : keyedByFieldNameCache.get(type);
++        return result;
+     }
+ 
+     @Override
+@@ -167,7 +172,7 @@
+         keyedByFieldNameCache.keySet().retainAll(objectTypeSet);
+         keyedByFieldKeyCache.keySet().retainAll(objectTypeSet);
+         if (sorter instanceof Caching) {
+-            ((Caching)sorter).flushCache();
++            ((Caching) sorter).flushCache();
+         }
+     }
+ 

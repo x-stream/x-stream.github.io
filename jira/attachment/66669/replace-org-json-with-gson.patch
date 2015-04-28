@@ -1,0 +1,144 @@
+Index: pom.xml
+===================================================================
+--- pom.xml	(revision 2302)
++++ pom.xml	(working copy)
+@@ -288,9 +288,10 @@
+       </dependency>
+ 
+       <dependency>
+-        <groupId>org.json</groupId>
+-        <artifactId>json</artifactId>
+-        <version>${version.org.json}</version>
++        <groupId>com.google.code.gson</groupId>
++        <artifactId>gson</artifactId>
++        <version>${version.gson}</version>
++        <scope>test</scope>
+       </dependency>
+ 
+       <dependency>
+@@ -703,7 +704,7 @@
+     <version.org.hibernate.envers>${version.org.hibernate.core}</version.org.hibernate.envers>
+     <version.org.jdom>1.1.3</version.org.jdom>
+     <version.org.jdom2>2.0.5</version.org.jdom2>
+-    <version.org.json>20080701</version.org.json>
++    <version.gson>2.2.4</version.gson>
+     <version.org.slf4j>1.6.1</version.org.slf4j>
+     <version.oro>2.0.8</version.oro>
+     <version.stax>1.2.0</version.stax>
+Index: xstream/pom.xml
+===================================================================
+--- xstream/pom.xml	(revision 2302)
++++ xstream/pom.xml	(working copy)
+@@ -97,8 +97,8 @@
+     </dependency>
+ 
+     <dependency>
+-      <groupId>org.json</groupId>
+-      <artifactId>json</artifactId>
++      <groupId>com.google.code.gson</groupId>
++      <artifactId>gson</artifactId>
+       <optional>true</optional>
+     </dependency>
+ 
+Index: xstream/src/test/com/thoughtworks/xstream/io/json/JsonWriterModeTest.java
+===================================================================
+--- xstream/src/test/com/thoughtworks/xstream/io/json/JsonWriterModeTest.java	(revision 2302)
++++ xstream/src/test/com/thoughtworks/xstream/io/json/JsonWriterModeTest.java	(working copy)
+@@ -16,7 +16,6 @@
+ import java.io.Writer;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+-import java.util.HashSet;
+ 
+ import com.thoughtworks.acceptance.someobjects.X;
+ import com.thoughtworks.acceptance.someobjects.Y;
+@@ -23,9 +22,8 @@
+ import com.thoughtworks.xstream.XStream;
+ import com.thoughtworks.xstream.io.json.JsonWriter.Format;
+ 
+-import org.json.JSONArray;
+-import org.json.JSONException;
+-import org.json.JSONObject;
++import com.google.gson.JsonElement;
++import com.google.gson.JsonParser;
+ 
+ import junit.framework.Test;
+ import junit.framework.TestCase;
+@@ -43,6 +41,7 @@
+     private Object target;
+     private final int mode;
+     private final Format format;
++    private static final JsonParser jsonParser = new JsonParser();
+ 
+     public JsonWriterModeTest(
+         String name, int xstreamMode, int writerMode, JsonWriter.Format format) {
+@@ -81,66 +80,11 @@
+         assertValidJSON(json);
+     }
+ 
+-    private static void assertValidJSON(String json) throws JSONException {
+-        JSONObject jsonObject = new JSONObject(json);
+-        assertTrue(equals(jsonObject, new JSONObject(jsonObject.toString())));
++    private static void assertValidJSON(String json) {
++        JsonElement jsonElement = jsonParser.parse(json); 
++        assertEquals(jsonElement, jsonParser.parse(jsonElement.toString()));
+     }
+-    
+-    private static boolean equals(JSONObject object1, JSONObject object2) {
+-        String[] names = JSONObject.getNames(object1);
+-        try {
+-            if (names == null) {
+-                return JSONObject.getNames(object2) == null;
+-            }
+-            if (new HashSet(Arrays.asList(names)).equals(new HashSet(Arrays.asList(JSONObject.getNames(object2))))) {
+-                for (int i = 0; i < names.length; i++) {
+-                    if (!equals(object1.get(names[i]), object2.get(names[i]))) {
+-                        return false;
+-                    }
+-                }
+-                return true;
+-            }
+-        } catch (JSONException e) {
+-            // ignore - return false
+-        }
+-        return false;
+-    }
+ 
+-    private static boolean equals(JSONArray array1, JSONArray array2) {
+-        int length = array1.length();
+-        if (length == array2.length()) {
+-            try {
+-                while (length-- > 0) {
+-                    if (!equals(array1.get(length), array2.get(length))) {
+-                        return false;
+-                    }
+-                }
+-                return true;
+-            } catch (JSONException e) {
+-                // ignore - return false
+-            }
+-        }
+-        return false;
+-    }
+-
+-    private static boolean equals(Object o1, Object o2) {
+-        if (o1 == null && o2 == null) {
+-            return true;
+-        } else if ((o1 == null && o2 != null) || (o1 != null && o2 == null)) {
+-            return false;
+-        }
+-        Class type = o1.getClass();
+-        if (type != o2.getClass()) {
+-            return false;
+-        }
+-        if (type == JSONObject.class) {
+-            return equals((JSONObject)o1, (JSONObject)o2);
+-        } else if (type == JSONArray.class) {
+-            return equals((JSONArray)o1, (JSONArray)o2);
+-        }
+-        return o1.equals(o2);
+-    }
+-
+     private String toJSON(int mode, JsonWriter.Format format) {
+         final StringWriter writer = new StringWriter(1024);
+         writeJSON(writer, mode, format);
