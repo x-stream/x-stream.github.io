@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -414,7 +414,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171420_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171420_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_171420_verbose subText"><span class="date user-tz" title="30/Mar/09 12:33 PM"><time class="livestamp" datetime="2009-03-30T12:33-0500">30/Mar/09 12:33 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Keith,</p>
@@ -424,7 +424,7 @@
 <p>In consequence we're starting to talk here about very specific scenarios and I am a little hesitant to add performance optimizations for such cases.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -438,7 +438,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171420_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171420_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_171420_concise subText"><span class="date user-tz" title="30/Mar/09 12:33 PM"><time class="livestamp" datetime="2009-03-30T12:33-0500">30/Mar/09 12:33 PM</time></span></span>                    Hi Keith, 
 
  I cannot verify your results. I am using normally some test objects that require a lot of introspection to create some significant usage of the ReflectionConverter code, but Unsafe.objectFieldOffset() is nowhere near the top (for me it is not even present in YourKit's hotspots). I am using Sun JDK 6 (32-bit) on Linux with YourKit 8.0.2 (same after upgrade to YourKit 8.0.5). Looking at AbstractRecflectionConverter.duUnmarshal alone, the calls to HashMap.get() already take 19% of the method's time while the calls to Sun14ReflectionProvider.writeField() take only about 3% of this time. 
@@ -446,7 +446,7 @@
  In consequence we're starting to talk here about very specific scenarios and I am a little hesitant to add performance optimizations for such cases. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -566,7 +566,7 @@ Time spent in Unsafe.objectFieldOffset: 31000ms
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274768_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274768_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_274768_verbose subText"><span class="date user-tz" title="01/Aug/11 12:29 PM"><time class="livestamp" datetime="2011-08-01T12:29-0500">01/Aug/11 12:29 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Applied in HEAD with the small difference of using an instance member for the cache to avoid classloader problems and with the background knowledge that even different provider instance will normally be used for distinct types. Thanks, Keith.</p> </div>
@@ -581,7 +581,7 @@ Time spent in Unsafe.objectFieldOffset: 31000ms
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274768_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274768_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_274768_concise subText"><span class="date user-tz" title="01/Aug/11 12:29 PM"><time class="livestamp" datetime="2011-08-01T12:29-0500">01/Aug/11 12:29 PM</time></span></span>                    Applied in HEAD with the small difference of using an instance member for the cache to avoid classloader problems and with the background knowledge that even different provider instance will normally be used for distinct types. Thanks, Keith.              </div>
         </div>
     </div>
@@ -597,7 +597,7 @@ Time spent in Unsafe.objectFieldOffset: 31000ms
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

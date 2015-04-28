@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -387,7 +387,7 @@ xs.autodetectAnnotations(<span class="code-keyword">true</span>);
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293709_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293709_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_293709_verbose subText"><span class="date user-tz" title="09/Mar/12 2:40 AM"><time class="livestamp" datetime="2012-03-09T02:40-0600">09/Mar/12 2:40 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>This is more or less by design when you're working with auto-detected annotations. XStream cannot scan all classes upfront, therefore it used the AnnotationMapper as hook, when a converter looks for the name of a class or a field (Mapper.serializedClass or Mapper.serializedMember). This works normally quite well at serialization time and is unreliable at deserialization time (<a href="http://xstream.codehaus.org/annotations-tutorial.html#AutoDetect" class="external-link" rel="nofollow">as documented</a>). However, your converter does not make those calls to determine the name of the XML element, therefore are the annotations of the item's type not processed when the item is converted.</p>
@@ -414,7 +414,7 @@ xs.autodetectAnnotations(<span class="code-keyword">true</span>);
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293709_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293709_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_293709_concise subText"><span class="date user-tz" title="09/Mar/12 2:40 AM"><time class="livestamp" datetime="2012-03-09T02:40-0600">09/Mar/12 2:40 AM</time></span></span>                    This is more or less by design when you're working with auto-detected annotations. XStream cannot scan all classes upfront, therefore it used the AnnotationMapper as hook, when a converter looks for the name of a class or a field (Mapper.serializedClass or Mapper.serializedMember). This works normally quite well at serialization time and is unreliable at deserialization time ( as documented ). However, your converter does not make those calls to determine the name of the XML element, therefore are the annotations of the item's type not processed when the item is converted. 
 
  You have currently 3 possibilities: 
@@ -483,7 +483,7 @@ xs.autodetectAnnotations(<span class="code-keyword">true</span>);
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293735_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293735_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_293735_verbose subText"><span class="date user-tz" title="09/Mar/12 2:08 PM"><time class="livestamp" datetime="2012-03-09T14:08-0600">09/Mar/12 2:08 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closing then.</p> </div>
@@ -498,7 +498,7 @@ xs.autodetectAnnotations(<span class="code-keyword">true</span>);
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293735_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_293735_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_293735_concise subText"><span class="date user-tz" title="09/Mar/12 2:08 PM"><time class="livestamp" datetime="2012-03-09T14:08-0600">09/Mar/12 2:08 PM</time></span></span>                    Closing then.              </div>
         </div>
     </div>
@@ -514,7 +514,7 @@ xs.autodetectAnnotations(<span class="code-keyword">true</span>);
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

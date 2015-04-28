@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -446,7 +446,7 @@ work with the XML spec.</p>
  added a comment  - <span class="commentdate_280140_verbose subText"><span class="date user-tz" title="28/Sep/11 3:03 AM"><time class="livestamp" datetime="2011-09-28T03:03-0500">28/Sep/11 3:03 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi<br>
-As discussed with Jörg Schaible in the user's mailing list, XStream's PrettyPrintWriter should treat &amp; escape '\n' and '\t' the same way it treats &amp; escape '\r' (else the xml parseur on the other end will just replace them by white-spaces). This should be the case for the values as well as for the attributes (anyway, the PrettyPrintWriter's escaping is done in a single method for the 2, so there is only the writeText method to change.<br>
+As discussed with JÃ¶rg Schaible in the user's mailing list, XStream's PrettyPrintWriter should treat &amp; escape '\n' and '\t' the same way it treats &amp; escape '\r' (else the xml parseur on the other end will just replace them by white-spaces). This should be the case for the values as well as for the attributes (anyway, the PrettyPrintWriter's escaping is done in a single method for the 2, so there is only the writeText method to change.<br>
 And btw, thank's for the great lib !</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
@@ -461,7 +461,7 @@ And btw, thank's for the great lib !</p> </div>
 
     <a class="user-hover user-avatar" rel="mignot.sebastien@gmail.com" id="commentauthor_280140_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=mignot.sebastien%40gmail.com"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> sebastien mignot</a>
  added a comment  - <span class="commentdate_280140_concise subText"><span class="date user-tz" title="28/Sep/11 3:03 AM"><time class="livestamp" datetime="2011-09-28T03:03-0500">28/Sep/11 3:03 AM</time></span></span>                    Hi 
-As discussed with Jörg Schaible in the user's mailing list, XStream's PrettyPrintWriter should treat &amp; escape '\n' and '\t' the same way it treats &amp; escape '\r' (else the xml parseur on the other end will just replace them by white-spaces). This should be the case for the values as well as for the attributes (anyway, the PrettyPrintWriter's escaping is done in a single method for the 2, so there is only the writeText method to change. 
+As discussed with JÃ¶rg Schaible in the user's mailing list, XStream's PrettyPrintWriter should treat &amp; escape '\n' and '\t' the same way it treats &amp; escape '\r' (else the xml parseur on the other end will just replace them by white-spaces). This should be the case for the values as well as for the attributes (anyway, the PrettyPrintWriter's escaping is done in a single method for the 2, so there is only the writeText method to change. 
 And btw, thank's for the great lib !              </div>
         </div>
     </div>
@@ -482,7 +482,7 @@ And btw, thank's for the great lib !              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_280308_verbose subText"><span class="date user-tz" title="29/Sep/11 5:36 PM"><time class="livestamp" datetime="2011-09-29T17:36-0500">29/Sep/11 5:36 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Sadly that I never realized that the XML spec is quite clear: Attributes are written by default as CDATA. And while '\n', '\t' and '\r' are replaced with spaces by the attribute normalization, they are replaced with the real character if these characters are delivered as entities. Therefore will the PrettyPrintWriter (and derived) encode these characters now with entities. Note, that the writers based on 3rd party code may still fail to do so. BEA's and Woodstox' StAX writer and the XOM writer are compliant and will encode these whitespace characters, while JDK's StAX writer and Dom4J's XML writer fail.</p> </div>
@@ -497,7 +497,7 @@ And btw, thank's for the great lib !              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_280308_concise subText"><span class="date user-tz" title="29/Sep/11 5:36 PM"><time class="livestamp" datetime="2011-09-29T17:36-0500">29/Sep/11 5:36 PM</time></span></span>                    Sadly that I never realized that the XML spec is quite clear: Attributes are written by default as CDATA. And while '\n', '\t' and '\r' are replaced with spaces by the attribute normalization, they are replaced with the real character if these characters are delivered as entities. Therefore will the PrettyPrintWriter (and derived) encode these characters now with entities. Note, that the writers based on 3rd party code may still fail to do so. BEA's and Woodstox' StAX writer and the XOM writer are compliant and will encode these whitespace characters, while JDK's StAX writer and Dom4J's XML writer fail.              </div>
         </div>
     </div>
@@ -513,7 +513,7 @@ And btw, thank's for the great lib !              </div>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

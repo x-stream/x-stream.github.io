@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -378,7 +378,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_228626_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_228626_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_228626_verbose subText"><span class="date user-tz" title="14/Jul/10 3:08 PM"><time class="livestamp" datetime="2010-07-14T15:08-0500">14/Jul/10 3:08 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hmm. Which older version do you mean? XStream or Jettison? IMHO you cannot compare output Jettison 1.2 and 1.0.x anyway, I had to adjust the JSON structure in the unit tests to make XStream compatible for 1.2: <a href="http://svn.xstream.codehaus.org/browse/xstream/trunk/xstream/src/test/com/thoughtworks/xstream/io/json/JettisonMappedXmlDriverTest.java?r2=1727&amp;r1=1641" class="external-link" rel="nofollow">http://svn.xstream.codehaus.org/browse/xstream/trunk/xstream/src/test/com/thoughtworks/xstream/io/json/JettisonMappedXmlDriverTest.java?r2=1727&amp;r1=1641</a></p> </div>
@@ -393,7 +393,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_228626_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_228626_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_228626_concise subText"><span class="date user-tz" title="14/Jul/10 3:08 PM"><time class="livestamp" datetime="2010-07-14T15:08-0500">14/Jul/10 3:08 PM</time></span></span>                    Hmm. Which older version do you mean? XStream or Jettison? IMHO you cannot compare output Jettison 1.2 and 1.0.x anyway, I had to adjust the JSON structure in the unit tests to make XStream compatible for 1.2:  http://svn.xstream.codehaus.org/browse/xstream/trunk/xstream/src/test/com/thoughtworks/xstream/io/json/JettisonMappedXmlDriverTest.java?r2=1727&amp;r1=1641               </div>
         </div>
     </div>
@@ -494,7 +494,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_229044_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_229044_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_229044_verbose subText"><span class="date user-tz" title="17/Jul/10 6:06 AM"><time class="livestamp" datetime="2010-07-17T06:06-0500">17/Jul/10 6:06 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I am not sure if this patch is a wise move. I ran the unit tests against the "new" format and I recognized why the serializeAsArray stuff was added in first place: A list with a single element is then no longer serialized as list in JSON i.e. the representation of a list in JSON differes on the number of elements. I am not keen on getting all the complaints about this behavior again.</p>
@@ -511,7 +511,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_229044_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_229044_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_229044_concise subText"><span class="date user-tz" title="17/Jul/10 6:06 AM"><time class="livestamp" datetime="2010-07-17T06:06-0500">17/Jul/10 6:06 AM</time></span></span>                    I am not sure if this patch is a wise move. I ran the unit tests against the "new" format and I recognized why the serializeAsArray stuff was added in first place: A list with a single element is then no longer serialized as list in JSON i.e. the representation of a list in JSON differes on the number of elements. I am not keen on getting all the complaints about this behavior again. 
 
  Additionally, since you mentioned the map, I don't think that the XStream's MapConverter is the best choice when you marshal to JSON. In this case I'd use one that renders the keys as tags (resp. labels) anyway. When you surround the label with quotes, you can use quite anything as label and you're not limited to valid XML tags.              </div>
@@ -534,7 +534,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_237741_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_237741_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_237741_verbose subText"><span class="date user-tz" title="06/Oct/10 7:04 PM"><time class="livestamp" datetime="2010-10-06T19:04-0500">06/Oct/10 7:04 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Dejan, are you still interested in this change despite the consequences I've lined out in the last comment?</p> </div>
@@ -549,7 +549,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_237741_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_237741_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_237741_concise subText"><span class="date user-tz" title="06/Oct/10 7:04 PM"><time class="livestamp" datetime="2010-10-06T19:04-0500">06/Oct/10 7:04 PM</time></span></span>                    Hi Dejan, are you still interested in this change despite the consequences I've lined out in the last comment?              </div>
         </div>
     </div>
@@ -614,7 +614,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238029_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238029_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_238029_verbose subText"><span class="date user-tz" title="07/Oct/10 3:43 PM"><time class="livestamp" datetime="2010-10-07T15:43-0500">07/Oct/10 3:43 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Applied.</p> </div>
@@ -629,7 +629,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238029_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238029_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_238029_concise subText"><span class="date user-tz" title="07/Oct/10 3:43 PM"><time class="livestamp" datetime="2010-10-07T15:43-0500">07/Oct/10 3:43 PM</time></span></span>                    Applied.              </div>
         </div>
     </div>
@@ -681,7 +681,7 @@
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

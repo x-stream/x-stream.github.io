@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -302,15 +302,15 @@
                     <p>Under japanese locale, com.thoughtworks.acceptance.BasicTypesTest fails as follows:</p>
 
 <p>    <span class="error">[junit]</span> Testcase: testDate(com.thoughtworks.acceptance.BasicTypesTest):     FAILED<br>
-    <span class="error">[junit]</span> expected:&lt;...AM...&gt; but was:&lt;...¸áÁ°...&gt;<br>
-    <span class="error">[junit]</span> junit.framework.ComparisonFailure: expected:&lt;...AM...&gt; but was:&lt;...¸áÁ°...&gt;<br>
+    <span class="error">[junit]</span> expected:&lt;...AM...&gt; but was:&lt;...Â¸Ã¡ÃÂ°...&gt;<br>
+    <span class="error">[junit]</span> junit.framework.ComparisonFailure: expected:&lt;...AM...&gt; but was:&lt;...Â¸Ã¡ÃÂ°...&gt;<br>
     <span class="error">[junit]</span>     at com.thoughtworks.acceptance.AbstractAcceptanceTest.assertBothWays(Unknown Source)<br>
     <span class="error">[junit]</span>     at com.thoughtworks.acceptance.BasicTypesTest.testDate(Unknown Source)<br>
     <span class="error">[junit]</span>     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>
     <span class="error">[junit]</span>     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)<br>
     <span class="error">[junit]</span>     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)</p>
 
-<p>"¸áÁ°" is a japanese word meaning "AM".<br>
+<p>"Â¸Ã¡ÃÂ°" is a japanese word meaning "AM".<br>
 This is because, SimpleDateFormat did not always format 'a' pattern letter to AM/PM.<br>
 Explicitly specifying english locale is a solution to this problem?</p>
 
@@ -319,7 +319,7 @@ Explicitly specifying english locale is a solution to this problem?</p>
 RCS file: /scm/xstream/xstream/src/java/com/thoughtworks/xstream/converters/basic/ThreadSafeSimpleDateFormat.java,v<br>
 retrieving revision 1.5<br>
 diff -u -r1.5 ThreadSafeSimpleDateFormat.java<br>
-— src/java/com/thoughtworks/xstream/converters/basic/ThreadSafeSimpleDateFormat.java  11 May 2004 17:21:42 -0000      1.5<br>
+Â— src/java/com/thoughtworks/xstream/converters/basic/ThreadSafeSimpleDateFormat.java  11 May 2004 17:21:42 -0000      1.5<br>
 +++ src/java/com/thoughtworks/xstream/converters/basic/ThreadSafeSimpleDateFormat.java  23 Jun 2004 22:38:10 -0000<br>
 @@ -4,6 +4,7 @@<br>
  import java.text.ParseException;<br>

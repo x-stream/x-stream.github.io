@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -301,18 +301,18 @@ x2.toXML(teststring, new FileWriter("test-encoding-2.xml"));</p>
 
 <p>--------------- End Samples -----------</p>
 
-<p>Given the teststring variable is "Ää Öö Üu", the output for both is identical:</p>
+<p>Given the teststring variable is "Ã„Ã¤ Ã–Ã¶ Ãœu", the output for both is identical:</p>
 
 <p>00000000h: 3C 73 74 72 69 6E 67 3E ; &lt;string&gt;<br>
-00000008h: C4 E4 20 D6 F6 20 DC FC ; Ää Öö Üü<br>
+00000008h: C4 E4 20 D6 F6 20 DC FC ; Ã„Ã¤ Ã–Ã¶ ÃœÃ¼<br>
 00000010h: 3C 2F 73 74 72 69 6E 67 ; &lt;/string<br>
 00000018h: 3E                      ; &gt;</p>
 
 <p>Obviously, the umlaut encoding does not take place in UTF-8, which (to my expectations) would look like this:</p>
 
 <p>00000000h: 3C 73 74 72 69 6E 67 3E ; &lt;string&gt;<br>
-00000008h: C3 84 C3 A4 20 C3 96 C3 ; Ã„Ã¤ Ã-Ã<br>
-00000010h: B6 20 C3 9C C3 BC 3C 2F ; ¶ ÃœÃ¼&lt;/<br>
+00000008h: C3 84 C3 A4 20 C3 96 C3 ; ÃƒÂ„ÃƒÂ¤ Ãƒ-Ãƒ<br>
+00000010h: B6 20 C3 9C C3 BC 3C 2F ; Â¶ ÃƒÂœÃƒÂ¼&lt;/<br>
 00000018h: 73 74 72 69 6E 67 3E    ; string&gt;</p>
 
 <p>The encoding of the above code snippets rather take place in my Windows XPs default encoding schema ISO-8859-1.</p>
@@ -537,7 +537,7 @@ Matthias              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_79761_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_79761_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_79761_verbose subText"><span class="date user-tz" title="09/Nov/06 4:30 PM"><time class="livestamp" datetime="2006-11-09T16:30-0600">09/Nov/06 4:30 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>As Matthias has pointed out, a JDK Writer will use a different encoding by default, but it should match the one of the driver. Write into a ByteArrayOutputStream to prevent further encoding.</p> </div>
@@ -552,7 +552,7 @@ Matthias              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_79761_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_79761_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_79761_concise subText"><span class="date user-tz" title="09/Nov/06 4:30 PM"><time class="livestamp" datetime="2006-11-09T16:30-0600">09/Nov/06 4:30 PM</time></span></span>                    As Matthias has pointed out, a JDK Writer will use a different encoding by default, but it should match the one of the driver. Write into a ByteArrayOutputStream to prevent further encoding.              </div>
         </div>
     </div>

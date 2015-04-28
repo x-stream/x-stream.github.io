@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -315,7 +315,7 @@
         </div></div>
 </div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
     <div class="user-content-block">
-                    <p>The profiling results for our application (which uses XStream 1.2.2 / 1.3) suggest that the keying mechanism used by the field alias mapper leads to a performance hotspot (in terms of execution time) due to the combination of the two factors number of invocations (the key method is called relatively often during serialization), and costs (in terms of execution time) per invocation, caused by the expensive string operations (implicit use of java.lang.StringBuffer – init, append, toString in the key method). </p>
+                    <p>The profiling results for our application (which uses XStream 1.2.2 / 1.3) suggest that the keying mechanism used by the field alias mapper leads to a performance hotspot (in terms of execution time) due to the combination of the two factors number of invocations (the key method is called relatively often during serialization), and costs (in terms of execution time) per invocation, caused by the expensive string operations (implicit use of java.lang.StringBuffer Â– init, append, toString in the key method). </p>
 
 <p>I recommend reworking the key mechanism so as to avoid using string operations. Maybe using the parameter object references as a key instead of concatenating their string representations could be a more efficient approach?</p>
 
@@ -511,7 +511,7 @@ To that end, please see attached patch. Creating temporary key object is more ef
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_148379_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_148379_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_148379_verbose subText"><span class="date user-tz" title="18/Sep/08 3:31 PM"><time class="livestamp" datetime="2008-09-18T15:31-0500">18/Sep/08 3:31 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Superceded by <a href="517" title="Misc performance improvements (for detected HotSpots via profiler)" class="issue-link" data-issue-key="XSTR-517"><del>XSTR-517</del></a></p> </div>
@@ -526,7 +526,7 @@ To that end, please see attached patch. Creating temporary key object is more ef
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_148379_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_148379_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_148379_concise subText"><span class="date user-tz" title="18/Sep/08 3:31 PM"><time class="livestamp" datetime="2008-09-18T15:31-0500">18/Sep/08 3:31 PM</time></span></span>                    Superceded by   XSTR-517                </div>
         </div>
     </div>
@@ -547,7 +547,7 @@ To that end, please see attached patch. Creating temporary key object is more ef
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156092_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156092_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156092_verbose subText"><span class="date user-tz" title="01/Dec/08 4:07 PM"><time class="livestamp" datetime="2008-12-01T16:07-0600">01/Dec/08 4:07 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closed after receiving no further comment.</p> </div>
@@ -562,7 +562,7 @@ To that end, please see attached patch. Creating temporary key object is more ef
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156092_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156092_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156092_concise subText"><span class="date user-tz" title="01/Dec/08 4:07 PM"><time class="livestamp" datetime="2008-12-01T16:07-0600">01/Dec/08 4:07 PM</time></span></span>                    Closed after receiving no further comment.              </div>
         </div>
     </div>
@@ -578,7 +578,7 @@ To that end, please see attached patch. Creating temporary key object is more ef
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

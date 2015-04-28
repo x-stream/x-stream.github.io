@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -300,36 +300,36 @@
 
 </div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
     <div class="user-content-block">
-                    <p>I want to use a resulting JSON formatted XStreamed object in a browser  <br>
+                    <p>I want to use a resulting JSON formatted XStreamed object in a browser Â <br>
 in JS.</p>
 
-<p>The way JSON libraries typically works are to push the resulting  <br>
+<p>The way JSON libraries typically works are to push the resulting Â <br>
 object into a closure :</p>
 
 <p>function (data) {<br>
-   // do something with data. like .....<br>
-   alert(data.field1)<br>
+Â  Â // do something with data. like .....<br>
+Â  Â alert(data.field1)<br>
 }</p>
 
-<p>Well that would be the case, but for objects that come from the two  <br>
+<p>Well that would be the case, but for objects that come from the two Â <br>
 JSON capable drivers in XStream, they are doing to look more like</p>
 
 <p>function (data) {<br>
-   alert(data.rootNode.field1)<br>
+Â  Â alert(data.rootNode.field1)<br>
 }</p>
 
-<p>'data' is prepended by the JSON libraries.  rootNode (more typically  <br>
+<p>'data' is prepended by the JSON libraries. Â rootNode (more typically Â <br>
 the Java type name of the root node) is made by XStream.</p>
 
-<p>Could we have a mode of operation for the two JSON types that allowed  <br>
-for "no root node" ?  Like so ..</p>
+<p>Could we have a mode of operation for the two JSON types that allowed Â <br>
+for "no root node" ? Â Like so ..</p>
 
-<p>   </p>
+<p>Â  Â </p>
 {"name" : "Fred", "sex" : "Male"}
 
 <p>instead of ..</p>
 
-<p>   {"MyPerson":</p>
+<p>Â  Â {"MyPerson":</p>
 {"name" : "Fred", "sex" : "Male"}
 <p>}</p>
             </div>
@@ -587,7 +587,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153313_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153313_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_153313_verbose subText"><span class="date user-tz" title="06/Nov/08 2:43 PM"><time class="livestamp" datetime="2008-11-06T14:43-0600">06/Nov/08 2:43 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Renamed issue, it is different to the original one, that I have cloned to <a href="531" title="add an option to hide system attributes (e.g. the class name) in the json" class="issue-link" data-issue-key="XSTR-531"><del>XSTR-531</del></a>.</p> </div>
@@ -602,7 +602,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153313_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153313_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_153313_concise subText"><span class="date user-tz" title="06/Nov/08 2:43 PM"><time class="livestamp" datetime="2008-11-06T14:43-0600">06/Nov/08 2:43 PM</time></span></span>                    Renamed issue, it is different to the original one, that I have cloned to   XSTR-531  .              </div>
         </div>
     </div>
@@ -623,7 +623,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153340_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153340_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_153340_verbose subText"><span class="date user-tz" title="06/Nov/08 6:32 PM"><time class="livestamp" datetime="2008-11-06T18:32-0600">06/Nov/08 6:32 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I've committed a modified version of your patch, you may have a look at this preliminary version. What do you think?</p>
@@ -654,7 +654,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153340_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153340_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_153340_concise subText"><span class="date user-tz" title="06/Nov/08 6:32 PM"><time class="livestamp" datetime="2008-11-06T18:32-0600">06/Nov/08 6:32 PM</time></span></span>                    I've committed a modified version of your patch, you may have a look at this preliminary version. What do you think? 
 
  Your patch produced invalid JSON in two cases: 
@@ -691,7 +691,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153485_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153485_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_153485_verbose subText"><span class="date user-tz" title="07/Nov/08 5:29 PM"><time class="livestamp" datetime="2008-11-07T17:29-0600">07/Nov/08 5:29 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I've finalized this functionality now.</p> </div>
@@ -706,7 +706,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153485_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_153485_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_153485_concise subText"><span class="date user-tz" title="07/Nov/08 5:29 PM"><time class="livestamp" datetime="2008-11-07T17:29-0600">07/Nov/08 5:29 PM</time></span></span>                    I've finalized this functionality now.              </div>
         </div>
     </div>
@@ -727,7 +727,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156127_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156127_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156127_verbose subText"><span class="date user-tz" title="01/Dec/08 4:15 PM"><time class="livestamp" datetime="2008-12-01T16:15-0600">01/Dec/08 4:15 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Set correct fix version.</p> </div>
@@ -742,7 +742,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156127_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156127_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156127_concise subText"><span class="date user-tz" title="01/Dec/08 4:15 PM"><time class="livestamp" datetime="2008-12-01T16:15-0600">01/Dec/08 4:15 PM</time></span></span>                    Set correct fix version.              </div>
         </div>
     </div>
@@ -763,7 +763,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156129_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156129_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156129_verbose subText"><span class="date user-tz" title="01/Dec/08 4:16 PM"><time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Fixed for upcoming release.</p> </div>
@@ -778,7 +778,7 @@ for "no root node" ?  Like so ..</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156129_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156129_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156129_concise subText"><span class="date user-tz" title="01/Dec/08 4:16 PM"><time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time></span></span>                    Fixed for upcoming release.              </div>
         </div>
     </div>
@@ -794,7 +794,7 @@ for "no root node" ?  Like so ..</p>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -289,12 +289,12 @@
 
 </div></div><div id="descriptionmodule" class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
     <div class="user-content-block">
-                    <p>Guessing you'll either want to add more to this patch or you'll chose to apply only part of the patch – course applying none of it is a distinct possibility <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p>
+                    <p>Guessing you'll either want to add more to this patch or you'll chose to apply only part of the patch Â– course applying none of it is a distinct possibility <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p>
 
 <p>Anyway, this patch does three things really:<br>
- – Simple extra constructor to XStream to allow for just a Mapper to be passed in.<br>
- – Allows shouldSerializeMember methods to evaluate the value of the field rather than just the aliasName<span class="error">[1]</span> and definedIn.<br>
- – Mapper for optionally skipping empty collections.  If you choose to take this, you may want it to be configurable on field basis.  Happy to add that or anything else you want.</p>
+ Â– Simple extra constructor to XStream to allow for just a Mapper to be passed in.<br>
+ Â– Allows shouldSerializeMember methods to evaluate the value of the field rather than just the aliasName<span class="error">[1]</span> and definedIn.<br>
+ Â– Mapper for optionally skipping empty collections.  If you choose to take this, you may want it to be configurable on field basis.  Happy to add that or anything else you want.</p>
 
 
 <p><span class="error">[1]</span> BTW, did you know the parameter names typically used for shouldSerializeMember are wrong.  It's signature is typically (Class definedIn, String fieldName), when in fact the only place to invoke it in a non delegated fashion (AbstractReflectionConverter) actually passes in aliasName in leu of fieldName.  Not sure if there is something I am missing.</p>
@@ -431,7 +431,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_63861_verbose subText"><span class="date user-tz" title="20/Apr/06 3:50 AM"><time class="livestamp" datetime="2006-04-20T03:50-0500">20/Apr/06 3:50 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi David,</p>
@@ -441,7 +441,7 @@
 <p><span class="error">[1]</span> Thanks for heads-up. In fact this is currently just by chance, since the aliasing was added at a later development stage.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -455,7 +455,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_63861_concise subText"><span class="date user-tz" title="20/Apr/06 3:50 AM"><time class="livestamp" datetime="2006-04-20T03:50-0500">20/Apr/06 3:50 AM</time></span></span>                    Hi David, 
 
  the only reason I did not resolve this issue with "won't fix" is, that you address more than the empty collection with this issue. Regarding your empty collection mapper I don't think this is a valid solution, since XStream can no longer distinguish at deserialization time, wether the collection was empty or null. Even worse it  will  be initialized with null. We might revisit such a functionality when we start to support  XSTR-76  and  XSTR-248  which are somewhat related. Resolving those issues, we might have also the need for passing the real object along with the type to shouldSerializeMember. 
@@ -463,7 +463,7 @@
   [1]  Thanks for heads-up. In fact this is currently just by chance, since the aliasing was added at a later development stage. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>

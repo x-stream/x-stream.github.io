@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -422,7 +422,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_117276_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_117276_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_117276_verbose subText"><span class="date user-tz" title="19/Dec/07 2:00 AM"><time class="livestamp" datetime="2007-12-19T02:00-0600">19/Dec/07 2:00 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Unfortunately this is another issue with Jettison itself ... :-/</p> </div>
@@ -437,7 +437,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_117276_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_117276_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_117276_concise subText"><span class="date user-tz" title="19/Dec/07 2:00 AM"><time class="livestamp" datetime="2007-12-19T02:00-0600">19/Dec/07 2:00 AM</time></span></span>                    Unfortunately this is another issue with Jettison itself ... :-/              </div>
         </div>
     </div>
@@ -458,7 +458,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121101_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121101_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_121101_verbose subText"><span class="date user-tz" title="23/Jan/08 6:27 PM"><time class="livestamp" datetime="2008-01-23T18:27-0600">23/Jan/08 6:27 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi,</p>
@@ -466,7 +466,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
 <p>after some investigation, I have to state that the problem is related to the way Jettison maps the XML into JSON arrays. See Jettison's user guide and you'll know that Jettison will only put XML elements into an array if they are at the same level and have the same name. In your case it will map the collection into an object containing an array of ints and a single string. And it will also deserialize this. It is just that the original sequence of the elements is no longer kept. You may use the JsonHierarchicalStreamDriver to generate the JSON, but recognize the different JSON representation. Here the renderer did know exactly what types it dealt with and how they have to be written into proper JSON. However, the resulting JSON string does no longer contain enough information to recreate the original objects. Main problem is, that you cannot express all necessary data in JSON to guarantee a 1:1 deserialization into arbitrary Java objects.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -480,13 +480,13 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121101_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121101_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_121101_concise subText"><span class="date user-tz" title="23/Jan/08 6:27 PM"><time class="livestamp" datetime="2008-01-23T18:27-0600">23/Jan/08 6:27 PM</time></span></span>                    Hi, 
 
  after some investigation, I have to state that the problem is related to the way Jettison maps the XML into JSON arrays. See Jettison's user guide and you'll know that Jettison will only put XML elements into an array if they are at the same level and have the same name. In your case it will map the collection into an object containing an array of ints and a single string. And it will also deserialize this. It is just that the original sequence of the elements is no longer kept. You may use the JsonHierarchicalStreamDriver to generate the JSON, but recognize the different JSON representation. Here the renderer did know exactly what types it dealt with and how they have to be written into proper JSON. However, the resulting JSON string does no longer contain enough information to recreate the original objects. Main problem is, that you cannot express all necessary data in JSON to guarantee a 1:1 deserialization into arbitrary Java objects. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -508,7 +508,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125056_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125056_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125056_verbose subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closed after no further comment has been given.</p> </div>
@@ -523,7 +523,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125056_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125056_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125056_concise subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>                    Closed after no further comment has been given.              </div>
         </div>
     </div>
@@ -539,7 +539,7 @@ JettisonMappedXmlDriver doesn't work for collection object.              </div>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

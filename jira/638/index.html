@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -430,7 +430,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_243224_verbose subText"><span class="date user-tz" title="15/Nov/10 5:28 PM"><time class="livestamp" datetime="2010-11-15T17:28-0600">15/Nov/10 5:28 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>SerializationMethodInvoker: I don't understand your comment. It <b>is</b> caching the Method instances. Additionally it is fine that each ARC implementation has its own SMI, because each registered converter will handle a distinct set of types. There's no need to share the cache between converter instances and therefore we do not need a static using weak references for keys and values. The caches exists per XStream instance like all others.</p>
@@ -447,7 +447,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_243224_concise subText"><span class="date user-tz" title="15/Nov/10 5:28 PM"><time class="livestamp" datetime="2010-11-15T17:28-0600">15/Nov/10 5:28 PM</time></span></span>                    SerializationMethodInvoker: I don't understand your comment. It  is  caching the Method instances. Additionally it is fine that each ARC implementation has its own SMI, because each registered converter will handle a distinct set of types. There's no need to share the cache between converter instances and therefore we do not need a static using weak references for keys and values. The caches exists per XStream instance like all others. 
 
  Cloneable: I don't see a performance problem in the current context of XStream either. Cloning is nothing XStream does on a frequent base. Currently it is performing one cloning attempt for every marshalling process. That does hardly qualify as performance problem.                </div>
@@ -682,7 +682,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_243799_verbose subText"><span class="date user-tz" title="19/Nov/10 12:08 PM"><time class="livestamp" datetime="2010-11-19T12:08-0600">19/Nov/10 12:08 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Sorry, dude, but your version currupts the cache. It took me some hours to verify it, but see yourself with the new test SerializationNestedWriteObjectsTest.testCachingInheritedWriteObject. However, this is not hypothetical, the same scenario applies when serializing a synchronized ArrayList.</p> </div>
@@ -697,7 +697,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_243799_concise subText"><span class="date user-tz" title="19/Nov/10 12:08 PM"><time class="livestamp" datetime="2010-11-19T12:08-0600">19/Nov/10 12:08 PM</time></span></span>                    Sorry, dude, but your version currupts the cache. It took me some hours to verify it, but see yourself with the new test SerializationNestedWriteObjectsTest.testCachingInheritedWriteObject. However, this is not hypothetical, the same scenario applies when serializing a synchronized ArrayList.              </div>
         </div>
     </div>
@@ -718,7 +718,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_243804_verbose subText"><span class="date user-tz" title="19/Nov/10 1:02 PM"><time class="livestamp" datetime="2010-11-19T13:02-0600">19/Nov/10 1:02 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Won't fix is regarding the Cloneable. As said on the dev list, the much better approach is to use a NameCoder that does not have to be cloned and that can handle names to encode statically.</p>
@@ -735,7 +735,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_243804_concise subText"><span class="date user-tz" title="19/Nov/10 1:02 PM"><time class="livestamp" datetime="2010-11-19T13:02-0600">19/Nov/10 1:02 PM</time></span></span>                    Won't fix is regarding the Cloneable. As said on the dev list, the much better approach is to use a NameCoder that does not have to be cloned and that can handle names to encode statically. 
 
  SerializationMethodInvoker: I've implemented a new (and much smarter) version now for the cache and I can see a drop of the calls for getMethod there by ~25% (running XStream's acceptance tests).              </div>
@@ -789,7 +789,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -301,7 +301,7 @@
     <div class="user-content-block">
                     <p>Based on trying to resolve performance problems (for my use case, XStream badly lags JAXB 2.0), I found and resolved 3 hot spots that were easy enough to fix. One was for an existing issues (<a href="506" title="Method com.thoughtworks.xstream.mapper.FieldAliasMapper.key(Class,String) contains performance hotspot" class="issue-link" data-issue-key="XSTR-506"><del>XSTR-506</del></a>), but I didn't see entries for other 2.</p>
 
-<p>Anyway, please see attached files for patched versions – I verified that they each resolved a hot spot (i.e. didn't show prominently in profiler output after change), and improved read (deserialize) performance significantly.</p>
+<p>Anyway, please see attached files for patched versions Â– I verified that they each resolved a hot spot (i.e. didn't show prominently in profiler output after change), and improved read (deserialize) performance significantly.</p>
 
 
 
@@ -457,7 +457,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_151521_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_151521_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_151521_verbose subText"><span class="date user-tz" title="21/Oct/08 1:09 PM"><time class="livestamp" datetime="2008-10-21T13:09-0500">21/Oct/08 1:09 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Tatu,</p>
@@ -467,7 +467,7 @@
 <p>You may give the head revision a try ...</p>
 
 <p>Regards,<br>
-Jörg</p> </div>
+JÃ¶rg</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">
@@ -479,7 +479,7 @@ Jörg</p> </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_151521_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_151521_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_151521_concise subText"><span class="date user-tz" title="21/Oct/08 1:09 PM"><time class="livestamp" datetime="2008-10-21T13:09-0500">21/Oct/08 1:09 PM</time></span></span>                    Hi Tatu, 
 
  thanks again for your patches. The patch for the SerializationMethodInvoker has been applied, the patch for the FieldAliasingMapper has been solved differently as such a Field class already existed in XStream's code base and the patch for the XmlFriendlyReplace has been applied and improved by adding a cache. 
@@ -487,7 +487,7 @@ Jörg</p> </div>
  You may give the head revision a try ... 
 
  Regards, 
-Jörg              </div>
+JÃ¶rg              </div>
         </div>
     </div>
 </div>
@@ -507,7 +507,7 @@ Jörg              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156120_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156120_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156120_verbose subText"><span class="date user-tz" title="01/Dec/08 4:15 PM"><time class="livestamp" datetime="2008-12-01T16:15-0600">01/Dec/08 4:15 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Set correct fix version.</p> </div>
@@ -522,7 +522,7 @@ Jörg              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156120_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156120_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156120_concise subText"><span class="date user-tz" title="01/Dec/08 4:15 PM"><time class="livestamp" datetime="2008-12-01T16:15-0600">01/Dec/08 4:15 PM</time></span></span>                    Set correct fix version.              </div>
         </div>
     </div>
@@ -543,7 +543,7 @@ Jörg              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156145_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156145_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156145_verbose subText"><span class="date user-tz" title="01/Dec/08 4:16 PM"><time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Fixed for upcoming release.</p> </div>
@@ -558,7 +558,7 @@ Jörg              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156145_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156145_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156145_concise subText"><span class="date user-tz" title="01/Dec/08 4:16 PM"><time class="livestamp" datetime="2008-12-01T16:16-0600">01/Dec/08 4:16 PM</time></span></span>                    Fixed for upcoming release.              </div>
         </div>
     </div>
@@ -574,7 +574,7 @@ Jörg              </div>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

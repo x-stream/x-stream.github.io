@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -296,7 +296,7 @@
                         <div class="wrap">
                             <strong title="JDK version and platform" class="name">JDK version and platform:</strong>
                             <div id="customfield_10070-val" class="value type-textfield" data-fieldtype="textfield" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:textfield">
-                                       1.4.2_08-b03
+                                      Â 1.4.2_08-b03
   
                             </div>
                         </div>
@@ -310,7 +310,7 @@
 
 <p>public class Main {<br>
         public static void main(String[] args) {<br>
-                final XStream x = new XStream(new DomDriver(new ClassPathEntityResolver("windows-1252")));<br>
+                final XStream x = new XStream(new DomDriver(new ClassPathEntityResolver("utf-8")));<br>
                 x.setMode(XStream.ID_REFERENCES);<br>
                 x.alias("strings", Strings.class);<br>
                 x.addImplicitCollection(Strings.class, "strings");<br>
@@ -463,7 +463,7 @@ Daniel</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61143_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61143_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_61143_verbose subText"><span class="date user-tz" title="15/Mar/06 3:13 PM"><time class="livestamp" datetime="2006-03-15T15:13-0600">15/Mar/06 3:13 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>XStream does not write ids for implicit elements anymore. Any attempt to reference such an element results now in a ConverterException. Your case should be fixed now.</p> </div>
@@ -478,7 +478,7 @@ Daniel</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61143_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61143_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_61143_concise subText"><span class="date user-tz" title="15/Mar/06 3:13 PM"><time class="livestamp" datetime="2006-03-15T15:13-0600">15/Mar/06 3:13 PM</time></span></span>                    XStream does not write ids for implicit elements anymore. Any attempt to reference such an element results now in a ConverterException. Your case should be fixed now.              </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -327,7 +327,7 @@
 <p>Since the JLS is a bit fuzzy about the legal identifiers, I've implemented a small application that test every Unicode character if it is a legal character to start or continue a Java identifier and if so, checks whether it is a legal character to start or continue a legal XML name. </p>
 
 <p>The result is that there are 85 characters legal in Java identifiers, but not legal in XML names. For most of these characters, it is unlikely that they will be used in Java identifiers on a typical American or European system. But the following characters are legal in Java identifiers and are printable in these systems: <br>
-'$', '¢', '£', '¤', '¥', 'ª', 'µ', 'º'</p>
+'$', 'Â¢', 'Â£', 'Â¤', 'Â¥', 'Âª', 'Âµ', 'Âº'</p>
 
 <p>But nevertheless for all the other characters it is totally legal to be part of an Java identifier as well. <br>
 Even the UNICODE codepoint LEFT_TO_RIGHT_OVERRIDE (0x202e) is legal! (I tried it with Eclipse Helios on Windows XP. It looks (and feels) weired, but is legal and does not produce compile errors!)</p>
@@ -462,7 +462,7 @@ Even the UNICODE codepoint LEFT_TO_RIGHT_OVERRIDE (0x202e) is legal! (I tried it
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_227674_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_227674_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_227674_verbose subText"><span class="date user-tz" title="08/Jul/10 3:11 AM"><time class="livestamp" datetime="2010-07-08T03:11-0500">08/Jul/10 3:11 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The mechanism to encode java identifiers has been changed for upcoming 1.4.x and the XmlFriendyReplacer is now deprecated. However, thanks for your analysis. I was not aware that there are some Unicode chars that can be used in Java identifiers as well, I always wrongly assumed that isJavaIdentifier is restricted to chars within 8-bit ASCII. I'll use your code within a unit test and update the current fucntionality.</p> </div>
@@ -477,7 +477,7 @@ Even the UNICODE codepoint LEFT_TO_RIGHT_OVERRIDE (0x202e) is legal! (I tried it
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_227674_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_227674_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_227674_concise subText"><span class="date user-tz" title="08/Jul/10 3:11 AM"><time class="livestamp" datetime="2010-07-08T03:11-0500">08/Jul/10 3:11 AM</time></span></span>                    The mechanism to encode java identifiers has been changed for upcoming 1.4.x and the XmlFriendyReplacer is now deprecated. However, thanks for your analysis. I was not aware that there are some Unicode chars that can be used in Java identifiers as well, I always wrongly assumed that isJavaIdentifier is restricted to chars within 8-bit ASCII. I'll use your code within a unit test and update the current fucntionality.              </div>
         </div>
     </div>
@@ -498,7 +498,7 @@ Even the UNICODE codepoint LEFT_TO_RIGHT_OVERRIDE (0x202e) is legal! (I tried it
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274450_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274450_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_274450_verbose subText"><span class="date user-tz" title="27/Jul/11 7:36 PM"><time class="livestamp" datetime="2011-07-27T19:36-0500">27/Jul/11 7:36 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Thanks for providing the test code. I've used some of it to implement the final solution in the new XmlFriendlyNameCoder. Fixed in HEAD.</p> </div>
@@ -513,7 +513,7 @@ Even the UNICODE codepoint LEFT_TO_RIGHT_OVERRIDE (0x202e) is legal! (I tried it
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274450_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274450_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_274450_concise subText"><span class="date user-tz" title="27/Jul/11 7:36 PM"><time class="livestamp" datetime="2011-07-27T19:36-0500">27/Jul/11 7:36 PM</time></span></span>                    Thanks for providing the test code. I've used some of it to implement the final solution in the new XmlFriendlyNameCoder. Fixed in HEAD.              </div>
         </div>
     </div>
@@ -529,7 +529,7 @@ Even the UNICODE codepoint LEFT_TO_RIGHT_OVERRIDE (0x202e) is legal! (I tried it
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

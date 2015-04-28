@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -351,7 +351,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61465_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61465_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_61465_verbose subText"><span class="date user-tz" title="19/Mar/06 8:02 AM"><time class="livestamp" datetime="2006-03-19T08:02-0600">19/Mar/06 8:02 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Yes, we need this definitely. And as I already explained some time ago, it is not enough to build XStream with the different JDK versions as we do currently in Beetlejuice, but to use the resulting artifact from the Sun JDK 1.5 build and use it with the different JDKs. Latest indication is the problem with IBM JDK 1.4, that declares the methods and field in reverse order ... but only for classes it compiled itself. Also JRockit is such a canidate, that has the Sun classes for the enhanced mode, but it does not work. OTOH XStream has a some code, where the version of the JDK is used to decide for certain functionality ... which is also not true.</p> </div>
@@ -366,7 +366,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61465_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_61465_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_61465_concise subText"><span class="date user-tz" title="19/Mar/06 8:02 AM"><time class="livestamp" datetime="2006-03-19T08:02-0600">19/Mar/06 8:02 AM</time></span></span>                    Yes, we need this definitely. And as I already explained some time ago, it is not enough to build XStream with the different JDK versions as we do currently in Beetlejuice, but to use the resulting artifact from the Sun JDK 1.5 build and use it with the different JDKs. Latest indication is the problem with IBM JDK 1.4, that declares the methods and field in reverse order ... but only for classes it compiled itself. Also JRockit is such a canidate, that has the Sun classes for the enhanced mode, but it does not work. OTOH XStream has a some code, where the version of the JDK is used to decide for certain functionality ... which is also not true.              </div>
         </div>
     </div>

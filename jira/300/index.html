@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -425,7 +425,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321944_verbose subText"><span class="date user-tz" title="13/Mar/13 8:29 PM"><time class="livestamp" datetime="2013-03-13T20:29-0500">13/Mar/13 8:29 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>It's been a long time and XStream is still Java 1.4 compatible.</p>
@@ -444,7 +444,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321944_concise subText"><span class="date user-tz" title="13/Mar/13 8:29 PM"><time class="livestamp" datetime="2013-03-13T20:29-0500">13/Mar/13 8:29 PM</time></span></span>                    It's been a long time and XStream is still Java 1.4 compatible. 
 
  However, I was never lucky with the proposed changes of the XStream API. I've added therefore a complete different approach using a specialized converter (EnumToStringConverter) that can be registered individually for an individual Enum type. By default it is using the Enum's string representation (that's what I normally use to get a nice camel case representation from enum values like NOT_SUPPORTED also in other parts of my applications) or you may provide an individual map for the string alternative values. 
@@ -472,9 +472,9 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     <a class="user-hover user-avatar" rel="dblevins" id="commentauthor_321945_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=dblevins"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> David Blevins</a>
  added a comment  - <span class="commentdate_321945_verbose subText"><span class="date user-tz" title="13/Mar/13 10:17 PM"><time class="livestamp" datetime="2013-03-13T22:17-0500">13/Mar/13 10:17 PM</time></span></span>  </div>
         </div>
-        <div class="action-body flooded"><p>Hi Jörg!</p>
+        <div class="action-body flooded"><p>Hi JÃ¶rg!</p>
 
-<p>We switched away from XStream a couple months after this in OpenEJB (now TomEE) for JAXB and in fact have recently switched from that to a custom JAXB runtime we wrote that actually bytecode generates the (un)marshallers so no calculation is done at runtime – all xml-&gt;java and java-&gt;xml logic is 100% static methods and quite fast as a result.</p>
+<p>We switched away from XStream a couple months after this in OpenEJB (now TomEE) for JAXB and in fact have recently switched from that to a custom JAXB runtime we wrote that actually bytecode generates the (un)marshallers so no calculation is done at runtime Â– all xml-&gt;java and java-&gt;xml logic is 100% static methods and quite fast as a result.</p>
 
 <p>But I have been in your shoes more times than I can count and fully understand it isn't always easy to deal with the more complex patches that come in, due to time or other factors, and sometimes they hang over your head.  I think it's wonderful to see you still working on XStream and I really appreciate the follow up.  Few people would look so far back and take care of an issue like this and I think it shows great character.</p> </div>
     </div>
@@ -489,9 +489,9 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
                 
 
     <a class="user-hover user-avatar" rel="dblevins" id="commentauthor_321945_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=dblevins"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> David Blevins</a>
- added a comment  - <span class="commentdate_321945_concise subText"><span class="date user-tz" title="13/Mar/13 10:17 PM"><time class="livestamp" datetime="2013-03-13T22:17-0500">13/Mar/13 10:17 PM</time></span></span>                    Hi Jörg! 
+ added a comment  - <span class="commentdate_321945_concise subText"><span class="date user-tz" title="13/Mar/13 10:17 PM"><time class="livestamp" datetime="2013-03-13T22:17-0500">13/Mar/13 10:17 PM</time></span></span>                    Hi JÃ¶rg! 
 
- We switched away from XStream a couple months after this in OpenEJB (now TomEE) for JAXB and in fact have recently switched from that to a custom JAXB runtime we wrote that actually bytecode generates the (un)marshallers so no calculation is done at runtime – all xml-&gt;java and java-&gt;xml logic is 100% static methods and quite fast as a result. 
+ We switched away from XStream a couple months after this in OpenEJB (now TomEE) for JAXB and in fact have recently switched from that to a custom JAXB runtime we wrote that actually bytecode generates the (un)marshallers so no calculation is done at runtime Â– all xml-&gt;java and java-&gt;xml logic is 100% static methods and quite fast as a result. 
 
  But I have been in your shoes more times than I can count and fully understand it isn't always easy to deal with the more complex patches that come in, due to time or other factors, and sometimes they hang over your head.  I think it's wonderful to see you still working on XStream and I really appreciate the follow up.  Few people would look so far back and take care of an issue like this and I think it shows great character.              </div>
         </div>
@@ -513,7 +513,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321986_verbose subText"><span class="date user-tz" title="14/Mar/13 12:25 PM"><time class="livestamp" datetime="2013-03-14T12:25-0500">14/Mar/13 12:25 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi David,</p>
@@ -530,7 +530,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321986_concise subText"><span class="date user-tz" title="14/Mar/13 12:25 PM"><time class="livestamp" datetime="2013-03-14T12:25-0500">14/Mar/13 12:25 PM</time></span></span>                    Hi David, 
 
  thanks for the feedback. I was aware that you're certainly no longer waiting for this functionality. And you're definitely right to use JAXB for your use case - especially if you generate byte-code on the fly, this sounds interesting                </div>
@@ -548,7 +548,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

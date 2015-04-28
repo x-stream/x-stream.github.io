@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -933,7 +933,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_304020_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_304020_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_304020_verbose subText"><span class="date user-tz" title="19/Jul/12 1:32 AM"><time class="livestamp" datetime="2012-07-19T01:32-0500">19/Jul/12 1:32 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Sorry, but there's nothing XStream can really do for you. You are serializing the objects of a DOM model using the ReflectionConverter. However, this implies, that the generated XML is highly dependent on internal implementation details. These have changed for the DOM classes in the JDK from Java 1.4 to Java 5 and now obviously again from Java 6 to Java 7. To be independent of such changes you will have to write own converters for these classes or take an approach as provided by Ken Arnold in <a href="548" title="Converter for raw XML streams" class="issue-link" data-issue-key="XSTR-548">XSTR-548</a>.</p> </div>
@@ -948,7 +948,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_304020_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_304020_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_304020_concise subText"><span class="date user-tz" title="19/Jul/12 1:32 AM"><time class="livestamp" datetime="2012-07-19T01:32-0500">19/Jul/12 1:32 AM</time></span></span>                    Sorry, but there's nothing XStream can really do for you. You are serializing the objects of a DOM model using the ReflectionConverter. However, this implies, that the generated XML is highly dependent on internal implementation details. These have changed for the DOM classes in the JDK from Java 1.4 to Java 5 and now obviously again from Java 6 to Java 7. To be independent of such changes you will have to write own converters for these classes or take an approach as provided by Ken Arnold in  XSTR-548 .              </div>
         </div>
     </div>
@@ -969,7 +969,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317610_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317610_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317610_verbose subText"><span class="date user-tz" title="19/Jan/13 4:46 AM"><time class="livestamp" datetime="2013-01-19T04:46-0600">19/Jan/13 4:46 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Reflection-based converters <b>will</b> expose implementation details to the peristence layer which may case incompatibilities between JDK versions or between JDKs of different vendors. XStream cannot deliver specialized converters OOTB for any avialble type in the JDK.</p> </div>
@@ -984,7 +984,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317610_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317610_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317610_concise subText"><span class="date user-tz" title="19/Jan/13 4:46 AM"><time class="livestamp" datetime="2013-01-19T04:46-0600">19/Jan/13 4:46 AM</time></span></span>                    Reflection-based converters  will  expose implementation details to the peristence layer which may case incompatibilities between JDK versions or between JDKs of different vendors. XStream cannot deliver specialized converters OOTB for any avialble type in the JDK.              </div>
         </div>
     </div>
@@ -1000,7 +1000,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

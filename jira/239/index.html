@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -423,7 +423,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62919_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62919_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_62919_verbose subText"><span class="date user-tz" title="05/Apr/06 4:52 PM"><time class="livestamp" datetime="2006-04-05T16:52-0500">05/Apr/06 4:52 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>A really bad coincidence happen for CGLIB proxies of real classes. A CGLIB class proxy will delegate all method calls, but represents still a complete instance of the original class. If this class is Serializable and has a readObject/writeObject methods two things may happen:<br>
@@ -443,7 +443,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62919_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62919_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_62919_concise subText"><span class="date user-tz" title="05/Apr/06 4:52 PM"><time class="livestamp" datetime="2006-04-05T16:52-0500">05/Apr/06 4:52 PM</time></span></span>                    A really bad coincidence happen for CGLIB proxies of real classes. A CGLIB class proxy will delegate all method calls, but represents still a complete instance of the original class. If this class is Serializable and has a readObject/writeObject methods two things may happen: 
 a) any direct access to a field will reference the element in the proxied instance 
 b) any indirect access will be delegated by the proxy 
@@ -469,7 +469,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62923_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62923_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_62923_verbose subText"><span class="date user-tz" title="05/Apr/06 4:57 PM"><time class="livestamp" datetime="2006-04-05T16:57-0500">05/Apr/06 4:57 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>A workaround for the above case is a Converter for CGLIB proxies, that skips the SerializationConverter. In the sample a modified ReflectionConverter is registered with a higher priority, that handles all CGLIB-based proxies.</p>
@@ -493,7 +493,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62923_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_62923_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_62923_concise subText"><span class="date user-tz" title="05/Apr/06 4:57 PM"><time class="livestamp" datetime="2006-04-05T16:57-0500">05/Apr/06 4:57 PM</time></span></span>                    A workaround for the above case is a Converter for CGLIB proxies, that skips the SerializationConverter. In the sample a modified ReflectionConverter is registered with a higher priority, that handles all CGLIB-based proxies. 
 
          xstream.registerConverter(new ReflectionConverter(xstream.getMapper(), new JVM().bestReflectionProvider()){ 
@@ -523,7 +523,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63062_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63062_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_63062_verbose subText"><span class="date user-tz" title="07/Apr/06 8:58 AM"><time class="livestamp" datetime="2006-04-07T08:58-0500">07/Apr/06 8:58 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Next chapter: The workaround in the last comment is only valid for the current process. If another process tries to deserialize the stream, the CGLIB proxy classes are no longer known. A combination of Mapper and Converter is necessary, although it is not yet clear if such a proxy can be properly recreated at all.</p> </div>
@@ -538,7 +538,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63062_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63062_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_63062_concise subText"><span class="date user-tz" title="07/Apr/06 8:58 AM"><time class="livestamp" datetime="2006-04-07T08:58-0500">07/Apr/06 8:58 AM</time></span></span>                    Next chapter: The workaround in the last comment is only valid for the current process. If another process tries to deserialize the stream, the CGLIB proxy classes are no longer known. A combination of Mapper and Converter is necessary, although it is not yet clear if such a proxy can be properly recreated at all.              </div>
         </div>
     </div>
@@ -559,7 +559,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63141_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63141_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_63141_verbose subText"><span class="date user-tz" title="08/Apr/06 2:36 PM"><time class="livestamp" datetime="2006-04-08T14:36-0500">08/Apr/06 2:36 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Support for the CGLIB Enhancer has been added. Supported is limited to Enhancer created proxies using CGLIB's DefaultNamingStrategy, no super class or a superclass with an accessible default constructor and a single Callback.</p> </div>
@@ -574,7 +574,7 @@ This may leed to the situation, that the values written into the stream might be
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63141_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63141_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_63141_concise subText"><span class="date user-tz" title="08/Apr/06 2:36 PM"><time class="livestamp" datetime="2006-04-08T14:36-0500">08/Apr/06 2:36 PM</time></span></span>                    Support for the CGLIB Enhancer has been added. Supported is limited to Enhancer created proxies using CGLIB's DefaultNamingStrategy, no super class or a superclass with an accessible default constructor and a single Callback.              </div>
         </div>
     </div>
@@ -636,7 +636,7 @@ This may leed to the situation, that the values written into the stream might be
 
             <span class="user-hover" id="issue_summary_reporter_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-2.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
             </dd>

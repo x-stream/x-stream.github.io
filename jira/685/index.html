@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -385,7 +385,7 @@ Settings s = (Settings) xstream.fromXML(file);</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_287067_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_287067_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_287067_verbose subText"><span class="date user-tz" title="29/Dec/11 7:36 AM"><time class="livestamp" datetime="2011-12-29T07:36-0600">29/Dec/11 7:36 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Fixed in trunk. For now you may use a workaround by invoking the driver directly:</p>
@@ -408,7 +408,7 @@ reader.close();
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_287067_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_287067_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_287067_concise subText"><span class="date user-tz" title="29/Dec/11 7:36 AM"><time class="livestamp" datetime="2011-12-29T07:36-0600">29/Dec/11 7:36 AM</time></span></span>                    Fixed in trunk. For now you may use a workaround by invoking the driver directly: 
   
  
@@ -478,7 +478,7 @@ reader.close();
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_308468_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_308468_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_308468_verbose subText"><span class="date user-tz" title="13/Sep/12 5:25 PM"><time class="livestamp" datetime="2012-09-13T17:25-0500">13/Sep/12 5:25 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>You're unfortunately right, but the question is, what XStream can do about. If you provide a file or URL, XStream creates a javax.xml.transform.stream.StreamSource (required to resolve external references) which in turn is used as argument for the XMLInputFactory.createXMLStreamReader() creating the javax.xml.stream.XMLStreamReader. The XMLStreamReader will then open the file or URL on its own. When XStream is finished, it does now call since version 1.4.3 the XMLStreamReader.close() method.</p>
@@ -495,7 +495,7 @@ reader.close();
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_308468_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_308468_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_308468_concise subText"><span class="date user-tz" title="13/Sep/12 5:25 PM"><time class="livestamp" datetime="2012-09-13T17:25-0500">13/Sep/12 5:25 PM</time></span></span>                    You're unfortunately right, but the question is, what XStream can do about. If you provide a file or URL, XStream creates a javax.xml.transform.stream.StreamSource (required to resolve external references) which in turn is used as argument for the XMLInputFactory.createXMLStreamReader() creating the javax.xml.stream.XMLStreamReader. The XMLStreamReader will then open the file or URL on its own. When XStream is finished, it does now call since version 1.4.3 the XMLStreamReader.close() method. 
 
  However, to my big surprise, StAX 1.0 specification demands that the implementation does  not  close the underlaying input source. Unfortunately the XMLStreamReader instance is actually the only object, that knows the file handle/socket/... that has to be closed to release the system resource and it is not possible to access it from outside. :-/              </div>
@@ -518,7 +518,7 @@ reader.close();
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332943_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332943_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_332943_verbose subText"><span class="date user-tz" title="17/Sep/13 2:47 PM"><time class="livestamp" datetime="2013-09-17T14:47-0500">17/Sep/13 2:47 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Found a solution in current trunk reading from File or URL.</p> </div>
@@ -533,7 +533,7 @@ reader.close();
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332943_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332943_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_332943_concise subText"><span class="date user-tz" title="17/Sep/13 2:47 PM"><time class="livestamp" datetime="2013-09-17T14:47-0500">17/Sep/13 2:47 PM</time></span></span>                    Found a solution in current trunk reading from File or URL.              </div>
         </div>
     </div>
@@ -549,7 +549,7 @@ reader.close();
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

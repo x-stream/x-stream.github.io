@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -421,7 +421,7 @@ One of the constructors changed, and the change reflects a specific internal beh
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327097_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327097_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_327097_verbose subText"><span class="date user-tz" title="20/Jun/13 5:09 PM"><time class="livestamp" datetime="2013-06-20T17:09-0500">20/Jun/13 5:09 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Actually the assumption is correct, but it fails before it can call put on each element. See, the stack trace implies that we are dealing here with two instances of OrderRetainingMap. One is provided as argument for the new one. The AIOOBE  is actually risen in the entrySet() method for the provided instance. Since this method has also be called in the old implementation, I doubt that the call of putAll does actually make a difference. For me this looks more like a concurrency problem, because a key in the provided map has suddenly vanished.</p>
@@ -438,7 +438,7 @@ One of the constructors changed, and the change reflects a specific internal beh
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327097_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327097_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_327097_concise subText"><span class="date user-tz" title="20/Jun/13 5:09 PM"><time class="livestamp" datetime="2013-06-20T17:09-0500">20/Jun/13 5:09 PM</time></span></span>                    Actually the assumption is correct, but it fails before it can call put on each element. See, the stack trace implies that we are dealing here with two instances of OrderRetainingMap. One is provided as argument for the new one. The AIOOBE  is actually risen in the entrySet() method for the provided instance. Since this method has also be called in the old implementation, I doubt that the call of putAll does actually make a difference. For me this looks more like a concurrency problem, because a key in the provided map has suddenly vanished. 
 
  Can you provide a complete stack trace?              </div>
@@ -461,7 +461,7 @@ One of the constructors changed, and the change reflects a specific internal beh
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332932_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332932_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_332932_verbose subText"><span class="date user-tz" title="17/Sep/13 12:15 PM"><time class="livestamp" datetime="2013-09-17T12:15-0500">17/Sep/13 12:15 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Nothing will happen without further information.</p> </div>
@@ -476,7 +476,7 @@ One of the constructors changed, and the change reflects a specific internal beh
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332932_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_332932_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_332932_concise subText"><span class="date user-tz" title="17/Sep/13 12:15 PM"><time class="livestamp" datetime="2013-09-17T12:15-0500">17/Sep/13 12:15 PM</time></span></span>                    Nothing will happen without further information.              </div>
         </div>
     </div>
@@ -497,7 +497,7 @@ One of the constructors changed, and the change reflects a specific internal beh
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333801_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333801_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_333801_verbose subText"><span class="date user-tz" title="08/Oct/13 7:26 PM"><time class="livestamp" datetime="2013-10-08T19:26-0500">08/Oct/13 7:26 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Fixed in trunk and 1.4.x branch.</p> </div>
@@ -512,7 +512,7 @@ One of the constructors changed, and the change reflects a specific internal beh
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333801_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333801_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_333801_concise subText"><span class="date user-tz" title="08/Oct/13 7:26 PM"><time class="livestamp" datetime="2013-10-08T19:26-0500">08/Oct/13 7:26 PM</time></span></span>                    Fixed in trunk and 1.4.x branch.              </div>
         </div>
     </div>
@@ -528,7 +528,7 @@ One of the constructors changed, and the change reflects a specific internal beh
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

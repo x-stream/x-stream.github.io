@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -317,11 +317,11 @@
     <div class="user-content-block">
                     <p>To recap: I want to be able to read documents that have defined objects, but some fields of the object contain arbitrary XML that I can't describe in advance.  What I want is to be able to read and write these objects, and have these XML parts present in my program as XML trees represented as Dom or JDom or whatever.</p>
 
-<p>The last place I left it, I thought about the idea of having the XML object representation type being the type of the field – an org.w3c.xml.Element means a DOM document, an org.jdom.Element for a JDom object, etc.  Since then I've implemented this idea and it works just fine for me.  Here's what I've got:</p>
+<p>The last place I left it, I thought about the idea of having the XML object representation type being the type of the field Â– an org.w3c.xml.Element means a DOM document, an org.jdom.Element for a JDom object, etc.  Since then I've implemented this idea and it works just fine for me.  Here's what I've got:</p>
 
 <p>Two converters: DomConverter and JDomConverter that convert XML elements in a document into Dom or JDom object representations respectively.  These must be used with matching drivers, because the "conversion" is simply using the document's current element.</p>
 
-<p>Jörg suggested that using the regular readers would cause problems because they don't handle mixed content (elements with mixed text and element children).  That isn't a problem for me, and things work fine without worrying about that.  However, I can imagine this is so, so I created MixedDomStreamReader and MixedJDomStreamReader classes.  The specific converters (DomConverter and JDomConverter) return these kinds of readers from their createReader() methods.  Marshalling uses a new MixedStreamCopier class to copy the node tree from the created mixed reader.</p>
+<p>JÃ¶rg suggested that using the regular readers would cause problems because they don't handle mixed content (elements with mixed text and element children).  That isn't a problem for me, and things work fine without worrying about that.  However, I can imagine this is so, so I created MixedDomStreamReader and MixedJDomStreamReader classes.  The specific converters (DomConverter and JDomConverter) return these kinds of readers from their createReader() methods.  Marshalling uses a new MixedStreamCopier class to copy the node tree from the created mixed reader.</p>
 
 <p>I'm using this now, and it is working well for me.  It works out to about 500 lines of code, and fundamentally seems robust.</p>
 
@@ -541,7 +541,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171453_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171453_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_171453_verbose subText"><span class="date user-tz" title="30/Mar/09 4:01 PM"><time class="livestamp" datetime="2009-03-30T16:01-0500">30/Mar/09 4:01 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Ken, can you make here an additional statement, that you donate this code for the XStream project to be published under BSD style license? Thanks!</p> </div>
@@ -556,7 +556,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171453_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_171453_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_171453_concise subText"><span class="date user-tz" title="30/Mar/09 4:01 PM"><time class="livestamp" datetime="2009-03-30T16:01-0500">30/Mar/09 4:01 PM</time></span></span>                    Ken, can you make here an additional statement, that you donate this code for the XStream project to be published under BSD style license? Thanks!              </div>
         </div>
     </div>
@@ -608,7 +608,7 @@
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

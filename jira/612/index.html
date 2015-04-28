@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -486,7 +486,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272608_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272608_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_272608_verbose subText"><span class="date user-tz" title="07/Jul/11 5:03 PM"><time class="livestamp" datetime="2011-07-07T17:03-0500">07/Jul/11 5:03 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Kevin,</p>
@@ -503,7 +503,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272608_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272608_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_272608_concise subText"><span class="date user-tz" title="07/Jul/11 5:03 PM"><time class="livestamp" datetime="2011-07-07T17:03-0500">07/Jul/11 5:03 PM</time></span></span>                    Hi Kevin, 
 
  finally ... I am looking into this before finishing 1.4. However, I am not that confident with opening the implementation at all edges. I rather try to get implementation and entry points of ReflectionProvider and BeanProvider more in sync. Therefore I will first factor out the new interface JavaBeanProvider from BeanProvider to match the architecture of the reflection package. This will provide you with most flexibility in first place. WDYT?              </div>
@@ -526,7 +526,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_273400_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_273400_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_273400_verbose subText"><span class="date user-tz" title="16/Jul/11 3:14 PM"><time class="livestamp" datetime="2011-07-16T15:14-0500">16/Jul/11 3:14 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The current implementation uses now a similar design as the reflection-based stuff. I reintroduced the PropertyDictionary that can be setup with an own PropertySorter. I think I provide now quite similar extension points compared to your original patch. Implementation is in trunk.</p> </div>
@@ -541,7 +541,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_273400_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_273400_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_273400_concise subText"><span class="date user-tz" title="16/Jul/11 3:14 PM"><time class="livestamp" datetime="2011-07-16T15:14-0500">16/Jul/11 3:14 PM</time></span></span>                    The current implementation uses now a similar design as the reflection-based stuff. I reintroduced the PropertyDictionary that can be setup with an own PropertySorter. I think I provide now quite similar extension points compared to your original patch. Implementation is in trunk.              </div>
         </div>
     </div>
@@ -610,7 +610,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_279369_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_279369_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_279369_verbose subText"><span class="date user-tz" title="19/Sep/11 5:58 PM"><time class="livestamp" datetime="2011-09-19T17:58-0500">19/Sep/11 5:58 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Kevin,</p>
@@ -618,7 +618,7 @@
 <p>isn't this possible by simply overloading JavaBeanConverter.marshal(...)? I realize, that you have to keep the mapper yourself for now, but it has to be provided with the converter's constructor, so it is a simple annoyance. In trunk it is now already declared as "protected final" (analogue to AbstractReflectionConverter).</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -632,13 +632,13 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_279369_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_279369_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_279369_concise subText"><span class="date user-tz" title="19/Sep/11 5:58 PM"><time class="livestamp" datetime="2011-09-19T17:58-0500">19/Sep/11 5:58 PM</time></span></span>                    Hi Kevin, 
 
  isn't this possible by simply overloading JavaBeanConverter.marshal(...)? I realize, that you have to keep the mapper yourself for now, but it has to be provided with the converter's constructor, so it is a simple annoyance. In trunk it is now already declared as "protected final" (analogue to AbstractReflectionConverter). 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -660,7 +660,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280911_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280911_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_280911_verbose subText"><span class="date user-tz" title="09/Oct/11 9:33 AM"><time class="livestamp" datetime="2011-10-09T09:33-0500">09/Oct/11 9:33 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Resolving the issue, assuming that the protected field is enough. New snapshot is available in the repo.</p> </div>
@@ -675,7 +675,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280911_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280911_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_280911_concise subText"><span class="date user-tz" title="09/Oct/11 9:33 AM"><time class="livestamp" datetime="2011-10-09T09:33-0500">09/Oct/11 9:33 AM</time></span></span>                    Resolving the issue, assuming that the protected field is enough. New snapshot is available in the repo.              </div>
         </div>
     </div>
@@ -691,7 +691,7 @@
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

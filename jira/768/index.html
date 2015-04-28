@@ -1,5 +1,5 @@
 <!DOCTYPE html><html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -422,7 +422,7 @@ For example, when setting the system time zone to GMT-12:00 and calling {{TimeZo
 <br>
 
 <br>
-The problem seems to be in {{com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString(String)}}â€‹. This has the following code:
+The problem seems to be in {{com.thoughtworks.xstream.converters.extended.ISO8601GregorianCalendarConverter.fromString(String)}}Ã¢â¬â¹. This has the following code:
 <br>
 {code}
 <br>
@@ -569,12 +569,12 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363410_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363410_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_363410_verbose subText"><span class="date user-tz" title="16/Feb/15 5:35 PM"><time class="livestamp" datetime="2015-02-16T17:35-0600">16/Feb/15 5:35 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Well, as soon I apply your proposed change, we have a failing unit test. Problem is, that DateTimeZone.getDefault() does not (and cannot) take into account if a user changed the default of the Java runtime using TimeZone.setDefault("CEST").</p>
 
-<p>However, we have an additional problem since Java 6, because since this runtime version we have localized time zone abbreviations. E.g. with a German default locale we get MESZ (Mittel-Europ�ische SommerZeit) instead of CEST (Central European Summer Time). What a mess!</p> </div>
+<p>However, we have an additional problem since Java 6, because since this runtime version we have localized time zone abbreviations. E.g. with a German default locale we get MESZ (Mittel-Europäische SommerZeit) instead of CEST (Central European Summer Time). What a mess!</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">
@@ -586,10 +586,10 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363410_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363410_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_363410_concise subText"><span class="date user-tz" title="16/Feb/15 5:35 PM"><time class="livestamp" datetime="2015-02-16T17:35-0600">16/Feb/15 5:35 PM</time></span></span>                    Well, as soon I apply your proposed change, we have a failing unit test. Problem is, that DateTimeZone.getDefault() does not (and cannot) take into account if a user changed the default of the Java runtime using TimeZone.setDefault("CEST"). 
 
- However, we have an additional problem since Java 6, because since this runtime version we have localized time zone abbreviations. E.g. with a German default locale we get MESZ (Mittel-Europ�ische SommerZeit) instead of CEST (Central European Summer Time). What a mess!              </div>
+ However, we have an additional problem since Java 6, because since this runtime version we have localized time zone abbreviations. E.g. with a German default locale we get MESZ (Mittel-Europäische SommerZeit) instead of CEST (Central European Summer Time). What a mess!              </div>
         </div>
     </div>
 </div>
@@ -609,7 +609,7 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363411_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363411_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_363411_verbose subText"><span class="date user-tz" title="16/Feb/15 5:42 PM"><time class="livestamp" datetime="2015-02-16T17:42-0600">16/Feb/15 5:42 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Does this work for you?</p>
@@ -628,7 +628,7 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363411_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_363411_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_363411_concise subText"><span class="date user-tz" title="16/Feb/15 5:42 PM"><time class="livestamp" datetime="2015-02-16T17:42-0600">16/Feb/15 5:42 PM</time></span></span>                    Does this work for you? 
   
  
@@ -681,7 +681,7 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
         <div class="action-details" id="changehistorydetails_500406">
                                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="changehistoryauthor_500406" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="changehistoryauthor_500406" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  made changes  - <span class="date" title="17/Feb/15 5:20 PM"><time class="livestamp" datetime="2015-02-17T17:20-0600">17/Feb/15 5:20 PM</time></span>
         </div>
         <div class="changehistory action-body">
@@ -738,7 +738,7 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
         <div class="action-details" id="changehistorydetails_500611">
                                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="changehistoryauthor_500611" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="changehistoryauthor_500611" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  made changes  - <span class="date" title="18/Feb/15 12:28 PM"><time class="livestamp" datetime="2015-02-18T12:28-0600">18/Feb/15 12:28 PM</time></span>
         </div>
         <div class="changehistory action-body">
@@ -780,7 +780,7 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
         <div class="action-details" id="changehistorydetails_500615">
                                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="changehistoryauthor_500615" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="changehistoryauthor_500615" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  made changes  - <span class="date" title="18/Feb/15 12:29 PM"><time class="livestamp" datetime="2015-02-18T12:29-0600">18/Feb/15 12:29 PM</time></span>
         </div>
         <div class="changehistory action-body">
@@ -817,7 +817,7 @@ This ignores the problem entirely and uses the time zone reported by Joda direct
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            J�rg Schaible
+            Jörg Schaible
         </span>
     </span>
                             </dd>

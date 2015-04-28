@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -421,7 +421,7 @@
         </div>
         <div class="action-body flooded"><p>Actually it's much simpler than that, seems like a simple Map causes the same problem:</p>
 
-<p>–<br>
+<p>Â–<br>
 public class XSTR389Test extends TestCase {</p>
 
 <p>	public static class MapHolder {</p>
@@ -442,7 +442,7 @@ public class XSTR389Test extends TestCase {</p>
 		assertNotNull(json);
 	}
 <p>}<br>
-–</p>
+Â–</p>
 
 <p>Please ignore my previous attachment (I don't have permission to delete it).</p> </div>
     </div>
@@ -459,7 +459,7 @@ public class XSTR389Test extends TestCase {</p>
     <a class="user-hover user-avatar" rel="mnasato" id="commentauthor_91820_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=mnasato"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mirko Nasato</a>
  added a comment  - <span class="commentdate_91820_concise subText"><span class="date user-tz" title="02/Apr/07 3:08 PM"><time class="livestamp" datetime="2007-04-02T15:08-0500">02/Apr/07 3:08 PM</time></span></span>                    Actually it's much simpler than that, seems like a simple Map causes the same problem: 
 
- – 
+ Â– 
 public class XSTR389Test extends TestCase { 
 
  	public static class MapHolder { 
@@ -480,7 +480,7 @@ public class XSTR389Test extends TestCase {
 		assertNotNull(json);
 	}
  } 
-– 
+Â– 
 
  Please ignore my previous attachment (I don't have permission to delete it).              </div>
         </div>
@@ -507,7 +507,7 @@ public class XSTR389Test extends TestCase {
         </div>
         <div class="action-body flooded"><p>Even simpler:</p>
 
-<p>–<br>
+<p>Â–<br>
 public class XSTR389Test extends TestCase {</p>
 
 <p>	public void test() </p>
@@ -519,7 +519,7 @@ public class XSTR389Test extends TestCase {</p>
 		assertNotNull(json);
 	}
 <p>}<br>
-–</p>
+Â–</p>
 
 <p>so this issue should be "JSON writer does not support Maps".</p> </div>
     </div>
@@ -536,7 +536,7 @@ public class XSTR389Test extends TestCase {</p>
     <a class="user-hover user-avatar" rel="mnasato" id="commentauthor_91821_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=mnasato"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mirko Nasato</a>
  added a comment  - <span class="commentdate_91821_concise subText"><span class="date user-tz" title="02/Apr/07 3:17 PM"><time class="livestamp" datetime="2007-04-02T15:17-0500">02/Apr/07 3:17 PM</time></span></span>                    Even simpler: 
 
- – 
+ Â– 
 public class XSTR389Test extends TestCase { 
 
  	public void test()  
@@ -548,7 +548,7 @@ public class XSTR389Test extends TestCase {
 		assertNotNull(json);
 	}
  } 
-– 
+Â– 
 
  so this issue should be "JSON writer does not support Maps".              </div>
         </div>
@@ -606,7 +606,7 @@ public class XSTR389Test extends TestCase {
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_94603_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_94603_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_94603_verbose subText"><span class="date user-tz" title="30/Apr/07 11:39 AM"><time class="livestamp" datetime="2007-04-30T11:39-0500">30/Apr/07 11:39 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Mirko and Jonathan,</p>
@@ -614,7 +614,7 @@ public class XSTR389Test extends TestCase {
 <p>I cannot reproduce this with the current version in subversion, I've committed unit tests for this case in the JsonHierarchicalStreamDriver, but they ru nwith success. Can you build this and give it a try yourself? Please report back!</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -628,13 +628,13 @@ public class XSTR389Test extends TestCase {
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_94603_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_94603_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_94603_concise subText"><span class="date user-tz" title="30/Apr/07 11:39 AM"><time class="livestamp" datetime="2007-04-30T11:39-0500">30/Apr/07 11:39 AM</time></span></span>                    Hi Mirko and Jonathan, 
 
  I cannot reproduce this with the current version in subversion, I've committed unit tests for this case in the JsonHierarchicalStreamDriver, but they ru nwith success. Can you build this and give it a try yourself? Please report back! 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -700,7 +700,7 @@ public class XSTR389Test extends TestCase {
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125041_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125041_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125041_verbose subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closed after no further comment has been given.</p> </div>
@@ -715,7 +715,7 @@ public class XSTR389Test extends TestCase {
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125041_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125041_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125041_concise subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>                    Closed after no further comment has been given.              </div>
         </div>
     </div>

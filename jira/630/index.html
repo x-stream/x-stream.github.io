@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -438,7 +438,7 @@ but it is "null"              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321940_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321940_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321940_verbose subText"><span class="date user-tz" title="13/Mar/13 6:29 PM"><time class="livestamp" datetime="2013-03-13T18:29-0500">13/Mar/13 6:29 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I always implied with this report, that there is a real incompatibility in JRockit, but that's not the case. XStream is from Java to XML and back. Therefore it expects that a persisted sorted collection <b>is</b> sorted (<a href="407" title="Comparing uninitialized objects" class="issue-link" data-issue-key="XSTR-407"><del>XSTR-407</del></a>). XStream makes a great effort to support JDKs where it is possible to rebuild the original instance without calling the comparator for each element again, especially because it can have other unwanted side-effects. When you add now elements out-of-order manually into the XML representation of such a collection, you risk that the resulting instance is simply in an undefined state. That's exactly what you're facing here. It might be that JRockit 6 is the first JRockit version, where XStream is actually able to rebuild the collection without calling the comparator, but if it works on older versions, it has been pure coincidence.</p> </div>
@@ -453,7 +453,7 @@ but it is "null"              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321940_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321940_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321940_concise subText"><span class="date user-tz" title="13/Mar/13 6:29 PM"><time class="livestamp" datetime="2013-03-13T18:29-0500">13/Mar/13 6:29 PM</time></span></span>                    I always implied with this report, that there is a real incompatibility in JRockit, but that's not the case. XStream is from Java to XML and back. Therefore it expects that a persisted sorted collection  is  sorted (  XSTR-407  ). XStream makes a great effort to support JDKs where it is possible to rebuild the original instance without calling the comparator for each element again, especially because it can have other unwanted side-effects. When you add now elements out-of-order manually into the XML representation of such a collection, you risk that the resulting instance is simply in an undefined state. That's exactly what you're facing here. It might be that JRockit 6 is the first JRockit version, where XStream is actually able to rebuild the collection without calling the comparator, but if it works on older versions, it has been pure coincidence.              </div>
         </div>
     </div>
@@ -469,7 +469,7 @@ but it is "null"              </div>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

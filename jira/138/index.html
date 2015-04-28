@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -347,7 +347,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121111_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121111_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_121111_verbose subText"><span class="date user-tz" title="23/Jan/08 8:35 PM"><time class="livestamp" datetime="2008-01-23T20:35-0600">23/Jan/08 8:35 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Well, a StaxEventReader is for the same reason not possible, why there exists no SaxReader: </p>
@@ -369,7 +369,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121111_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_121111_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_121111_concise subText"><span class="date user-tz" title="23/Jan/08 8:35 PM"><time class="livestamp" datetime="2008-01-23T20:35-0600">23/Jan/08 8:35 PM</time></span></span>                    Well, a StaxEventReader is for the same reason not possible, why there exists no SaxReader:  
 
    XStream works on a stream-based parser model, while SAX is event-based.  The steam based model implies, that the 
@@ -400,9 +400,9 @@
     <a class="user-hover user-avatar" rel="cowtowncoder" id="commentauthor_156405_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=cowtowncoder"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Tatu Saloranta</a>
  added a comment  - <span class="commentdate_156405_verbose subText"><span class="date user-tz" title="02/Dec/08 5:23 PM"><time class="livestamp" datetime="2008-12-02T17:23-0600">02/Dec/08 5:23 PM</time></span></span>  </div>
         </div>
-        <div class="action-body flooded"><p>Hi Joerg – actually, I think you may have read too much into XMLEventReader. It is still using pull-model (just like XMLStreamReader), it's just that instead of offering a cursor in the stream, results are event objects (XMLEvent) that contain all the data for the event.</p>
+        <div class="action-body flooded"><p>Hi Joerg Â– actually, I think you may have read too much into XMLEventReader. It is still using pull-model (just like XMLStreamReader), it's just that instead of offering a cursor in the stream, results are event objects (XMLEvent) that contain all the data for the event.</p>
 
-<p>So, it should not be super-difficult to support this I think, although at the same time usually it just should not be used – stream reader is more efficient than event reader, without exceptions. But I guess application may not get to choose which one is used in some cases.</p>
+<p>So, it should not be super-difficult to support this I think, although at the same time usually it just should not be used Â– stream reader is more efficient than event reader, without exceptions. But I guess application may not get to choose which one is used in some cases.</p>
 
 <p>I think I could hack together a reader if this feature is what users want.</p> </div>
     </div>
@@ -417,9 +417,9 @@
                 
 
     <a class="user-hover user-avatar" rel="cowtowncoder" id="commentauthor_156405_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=cowtowncoder"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Tatu Saloranta</a>
- added a comment  - <span class="commentdate_156405_concise subText"><span class="date user-tz" title="02/Dec/08 5:23 PM"><time class="livestamp" datetime="2008-12-02T17:23-0600">02/Dec/08 5:23 PM</time></span></span>                    Hi Joerg – actually, I think you may have read too much into XMLEventReader. It is still using pull-model (just like XMLStreamReader), it's just that instead of offering a cursor in the stream, results are event objects (XMLEvent) that contain all the data for the event. 
+ added a comment  - <span class="commentdate_156405_concise subText"><span class="date user-tz" title="02/Dec/08 5:23 PM"><time class="livestamp" datetime="2008-12-02T17:23-0600">02/Dec/08 5:23 PM</time></span></span>                    Hi Joerg Â– actually, I think you may have read too much into XMLEventReader. It is still using pull-model (just like XMLStreamReader), it's just that instead of offering a cursor in the stream, results are event objects (XMLEvent) that contain all the data for the event. 
 
- So, it should not be super-difficult to support this I think, although at the same time usually it just should not be used – stream reader is more efficient than event reader, without exceptions. But I guess application may not get to choose which one is used in some cases. 
+ So, it should not be super-difficult to support this I think, although at the same time usually it just should not be used Â– stream reader is more efficient than event reader, without exceptions. But I guess application may not get to choose which one is used in some cases. 
 
  I think I could hack together a reader if this feature is what users want.              </div>
         </div>
@@ -441,7 +441,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156407_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156407_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156407_verbose subText"><span class="date user-tz" title="02/Dec/08 5:32 PM"><time class="livestamp" datetime="2008-12-02T17:32-0600">02/Dec/08 5:32 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Well, you're definitely the expert in this area <img class="emoticon" src="index_files/wink.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p> </div>
@@ -456,7 +456,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156407_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156407_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_156407_concise subText"><span class="date user-tz" title="02/Dec/08 5:32 PM"><time class="livestamp" datetime="2008-12-02T17:32-0600">02/Dec/08 5:32 PM</time></span></span>                    Well, you're definitely the expert in this area                </div>
         </div>
     </div>

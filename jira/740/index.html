@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -321,9 +321,9 @@
 
 <p>The constructor of GregorianCalendar uses Locale.getDefault(Locale.Category.FORMAT) internally to create a calendar, whereas the ISO8601GregorianCalendarConverter uses Locale.getDefault().</p>
 
-<p>On my system, those two differ and therefore, the calendar returned by the converter is created with a different locale than a regular new Calendar(…) would create. And due to the weird implementation of date handling in Java, those two are not equal (Calendar equality is locale dependent).</p>
+<p>On my system, those two differ and therefore, the calendar returned by the converter is created with a different locale than a regular new Calendar(â¦) would create. And due to the weird implementation of date handling in Java, those two are not equal (Calendar equality is locale dependent).</p>
 
-<p>I would expect two calendars, one created by xstream and one via new GregorianCalendar(…) to be equal and consider their inequality to be a bug.</p>
+<p>I would expect two calendars, one created by xstream and one via new GregorianCalendar(â¦) to be equal and consider their inequality to be a bug.</p>
 
 <p>I've created a failing unit test as well.</p>
 
@@ -441,7 +441,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327153_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327153_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_327153_verbose subText"><span class="date user-tz" title="21/Jun/13 2:55 PM"><time class="livestamp" datetime="2013-06-21T14:55-0500">21/Jun/13 2:55 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Calling DateTime.getGregorianCalendar() instead now. This is not affected, because it let internally use the Java runtime select the Locale on its own. Fixed in HEAD. Thanks for the test case, though.</p> </div>
@@ -456,7 +456,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327153_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> J�rg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_327153_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_327153_concise subText"><span class="date user-tz" title="21/Jun/13 2:55 PM"><time class="livestamp" datetime="2013-06-21T14:55-0500">21/Jun/13 2:55 PM</time></span></span>                    Calling DateTime.getGregorianCalendar() instead now. This is not affected, because it let internally use the Java runtime select the Locale on its own. Fixed in HEAD. Thanks for the test case, though.              </div>
         </div>
     </div>
@@ -472,7 +472,7 @@
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            J�rg Schaible
+            Jörg Schaible
         </span>
     </span>
                             </dd>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -450,7 +450,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320543_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320543_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320543_verbose subText"><span class="date user-tz" title="26/Feb/13 7:25 PM"><time class="livestamp" datetime="2013-02-26T19:25-0600">26/Feb/13 7:25 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Sorry, but I don't understand this one. icedtea-6/7 identifies itself with vendor Oracle (7) or Sun (6) and XStream runs therefore already flawlessly in enhanced mode on this JVM. However, JamVM from JENKINS-10752 is a different story. I have on my Gentoo box latest version 1.5.4 installed and its runtime does not contain sun.reflect.ReflectionFactory used by Sun14ReflectionProvider. So XStream cannot run in enhanced more with this JVM as long as it has no alternate implementation (for some time we had an alternative one for Harmony, but I never got it stable and it has been ditched in the meanwhile).</p> </div>
@@ -465,7 +465,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320543_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320543_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320543_concise subText"><span class="date user-tz" title="26/Feb/13 7:25 PM"><time class="livestamp" datetime="2013-02-26T19:25-0600">26/Feb/13 7:25 PM</time></span></span>                    Sorry, but I don't understand this one. icedtea-6/7 identifies itself with vendor Oracle (7) or Sun (6) and XStream runs therefore already flawlessly in enhanced mode on this JVM. However, JamVM from JENKINS-10752 is a different story. I have on my Gentoo box latest version 1.5.4 installed and its runtime does not contain sun.reflect.ReflectionFactory used by Sun14ReflectionProvider. So XStream cannot run in enhanced more with this JVM as long as it has no alternate implementation (for some time we had an alternative one for Harmony, but I never got it stable and it has been ditched in the meanwhile).              </div>
         </div>
     </div>
@@ -491,11 +491,11 @@
         </div>
         <div class="action-body flooded"><p>I don't personally have any environment to test this out myself.</p>
 
-<p>I do know the guy who reported the problem — he is at Canonical and he maintains the Jenkins package for the official Ubuntu repository, so I just generally trust what he's doing. <a href="https://bugs.launchpad.net/ubuntu/+source/jenkins-xstream/+bug/827463" class="external-link" rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/jenkins-xstream/+bug/827463</a> sheds more light into this, and here is how I understand this patch.</p>
+<p>I do know the guy who reported the problem Â— he is at Canonical and he maintains the Jenkins package for the official Ubuntu repository, so I just generally trust what he's doing. <a href="https://bugs.launchpad.net/ubuntu/+source/jenkins-xstream/+bug/827463" class="external-link" rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/jenkins-xstream/+bug/827463</a> sheds more light into this, and here is how I understand this patch.</p>
 
 <p>JamVM is <a href="http://en.wikipedia.org/wiki/JamVM" class="external-link" rel="nofollow">just a JVM</a>, so it needs to "borrow" class libraries from somewhere else. According to that Wikipedia article, it supports GNU Classpath and OpenJDK, and in case of Ubuntu it uses OpenJDK class libraries (which presumably also includes its native counterparts.) This is the combination that supports <tt>sun.misc.Unsafe</tt> that the author wanted to make work.</p>
 
-<p>While <a href="https://github.com/ansoncat/jamvm/blob/master/src/properties.c" class="external-link" rel="nofollow">it is possible to detect JamVM as a JVM vendor</a>, this won't be accurate because whether the enhanced mode is available or not depends on the choice of class libraries — JamVM+GNU classpath will presumably not work in this mode. So the author opted to check <tt>java.runtime.name</tt>.</p>
+<p>While <a href="https://github.com/ansoncat/jamvm/blob/master/src/properties.c" class="external-link" rel="nofollow">it is possible to detect JamVM as a JVM vendor</a>, this won't be accurate because whether the enhanced mode is available or not depends on the choice of class libraries Â— JamVM+GNU classpath will presumably not work in this mode. So the author opted to check <tt>java.runtime.name</tt>.</p>
 
 <p>As you observed, if you are to run Hotspot JVM in OpenJDK (with its associated class libraries), it identifies the vendor to be Oracle/Sun, but it won't if you are to run JamVM + OpenJDK class libraries.</p>
 
@@ -516,11 +516,11 @@
     <a class="user-hover user-avatar" rel="kohsuke" id="commentauthor_320591_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=kohsuke"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Kohsuke Kawaguchi</a>
  added a comment  - <span class="commentdate_320591_concise subText"><span class="date user-tz" title="27/Feb/13 4:05 PM"><time class="livestamp" datetime="2013-02-27T16:05-0600">27/Feb/13 4:05 PM</time></span></span>                    I don't personally have any environment to test this out myself. 
 
- I do know the guy who reported the problem — he is at Canonical and he maintains the Jenkins package for the official Ubuntu repository, so I just generally trust what he's doing.  https://bugs.launchpad.net/ubuntu/+source/jenkins-xstream/+bug/827463  sheds more light into this, and here is how I understand this patch. 
+ I do know the guy who reported the problem Â— he is at Canonical and he maintains the Jenkins package for the official Ubuntu repository, so I just generally trust what he's doing.  https://bugs.launchpad.net/ubuntu/+source/jenkins-xstream/+bug/827463  sheds more light into this, and here is how I understand this patch. 
 
  JamVM is  just a JVM , so it needs to "borrow" class libraries from somewhere else. According to that Wikipedia article, it supports GNU Classpath and OpenJDK, and in case of Ubuntu it uses OpenJDK class libraries (which presumably also includes its native counterparts.) This is the combination that supports  sun.misc.Unsafe  that the author wanted to make work. 
 
- While  it is possible to detect JamVM as a JVM vendor , this won't be accurate because whether the enhanced mode is available or not depends on the choice of class libraries — JamVM+GNU classpath will presumably not work in this mode. So the author opted to check  java.runtime.name . 
+ While  it is possible to detect JamVM as a JVM vendor , this won't be accurate because whether the enhanced mode is available or not depends on the choice of class libraries Â— JamVM+GNU classpath will presumably not work in this mode. So the author opted to check  java.runtime.name . 
 
  As you observed, if you are to run Hotspot JVM in OpenJDK (with its associated class libraries), it identifies the vendor to be Oracle/Sun, but it won't if you are to run JamVM + OpenJDK class libraries. 
 
@@ -546,7 +546,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320593_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320593_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320593_verbose subText"><span class="date user-tz" title="27/Feb/13 5:26 PM"><time class="livestamp" datetime="2013-02-27T17:26-0600">27/Feb/13 5:26 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Note, it is not <tt>sun.misc.Unsafe</tt>! That one is present. JamVM on Gentoo is using GNU classpath and that one is missing <tt>sun.reflect.ReflectionFactory</tt>. I'll investigate a bit ...</p> </div>
@@ -561,7 +561,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320593_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320593_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320593_concise subText"><span class="date user-tz" title="27/Feb/13 5:26 PM"><time class="livestamp" datetime="2013-02-27T17:26-0600">27/Feb/13 5:26 PM</time></span></span>                    Note, it is not  sun.misc.Unsafe ! That one is present. JamVM on Gentoo is using GNU classpath and that one is missing  sun.reflect.ReflectionFactory . I'll investigate a bit ...              </div>
         </div>
     </div>
@@ -628,7 +628,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320595_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320595_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320595_verbose subText"><span class="date user-tz" title="27/Feb/13 6:23 PM"><time class="livestamp" datetime="2013-02-27T18:23-0600">27/Feb/13 6:23 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>This code predates my involvement in XStream. However, as it turns out, we do not need the <tt>ReflectionFactory</tt> at all, since <tt>Unsafe</tt> has a method <tt>allocateInstance</tt> that will also create an instance without calling any ctor or initializer. And I've verified, that it also works for IBM JDK 1.4 and Blackdown JDK 1.4. On top of it we get rid of the constructor cache <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p> </div>
@@ -643,7 +643,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320595_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320595_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320595_concise subText"><span class="date user-tz" title="27/Feb/13 6:23 PM"><time class="livestamp" datetime="2013-02-27T18:23-0600">27/Feb/13 6:23 PM</time></span></span>                    This code predates my involvement in XStream. However, as it turns out, we do not need the  ReflectionFactory  at all, since  Unsafe  has a method  allocateInstance  that will also create an instance without calling any ctor or initializer. And I've verified, that it also works for IBM JDK 1.4 and Blackdown JDK 1.4. On top of it we get rid of the constructor cache                </div>
         </div>
     </div>
@@ -664,7 +664,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320596_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320596_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320596_verbose subText"><span class="date user-tz" title="27/Feb/13 6:56 PM"><time class="livestamp" datetime="2013-02-27T18:56-0600">27/Feb/13 6:56 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>It seems my enthusiasm was a bit early. As it turns out, GNU Classpath's <tt>Unsafe</tt> does not have an <tt>allocateInstance</tt> method <img class="emoticon" src="index_files/sad.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p>
@@ -726,7 +726,7 @@ java.vm.name: JamVM
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320596_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320596_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320596_concise subText"><span class="date user-tz" title="27/Feb/13 6:56 PM"><time class="livestamp" datetime="2013-02-27T18:56-0600">27/Feb/13 6:56 PM</time></span></span>                    It seems my enthusiasm was a bit early. As it turns out, GNU Classpath's  Unsafe  does not have an  allocateInstance  method   
 
  Your patch will not work either, because it looks for the value of system property  java.runtime.name , but it is not specified and the value is therefore  null . 
@@ -795,7 +795,7 @@ java.vm.name: JamVM
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320597_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320597_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320597_verbose subText"><span class="date user-tz" title="27/Feb/13 7:30 PM"><time class="livestamp" datetime="2013-02-27T19:30-0600">27/Feb/13 7:30 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I've implemented now a dynamic detection of a working enhanced mode with Sun14ReflectionProvider. Fixed in trunk.</p> </div>
@@ -810,7 +810,7 @@ java.vm.name: JamVM
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320597_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320597_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_320597_concise subText"><span class="date user-tz" title="27/Feb/13 7:30 PM"><time class="livestamp" datetime="2013-02-27T19:30-0600">27/Feb/13 7:30 PM</time></span></span>                    I've implemented now a dynamic detection of a working enhanced mode with Sun14ReflectionProvider. Fixed in trunk.              </div>
         </div>
     </div>
@@ -826,7 +826,7 @@ java.vm.name: JamVM
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -381,7 +381,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95347_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95347_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_95347_verbose subText"><span class="date user-tz" title="07/May/07 6:35 PM"><time class="livestamp" datetime="2007-05-07T18:35-0500">07/May/07 6:35 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Harmanjit,</p>
@@ -391,7 +391,7 @@
 <p>To solve the issue, you have to declare a default ctor or implement a SingleValueConverter, that might also produce a nicer XML.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -405,7 +405,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95347_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95347_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_95347_concise subText"><span class="date user-tz" title="07/May/07 6:35 PM"><time class="livestamp" datetime="2007-05-07T18:35-0500">07/May/07 6:35 PM</time></span></span>                    Hi Harmanjit, 
 
  since XStream does not support JDK 1.2.x I suppose you've using JDK 1.3. However, you're hit by a limitation of the PureJavaReflectionProvider, that is in action for JDK 1.3. This provider has to call the default ctor to recreate an instance. Unfortunately your class does not declare one (not even private), therefore it uses the JDK serialization as fallback to create a new instance that works under some circumstances. Now, since you've declared a readResolve method, it will already be called by this mechanism and (since the ordinalValue is always initialized 0) your method will return the first entry of your static list that is (each time) overwritten in consequence. 
@@ -413,7 +413,7 @@
  To solve the issue, you have to declare a default ctor or implement a SingleValueConverter, that might also produce a nicer XML. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>

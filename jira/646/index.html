@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -375,7 +375,7 @@ However, these caches are gone for every minor GC, because WeakReference of cons
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272416_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272416_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_272416_verbose subText"><span class="date user-tz" title="05/Jul/11 8:11 PM"><time class="livestamp" datetime="2011-07-05T20:11-0500">05/Jul/11 8:11 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Thanks for heads-up and this is not the only place for such a strategy in XStream. The problem is, if we don't use the WeakReference for the Constructor instances, we create a memory leak for static XStream instances, because a Constructor instance refers its Class that is used as key. I am thinking for some time now for the best strategy to cache lookups for Constructor and Method instances that do not create a memory leak when their original classloader is dropped. Ideas?</p> </div>
@@ -390,7 +390,7 @@ However, these caches are gone for every minor GC, because WeakReference of cons
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272416_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_272416_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_272416_concise subText"><span class="date user-tz" title="05/Jul/11 8:11 PM"><time class="livestamp" datetime="2011-07-05T20:11-0500">05/Jul/11 8:11 PM</time></span></span>                    Thanks for heads-up and this is not the only place for such a strategy in XStream. The problem is, if we don't use the WeakReference for the Constructor instances, we create a memory leak for static XStream instances, because a Constructor instance refers its Class that is used as key. I am thinking for some time now for the best strategy to cache lookups for Constructor and Method instances that do not create a memory leak when their original classloader is dropped. Ideas?              </div>
         </div>
     </div>
@@ -411,7 +411,7 @@ However, these caches are gone for every minor GC, because WeakReference of cons
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274185_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274185_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_274185_verbose subText"><span class="date user-tz" title="25/Jul/11 5:25 PM"><time class="livestamp" datetime="2011-07-25T17:25-0500">25/Jul/11 5:25 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Dropped WeakHashMap altogether in HEAD. It did not made sense as you have pointed out.</p> </div>
@@ -426,7 +426,7 @@ However, these caches are gone for every minor GC, because WeakReference of cons
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274185_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_274185_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_274185_concise subText"><span class="date user-tz" title="25/Jul/11 5:25 PM"><time class="livestamp" datetime="2011-07-25T17:25-0500">25/Jul/11 5:25 PM</time></span></span>                    Dropped WeakHashMap altogether in HEAD. It did not made sense as you have pointed out.              </div>
         </div>
     </div>
@@ -442,7 +442,7 @@ However, these caches are gone for every minor GC, because WeakReference of cons
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

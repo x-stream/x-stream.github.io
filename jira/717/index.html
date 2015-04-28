@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -620,7 +620,7 @@ Caused by: com.thoughtworks.xstream.converters.ConversionException: Could not ca
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317300_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317300_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317300_verbose subText"><span class="date user-tz" title="14/Jan/13 11:36 AM"><time class="livestamp" datetime="2013-01-14T11:36-0600">14/Jan/13 11:36 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>This is normal. XStream uses specialized converters for <b>known</b> types only, all other ones are handled by the reflection-based converters which will reflect any implementation specific detail in the XML structure. This includes differences between different JDK versions or JDKs from different vendors.</p>
@@ -637,7 +637,7 @@ Caused by: com.thoughtworks.xstream.converters.ConversionException: Could not ca
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317300_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317300_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317300_concise subText"><span class="date user-tz" title="14/Jan/13 11:36 AM"><time class="livestamp" datetime="2013-01-14T11:36-0600">14/Jan/13 11:36 AM</time></span></span>                    This is normal. XStream uses specialized converters for  known  types only, all other ones are handled by the reflection-based converters which will reflect any implementation specific detail in the XML structure. This includes differences between different JDK versions or JDKs from different vendors. 
 
  If you want to prevent this behavior for UnicodeProperties, you will have to register your own converter that can handle this type. You may simply derive from the MapConverter.              </div>
@@ -663,7 +663,7 @@ Caused by: com.thoughtworks.xstream.converters.ConversionException: Could not ca
     <a class="user-hover user-avatar" rel="papgyo" id="commentauthor_317330_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=papgyo"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Vilmos Papp</a>
  added a comment  - <span class="commentdate_317330_verbose subText"><span class="date user-tz" title="15/Jan/13 2:51 AM"><time class="livestamp" datetime="2013-01-15T02:51-0600">15/Jan/13 2:51 AM</time></span></span>  </div>
         </div>
-        <div class="action-body flooded"><p>Hi Jörg,</p>
+        <div class="action-body flooded"><p>Hi JÃ¶rg,</p>
 
 <p>Thanks for the quick answer and the solution proposal.</p>
 
@@ -681,7 +681,7 @@ Vilmos</p> </div>
                 
 
     <a class="user-hover user-avatar" rel="papgyo" id="commentauthor_317330_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=papgyo"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Vilmos Papp</a>
- added a comment  - <span class="commentdate_317330_concise subText"><span class="date user-tz" title="15/Jan/13 2:51 AM"><time class="livestamp" datetime="2013-01-15T02:51-0600">15/Jan/13 2:51 AM</time></span></span>                    Hi Jörg, 
+ added a comment  - <span class="commentdate_317330_concise subText"><span class="date user-tz" title="15/Jan/13 2:51 AM"><time class="livestamp" datetime="2013-01-15T02:51-0600">15/Jan/13 2:51 AM</time></span></span>                    Hi JÃ¶rg, 
 
  Thanks for the quick answer and the solution proposal. 
 
@@ -710,7 +710,7 @@ Vilmos              </div>
     <a class="user-hover user-avatar" rel="papgyo" id="commentauthor_317355_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=papgyo"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Vilmos Papp</a>
  added a comment  - <span class="commentdate_317355_verbose subText"><span class="date user-tz" title="15/Jan/13 9:02 AM"><time class="livestamp" datetime="2013-01-15T09:02-0600">15/Jan/13 9:02 AM</time></span></span>   - <span class="redText subText" title="Vilmos Papp - 15/Jan/13 9:07 AM">edited</span> </div>
         </div>
-        <div class="action-body flooded"><p>Hi Jörg,</p>
+        <div class="action-body flooded"><p>Hi JÃ¶rg,</p>
 
 <p>I decompiled the HashMap implementation of JRockit and Oracle/Sun JVM, and it is an exact difference between them, that the JRockit version has a </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
@@ -734,7 +734,7 @@ Vilmos              </div>
                 
 
     <a class="user-hover user-avatar" rel="papgyo" id="commentauthor_317355_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=papgyo"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Vilmos Papp</a>
- added a comment  - <span class="commentdate_317355_concise subText"><span class="date user-tz" title="15/Jan/13 9:02 AM"><time class="livestamp" datetime="2013-01-15T09:02-0600">15/Jan/13 9:02 AM</time></span></span>   - <span class="redText subText" title="Vilmos Papp - 15/Jan/13 9:07 AM">edited</span>                   Hi Jörg, 
+ added a comment  - <span class="commentdate_317355_concise subText"><span class="date user-tz" title="15/Jan/13 9:02 AM"><time class="livestamp" datetime="2013-01-15T09:02-0600">15/Jan/13 9:02 AM</time></span></span>   - <span class="redText subText" title="Vilmos Papp - 15/Jan/13 9:07 AM">edited</span>                   Hi JÃ¶rg, 
 
  I decompiled the HashMap implementation of JRockit and Oracle/Sun JVM, and it is an exact difference between them, that the JRockit version has a  
   
@@ -764,7 +764,7 @@ Vilmos              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317367_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317367_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317367_verbose subText"><span class="date user-tz" title="15/Jan/13 11:19 AM"><time class="livestamp" datetime="2013-01-15T11:19-0600">15/Jan/13 11:19 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><blockquote><p>Could you verify it whether it can be patched or not?</p></blockquote>
@@ -781,7 +781,7 @@ Vilmos              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317367_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317367_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317367_concise subText"><span class="date user-tz" title="15/Jan/13 11:19 AM"><time class="livestamp" datetime="2013-01-15T11:19-0600">15/Jan/13 11:19 AM</time></span></span>                     Could you verify it whether it can be patched or not?  
 
  Sorry, this statement does not make any sense to me. The solution is still the same. Register an own converter for UnicodeProperties.              </div>
@@ -804,7 +804,7 @@ Vilmos              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317609_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317609_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317609_verbose subText"><span class="date user-tz" title="19/Jan/13 4:43 AM"><time class="livestamp" datetime="2013-01-19T04:43-0600">19/Jan/13 4:43 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Please use the user's list if you have further problems with this.</p> </div>
@@ -819,7 +819,7 @@ Vilmos              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317609_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_317609_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_317609_concise subText"><span class="date user-tz" title="19/Jan/13 4:43 AM"><time class="livestamp" datetime="2013-01-19T04:43-0600">19/Jan/13 4:43 AM</time></span></span>                    Please use the user's list if you have further problems with this.              </div>
         </div>
     </div>
@@ -835,7 +835,7 @@ Vilmos              </div>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -459,7 +459,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333347_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333347_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_333347_verbose subText"><span class="date user-tz" title="26/Sep/13 4:24 PM"><time class="livestamp" datetime="2013-09-26T16:24-0500">26/Sep/13 4:24 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The primary description of this issue implies the modification of the setup of an XStream instance at (un)marshalling time. This is highly discouraged and not really supported, because XStream uses internal caches, that will not be flushed, if something is changed, and because it is on top not thread-safe at all.</p>
@@ -478,7 +478,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333347_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333347_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_333347_concise subText"><span class="date user-tz" title="26/Sep/13 4:24 PM"><time class="livestamp" datetime="2013-09-26T16:24-0500">26/Sep/13 4:24 PM</time></span></span>                    The primary description of this issue implies the modification of the setup of an XStream instance at (un)marshalling time. This is highly discouraged and not really supported, because XStream uses internal caches, that will not be flushed, if something is changed, and because it is on top not thread-safe at all. 
 
  XStream's default mechanism for converters is to override them either with equal or higher priority (the NullConverter is registered as VERY_HIGH). Remember, that a converter provides no information, which types it actually handles therefore it does not make sense to unregister a converter for type X. Nevertheless, you can provide an own implementation of a ConverterRegistry that supports unregistration - you just cannot use the XStream facade. 
@@ -498,7 +498,7 @@
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>
@@ -510,7 +510,7 @@
 
             <span class="user-hover" id="issue_summary_reporter_afaenger" rel="afaenger">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Andreas Fänger
+            Andreas FÃ¤nger
         </span>
     </span>
             </dd>

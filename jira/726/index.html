@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -304,7 +304,7 @@
 
 <p>To facilitate this kind of situation, it is desirable for those implmentation-only subtypes (<tt>JumboEnumSet</tt> vs <tt>RegularEnumSet</tt>) not to leak into the persisted form.</p>
 
-<p>I added <tt>XStreamSerializeAs</tt> to achieve this. You put this on the likes of <tt>EnumSet</tt>, and all subtypes get persisted as <tt>EnumSet</tt> — combined with suitable <tt>Converter</tt> that instantiates the right subtype, this works well.</p>
+<p>I added <tt>XStreamSerializeAs</tt> to achieve this. You put this on the likes of <tt>EnumSet</tt>, and all subtypes get persisted as <tt>EnumSet</tt> Â— combined with suitable <tt>Converter</tt> that instantiates the right subtype, this works well.</p>
             </div>
 </div>
 </div></div><div id="attachmentmodule" class="module toggle-wrap"><div id="attachmentmodule_heading" class="mod-header"><ul class="ops"><li class="drop"><div class="aui-dd-parent"><a href="#" class="icon drop-menu js-default-dropdown" title="Options"><span>Options</span></a><div class="aui-dropdown-content aui-list"><ul id="attachment-sorting-options" class="aui-list-section aui-first"><li class="aui-list-item"><a id="attachment-sort-key-name" href="726?attachmentSortBy=fileName#attachmentmodule" class="aui-list-checked aui-checked aui-list-item-link" title="viewissue.subtasks.tab.show.all.name"><span>Sort By Name</span></a></li><li class="aui-list-item"><a id="attachment-sort-key-date" href="726?attachmentSortBy=dateTime#attachmentmodule" class="aui-list-checked aui-list-item-link" title="Sort By Date"><span>Sort By Date</span></a></li></ul><ul id="attachment-sorting-order-options" class="aui-list-section"><li class="aui-list-item"><a id="attachment-sort-direction-asc" href="726?attachmentOrder=asc#attachmentmodule" class="aui-list-checked aui-checked aui-list-item-link" title="Ascending"><span>Ascending</span></a></li><li class="aui-list-item"><a id="attachment-sort-direction-desc" href="726?attachmentOrder=desc#attachmentmodule" class="aui-list-checked aui-list-item-link" title="Descending"><span>Descending</span></a></li></ul><ul id="attachment-manage-options" class="aui-list-section aui-last"><li class="aui-list-item"><a id="aszip" href="https://jira.codehaus.org/secure/attachmentzip/144532.zip" class="aui-list-checked aui-list-item-link" title="Download all attachments as a ZIP file"><span>Download All</span></a></li></ul></div></div></li></ul><h2 class="toggle-title">Attachments</h2></div><div class="mod-content">
@@ -418,7 +418,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321928_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321928_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321928_verbose subText"><span class="date user-tz" title="13/Mar/13 1:02 PM"><time class="livestamp" datetime="2013-03-13T13:02-0500">13/Mar/13 1:02 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Did you ever had a look at XStream.aliasType()? It seems that this functionality already covers this patch except that it is not (yet) declarable with an annotation.</p> </div>
@@ -433,7 +433,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321928_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321928_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_321928_concise subText"><span class="date user-tz" title="13/Mar/13 1:02 PM"><time class="livestamp" datetime="2013-03-13T13:02-0500">13/Mar/13 1:02 PM</time></span></span>                    Did you ever had a look at XStream.aliasType()? It seems that this functionality already covers this patch except that it is not (yet) declarable with an annotation.              </div>
         </div>
     </div>
@@ -490,7 +490,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_328541_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_328541_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_328541_verbose subText"><span class="date user-tz" title="12/Jul/13 3:22 PM"><time class="livestamp" datetime="2013-07-12T15:22-0500">12/Jul/13 3:22 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Implemented with annotation XStreamAliasType (reflecting the call of XStream.aliasType()).</p> </div>
@@ -505,7 +505,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_328541_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_328541_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_328541_concise subText"><span class="date user-tz" title="12/Jul/13 3:22 PM"><time class="livestamp" datetime="2013-07-12T15:22-0500">12/Jul/13 3:22 PM</time></span></span>                    Implemented with annotation XStreamAliasType (reflecting the call of XStream.aliasType()).              </div>
         </div>
     </div>
@@ -521,7 +521,7 @@
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

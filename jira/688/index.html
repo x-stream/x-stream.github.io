@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -329,7 +329,7 @@ class B <span class="code-keyword">extends</span> A{<span class="code-object">St
 </div></div>
 <p><img class="emoticon" src="index_files/warning.gif" alt="" height="16" align="absmiddle" border="0" width="16"> when unmarshaling the instance of the <ins>class B</ins> and verifying field "<ins>String a</ins>" , xStream pass into shouldSerializeMember the <ins>class B</ins> as "<b>definedIn</b>" instead of <ins>class A</ins>.</p>
 
-<p>—<br>
+<p>Â—<br>
 The problem is in the class <b>com.thoughtworks.xstream.converters.reflection.<ins>AbstractReflectionConverter</ins></b> at line 302.<br>
 I suggest to you to change this line:</p>
 <blockquote><p>"|| !mapper.shouldSerializeMember(<font color="red">classDefiningField != null ? classDefiningField : result.getClass()</font>, fieldName)) {"</p></blockquote>
@@ -450,7 +450,7 @@ I suggest to you to change this line:</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_288746_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_288746_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_288746_verbose subText"><span class="date user-tz" title="18/Jan/12 1:06 PM"><time class="livestamp" datetime="2012-01-18T13:06-0600">18/Jan/12 1:06 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Fixed in trunk. Thanks for test case.</p> </div>
@@ -465,7 +465,7 @@ I suggest to you to change this line:</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_288746_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_288746_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_288746_concise subText"><span class="date user-tz" title="18/Jan/12 1:06 PM"><time class="livestamp" datetime="2012-01-18T13:06-0600">18/Jan/12 1:06 PM</time></span></span>                    Fixed in trunk. Thanks for test case.              </div>
         </div>
     </div>
@@ -481,7 +481,7 @@ I suggest to you to change this line:</p>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

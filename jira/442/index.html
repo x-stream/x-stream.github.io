@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -536,7 +536,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: name : n
         </div>
         <div class="action-body flooded"><p>I had this problem, and I patched with this</p>
 
-<p>— jettison/src/main/java/org/codehaus/jettison/mapped/MappedXMLStreamWriter.java	(revision 39)<br>
+<p>Â— jettison/src/main/java/org/codehaus/jettison/mapped/MappedXMLStreamWriter.java	(revision 39)<br>
 +++ jettison/src/main/java/org/codehaus/jettison/mapped/MappedXMLStreamWriter.java	(working copy)<br>
 @@ -180,9 +180,9 @@<br>
          if (current instanceof String) </p>
@@ -570,7 +570,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: name : n
     <a class="user-hover user-avatar" rel="kasten" id="commentauthor_112947_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=kasten"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Fernando Kasten Peinado</a>
  added a comment  - <span class="commentdate_112947_concise subText"><span class="date user-tz" title="06/Nov/07 8:11 AM"><time class="livestamp" datetime="2007-11-06T08:11-0600">06/Nov/07 8:11 AM</time></span></span>                    I had this problem, and I patched with this 
 
- — jettison/src/main/java/org/codehaus/jettison/mapped/MappedXMLStreamWriter.java	(revision 39) 
+ Â— jettison/src/main/java/org/codehaus/jettison/mapped/MappedXMLStreamWriter.java	(revision 39) 
 +++ jettison/src/main/java/org/codehaus/jettison/mapped/MappedXMLStreamWriter.java	(working copy) 
 @@ -180,9 +180,9 @@ 
          if (current instanceof String)  
@@ -609,7 +609,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: name : n
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_112965_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_112965_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_112965_verbose subText"><span class="date user-tz" title="06/Nov/07 10:19 AM"><time class="livestamp" datetime="2007-11-06T10:19-0600">06/Nov/07 10:19 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Linking the appropriate issue at Jettison with XStream, since the same error manifests with arrays and especially since the patch for the Jettison code was posted to XStream's JIRA issue.</p> </div>
@@ -624,7 +624,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: name : n
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_112965_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_112965_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_112965_concise subText"><span class="date user-tz" title="06/Nov/07 10:19 AM"><time class="livestamp" datetime="2007-11-06T10:19-0600">06/Nov/07 10:19 AM</time></span></span>                    Linking the appropriate issue at Jettison with XStream, since the same error manifests with arrays and especially since the patch for the Jettison code was posted to XStream's JIRA issue.              </div>
         </div>
     </div>
@@ -727,7 +727,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: name : n
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124722_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124722_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_124722_verbose subText"><span class="date user-tz" title="22/Feb/08 5:31 PM"><time class="livestamp" datetime="2008-02-22T17:31-0600">22/Feb/08 5:31 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The problem is completely on Jettison's side. However, running HEAD of XStream with the HEAD of Jettison the attached test works, see output:</p>
@@ -750,7 +750,7 @@ david
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124722_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124722_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_124722_concise subText"><span class="date user-tz" title="22/Feb/08 5:31 PM"><time class="livestamp" datetime="2008-02-22T17:31-0600">22/Feb/08 5:31 PM</time></span></span>                    The problem is completely on Jettison's side. However, running HEAD of XStream with the HEAD of Jettison the attached test works, see output: 
 
   
@@ -780,7 +780,7 @@ david
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125053_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125053_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125053_verbose subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closed after no further comment has been given.</p> </div>
@@ -795,7 +795,7 @@ david
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125053_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125053_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125053_concise subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>                    Closed after no further comment has been given.              </div>
         </div>
     </div>
@@ -811,7 +811,7 @@ david
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

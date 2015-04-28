@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -366,7 +366,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_96212_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_96212_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_96212_verbose subText"><span class="date user-tz" title="17/May/07 1:09 PM"><time class="livestamp" datetime="2007-05-17T13:09-0500">17/May/07 1:09 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Etienne,</p>
@@ -378,7 +378,7 @@
 <p>Please give it a try. If it does not work for you, please use the mailing list to demonstrate the problem. From your description I was not sure, what you really did. If you still have a problem and it manifests as bug, we can reopen this issue.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
 
 
@@ -394,7 +394,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_96212_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_96212_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_96212_concise subText"><span class="date user-tz" title="17/May/07 1:09 PM"><time class="livestamp" datetime="2007-05-17T13:09-0500">17/May/07 1:09 PM</time></span></span>                    Hi Etienne, 
 
  date handling is somewhat complicated. First of all you have to recognize, that a Date does not have any information about the time zone. The data kept within a Date object must always be interpreted in combination with a time zone (therefore the Calendar was introduced, which combines date and time zone). When XStream marshals a date value to a String it saves therefore string representation of the date as it is interpreted in the current time zone. And since the time zone meanwhile might have changed it also stores the time zone itself. Therefore XStream is able to unmarshal the Date object and return a date that corresponds to the saved time - but now in the current time zone. 
@@ -404,7 +404,7 @@
  Please give it a try. If it does not work for you, please use the mailing list to demonstrate the problem. From your description I was not sure, what you really did. If you still have a problem and it manifests as bug, we can reopen this issue. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
 
 

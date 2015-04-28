@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -407,7 +407,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_99837_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_99837_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_99837_verbose subText"><span class="date user-tz" title="18/Jun/07 3:47 AM"><time class="livestamp" datetime="2007-06-18T03:47-0500">18/Jun/07 3:47 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Frederik,</p>
@@ -417,7 +417,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
 <p>I changed the impl now using weak references for the value also, so they should be catched by the GC now.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -431,7 +431,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_99837_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_99837_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_99837_concise subText"><span class="date user-tz" title="18/Jun/07 3:47 AM"><time class="livestamp" datetime="2007-06-18T03:47-0500">18/Jun/07 3:47 AM</time></span></span>                    Hi Frederik, 
 
  thanks for heads-up. The main reason for the cache are strings that are used as enums. This is quite common for data kept in DBs. Without the caching all those strings will no longer be shared and consume quite a lot of unnecessary memory. Remember, that XStream tries to work optimal in various scenarios. Your solution to register a non-caching StringConverter is completely valid. But you should benchmark it ... for me the cached version was often faster (see code in svn -&gt; benchmark/test). 
@@ -439,7 +439,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
  I changed the impl now using weak references for the value also, so they should be catched by the GC now. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -461,7 +461,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125077_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125077_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125077_verbose subText"><span class="date user-tz" title="25/Feb/08 5:01 PM"><time class="livestamp" datetime="2008-02-25T17:01-0600">25/Feb/08 5:01 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closing issues before next release.</p> </div>
@@ -476,7 +476,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125077_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125077_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_125077_concise subText"><span class="date user-tz" title="25/Feb/08 5:01 PM"><time class="livestamp" datetime="2008-02-25T17:01-0600">25/Feb/08 5:01 PM</time></span></span>                    Closing issues before next release.              </div>
         </div>
     </div>
@@ -492,7 +492,7 @@ See "Implementation note" on <a href="http://java.sun.com/javase/6/docs/api/java
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="mozilla"><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
     
 
 
@@ -407,7 +407,7 @@ For J2ME/embedeed profiles, I think its safe to assume existence of data types, 
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47986_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47986_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_47986_verbose subText"><span class="date user-tz" title="06/Oct/05 3:32 PM"><time class="livestamp" datetime="2005-10-06T15:32-0500">06/Oct/05 3:32 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Well, the devs are currently very busy and at least me I have no J2ME experience yet. A patch would be welcomed though <img class="emoticon" src="index_files/wink.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p> </div>
@@ -422,7 +422,7 @@ For J2ME/embedeed profiles, I think its safe to assume existence of data types, 
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47986_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47986_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_47986_concise subText"><span class="date user-tz" title="06/Oct/05 3:32 PM"><time class="livestamp" datetime="2005-10-06T15:32-0500">06/Oct/05 3:32 PM</time></span></span>                    Well, the devs are currently very busy and at least me I have no J2ME experience yet. A patch would be welcomed though                </div>
         </div>
     </div>
@@ -449,7 +449,7 @@ For J2ME/embedeed profiles, I think its safe to assume existence of data types, 
         <div class="action-body flooded"><p>Kinda busy at the moment, too, but I'll see what I can come up with.</p>
 
 <p>As far as the 'java.version' is concerned, here is what Aonix tells me:<br>
-— quote —<br>
+Â— quote Â—<br>
 "We have run into the java.version issue before. While it is true that<br>
 Sun licensed VMs offer a Sun-style version number string for<br>
 java.version, not all VMs do this. The J9 VM offers the string "1.3.0<br>
@@ -460,19 +460,19 @@ property "java.specification.version". For this property, Sun VMs return<br>
 "1.3", "1.4", or "1.5" depending on the release, of course. The j9 VM<br>
 returns "1.3" and PVM returns "1.3". Perhaps xtream could be persuaded<br>
 to use this property instead."<br>
-— quote —</p>
+Â— quote Â—</p>
 
 <p>Any chance using "java.specification.version" instead of "java.version"?</p>
 
 <p>As far as the 'enhanced mode' goes, here is what the folks at Aonix offered<br>
-— quote —<br>
+Â— quote Â—<br>
 "The xstream FAQ indicates that the "Enhanced" mode using Unsafe will<br>
 only work on Sun, Apple, and HP 1.4 VMs. As a clean room vendor, we<br>
 cannot look at Sun source code and cannot recreate a class that has no<br>
 publicly documented API. If xstream was willing to tell us what<br>
 functionality they need without revealing the source to Unsafe, we could<br>
 provide that functionality in PVM."<br>
-— quote —</p>
+Â— quote Â—</p>
 
 <p>Any chance you folks could tell me whats needed for 'enhanced' mode (vs. regular java mode) and I'll pass it on?</p>
 
@@ -494,7 +494,7 @@ provide that functionality in PVM."<br>
  added a comment  - <span class="commentdate_48000_concise subText"><span class="date user-tz" title="07/Oct/05 12:56 AM"><time class="livestamp" datetime="2005-10-07T00:56-0500">07/Oct/05 12:56 AM</time></span></span>                    Kinda busy at the moment, too, but I'll see what I can come up with. 
 
  As far as the 'java.version' is concerned, here is what Aonix tells me: 
-— quote — 
+Â— quote Â— 
 "We have run into the java.version issue before. While it is true that 
 Sun licensed VMs offer a Sun-style version number string for 
 java.version, not all VMs do this. The J9 VM offers the string "1.3.0 
@@ -505,19 +505,19 @@ property "java.specification.version". For this property, Sun VMs return
 "1.3", "1.4", or "1.5" depending on the release, of course. The j9 VM 
 returns "1.3" and PVM returns "1.3". Perhaps xtream could be persuaded 
 to use this property instead." 
-— quote — 
+Â— quote Â— 
 
  Any chance using "java.specification.version" instead of "java.version"? 
 
  As far as the 'enhanced mode' goes, here is what the folks at Aonix offered 
-— quote — 
+Â— quote Â— 
 "The xstream FAQ indicates that the "Enhanced" mode using Unsafe will 
 only work on Sun, Apple, and HP 1.4 VMs. As a clean room vendor, we 
 cannot look at Sun source code and cannot recreate a class that has no 
 publicly documented API. If xstream was willing to tell us what 
 functionality they need without revealing the source to Unsafe, we could 
 provide that functionality in PVM." 
-— quote — 
+Â— quote Â— 
 
  Any chance you folks could tell me whats needed for 'enhanced' mode (vs. regular java mode) and I'll pass it on? 
 
@@ -543,7 +543,7 @@ provide that functionality in PVM."
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58117_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58117_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_58117_verbose subText"><span class="date user-tz" title="07/Feb/06 5:49 PM"><time class="livestamp" datetime="2006-02-07T17:49-0600">07/Feb/06 5:49 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Thomas,</p>
@@ -553,7 +553,7 @@ provide that functionality in PVM."
 2) functionality to create an instance of a class without calling its ctor and the ability to set the fields even if final. THis is basically the same functionality each JDK must handle internally for serialization also.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -567,7 +567,7 @@ provide that functionality in PVM."
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58117_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58117_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_58117_concise subText"><span class="date user-tz" title="07/Feb/06 5:49 PM"><time class="livestamp" datetime="2006-02-07T17:49-0600">07/Feb/06 5:49 PM</time></span></span>                    Hi Thomas, 
 
  I switched now internally from java.version to java.specification.version. For other VMs supporting enhanced mode we need two things 
@@ -575,7 +575,7 @@ provide that functionality in PVM."
 2) functionality to create an instance of a class without calling its ctor and the ability to set the fields even if final. THis is basically the same functionality each JDK must handle internally for serialization also. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -643,7 +643,7 @@ Andrew.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58574_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58574_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_58574_verbose subText"><span class="date user-tz" title="14/Feb/06 1:45 AM"><time class="livestamp" datetime="2006-02-14T01:45-0600">14/Feb/06 1:45 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Andrew,</p>
@@ -651,7 +651,7 @@ Andrew.              </div>
 <p>unfortunately, no. It just means, that XStream will now determin the JDK it is running on based on the entry of java.specification.version, which seems not filled with arbitrary elements as java.version. But XStream makes internal assumptions what classes are available for which JDK to register appropriate converters. This might not be true at all for J2ME and I have currently no setup with a test environment. So if you wanna give it a try and report back, it is more than welcome. I don't expect, that the enhanced mode will run though, this too specific for the Sun JDK.</p>
 
 <ul class="alternate" type="square">
-	<li>Jörg</li>
+	<li>JÃ¶rg</li>
 </ul>
  </div>
     </div>
@@ -665,13 +665,13 @@ Andrew.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58574_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_58574_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_58574_concise subText"><span class="date user-tz" title="14/Feb/06 1:45 AM"><time class="livestamp" datetime="2006-02-14T01:45-0600">14/Feb/06 1:45 AM</time></span></span>                    Hi Andrew, 
 
  unfortunately, no. It just means, that XStream will now determin the JDK it is running on based on the entry of java.specification.version, which seems not filled with arbitrary elements as java.version. But XStream makes internal assumptions what classes are available for which JDK to register appropriate converters. This might not be true at all for J2ME and I have currently no setup with a test environment. So if you wanna give it a try and report back, it is more than welcome. I don't expect, that the enhanced mode will run though, this too specific for the Sun JDK. 
 
  
-	 Jörg 
+	 JÃ¶rg 
  
              </div>
         </div>
@@ -693,7 +693,7 @@ Andrew.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333243_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333243_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_333243_verbose subText"><span class="date user-tz" title="24/Sep/13 8:26 PM"><time class="livestamp" datetime="2013-09-24T20:26-0500">24/Sep/13 8:26 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>XStream no longer fails for unavailabe converters during setup, available in trunk. However, since I have no test environment, any further problem must be reported in a new issue.</p> </div>
@@ -708,7 +708,7 @@ Andrew.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333243_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_333243_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> JÃ¶rg Schaible</a>
  added a comment  - <span class="commentdate_333243_concise subText"><span class="date user-tz" title="24/Sep/13 8:26 PM"><time class="livestamp" datetime="2013-09-24T20:26-0500">24/Sep/13 8:26 PM</time></span></span>                    XStream no longer fails for unavailabe converters during setup, available in trunk. However, since I have no test environment, any further problem must be reported in a new issue.              </div>
         </div>
     </div>
@@ -724,7 +724,7 @@ Andrew.              </div>
 
             <span class="user-hover" id="issue_summary_assignee_joehni" rel="joehni">
             <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="index_files/useravatar-1.png"></span></span>
-            Jörg Schaible
+            JÃ¶rg Schaible
         </span>
     </span>
                             </dd>
