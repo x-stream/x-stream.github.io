@@ -431,7 +431,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_63861_verbose subText"><span class="date user-tz" title="20/Apr/06 3:50 AM"><time class="livestamp" datetime="2006-04-20T03:50-0500">20/Apr/06 3:50 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi David,</p>
@@ -455,7 +455,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63861_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_63861_concise subText"><span class="date user-tz" title="20/Apr/06 3:50 AM"><time class="livestamp" datetime="2006-04-20T03:50-0500">20/Apr/06 3:50 AM</time></span></span>                    Hi David, 
 
  the only reason I did not resolve this issue with "won't fix" is, that you address more than the empty collection with this issue. Regarding your empty collection mapper I don't think this is a valid solution, since XStream can no longer distinguish at deserialization time, wether the collection was empty or null. Even worse it  will  be initialized with null. We might revisit such a functionality when we start to support  XSTR-76  and  XSTR-248  which are somewhat related. Resolving those issues, we might have also the need for passing the real object along with the type to shouldSerializeMember. 

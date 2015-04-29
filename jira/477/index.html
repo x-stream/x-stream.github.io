@@ -532,7 +532,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123326_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123326_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_123326_verbose subText"><span class="date user-tz" title="11/Feb/08 4:47 PM"><time class="livestamp" datetime="2008-02-11T16:47-0600">11/Feb/08 4:47 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I am not sure about this functionality. While XStream deals with typed objects, Jettison only recognizes String values. With your patch Jettison will always try to use a "better" type - even if the original type in the Java object was really a String. We'll see what the Jettison devs will say, XStream will use what they provide <img class="emoticon" src="index_files/wink.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p> </div>
@@ -547,7 +547,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123326_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123326_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_123326_concise subText"><span class="date user-tz" title="11/Feb/08 4:47 PM"><time class="livestamp" datetime="2008-02-11T16:47-0600">11/Feb/08 4:47 PM</time></span></span>                    I am not sure about this functionality. While XStream deals with typed objects, Jettison only recognizes String values. With your patch Jettison will always try to use a "better" type - even if the original type in the Java object was really a String. We'll see what the Jettison devs will say, XStream will use what they provide                </div>
         </div>
     </div>
@@ -638,7 +638,7 @@ setX(T item)
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123450_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123450_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_123450_verbose subText"><span class="date user-tz" title="12/Feb/08 3:47 PM"><time class="livestamp" datetime="2008-02-12T15:47-0600">12/Feb/08 3:47 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Deserialization works, since the StAX parser will provide XStream a String anyway and XStream will look up the type from the field that has to be written. I've tested it against the head revision of Jettison.</p> </div>
@@ -653,7 +653,7 @@ setX(T item)
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123450_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123450_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_123450_concise subText"><span class="date user-tz" title="12/Feb/08 3:47 PM"><time class="livestamp" datetime="2008-02-12T15:47-0600">12/Feb/08 3:47 PM</time></span></span>                    Deserialization works, since the StAX parser will provide XStream a String anyway and XStream will look up the type from the field that has to be written. I've tested it against the head revision of Jettison.              </div>
         </div>
     </div>
@@ -674,7 +674,7 @@ setX(T item)
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124721_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124721_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_124721_verbose subText"><span class="date user-tz" title="22/Feb/08 5:23 PM"><time class="livestamp" datetime="2008-02-22T17:23-0600">22/Feb/08 5:23 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I'm closing this now, since the problem is completely within Jettison. However, the Jettison guys have fixed it already, but I don't know when they will release Jettison again. Current head of XStream or upcoming version 1.3 will run with Jettison newer then version 1.2-RC2.</p> </div>
@@ -689,7 +689,7 @@ setX(T item)
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124721_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124721_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_124721_concise subText"><span class="date user-tz" title="22/Feb/08 5:23 PM"><time class="livestamp" datetime="2008-02-22T17:23-0600">22/Feb/08 5:23 PM</time></span></span>                    I'm closing this now, since the problem is completely within Jettison. However, the Jettison guys have fixed it already, but I don't know when they will release Jettison again. Current head of XStream or upcoming version 1.3 will run with Jettison newer then version 1.2-RC2.              </div>
         </div>
     </div>
@@ -710,7 +710,7 @@ setX(T item)
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125059_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125059_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_125059_verbose subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closed after no further comment has been given.</p> </div>
@@ -725,7 +725,7 @@ setX(T item)
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125059_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125059_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_125059_concise subText"><span class="date user-tz" title="25/Feb/08 4:53 PM"><time class="livestamp" datetime="2008-02-25T16:53-0600">25/Feb/08 4:53 PM</time></span></span>                    Closed after no further comment has been given.              </div>
         </div>
     </div>

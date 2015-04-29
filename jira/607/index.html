@@ -613,7 +613,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238045_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238045_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_238045_verbose subText"><span class="date user-tz" title="07/Oct/10 4:44 PM"><time class="livestamp" datetime="2010-10-07T16:44-0500">07/Oct/10 4:44 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Wiktor,</p>
@@ -635,7 +635,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238045_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_238045_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_238045_concise subText"><span class="date user-tz" title="07/Oct/10 4:44 PM"><time class="livestamp" datetime="2010-10-07T16:44-0500">07/Oct/10 4:44 PM</time></span></span>                    Hi Wiktor, 
 
  this is not a bug in XStream. The annotation auto-detection mode relies on the fact that the converter implementations will look up the type names of the objects in the handled object using a mapper. Your converter implementation has no need to use this, because you obtain the tag name of the child element using the record's name and since you are not interested in deserializing, you also do not have the need to write the type of your RecordDto (i.e. the PersonDto) into the XML stream. However, this will also skip the annotation detection in advance and when the PersonDto is handled (and its annotations are processed) it is already too late (at least for the first run). In your case you have to preprocess the PersonDto's annootation manually. 

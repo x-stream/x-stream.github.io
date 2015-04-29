@@ -424,7 +424,7 @@ and occupying the CPU.</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_184825_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_184825_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_184825_verbose subText"><span class="date user-tz" title="24/Jul/09 3:31 PM"><time class="livestamp" datetime="2009-07-24T15:31-0500">24/Jul/09 3:31 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Rico,</p>
@@ -444,7 +444,7 @@ Jörg</p> </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_184825_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_184825_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_184825_concise subText"><span class="date user-tz" title="24/Jul/09 3:31 PM"><time class="livestamp" datetime="2009-07-24T15:31-0500">24/Jul/09 3:31 PM</time></span></span>                    Hi Rico, 
 
  thanks for reporting, I've synchronized it now. If it causes a race condition it must be fixed. We will change in the complete naming mechanism something anyway, so it is fine with the synch. For  a workaround with the reeleased version, simply derive from the XmlFriendlyReplacer and overwrite the complete implementation with yours. While you will have the member fields doubled, it does not really matter for the functionality   

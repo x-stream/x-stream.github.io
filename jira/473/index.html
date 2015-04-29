@@ -412,7 +412,7 @@ Roman.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123454_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123454_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_123454_verbose subText"><span class="date user-tz" title="12/Feb/08 4:26 PM"><time class="livestamp" datetime="2008-02-12T16:26-0600">12/Feb/08 4:26 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I've always misinterpreted the spec, since I thought it is possible to write those as entities. However, they may not appear at all in XML, which makes it really difficult. Escaping does not work, since the XML parser would have to "unescape" those values also. Funny enough, even JDK XML serialization writes 0 as an entity value and fails when reading the generated XML. Maybe we have to introduce some quirks mode for XStream's PrettyPrintWriter. As long as it is not operating in XML 1.0 or 1.1. mode, it should write those entities - and if it is simply for backward compatibility. XStream's default parser (Xpp3) will happily ignore the spec and turn those entities back into real values ...</p> </div>
@@ -427,7 +427,7 @@ Roman.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123454_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_123454_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_123454_concise subText"><span class="date user-tz" title="12/Feb/08 4:26 PM"><time class="livestamp" datetime="2008-02-12T16:26-0600">12/Feb/08 4:26 PM</time></span></span>                    I've always misinterpreted the spec, since I thought it is possible to write those as entities. However, they may not appear at all in XML, which makes it really difficult. Escaping does not work, since the XML parser would have to "unescape" those values also. Funny enough, even JDK XML serialization writes 0 as an entity value and fails when reading the generated XML. Maybe we have to introduce some quirks mode for XStream's PrettyPrintWriter. As long as it is not operating in XML 1.0 or 1.1. mode, it should write those entities - and if it is simply for backward compatibility. XStream's default parser (Xpp3) will happily ignore the spec and turn those entities back into real values ...              </div>
         </div>
     </div>
@@ -448,7 +448,7 @@ Roman.              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124537_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124537_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_124537_verbose subText"><span class="date user-tz" title="20/Feb/08 6:12 PM"><time class="livestamp" datetime="2008-02-20T18:12-0600">20/Feb/08 6:12 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I've committed a version of the PrettyPrintWriter now, that works in different modes:</p>
@@ -471,7 +471,7 @@ QUIRKS is default for compatibility and because the Xpp3 parser does ignore the 
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124537_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_124537_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_124537_concise subText"><span class="date user-tz" title="20/Feb/08 6:12 PM"><time class="livestamp" datetime="2008-02-20T18:12-0600">20/Feb/08 6:12 PM</time></span></span>                    I've committed a version of the PrettyPrintWriter now, that works in different modes: 
  
 	 QUIRKS: Current behaviour, will write any non-printable character as character entity (default) 
@@ -500,7 +500,7 @@ QUIRKS is default for compatibility and because the Xpp3 parser does ignore the 
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125107_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125107_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_125107_verbose subText"><span class="date user-tz" title="25/Feb/08 5:02 PM"><time class="livestamp" datetime="2008-02-25T17:02-0600">25/Feb/08 5:02 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closing issues before next release.</p> </div>
@@ -515,7 +515,7 @@ QUIRKS is default for compatibility and because the Xpp3 parser does ignore the 
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125107_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125107_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_125107_concise subText"><span class="date user-tz" title="25/Feb/08 5:02 PM"><time class="livestamp" datetime="2008-02-25T17:02-0600">25/Feb/08 5:02 PM</time></span></span>                    Closing issues before next release.              </div>
         </div>
     </div>

@@ -379,7 +379,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_281241_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_281241_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_281241_verbose subText"><span class="date user-tz" title="13/Oct/11 3:30 PM"><time class="livestamp" datetime="2011-10-13T15:30-0500">13/Oct/11 3:30 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Dariusz,</p>
@@ -457,7 +457,7 @@ xstream.marshal(object, <span class="code-keyword">new</span> OSGiWriter(driver.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_281241_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_281241_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_281241_concise subText"><span class="date user-tz" title="13/Oct/11 3:30 PM"><time class="livestamp" datetime="2011-10-13T15:30-0500">13/Oct/11 3:30 PM</time></span></span>                    Hi Dariusz, 
 
  can you tell me how you gain the information from the type and what you have to do to load it again? Personally I have not much OSGi experience. 
@@ -830,7 +830,7 @@ xstream.marshal(object,  new  OSGiWriter(driver.createWriter(w)));
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_282484_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_282484_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_282484_verbose subText"><span class="date user-tz" title="31/Oct/11 10:14 PM"><time class="livestamp" datetime="2011-10-31T22:14-0500">31/Oct/11 10:14 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Yeah, class names are written in tag names, attribute values and sometimes even into text (e.g. serializing a Field). And some of the attributes may appear at same time.</p>
@@ -906,7 +906,7 @@ And bear with me, for it's ~4 a.m. <img class="emoticon" src="index_files/wink.g
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_282484_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_282484_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_282484_concise subText"><span class="date user-tz" title="31/Oct/11 10:14 PM"><time class="livestamp" datetime="2011-10-31T22:14-0500">31/Oct/11 10:14 PM</time></span></span>                    Yeah, class names are written in tag names, attribute values and sometimes even into text (e.g. serializing a Field). And some of the attributes may appear at same time. 
 
  Different approach. How big is your data? Can you keep it a 2nd time in memory? You might then separate the creation of the XML representation from the actual writing. But it would allow you to create at serialization time a map of all used classes in the tree with their bundle name incl. version and write that map as first information to the XML. 

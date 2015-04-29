@@ -387,7 +387,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47642_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47642_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47642_verbose subText"><span class="date user-tz" title="02/Oct/05 8:27 PM"><time class="livestamp" datetime="2005-10-02T20:27-0500">02/Oct/05 8:27 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Joe can you make a review here? The problem with this converter is, that it cannot handle the micro and nano part of the Timestamp. Though the ISO standard covers IMHO a arbitrary resolution for the fraction (by adding the necessary number of 's' after the fraction), it is not supported by Joda (at least not by DateTime). So you may decide, if it should stay. For now I've added a note to javadoc.</p> </div>
@@ -402,7 +402,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47642_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47642_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47642_concise subText"><span class="date user-tz" title="02/Oct/05 8:27 PM"><time class="livestamp" datetime="2005-10-02T20:27-0500">02/Oct/05 8:27 PM</time></span></span>                    Joe can you make a review here? The problem with this converter is, that it cannot handle the micro and nano part of the Timestamp. Though the ISO standard covers IMHO a arbitrary resolution for the fraction (by adding the necessary number of 's' after the fraction), it is not supported by Joda (at least not by DateTime). So you may decide, if it should stay. For now I've added a note to javadoc.              </div>
         </div>
     </div>
@@ -423,7 +423,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_47659_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jwalnes1"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
+    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_47659_verbose" href="https://github.com/joewalnes"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
  added a comment  - <span class="commentdate_47659_verbose subText"><span class="date user-tz" title="03/Oct/05 1:37 AM"><time class="livestamp" datetime="2005-10-03T01:37-0500">03/Oct/05 1:37 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Would be nice if we could find a way to support the micro/nano seconds. Few people read JavaDoc and it's the kind of thing that could cause an unexpected bug in someone's application. Are there any alternatives to Joda?</p>
@@ -440,7 +440,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_47659_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jwalnes1"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
+    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_47659_concise" href="https://github.com/joewalnes"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
  added a comment  - <span class="commentdate_47659_concise subText"><span class="date user-tz" title="03/Oct/05 1:37 AM"><time class="livestamp" datetime="2005-10-03T01:37-0500">03/Oct/05 1:37 AM</time></span></span>                    Would be nice if we could find a way to support the micro/nano seconds. Few people read JavaDoc and it's the kind of thing that could cause an unexpected bug in someone's application. Are there any alternatives to Joda? 
 
  Something to check for is thread safety. I'm not familiar with the Joda libraries but I encountered a problem using the standard Java DateFormat classes because they are not thread safe. My workaround was to use a pool of formatters to get the balance of performance and thread safety (see DateConverter).               </div>
@@ -463,7 +463,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47662_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47662_verbose" href="https://github.com/maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
  added a comment  - <span class="commentdate_47662_verbose subText"><span class="date user-tz" title="03/Oct/05 6:00 AM"><time class="livestamp" datetime="2005-10-03T06:00-0500">03/Oct/05 6:00 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Joda DateTime is thread-safe: <a href="http://joda-time.sourceforge.net/faq.html#threading" class="external-link" rel="nofollow">http://joda-time.sourceforge.net/faq.html#threading</a></p>
@@ -486,7 +486,7 @@ Maybe there is a way to do it that we've overlooked.</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47662_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47662_concise" href="https://github.com/maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
  added a comment  - <span class="commentdate_47662_concise subText"><span class="date user-tz" title="03/Oct/05 6:00 AM"><time class="livestamp" datetime="2005-10-03T06:00-0500">03/Oct/05 6:00 AM</time></span></span>                    Joda DateTime is thread-safe:  http://joda-time.sourceforge.net/faq.html#threading  
 
  As for the micro/nano seconds support, I'd be worth dropping them a line to ask. 
@@ -515,7 +515,7 @@ Maybe there is a way to do it that we've overlooked.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47665_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47665_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47665_verbose subText"><span class="date user-tz" title="03/Oct/05 6:49 AM"><time class="livestamp" datetime="2005-10-03T06:49-0500">03/Oct/05 6:49 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The question is, do we really need 500k joda-time to convert dates according ISO8601? I've written once an ISO8601DateFormat implementation that was based on the SimpleDateFormat (customer wanted to use ISO8601 symbols to define his own formats), that supported most cases. Since we can define, which exact string representation in ISO8601 format we support, it would be much less overhead. Multithreading support was realized with thread locals. WDYT?</p> </div>
@@ -530,7 +530,7 @@ Maybe there is a way to do it that we've overlooked.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47665_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47665_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47665_concise subText"><span class="date user-tz" title="03/Oct/05 6:49 AM"><time class="livestamp" datetime="2005-10-03T06:49-0500">03/Oct/05 6:49 AM</time></span></span>                    The question is, do we really need 500k joda-time to convert dates according ISO8601? I've written once an ISO8601DateFormat implementation that was based on the SimpleDateFormat (customer wanted to use ISO8601 symbols to define his own formats), that supported most cases. Since we can define, which exact string representation in ISO8601 format we support, it would be much less overhead. Multithreading support was realized with thread locals. WDYT?              </div>
         </div>
     </div>
@@ -551,7 +551,7 @@ Maybe there is a way to do it that we've overlooked.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47685_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47685_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47685_verbose subText"><span class="date user-tz" title="03/Oct/05 10:54 AM"><time class="livestamp" datetime="2005-10-03T10:54-0500">03/Oct/05 10:54 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Support for nano fraction added. Open question is still to use full-blown joda for this type of "simple" conversion?</p> </div>
@@ -566,7 +566,7 @@ Maybe there is a way to do it that we've overlooked.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47685_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47685_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47685_concise subText"><span class="date user-tz" title="03/Oct/05 10:54 AM"><time class="livestamp" datetime="2005-10-03T10:54-0500">03/Oct/05 10:54 AM</time></span></span>                    Support for nano fraction added. Open question is still to use full-blown joda for this type of "simple" conversion?              </div>
         </div>
     </div>
@@ -587,7 +587,7 @@ Maybe there is a way to do it that we've overlooked.
     
                 
 
-    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47758_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47758_verbose" href="https://github.com/maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
  added a comment  - <span class="commentdate_47758_verbose subText"><span class="date user-tz" title="04/Oct/05 3:05 AM"><time class="livestamp" datetime="2005-10-04T03:05-0500">04/Oct/05 3:05 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>It's the age-old question of development:  custom or re-use?<br>
@@ -607,7 +607,7 @@ I have no strong bias against using a custom converter.</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47758_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
+    <a class="user-hover user-avatar" rel="maurotalevi" id="commentauthor_47758_concise" href="https://github.com/maurotalevi"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Mauro Talevi</a>
  added a comment  - <span class="commentdate_47758_concise subText"><span class="date user-tz" title="04/Oct/05 3:05 AM"><time class="livestamp" datetime="2005-10-04T03:05-0500">04/Oct/05 3:05 AM</time></span></span>                    It's the age-old question of development:  custom or re-use? 
 I used joda-time because it was already done/tested and available to use. 
 I have no strong bias against using a custom converter. 
@@ -633,7 +633,7 @@ I have no strong bias against using a custom converter.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47765_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47765_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47765_verbose subText"><span class="date user-tz" title="04/Oct/05 4:11 AM"><time class="livestamp" datetime="2005-10-04T04:11-0500">04/Oct/05 4:11 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I withdraw my proposal <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p>
@@ -650,7 +650,7 @@ I have no strong bias against using a custom converter.
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47765_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_47765_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_47765_concise subText"><span class="date user-tz" title="04/Oct/05 4:11 AM"><time class="livestamp" datetime="2005-10-04T04:11-0500">04/Oct/05 4:11 AM</time></span></span>                    I withdraw my proposal   
 
  With the failing tests for 1.3 I had to recognize, that a core functionality supporting ISO8601with plain Java is missing (at least for 1.3). In the end it is not so difficult to write an own specialized converter using the SimpleDateFormat to work with ISO8601 formatted dates.              </div>

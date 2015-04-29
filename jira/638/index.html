@@ -358,7 +358,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243164_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243164_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243164_verbose subText"><span class="date user-tz" title="15/Nov/10 11:08 AM"><time class="livestamp" datetime="2010-11-15T11:08-0600">15/Nov/10 11:08 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>SerializationMethodInvoker is the same (line 128). It tries to cache, but that is pointless as AbstractReflectionConverter makes a new one in its ctor.</p> </div>
@@ -373,7 +373,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243164_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243164_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243164_concise subText"><span class="date user-tz" title="15/Nov/10 11:08 AM"><time class="livestamp" datetime="2010-11-15T11:08-0600">15/Nov/10 11:08 AM</time></span></span>                    SerializationMethodInvoker is the same (line 128). It tries to cache, but that is pointless as AbstractReflectionConverter makes a new one in its ctor.              </div>
         </div>
     </div>
@@ -394,7 +394,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243166_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243166_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243166_verbose subText"><span class="date user-tz" title="15/Nov/10 11:22 AM"><time class="livestamp" datetime="2010-11-15T11:22-0600">15/Nov/10 11:22 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>SerializationMethodInvoker has a cache member (as mentioned), however it is not caching method instances, it is somewhat separate to that that optimization <img class="emoticon" src="index_files/sad.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p> </div>
@@ -409,7 +409,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243166_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243166_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243166_concise subText"><span class="date user-tz" title="15/Nov/10 11:22 AM"><time class="livestamp" datetime="2010-11-15T11:22-0600">15/Nov/10 11:22 AM</time></span></span>                    SerializationMethodInvoker has a cache member (as mentioned), however it is not caching method instances, it is somewhat separate to that that optimization                </div>
         </div>
     </div>
@@ -430,7 +430,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243224_verbose subText"><span class="date user-tz" title="15/Nov/10 5:28 PM"><time class="livestamp" datetime="2010-11-15T17:28-0600">15/Nov/10 5:28 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>SerializationMethodInvoker: I don't understand your comment. It <b>is</b> caching the Method instances. Additionally it is fine that each ARC implementation has its own SMI, because each registered converter will handle a distinct set of types. There's no need to share the cache between converter instances and therefore we do not need a static using weak references for keys and values. The caches exists per XStream instance like all others.</p>
@@ -447,7 +447,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243224_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243224_concise subText"><span class="date user-tz" title="15/Nov/10 5:28 PM"><time class="livestamp" datetime="2010-11-15T17:28-0600">15/Nov/10 5:28 PM</time></span></span>                    SerializationMethodInvoker: I don't understand your comment. It  is  caching the Method instances. Additionally it is fine that each ARC implementation has its own SMI, because each registered converter will handle a distinct set of types. There's no need to share the cache between converter instances and therefore we do not need a static using weak references for keys and values. The caches exists per XStream instance like all others. 
 
  Cloneable: I don't see a performance problem in the current context of XStream either. Cloning is nothing XStream does on a frequent base. Currently it is performing one cloning attempt for every marshalling process. That does hardly qualify as performance problem.                </div>
@@ -470,7 +470,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243269_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243269_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243269_verbose subText"><span class="date user-tz" title="16/Nov/10 8:58 AM"><time class="livestamp" datetime="2010-11-16T08:58-0600">16/Nov/10 8:58 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Run a single test, and tell me whether your opinion is unchanged:</p>
@@ -496,7 +496,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243269_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243269_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243269_concise subText"><span class="date user-tz" title="16/Nov/10 8:58 AM"><time class="livestamp" datetime="2010-11-16T08:58-0600">16/Nov/10 8:58 AM</time></span></span>                    Run a single test, and tell me whether your opinion is unchanged: 
 
  BooleanFieldsTest.testBinaryValues() 
@@ -528,7 +528,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243273_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243273_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243273_verbose subText"><span class="date user-tz" title="16/Nov/10 9:19 AM"><time class="livestamp" datetime="2010-11-16T09:19-0600">16/Nov/10 9:19 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Cloneables's use of getMethod...</p>
@@ -548,7 +548,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243273_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243273_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243273_concise subText"><span class="date user-tz" title="16/Nov/10 9:19 AM"><time class="livestamp" datetime="2010-11-16T09:19-0600">16/Nov/10 9:19 AM</time></span></span>                    Cloneables's use of getMethod... 
 
  Repeat the test above for GregorianCalendarConverterTest.testCalendar() 
@@ -574,7 +574,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243515_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243515_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243515_verbose subText"><span class="date user-tz" title="18/Nov/10 5:58 AM"><time class="livestamp" datetime="2010-11-18T05:58-0600">18/Nov/10 5:58 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>SimpleMethodInvoker's caching of method lookups is broken.  Here's the fix</p>
@@ -625,7 +625,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243515_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243515_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243515_concise subText"><span class="date user-tz" title="18/Nov/10 5:58 AM"><time class="livestamp" datetime="2010-11-18T05:58-0600">18/Nov/10 5:58 AM</time></span></span>                    SimpleMethodInvoker's caching of method lookups is broken.  Here's the fix 
 
  Replace entire method 'getMethod' like so: 
@@ -682,7 +682,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243799_verbose subText"><span class="date user-tz" title="19/Nov/10 12:08 PM"><time class="livestamp" datetime="2010-11-19T12:08-0600">19/Nov/10 12:08 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Sorry, dude, but your version currupts the cache. It took me some hours to verify it, but see yourself with the new test SerializationNestedWriteObjectsTest.testCachingInheritedWriteObject. However, this is not hypothetical, the same scenario applies when serializing a synchronized ArrayList.</p> </div>
@@ -697,7 +697,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243799_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243799_concise subText"><span class="date user-tz" title="19/Nov/10 12:08 PM"><time class="livestamp" datetime="2010-11-19T12:08-0600">19/Nov/10 12:08 PM</time></span></span>                    Sorry, dude, but your version currupts the cache. It took me some hours to verify it, but see yourself with the new test SerializationNestedWriteObjectsTest.testCachingInheritedWriteObject. However, this is not hypothetical, the same scenario applies when serializing a synchronized ArrayList.              </div>
         </div>
     </div>
@@ -718,7 +718,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243804_verbose subText"><span class="date user-tz" title="19/Nov/10 1:02 PM"><time class="livestamp" datetime="2010-11-19T13:02-0600">19/Nov/10 1:02 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Won't fix is regarding the Cloneable. As said on the dev list, the much better approach is to use a NameCoder that does not have to be cloned and that can handle names to encode statically.</p>
@@ -735,7 +735,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243804_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243804_concise subText"><span class="date user-tz" title="19/Nov/10 1:02 PM"><time class="livestamp" datetime="2010-11-19T13:02-0600">19/Nov/10 1:02 PM</time></span></span>                    Won't fix is regarding the Cloneable. As said on the dev list, the much better approach is to use a NameCoder that does not have to be cloned and that can handle names to encode statically. 
 
  SerializationMethodInvoker: I've implemented a new (and much smarter) version now for the cache and I can see a drop of the calls for getMethod there by ~25% (running XStream's acceptance tests).              </div>
@@ -758,7 +758,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243903_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243903_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243903_verbose subText"><span class="date user-tz" title="20/Nov/10 5:06 PM"><time class="livestamp" datetime="2010-11-20T17:06-0600">20/Nov/10 5:06 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Problem fixed with SerializationMethodInvoker - thanks <img class="emoticon" src="index_files/smile.gif" alt="" height="16" align="absmiddle" border="0" width="16"></p> </div>
@@ -773,7 +773,7 @@ Add breakpoints to the 'Method result = type.getDeclaredMethod(name, parameterTy
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243903_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243903_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243903_concise subText"><span class="date user-tz" title="20/Nov/10 5:06 PM"><time class="livestamp" datetime="2010-11-20T17:06-0600">20/Nov/10 5:06 PM</time></span></span>                    Problem fixed with SerializationMethodInvoker - thanks                </div>
         </div>
     </div>

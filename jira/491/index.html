@@ -520,7 +520,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_152510_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_152510_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_152510_verbose subText"><span class="date user-tz" title="30/Oct/08 4:35 PM"><time class="livestamp" datetime="2008-10-30T16:35-0500">30/Oct/08 4:35 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Jon,</p>
@@ -539,7 +539,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_152510_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_152510_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_152510_concise subText"><span class="date user-tz" title="30/Oct/08 4:35 PM"><time class="livestamp" datetime="2008-10-30T16:35-0500">30/Oct/08 4:35 PM</time></span></span>                    Hi Jon, 
 
  I close this now as "cannot reproduce". I've added an acceptance test where a buffered images are serialized into XML and back and this works fine. However, I fixed recently a bug in   XSTR-508   that might have affected and solved your use case also. You may give the head revision a try. 
@@ -564,7 +564,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_154961_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_154961_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_154961_verbose subText"><span class="date user-tz" title="21/Nov/08 5:41 AM"><time class="livestamp" datetime="2008-11-21T05:41-0600">21/Nov/08 5:41 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Jon,</p>
@@ -586,7 +586,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_154961_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_154961_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_154961_concise subText"><span class="date user-tz" title="21/Nov/08 5:41 AM"><time class="livestamp" datetime="2008-11-21T05:41-0600">21/Nov/08 5:41 AM</time></span></span>                    Hi Jon, 
 
  one last comment. Meanwhile I had to detect that the added acceptance test will corrupt the memory of the JVM, since a BufferedImage contains (at least in the Linux JVM of Sun) internal classes that have a member variable that represents a pointer to native memory. At deserialization time XStream will overwrite this member also and the memory management of the JVM gets corrupted. So, unless somebody will write custom converters for a BufferedImage and all its contained data, it is not possible to marshal a BufferedImage in a safe way. 
@@ -614,7 +614,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156099_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156099_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_156099_verbose subText"><span class="date user-tz" title="01/Dec/08 4:13 PM"><time class="livestamp" datetime="2008-12-01T16:13-0600">01/Dec/08 4:13 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closed after receiving no further comment.</p> </div>
@@ -629,7 +629,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156099_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_156099_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_156099_concise subText"><span class="date user-tz" title="01/Dec/08 4:13 PM"><time class="livestamp" datetime="2008-12-01T16:13-0600">01/Dec/08 4:13 PM</time></span></span>                    Closed after receiving no further comment.              </div>
         </div>
     </div>

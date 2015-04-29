@@ -392,7 +392,7 @@ java.lang.NoSuchMethodError: org.objectweb.asm.ClassWriter.&lt;init&gt;(Z)V<br>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_143878_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_143878_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_143878_verbose subText"><span class="date user-tz" title="01/Aug/08 10:23 AM"><time class="livestamp" datetime="2008-08-01T10:23-0500">01/Aug/08 10:23 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I've closed this as "not a bug", since it is no XStream problem. You (or one of your dependencies) is using CGLIB which depends on ASM 1.5.x which is in turn binary incompatible with ASM 2.x and/or 3.x. The only reason why XStream triggers the problem is, because it finds CGLIB on the classpath and prepares itself to handle proxies created with CGLIB. Please ask on the list for further actions.</p> </div>
@@ -407,7 +407,7 @@ java.lang.NoSuchMethodError: org.objectweb.asm.ClassWriter.&lt;init&gt;(Z)V<br>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_143878_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_143878_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_143878_concise subText"><span class="date user-tz" title="01/Aug/08 10:23 AM"><time class="livestamp" datetime="2008-08-01T10:23-0500">01/Aug/08 10:23 AM</time></span></span>                    I've closed this as "not a bug", since it is no XStream problem. You (or one of your dependencies) is using CGLIB which depends on ASM 1.5.x which is in turn binary incompatible with ASM 2.x and/or 3.x. The only reason why XStream triggers the problem is, because it finds CGLIB on the classpath and prepares itself to handle proxies created with CGLIB. Please ask on the list for further actions.              </div>
         </div>
     </div>

@@ -482,7 +482,7 @@ And btw, thank's for the great lib !              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_280308_verbose subText"><span class="date user-tz" title="29/Sep/11 5:36 PM"><time class="livestamp" datetime="2011-09-29T17:36-0500">29/Sep/11 5:36 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Sadly that I never realized that the XML spec is quite clear: Attributes are written by default as CDATA. And while '\n', '\t' and '\r' are replaced with spaces by the attribute normalization, they are replaced with the real character if these characters are delivered as entities. Therefore will the PrettyPrintWriter (and derived) encode these characters now with entities. Note, that the writers based on 3rd party code may still fail to do so. BEA's and Woodstox' StAX writer and the XOM writer are compliant and will encode these whitespace characters, while JDK's StAX writer and Dom4J's XML writer fail.</p> </div>
@@ -497,7 +497,7 @@ And btw, thank's for the great lib !              </div>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_280308_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_280308_concise subText"><span class="date user-tz" title="29/Sep/11 5:36 PM"><time class="livestamp" datetime="2011-09-29T17:36-0500">29/Sep/11 5:36 PM</time></span></span>                    Sadly that I never realized that the XML spec is quite clear: Attributes are written by default as CDATA. And while '\n', '\t' and '\r' are replaced with spaces by the attribute normalization, they are replaced with the real character if these characters are delivered as entities. Therefore will the PrettyPrintWriter (and derived) encode these characters now with entities. Note, that the writers based on 3rd party code may still fail to do so. BEA's and Woodstox' StAX writer and the XOM writer are compliant and will encode these whitespace characters, while JDK's StAX writer and Dom4J's XML writer fail.              </div>
         </div>
     </div>

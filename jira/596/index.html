@@ -471,7 +471,7 @@ Eclipse Project SDK Version: 3.5.0.v20090423-7Q7bA7DPQ1SM6OYQ7wKYJhI-z-xZJCmLTBR
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294697_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294697_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294697_verbose subText"><span class="date user-tz" title="20/Mar/12 7:25 PM"><time class="livestamp" datetime="2012-03-20T19:25-0500">20/Mar/12 7:25 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>XStream 1.3.3 never existed, so I think this report was for XStream 1.3.1. However, that was the first version that actually had a check for the availability of the Subject class in the XStream initialization. Unfortunately this check did only load the class, but without initializing it. Therefore the converter was registered nevertheless and the runtime initialized the class later at first access which caused the exception. XStream will now initialize the class directly at loading time and ignore any occurring LinkageError resulting in a normal failed attempt to locate it.</p> </div>
@@ -486,7 +486,7 @@ Eclipse Project SDK Version: 3.5.0.v20090423-7Q7bA7DPQ1SM6OYQ7wKYJhI-z-xZJCmLTBR
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294697_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294697_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294697_concise subText"><span class="date user-tz" title="20/Mar/12 7:25 PM"><time class="livestamp" datetime="2012-03-20T19:25-0500">20/Mar/12 7:25 PM</time></span></span>                    XStream 1.3.3 never existed, so I think this report was for XStream 1.3.1. However, that was the first version that actually had a check for the availability of the Subject class in the XStream initialization. Unfortunately this check did only load the class, but without initializing it. Therefore the converter was registered nevertheless and the runtime initialized the class later at first access which caused the exception. XStream will now initialize the class directly at loading time and ignore any occurring LinkageError resulting in a normal failed attempt to locate it.              </div>
         </div>
     </div>

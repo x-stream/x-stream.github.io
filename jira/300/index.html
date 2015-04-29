@@ -425,7 +425,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_321944_verbose subText"><span class="date user-tz" title="13/Mar/13 8:29 PM"><time class="livestamp" datetime="2013-03-13T20:29-0500">13/Mar/13 8:29 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>It's been a long time and XStream is still Java 1.4 compatible.</p>
@@ -444,7 +444,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321944_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_321944_concise subText"><span class="date user-tz" title="13/Mar/13 8:29 PM"><time class="livestamp" datetime="2013-03-13T20:29-0500">13/Mar/13 8:29 PM</time></span></span>                    It's been a long time and XStream is still Java 1.4 compatible. 
 
  However, I was never lucky with the proposed changes of the XStream API. I've added therefore a complete different approach using a specialized converter (EnumToStringConverter) that can be registered individually for an individual Enum type. By default it is using the Enum's string representation (that's what I normally use to get a nice camel case representation from enum values like NOT_SUPPORTED also in other parts of my applications) or you may provide an individual map for the string alternative values. 
@@ -513,7 +513,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_321986_verbose subText"><span class="date user-tz" title="14/Mar/13 12:25 PM"><time class="livestamp" datetime="2013-03-14T12:25-0500">14/Mar/13 12:25 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi David,</p>
@@ -530,7 +530,7 @@ xstream.aliasEnumType(CmpVersion.class new MyDottedVersionNumerEnumFormat());</p
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_321986_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_321986_concise subText"><span class="date user-tz" title="14/Mar/13 12:25 PM"><time class="livestamp" datetime="2013-03-14T12:25-0500">14/Mar/13 12:25 PM</time></span></span>                    Hi David, 
 
  thanks for the feedback. I was aware that you're certainly no longer waiting for this functionality. And you're definitely right to use JAXB for your use case - especially if you generate byte-code on the fly, this sounds interesting                </div>

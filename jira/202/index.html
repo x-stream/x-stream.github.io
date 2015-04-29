@@ -457,7 +457,7 @@ public class ResultSet<br>
     
                 
 
-    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_30902_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jwalnes1"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
+    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_30902_verbose" href="https://github.com/joewalnes"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
  added a comment  - <span class="commentdate_30902_verbose subText"><span class="date user-tz" title="14/Mar/05 1:10 PM"><time class="livestamp" datetime="2005-03-14T13:10-0600">14/Mar/05 1:10 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>If the difference between the synchronized list implementations between 1.4 and 1.5 is just a rename, you <em>might</em> be able to get away with using an alias. </p>
@@ -480,7 +480,7 @@ public class ResultSet<br>
     
                 
 
-    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_30902_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=jwalnes1"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
+    <a class="user-hover user-avatar" rel="jwalnes1" id="commentauthor_30902_concise" href="https://github.com/joewalnes"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Joe Walnes</a>
  added a comment  - <span class="commentdate_30902_concise subText"><span class="date user-tz" title="14/Mar/05 1:10 PM"><time class="livestamp" datetime="2005-03-14T13:10-0600">14/Mar/05 1:10 PM</time></span></span>                    If the difference between the synchronized list implementations between 1.4 and 1.5 is just a rename, you  might  be able to get away with using an alias.  
 
  Something like: 
@@ -509,7 +509,7 @@ public class ResultSet<br>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63531_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63531_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_63531_verbose subText"><span class="date user-tz" title="13/Apr/06 5:38 PM"><time class="livestamp" datetime="2006-04-13T17:38-0500">13/Apr/06 5:38 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>It's a lot more than just a new name. Look at the acceptance test for collections and you know, what I mean.</p> </div>
@@ -524,7 +524,7 @@ public class ResultSet<br>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63531_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_63531_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_63531_concise subText"><span class="date user-tz" title="13/Apr/06 5:38 PM"><time class="livestamp" datetime="2006-04-13T17:38-0500">13/Apr/06 5:38 PM</time></span></span>                    It's a lot more than just a new name. Look at the acceptance test for collections and you know, what I mean.              </div>
         </div>
     </div>
@@ -617,7 +617,7 @@ cause-exception : com.thoughtworks.xstream.converters.reflection.ObjectAccessExc
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_64271_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_64271_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_64271_verbose subText"><span class="date user-tz" title="27/Apr/06 1:45 AM"><time class="livestamp" datetime="2006-04-27T01:45-0500">27/Apr/06 1:45 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I had a look at the issue and the problem is, that the synchronized collections in JDK 1.5 use a custom serialization, while they don't have this in JDK 1.4. This leads unfortunately to a complete different XML representation. Please try this as workaround:</p>
@@ -644,7 +644,7 @@ xstream.register(
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_64271_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_64271_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_64271_concise subText"><span class="date user-tz" title="27/Apr/06 1:45 AM"><time class="livestamp" datetime="2006-04-27T01:45-0500">27/Apr/06 1:45 AM</time></span></span>                    I had a look at the issue and the problem is, that the synchronized collections in JDK 1.5 use a custom serialization, while they don't have this in JDK 1.4. This leads unfortunately to a complete different XML representation. Please try this as workaround: 
 
   
@@ -767,7 +767,7 @@ xstream.register(
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_93098_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_93098_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_93098_verbose subText"><span class="date user-tz" title="17/Apr/07 2:34 AM"><time class="livestamp" datetime="2007-04-17T02:34-0500">17/Apr/07 2:34 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Matthias, please ask questions on the user list. Depending on your use case, you have different options.</p> </div>
@@ -782,7 +782,7 @@ xstream.register(
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_93098_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_93098_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_93098_concise subText"><span class="date user-tz" title="17/Apr/07 2:34 AM"><time class="livestamp" datetime="2007-04-17T02:34-0500">17/Apr/07 2:34 AM</time></span></span>                    Matthias, please ask questions on the user list. Depending on your use case, you have different options.              </div>
         </div>
     </div>

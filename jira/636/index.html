@@ -359,7 +359,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242265_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242265_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_242265_verbose subText"><span class="date user-tz" title="05/Nov/10 5:39 PM"><time class="livestamp" datetime="2010-11-05T17:39-0500">05/Nov/10 5:39 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Well, the WeakHashMap is not there in first place to save memory, but to allow the classloader to be purged. Essential in JEE or OSGi environemnts.</p> </div>
@@ -374,7 +374,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242265_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242265_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_242265_concise subText"><span class="date user-tz" title="05/Nov/10 5:39 PM"><time class="livestamp" datetime="2010-11-05T17:39-0500">05/Nov/10 5:39 PM</time></span></span>                    Well, the WeakHashMap is not there in first place to save memory, but to allow the classloader to be purged. Essential in JEE or OSGi environemnts.              </div>
         </div>
     </div>
@@ -395,7 +395,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_242453_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_242453_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_242453_verbose subText"><span class="date user-tz" title="08/Nov/10 3:03 PM"><time class="livestamp" datetime="2010-11-08T15:03-0600">08/Nov/10 3:03 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>OK, but I'm asking for a pluggable impl not a change.  I'm happy for the default situation to be as it is now. I'm just wanting to be able to pass in something like new NonWeakFieldDictionaryMaps();</p> </div>
@@ -410,7 +410,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_242453_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_242453_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_242453_concise subText"><span class="date user-tz" title="08/Nov/10 3:03 PM"><time class="livestamp" datetime="2010-11-08T15:03-0600">08/Nov/10 3:03 PM</time></span></span>                    OK, but I'm asking for a pluggable impl not a change.  I'm happy for the default situation to be as it is now. I'm just wanting to be able to pass in something like new NonWeakFieldDictionaryMaps();              </div>
         </div>
     </div>
@@ -432,7 +432,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242747_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242747_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_242747_verbose subText"><span class="date user-tz" title="10/Nov/10 6:54 PM"><time class="livestamp" datetime="2010-11-10T18:54-0600">10/Nov/10 6:54 PM</time></span></span>   - <span class="redText subText" title="Jörg Schaible - 10/Nov/10 6:56 PM">edited</span> </div>
         </div>
         <div class="action-body flooded"><p>I had a closer look at the implementation. We could make the init method and the two Map fields protected. However, I am quite convinced, that the current implementation prevents the entries from being purged anyway, because the value is a Field that refers the declaring class used in the key ... :-/</p> </div>
@@ -448,7 +448,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242747_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_242747_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_242747_concise subText"><span class="date user-tz" title="10/Nov/10 6:54 PM"><time class="livestamp" datetime="2010-11-10T18:54-0600">10/Nov/10 6:54 PM</time></span></span>   - <span class="redText subText" title="Jörg Schaible - 10/Nov/10 6:56 PM">edited</span>                   I had a closer look at the implementation. We could make the init method and the two Map fields protected. However, I am quite convinced, that the current implementation prevents the entries from being purged anyway, because the value is a Field that refers the declaring class used in the key ... :-/              </div>
         </div>
     </div>
@@ -469,7 +469,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243161_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243161_verbose" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243161_verbose subText"><span class="date user-tz" title="15/Nov/10 10:29 AM"><time class="livestamp" datetime="2010-11-15T10:29-0600">15/Nov/10 10:29 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>As you may have suspected, I'm having trouble reproducing this as a unit test.  I'm going to switch instead to a live run, with some instrumentation around second/subsequent reflection usage. </p> </div>
@@ -484,7 +484,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243161_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=paul"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
+    <a class="user-hover user-avatar" rel="paul" id="commentauthor_243161_concise" href="https://github.com/paul-hammant"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Paul Hammant</a>
  added a comment  - <span class="commentdate_243161_concise subText"><span class="date user-tz" title="15/Nov/10 10:29 AM"><time class="livestamp" datetime="2010-11-15T10:29-0600">15/Nov/10 10:29 AM</time></span></span>                    As you may have suspected, I'm having trouble reproducing this as a unit test.  I'm going to switch instead to a live run, with some instrumentation around second/subsequent reflection usage.               </div>
         </div>
     </div>
@@ -505,7 +505,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243220_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243220_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243220_verbose subText"><span class="date user-tz" title="15/Nov/10 5:10 PM"><time class="livestamp" datetime="2010-11-15T17:10-0600">15/Nov/10 5:10 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I'll try to create a test case as soon as possible.</p> </div>
@@ -520,7 +520,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243220_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243220_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243220_concise subText"><span class="date user-tz" title="15/Nov/10 5:10 PM"><time class="livestamp" datetime="2010-11-15T17:10-0600">15/Nov/10 5:10 PM</time></span></span>                    I'll try to create a test case as soon as possible.              </div>
         </div>
     </div>
@@ -541,7 +541,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243228_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243228_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243228_verbose subText"><span class="date user-tz" title="15/Nov/10 7:54 PM"><time class="livestamp" datetime="2010-11-15T19:54-0600">15/Nov/10 7:54 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>It is as suspected: The classes seem not be garbage collected. Enable the commented line and it fails:</p>
@@ -576,7 +576,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243228_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243228_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243228_concise subText"><span class="date user-tz" title="15/Nov/10 7:54 PM"><time class="livestamp" datetime="2010-11-15T19:54-0600">15/Nov/10 7:54 PM</time></span></span>                    It is as suspected: The classes seem not be garbage collected. Enable the commented line and it fails: 
 
   
@@ -617,7 +617,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243635_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243635_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243635_verbose subText"><span class="date user-tz" title="18/Nov/10 3:49 PM"><time class="livestamp" datetime="2010-11-18T15:49-0600">18/Nov/10 3:49 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>I dropped now the usage of the WeakHashMap altogether. Since the class used as key is again part of the cached data as field member of a Field instance, the entries are never removed. Using WeakPointer for the Field instances does also not work, because these instances are not referenced anywhere and can vanish at arbitrary times making the comlete cache obolete.</p> </div>
@@ -632,7 +632,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243635_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_243635_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_243635_concise subText"><span class="date user-tz" title="18/Nov/10 3:49 PM"><time class="livestamp" datetime="2010-11-18T15:49-0600">18/Nov/10 3:49 PM</time></span></span>                    I dropped now the usage of the WeakHashMap altogether. Since the class used as key is again part of the cached data as field member of a Field instance, the entries are never removed. Using WeakPointer for the Field instances does also not work, because these instances are not referenced anywhere and can vanish at arbitrary times making the comlete cache obolete.              </div>
         </div>
     </div>

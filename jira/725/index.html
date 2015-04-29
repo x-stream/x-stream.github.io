@@ -473,7 +473,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320750_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320750_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_320750_verbose subText"><span class="date user-tz" title="02/Mar/13 1:13 PM"><time class="livestamp" datetime="2013-03-02T13:13-0600">02/Mar/13 1:13 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>This issue made me thinking about the current approach. Actually there is no real reason why a different thread should wait to process a completely unrelated type. Therefore the big synchronization block has been moved now into the loop of processed types and is based on the currently processed type. The cache with the annotatedTypes is now only synchronized for the short time accessing the set. This should improve the situation even more.</p> </div>
@@ -488,7 +488,7 @@
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320750_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_320750_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_320750_concise subText"><span class="date user-tz" title="02/Mar/13 1:13 PM"><time class="livestamp" datetime="2013-03-02T13:13-0600">02/Mar/13 1:13 PM</time></span></span>                    This issue made me thinking about the current approach. Actually there is no real reason why a different thread should wait to process a completely unrelated type. Therefore the big synchronization block has been moved now into the loop of processed types and is based on the currently processed type. The cache with the annotatedTypes is now only synchronized for the short time accessing the set. This should improve the situation even more.              </div>
         </div>
     </div>

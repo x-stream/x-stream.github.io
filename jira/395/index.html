@@ -391,7 +391,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95060_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95060_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_95060_verbose subText"><span class="date user-tz" title="04/May/07 4:28 PM"><time class="livestamp" datetime="2007-05-04T16:28-0500">04/May/07 4:28 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Hi Rene,</p>
@@ -413,7 +413,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95060_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_95060_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_95060_concise subText"><span class="date user-tz" title="04/May/07 4:28 PM"><time class="livestamp" datetime="2007-05-04T16:28-0500">04/May/07 4:28 PM</time></span></span>                    Hi Rene, 
 
  after some benchmarks it was visible that even the synchronized WeakHashMap is most times a lot faster than String.intern(). Therefore I've replaced our current implementation with yours and have the additional benefit of saving the limited PermGen space. This was really a great contribution. Thanks a lot! You may checkout the current version from Subversion to test yourself. 
@@ -485,7 +485,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_97011_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_97011_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_97011_verbose subText"><span class="date user-tz" title="24/May/07 3:29 PM"><time class="livestamp" datetime="2007-05-24T15:29-0500">24/May/07 3:29 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The current implementation ensures that always the <b>same</b> string is used. So there's no reason to use inter(). It is slower, allocated valuable space and you gain nothing from such an option. However, you can easily register your own StringConverter if you insist on such a behaviour.</p> </div>
@@ -500,7 +500,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_97011_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_97011_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_97011_concise subText"><span class="date user-tz" title="24/May/07 3:29 PM"><time class="livestamp" datetime="2007-05-24T15:29-0500">24/May/07 3:29 PM</time></span></span>                    The current implementation ensures that always the  same  string is used. So there's no reason to use inter(). It is slower, allocated valuable space and you gain nothing from such an option. However, you can easily register your own StringConverter if you insist on such a behaviour.              </div>
         </div>
     </div>
@@ -677,7 +677,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_119576_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_119576_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_119576_verbose subText"><span class="date user-tz" title="11/Jan/08 8:42 AM"><time class="livestamp" datetime="2008-01-11T08:42-0600">11/Jan/08 8:42 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>This is what already has been implemented. You might check the latest SNAPSHOT.</p> </div>
@@ -692,7 +692,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_119576_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_119576_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_119576_concise subText"><span class="date user-tz" title="11/Jan/08 8:42 AM"><time class="livestamp" datetime="2008-01-11T08:42-0600">11/Jan/08 8:42 AM</time></span></span>                    This is what already has been implemented. You might check the latest SNAPSHOT.              </div>
         </div>
     </div>
@@ -749,7 +749,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125072_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125072_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_125072_verbose subText"><span class="date user-tz" title="25/Feb/08 5:01 PM"><time class="livestamp" datetime="2008-02-25T17:01-0600">25/Feb/08 5:01 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>Closing issues before next release.</p> </div>
@@ -764,7 +764,7 @@ xstream.registerConverter(new SRStringConverter(stringCache));</p>
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125072_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_125072_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_125072_concise subText"><span class="date user-tz" title="25/Feb/08 5:01 PM"><time class="livestamp" datetime="2008-02-25T17:01-0600">25/Feb/08 5:01 PM</time></span></span>                    Closing issues before next release.              </div>
         </div>
     </div>

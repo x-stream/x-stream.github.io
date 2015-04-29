@@ -379,7 +379,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294534_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294534_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294534_verbose subText"><span class="date user-tz" title="19/Mar/12 2:31 PM"><time class="livestamp" datetime="2012-03-19T14:31-0500">19/Mar/12 2:31 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>There's unfortunately nothing XStream can do about. Java serialization explicitly states that it does <b>not</b> call the constructors of the deserialized type. This is what XStream does.</p>
@@ -400,7 +400,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294534_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294534_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294534_concise subText"><span class="date user-tz" title="19/Mar/12 2:31 PM"><time class="livestamp" datetime="2012-03-19T14:31-0500">19/Mar/12 2:31 PM</time></span></span>                    There's unfortunately nothing XStream can do about. Java serialization explicitly states that it does  not  call the constructors of the deserialized type. This is what XStream does. 
 
  However, you are right, that the spec also requires that the default-ctor of the first non-serializable parent  is  called, but actually this is JVM-internal magic and is nothing that can be done with the Java API itself. Or do you know, how an inherited constructor of an already existing object can be called? 
@@ -463,7 +463,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294588_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294588_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294588_verbose subText"><span class="date user-tz" title="20/Mar/12 4:19 AM"><time class="livestamp" datetime="2012-03-20T04:19-0500">20/Mar/12 4:19 AM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The functionality to handle Serializable instances <b>is</b> fragile, just as you already have learned. Therefore we are not very keen to expose a lot more entry points. Again, did you try an instance of the SerilizationProvider using a PureJavaReflectionProvider? This should solve the initialization problem for you with the constructors. As sole concession we can declare marshalUnserializableParent as protected to prevent any of these fields written in an derived converter.</p>
@@ -480,7 +480,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294588_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294588_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294588_concise subText"><span class="date user-tz" title="20/Mar/12 4:19 AM"><time class="livestamp" datetime="2012-03-20T04:19-0500">20/Mar/12 4:19 AM</time></span></span>                    The functionality to handle Serializable instances  is  fragile, just as you already have learned. Therefore we are not very keen to expose a lot more entry points. Again, did you try an instance of the SerilizationProvider using a PureJavaReflectionProvider? This should solve the initialization problem for you with the constructors. As sole concession we can declare marshalUnserializableParent as protected to prevent any of these fields written in an derived converter. 
 
  You might also be interested in  XSTR-670  for a more global approach in an OSGi environment.              </div>
@@ -547,7 +547,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294916_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294916_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294916_verbose subText"><span class="date user-tz" title="22/Mar/12 6:16 PM"><time class="livestamp" datetime="2012-03-22T18:16-0500">22/Mar/12 6:16 PM</time></span></span>  </div>
         </div>
         <div class="action-body flooded"><p>The method is protected now in trunk. AFAICS it should work now if you overload marshalUnserializableParents with an empty method and overload instantiateNewInstance with a version that creates an object of the required type using its default constructor.</p> </div>
@@ -562,7 +562,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
     
                 
 
-    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294916_concise" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
+    <a class="user-hover user-avatar" rel="joehni" id="commentauthor_294916_concise" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_294916_concise subText"><span class="date user-tz" title="22/Mar/12 6:16 PM"><time class="livestamp" datetime="2012-03-22T18:16-0500">22/Mar/12 6:16 PM</time></span></span>                    The method is protected now in trunk. AFAICS it should work now if you overload marshalUnserializableParents with an empty method and overload instantiateNewInstance with a version that creates an object of the required type using its default constructor.              </div>
         </div>
     </div>
