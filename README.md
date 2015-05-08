@@ -1,15 +1,15 @@
 # XStream Documentation
 
-This repository contains the GitHub pages for XStream](https://github.com/x-stream/xstream)
-that are used to render automatically the static [website of ProxyToys](https://x-stream.github.io/). 
+This repository contains the [GitHub pages for XStream](https://github.com/x-stream/xstream)
+that are used to render automatically the static [website of XStream](https://x-stream.github.io/). 
 
 # Site Generation
 
 The content of this repository is generated. XStream uses Maven and XSite to generate the pages.
 To create an update of the site, you have to edit the sources in the XStream repository.
  
-## Requisites
-+ Java 5 runtime
+## Prerequisites
++ Java 8 runtime
 + Maven 3.0
  
 ## Steps
