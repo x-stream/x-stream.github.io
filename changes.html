@@ -51,11 +51,18 @@
 	<a href="http://jira.codehaus.org/browse/XSTR?report=com.atlassian.jira.plugin.system.project:roadmap-panel">Roadmap</a> and
 	<a href="http://jira.codehaus.org/browse/XSTR?report=com.atlassian.jira.plugin.system.project:changelog-panel">Change Log</a>.
 	</p>
-<!--
+
     <h1 id="upcoming-1.4.x">Upcoming 1.4.x maintenance release</h1>
 
     <p>Not yet released.</p>
--->
+
+    <h2>Minor changes</h2>
+
+    <ul>
+    	<li><a href="/jira/769">XSTR-769</a>: Synthetic fields with references to outer class use compiler dependent names.</li>
+    	<li><a href="/jira/771">XSTR-771</a>: UUID is an immutable type by default.</li>
+    </ul>
+
     <h1 id="1.4.8">1.4.8</h1>
 
     <p>Released February 18, 2015.</p>
@@ -70,19 +77,19 @@
     
     <ul>
     	<li>Detect Java 9 runtime.</li>
-    	<li>XSTR-767: Deserialization of referenced lambda expressions fail.</li>
-    	<li>XSTR-762: Private method readResolve() called on base classes.</li>
-    	<li>XSTR-761: Support ignored serialPersistentField at deserialization time.</li>
-    	<li>XSTR-755: ExternalizableConverter does not respect writeReplace and readResolve.</li>
-    	<li>XSTR-757: Deserialized TreeSet does not honor remove(Object) return value contract.</li>
-    	<li>XSTR-759: Support deserialization of <a href="http://www.w3.org/TR/NOTE-datetime">W3C datetime format</a>
+    	<li><a href="/jira/767">XSTR-767</a>: Deserialization of referenced lambda expressions fail.</li>
+    	<li><a href="/jira/762">XSTR-762</a>: Private method readResolve() called on base classes.</li>
+    	<li><a href="/jira/761">XSTR-761</a>: Support ignored serialPersistentField at deserialization time.</li>
+    	<li><a href="/jira/755">XSTR-755</a>: ExternalizableConverter does not respect writeReplace and readResolve.</li>
+    	<li><a href="/jira/757">XSTR-757</a>: Deserialized TreeSet does not honor remove(Object) return value contract.</li>
+    	<li><a href="/jira/759">XSTR-759</a>: Support deserialization of <a href="http://www.w3.org/TR/NOTE-datetime">W3C datetime format</a>
     	in DateConverter with Java 7 runtime.</li>
     	<li>Fix: DateConverter ignores provided locale.</li>
-    	<li>XSTR-768: ISO8601GregorianCalendarConverter may set invalid time zone for Joda-Time.</li>
+    	<li><a href="/jira/768">XSTR-768</a>: ISO8601GregorianCalendarConverter may set invalid time zone for Joda-Time.</li>
     	<li>Fix: WeakCache.entrySet().iterator().next.setValue(value) returns the reference instead of the old value.</li>
     	<li>Fix: SqlTimestampConverter throws IllegalArgumentException instead of ConversionException on fromString().</li>
     	<li>Fix: CGLIBEnhancedConverter does not initialize transient members of parent after deserialization.</li>
-    	<li>XSTR-763: Set scope of org.json:json to test instead declaring the dependency as optional.</li>
+    	<li><a href="/jira/763">XSTR-763</a>: Set scope of org.json:json to test instead declaring the dependency as optional.</li>
     </ul>
 
     <h2>API changes</h2>
@@ -114,7 +121,7 @@
     <ul>
    		<li>Add <a href="security.html#framework">security framework</a> to limit handled types while unmarshalling.</li>
    		<li>java.bean.EventHandler no longer handled automatically because of severe security vulnerability.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-751">XSTR-751</a>: New SunLimitedUnsafeReflectionProvider that uses undocumented features only to allocate new
+    	<li><a href="/jira/751">XSTR-751</a>: New SunLimitedUnsafeReflectionProvider that uses undocumented features only to allocate new
     	instances as required on Dalvik.</li>
    		<li>Fix instantiation of AnnotationMapper that requires ConverterLookup and ConverterRegistry to be the same
    		instance.</li>
@@ -152,7 +159,7 @@
     <h2>Major changes</h2>
     
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-566">XSTR-566</a> and <a href="http://jira.codehaus.org/browse/XSTR-200">XSTR-200</a>: Better compatibility with GAE and environments with active SecurityManager (i.e. in an
+    	<li><a href="/jira/566">XSTR-566</a> and <a href="/jira/200">XSTR-200</a>: Better compatibility with GAE and environments with active SecurityManager (i.e. in an
     	Applet). XStream converters try now to ensure already in the canConvert methods that they can handle the requested type in
     	practice and not only theoretically. Additionally the implementations even better take care, that the initialization of a
     	converter will not break the setup of XStream itself. Following modifications have been done for these topics:
@@ -168,7 +175,7 @@
     		<li>StackTraceElementConverter uses constructor for StackTraceElement instances in Java 5 and GEA.</li>
     	</ul>
     	</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-739">XSTR-739</a> and <a href="http://jira.codehaus.org/browse/XSTR-746">XSTR-746</a>: OrderRetainingMap fails if HashMap.putAll(Map) of Java Runtime is not
+    	<li><a href="/jira/739">XSTR-739</a> and <a href="/jira/746">XSTR-746</a>: OrderRetainingMap fails if HashMap.putAll(Map) of Java Runtime is not
     	implemented calling put for every element within the map.</li>
     	<li>New NamedArrayConverter to define names of inner elements.</li>
     </ul>
@@ -176,7 +183,7 @@
     <h2>Minor changes</h2>
     
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-747">XSTR-747</a>: All constructors of StaxDriver derived classes take erroneously a XmlFriendlyNameCoder
+    	<li><a href="/jira/747">XSTR-747</a>: All constructors of StaxDriver derived classes take erroneously a XmlFriendlyNameCoder
     	instead of a plain NameCoder.</li>
     </ul>
 
@@ -204,52 +211,52 @@
     <h2>Major changes</h2>
     
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-732">XSTR-732</a>: Use a referencing implementation for the ClassLoader to support environments where no new
+    	<li><a href="/jira/732">XSTR-732</a>: Use a referencing implementation for the ClassLoader to support environments where no new
     	ClassLoader can be instantiated due to security restrictions.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-691">XSTR-691</a>: Allow unknown XML elements to be ignored using new method XStream.ignoreUnknownElements.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-728">XSTR-728</a>: XStream creates invalid JSON with JsonHierarchicalStreamDriver for custom converters since
+    	<li><a href="/jira/691">XSTR-691</a>: Allow unknown XML elements to be ignored using new method XStream.ignoreUnknownElements.</li>
+    	<li><a href="/jira/728">XSTR-728</a>: XStream creates invalid JSON with JsonHierarchicalStreamDriver for custom converters since
     	XStream 1.4.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-300">XSTR-300</a>: New EnumToStringConverter to support custom string representations of Enum values.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-292">XSTR-292</a> and <a href="http://jira.codehaus.org/browse/XSTR-405">XSTR-405</a>: New NamedMapConverter and NamedCollectionConverter to define names of
+    	<li><a href="/jira/300">XSTR-300</a>: New EnumToStringConverter to support custom string representations of Enum values.</li>
+    	<li><a href="/jira/292">XSTR-292</a> and <a href="/jira/405">XSTR-405</a>: New NamedMapConverter and NamedCollectionConverter to define names of
     	inner elements.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-726">XSTR-726</a>: New annotation XStreamAliasType to support declarative definition of XStream.aliasType().</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-735">XSTR-735</a>: Support for JDOM2 with JDom2Driver, JDom2Reader and JDom2Writer.</li>
+    	<li><a href="/jira/726">XSTR-726</a>: New annotation XStreamAliasType to support declarative definition of XStream.aliasType().</li>
+    	<li><a href="/jira/735">XSTR-735</a>: Support for JDOM2 with JDom2Driver, JDom2Reader and JDom2Writer.</li>
     	<li>Optimized XML structure for java.awt.Font.</li>
     	<li>Fix: ToAttributedValueConverter silently appends fields without attribute support to the value producing mixed-mode XML.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-566">XSTR-566</a> and <a href="http://jira.codehaus.org/browse/XSTR-249">XSTR-249</a>: Better compatibility with Google AppEngine and J2ME, setup no longer fails for unavailable converters.</li>
+    	<li><a href="/jira/566">XSTR-566</a> and <a href="/jira/249">XSTR-249</a>: Better compatibility with Google AppEngine and J2ME, setup no longer fails for unavailable converters.</li>
     </ul>
 
     <h2>Minor changes</h2>
     
     <ul>
     	<li>Fix missing manifest information.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-729">XSTR-729</a>: Add OSGi information to manifests.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-723">XSTR-723</a>: XStream will now detect a working enhanced mode dynamically instead using lists of known
+    	<li><a href="/jira/729">XSTR-729</a>: Add OSGi information to manifests.</li>
+    	<li><a href="/jira/723">XSTR-723</a>: XStream will now detect a working enhanced mode dynamically instead using lists of known
     	vendors. This allows enhanced support for JamVM if it is bundled with OpenJDK. It will currently fail on a 
     	runtime based on GNU	Classpath (at least up to version 0.98).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-541">XSTR-541</a>: JavaScript compatibility problem with 64-bit integers in JSON.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-719">XSTR-719</a>: Support replacement of default converter in any case.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-725">XSTR-725</a>: processAnnotation performance improvement in concurrent situation.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-721">XSTR-721</a>: EnumConverter is more lenient while parsing constants.</li>
+    	<li><a href="/jira/541">XSTR-541</a>: JavaScript compatibility problem with 64-bit integers in JSON.</li>
+    	<li><a href="/jira/719">XSTR-719</a>: Support replacement of default converter in any case.</li>
+    	<li><a href="/jira/725">XSTR-725</a>: processAnnotation performance improvement in concurrent situation.</li>
+    	<li><a href="/jira/721">XSTR-721</a>: EnumConverter is more lenient while parsing constants.</li>
     	<li>New constructors for CollectionConverter and MapConverter to allow registration for an individual type.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-724">XSTR-724</a>: Cache class name lookup failures.</li>
+    	<li><a href="/jira/724">XSTR-724</a>: Cache class name lookup failures.</li>
     	<li>Current IBM JDK for Java 1.4.2 no longer has a reverse field ordering.</li>
     	<li>LongConverter supports now positive hex and octal numbers over Long.MAX_VALUE within 64 bit.</li>
     	<li>Fix: Sun14RefectionProvider ignores a provided FieldDictionary.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-457">XSTR-457</a>: Do not write 'defined-in' attribute it not needed.</li>
+    	<li><a href="/jira/457">XSTR-457</a>: Do not write 'defined-in' attribute it not needed.</li>
     	<li>JettisonMappedXmlDriver provides better support to overwrite its create methods.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-685">XSTR-685</a>: StAX based drivers (StaxDriver and JettisonMappedXmlDriver) are not closing internal input
+    	<li><a href="/jira/685">XSTR-685</a>: StAX based drivers (StaxDriver and JettisonMappedXmlDriver) are not closing internal input
     	stream reading from file or URL.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-736">XSTR-736</a>: XStream.unmarshal may throw NPE if version info of manifest is missing.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-733">XSTR-733</a>: Implicit elements that match multiple defined implicit collections will be assigned to the
+    	<li><a href="/jira/736">XSTR-736</a>: XStream.unmarshal may throw NPE if version info of manifest is missing.</li>
+    	<li><a href="/jira/733">XSTR-733</a>: Implicit elements that match multiple defined implicit collections will be assigned to the
     	map with the nearest matching element type.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-740">XSTR-740</a>: ISO8601GregorianCalendarConverter creates Calendar instance with wrong Locale in Java 7 if
+    	<li><a href="/jira/740">XSTR-740</a>: ISO8601GregorianCalendarConverter creates Calendar instance with wrong Locale in Java 7 if
     	the Locale for the LocaleCategory.FORMAT is different to the global default Locale.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-578">XSTR-578</a>: Implement support for aliasing in JavaClasConverter, JavaFieldConverter and
+    	<li><a href="/jira/578">XSTR-578</a>: Implement support for aliasing in JavaClasConverter, JavaFieldConverter and
     	JavaMethodConverter. While it is not possible to enable this in general, new constructors have been added to
     	these converters and an example in the acceptance tests (AliasTest).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-742">XSTR-742</a>: Register CompositeClassLoader in Java 7 as parallel capable.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-743">XSTR-743</a>: Support proxy collections of Hibernate Envers.</li>
+    	<li><a href="/jira/742">XSTR-742</a>: Register CompositeClassLoader in Java 7 as parallel capable.</li>
+    	<li><a href="/jira/743">XSTR-743</a>: Support proxy collections of Hibernate Envers.</li>
     	<li>Fix NPE in AttributeMapper.shouldLookForSingleValueConverter if parameters fieldName and definedIn are null.</li>
     	<li>Implicit type argument can be omitted when registering converters with @XStreamConverter annotation.</li>
     </ul>
@@ -285,7 +292,7 @@
     	c.t.x.core.JVM as replacement for the deprecated non-static methods.</li>
     	<li>Deprecated c.t.x.core.JVM() and all non-static methods.</li>
     	<li>Added method useImplicitType to c.t.x.annotations.XStreamConverter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-722">XSTR-722</a>: Added 
+    	<li><a href="/jira/722">XSTR-722</a>: Added 
     	c.t.x.converters.reflection.ReflectionProvider.getFieldOrNull(Class, String).</li>
     	<li>Deprecated 
     	c.t.x.converters.reflection.ReflectionProvider.fieldDefinedInClass(Class, String) in
@@ -309,16 +316,16 @@
     <h2>Minor changes</h2>
     
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-709">XSTR-709</a>: Locks up on Mac with Apple JVM due to unwanted initialization of AWT.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-711">XSTR-711</a>: DateConverter cannot handle dates in different era.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-741">XSTR-741</a>: ToAttributedValueConverter fails to write enums as attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-712">XSTR-712</a>: HibernateMapper throws NPE if a collection contains null.</li>
+    	<li><a href="/jira/709">XSTR-709</a>: Locks up on Mac with Apple JVM due to unwanted initialization of AWT.</li>
+    	<li><a href="/jira/711">XSTR-711</a>: DateConverter cannot handle dates in different era.</li>
+    	<li><a href="/jira/741">XSTR-741</a>: ToAttributedValueConverter fails to write enums as attributes.</li>
+    	<li><a href="/jira/712">XSTR-712</a>: HibernateMapper throws NPE if a collection contains null.</li>
     	<li>DateConverter supports now localized formats.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-710">XSTR-710</a>: JsonWriter does not write BigInteger and BigDecimal as number values.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-708">XSTR-708</a>: SqlTimestampConverter does not ignore timezone.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-707">XSTR-707</a>: Creation of XmllPullParser with the XmlPullParserFactory may fail in OSGi environment.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-705">XSTR-705</a>: Unnecessary synchronization accessing the field cache decreases performance.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-714">XSTR-714</a>: Fields not found when XStream12FieldKeySorter used.</li>
+    	<li><a href="/jira/710">XSTR-710</a>: JsonWriter does not write BigInteger and BigDecimal as number values.</li>
+    	<li><a href="/jira/708">XSTR-708</a>: SqlTimestampConverter does not ignore timezone.</li>
+    	<li><a href="/jira/707">XSTR-707</a>: Creation of XmllPullParser with the XmlPullParserFactory may fail in OSGi environment.</li>
+    	<li><a href="/jira/705">XSTR-705</a>: Unnecessary synchronization accessing the field cache decreases performance.</li>
+    	<li><a href="/jira/714">XSTR-714</a>: Fields not found when XStream12FieldKeySorter used.</li>
     </ul>
 
     <h2>API changes</h2>
@@ -335,28 +342,28 @@
     
     <ul>
     	<li>Support java.util.concurrent.ConcurrentHashMap with the MapConverter. This will also avoid a bug in JRockit
-    	JDK reported in <a href="http://jira.codehaus.org/browse/XSTR-608">XSTR-608</a>.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-699">XSTR-699</a>: Support for Hibernate 4 with XStream's Hibernate module as default for Java 6 or higher.</li>
+    	JDK reported in <a href="/jira/608">XSTR-608</a>.</li>
+    	<li><a href="/jira/699">XSTR-699</a>: Support for Hibernate 4 with XStream's Hibernate module as default for Java 6 or higher.</li>
     </ul>
 
     <h2>Minor changes</h2>
     
     <ul>
     	<li>JVM.loadClass will now also initialize the loaded class and ignore any occurring LinkageError.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-596">XSTR-596</a>: SubjectConverter will be no longer registered if initialization of javax.security.auth.Subject fails.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-683">XSTR-683</a>: Inheritance of implicit collections, arrays or maps is dependent on declaration sequence.</li>
+    	<li><a href="/jira/596">XSTR-596</a>: SubjectConverter will be no longer registered if initialization of javax.security.auth.Subject fails.</li>
+    	<li><a href="/jira/683">XSTR-683</a>: Inheritance of implicit collections, arrays or maps is dependent on declaration sequence.</li>
     	<li>Inherited implicit collections, arrays or maps can be overwritten with own definition in subtype.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-688">XSTR-688</a>: Cannot omit XML elements from derived fields.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-696">XSTR-696</a>: Ill-formed JSON generated, because JSON writer is fed with type of declaring field instead of
+    	<li><a href="/jira/688">XSTR-688</a>: Cannot omit XML elements from derived fields.</li>
+    	<li><a href="/jira/696">XSTR-696</a>: Ill-formed JSON generated, because JSON writer is fed with type of declaring field instead of
     	the real object's type.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-685">XSTR-685</a>: Deserialization from file or URL keeps stream open.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-684">XSTR-684</a>: XML 1.0 character validation fails for characters from 0x10 to 0x1f.</li>
+    	<li><a href="/jira/685">XSTR-685</a>: Deserialization from file or URL keeps stream open.</li>
+    	<li><a href="/jira/684">XSTR-684</a>: XML 1.0 character validation fails for characters from 0x10 to 0x1f.</li>
     	<li>JavaBeanConverter supports now instantiation for a specific type and can therefore be used in
     	@XStreamConverter annotation.</li>
     	<li>SerializableConverter is broken if the serialized type is the default implementation.</li>
     	<li>Method marshalUnserializableParent of SerializableConverter is protected now to skip the default mechanism
     	in a derived converter that uses the default constructor to create the original type (as an alternative for
-    	<a href="http://jira.codehaus.org/browse/XSTR-695">XSTR-695</a>).</li>
+    	<a href="/jira/695">XSTR-695</a>).</li>
     	<li>FieldDictionary may call sort of FieldKeySorter implementation with wrong type as key.</li>
     	<li>Sometimes DependencyInjectionFactory tries to instantiate objects with mismatching constructor arguments.</li>
     	<li>HSQLDB has to be a test dependency only for XStream's Hibernate module.</li>
@@ -371,13 +378,13 @@
     <ul>
     	<li>XStream libraries can be used now directly in Android, therefore support of Java 1.4.2 has been stopped with the delivery.
     	Anyone who needs a version for Java 1.4.2 can build it easily from source, this build is still supported and part of CI.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-675">XSTR-675</a>: New extended HierarchicalStreamReader interface with peekNextChild method. All XStream
+    	<li><a href="/jira/675">XSTR-675</a>: New extended HierarchicalStreamReader interface with peekNextChild method. All XStream
     	readers implement the new interface (by Nikita Levyankov).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-673">XSTR-673</a>: Collections.EMPTY_LIST, Collections.EMPTY_SET and Collections.EMPTY_MAP supported with own
+    	<li><a href="/jira/673">XSTR-673</a>: Collections.EMPTY_LIST, Collections.EMPTY_SET and Collections.EMPTY_MAP supported with own
     	alias and defined as immutable.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-631">XSTR-631</a>: Collections.singletonList(), Collections.singletonSet() and Collections.singletonMap()
+    	<li><a href="/jira/631">XSTR-631</a>: Collections.singletonList(), Collections.singletonSet() and Collections.singletonMap()
     	supported with own alias and own converters.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-406">XSTR-406</a> + <a href="http://jira.codehaus.org/browse/XSTR-663">XSTR-663</a>: Support additional parameters for XStreamConverter annotation (e.g. to declare a
+    	<li><a href="/jira/406">XSTR-406</a> + <a href="/jira/663">XSTR-663</a>: Support additional parameters for XStreamConverter annotation (e.g. to declare a
     	ToAttributedValueConverter).</li>
     </ul>
 
@@ -385,18 +392,18 @@
 
     <ul>
     	<li>WstxDriver did not trigger Woodstox, but BEA StAX implementation.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-260">XSTR-260</a>: PrettyPrintWriter does not handle tab and new line characters in attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-667">XSTR-667</a>: Cannot serialize empty list with JsonHierarchicalStreamDriver.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-661">XSTR-661</a>: TreeMarshaller.CircularReference is not a ConversionException.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-562">XSTR-562</a>: StAX: Namespace attribute is not written in non-repairing mode for second sibling.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-664">XSTR-664</a>: ClassCastException in HibernatePersistentSortedSetConverter and
+    	<li><a href="/jira/260">XSTR-260</a>: PrettyPrintWriter does not handle tab and new line characters in attributes.</li>
+    	<li><a href="/jira/667">XSTR-667</a>: Cannot serialize empty list with JsonHierarchicalStreamDriver.</li>
+    	<li><a href="/jira/661">XSTR-661</a>: TreeMarshaller.CircularReference is not a ConversionException.</li>
+    	<li><a href="/jira/562">XSTR-562</a>: StAX: Namespace attribute is not written in non-repairing mode for second sibling.</li>
+    	<li><a href="/jira/664">XSTR-664</a>: ClassCastException in HibernatePersistentSortedSetConverter and
     	HibernatePersistentSortedMapConverter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-674">XSTR-674</a>: Recreate binary compatibility with 1.3.x series for method
+    	<li><a href="/jira/674">XSTR-674</a>: Recreate binary compatibility with 1.3.x series for method
     	CustomObjectInputStream.getInstance(...).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-671">XSTR-671</a>: CannotResolveClassException should accept cause.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-672">XSTR-672</a>: Collections.EMPTY_LIST, Collections.EMPTY_SET and Collections.EMPTY_MAP used for in implicit
+    	<li><a href="/jira/671">XSTR-671</a>: CannotResolveClassException should accept cause.</li>
+    	<li><a href="/jira/672">XSTR-672</a>: Collections.EMPTY_LIST, Collections.EMPTY_SET and Collections.EMPTY_MAP used for in implicit
     	collection should not throw ReferencedImplicitElementException.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-676">XSTR-676</a>: Introduce MissingFieldException thrown at deserialization time indicating a missing field or
+    	<li><a href="/jira/676">XSTR-676</a>: Introduce MissingFieldException thrown at deserialization time indicating a missing field or
     	property (by Nikita Levyankov).</li>
     	<li>Add length limit for cached strings in StringConverter, 38 characters by default.</li>
     	<li>The JsonHierarchicalStreamDriver and the JsonWriter did not support the inherited NameCoder instance.</li>
@@ -431,7 +438,7 @@
     <h2>Major changes</h2>
 
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-659">XSTR-659</a>: Use again Xpp3 as default parser, now with additional XmlPullParser API as regular
+    	<li><a href="/jira/659">XSTR-659</a>: Use again Xpp3 as default parser, now with additional XmlPullParser API as regular
     	dependency for the XPP factory. Only standard kXML2 package contains the XPP factory, but not the minimal kXML2
     	version.</li>
     </ul>
@@ -450,65 +457,65 @@
 
     <ul>
     	<li>Java 7 is detected and supported.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-542">XSTR-542</a>: The XppDriver uses now the official XmlPullParser API to locate an available parser using
+    	<li><a href="/jira/542">XSTR-542</a>: The XppDriver uses now the official XmlPullParser API to locate an available parser using
     	the XmlPullParserFactory. This allows the usage of XPP technology with XStream in Android.</li>
     	<li>Additional explicit XPP drivers for the Xpp3 and kXML2 implementations.</li>
     	<li>Additional explicit XPP DOM drivers for the Xpp3 and kXML2 implementations.</li>
     	<li>kXML2 is now the preferred parser implementation, Xpp3 is optional.</li>
     	<li>Additional explicit StAX drivers for Woodstox, BEA StAX and SJSXP of the JDK 6 implementations.</li>
     	<li>JDK 1.3 is no longer officially supported.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-377">XSTR-377</a>+<a href="http://jira.codehaus.org/browse/XSTR-226">XSTR-226</a>: New artifact xstream-hibernate with converters and mapper to process Hibernate
+    	<li><a href="/jira/377">XSTR-377</a>+<a href="/jira/226">XSTR-226</a>: New artifact xstream-hibernate with converters and mapper to process Hibernate
     	object graphs (by Costin Leau, Konstantin Pribluda and in special Jaime Metcher).</li>
     	<li>New NameCoder interface and implementations to support a generic name translation between names from the
     	object graph and a target format. The new XmlFriendlyNameCoder replaces the XmlFriendlyReplacer used for XML
     	only.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-553">XSTR-553</a>: Support annotations in Android.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-556">XSTR-556</a>: DateConverter uses format with 3-letter time zones that are ambiguous. Therefore it will now
+    	<li><a href="/jira/553">XSTR-553</a>: Support annotations in Android.</li>
+    	<li><a href="/jira/556">XSTR-556</a>: DateConverter uses format with 3-letter time zones that are ambiguous. Therefore it will now
     	always use UTC to write dates. Unmarshalled dates are not affected as long as they contain a time zone.</li>
     	<li>The type java.lang.reflect.Field is now handled by an own converter, that can still read the old format.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-490">XSTR-490</a>: Provide path in Converter for contexts that track the path.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-592">XSTR-592</a>+<a href="http://jira.codehaus.org/browse/XSTR-579">XSTR-579</a>: OmitField respected at deserialization time even for existing fields.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-593">XSTR-593</a>: Direct support for java.net.URI instances (by Carlos Roman).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-615">XSTR-615</a>+<a href="http://jira.codehaus.org/browse/XSTR-580">XSTR-580</a>: Dynamic proxies cannot be referenced recursively.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-547">XSTR-547</a>: Wrong class loader used for Serializable types deserialized with an ObjectInputStream.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-341">XSTR-341</a>: Support of implicit arrays.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-306">XSTR-306</a>+<a href="http://jira.codehaus.org/browse/XSTR-406">XSTR-406</a>: Support of implicit maps.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-344">XSTR-344</a>: New ToAttributedValueConverter to allow conversion of an element with string body and
+    	<li><a href="/jira/490">XSTR-490</a>: Provide path in Converter for contexts that track the path.</li>
+    	<li><a href="/jira/592">XSTR-592</a>+<a href="/jira/579">XSTR-579</a>: OmitField respected at deserialization time even for existing fields.</li>
+    	<li><a href="/jira/593">XSTR-593</a>: Direct support for java.net.URI instances (by Carlos Roman).</li>
+    	<li><a href="/jira/615">XSTR-615</a>+<a href="/jira/580">XSTR-580</a>: Dynamic proxies cannot be referenced recursively.</li>
+    	<li><a href="/jira/547">XSTR-547</a>: Wrong class loader used for Serializable types deserialized with an ObjectInputStream.</li>
+    	<li><a href="/jira/341">XSTR-341</a>: Support of implicit arrays.</li>
+    	<li><a href="/jira/306">XSTR-306</a>+<a href="/jira/406">XSTR-406</a>: Support of implicit maps.</li>
+    	<li><a href="/jira/344">XSTR-344</a>: New ToAttributedValueConverter to allow conversion of an element with string body and
     	attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-573">XSTR-573</a>: SortedSet added with TreeSet as the default implementation.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-576">XSTR-576</a>: TreeMap and TreeSet no longer add an element without comparator (by Jason Greanya),
-    	solves also invalid format with JSON for such objects (<a href="http://jira.codehaus.org/browse/XSTR-640">XSTR-640</a>).</li>
+    	<li><a href="/jira/573">XSTR-573</a>: SortedSet added with TreeSet as the default implementation.</li>
+    	<li><a href="/jira/576">XSTR-576</a>: TreeMap and TreeSet no longer add an element without comparator (by Jason Greanya),
+    	solves also invalid format with JSON for such objects (<a href="/jira/640">XSTR-640</a>).</li>
     </ul>
 
     <h2>Minor changes</h2>
 
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-612">XSTR-612</a>: Improve extensibility of c.t.x.javabean.* package by reintroducing a PropertyDictionary with
+    	<li><a href="/jira/612">XSTR-612</a>: Improve extensibility of c.t.x.javabean.* package by reintroducing a PropertyDictionary with
     	the additional interface PropertySorter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-591">XSTR-591</a>: EnumSingleValueConverter did use toString() instead of name() to create the String
+    	<li><a href="/jira/591">XSTR-591</a>: EnumSingleValueConverter did use toString() instead of name() to create the String
     	representation of an enum value.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-618">XSTR-618</a>: Add Oracle as vendor used for recent JRockit versions and former Sun JDK.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-656">XSTR-656</a>: DomReader and Dom4JReader do not escape attribute names retrieving their values.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-604">XSTR-604</a>: StringConverter's cache may cause an OutOfMemoryException.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-577">XSTR-577</a>: Skip UTF-8 BOM in XmlHeaderAwareReader.</li>
+    	<li><a href="/jira/618">XSTR-618</a>: Add Oracle as vendor used for recent JRockit versions and former Sun JDK.</li>
+    	<li><a href="/jira/656">XSTR-656</a>: DomReader and Dom4JReader do not escape attribute names retrieving their values.</li>
+    	<li><a href="/jira/604">XSTR-604</a>: StringConverter's cache may cause an OutOfMemoryException.</li>
+    	<li><a href="/jira/577">XSTR-577</a>: Skip UTF-8 BOM in XmlHeaderAwareReader.</li>
     	<li>The XppReader no longer uses a BufferedReader.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-543">XSTR-543</a>: Better deserialization support of the defined-in system attribute in combination with field
+    	<li><a href="/jira/543">XSTR-543</a>: Better deserialization support of the defined-in system attribute in combination with field
     	aliases.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-551">XSTR-551</a>: Deprecated XStream.InitializationException still thrown instead of InitializationException.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-655">XSTR-655</a>: JsonWriter generates invalid JSON for Externalizable types.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-540">XSTR-540</a>: Support Jettison-based configuration of JettisonMappedXmlDriver (by Doug Daniels).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-633">XSTR-633</a>: JettisonMappedXmlDriver escaped property names according escape rules for XML tag names.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-625">XSTR-625</a>: Optionally ignore XStream's hints for Jettison to generate JSON arrays (by Dejan Bosanac).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-605">XSTR-605</a>: Upgrade to Jettison 1.2 (for Java 5 or higher).</li>
+    	<li><a href="/jira/551">XSTR-551</a>: Deprecated XStream.InitializationException still thrown instead of InitializationException.</li>
+    	<li><a href="/jira/655">XSTR-655</a>: JsonWriter generates invalid JSON for Externalizable types.</li>
+    	<li><a href="/jira/540">XSTR-540</a>: Support Jettison-based configuration of JettisonMappedXmlDriver (by Doug Daniels).</li>
+    	<li><a href="/jira/633">XSTR-633</a>: JettisonMappedXmlDriver escaped property names according escape rules for XML tag names.</li>
+    	<li><a href="/jira/625">XSTR-625</a>: Optionally ignore XStream's hints for Jettison to generate JSON arrays (by Dejan Bosanac).</li>
+    	<li><a href="/jira/605">XSTR-605</a>: Upgrade to Jettison 1.2 (for Java 5 or higher).</li>
     	<li>New JsonWriter.EXPLICIT_MODE generating JSON that enforces property sequence.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-552">XSTR-552</a>: Improve performance of ReflectionProvider (by Keith Kowalczykowski).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-559">XSTR-559</a>: Improve performance of Sun14ReflectionProvider (by Keith Kowalczykowski).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-564">XSTR-564</a>: Improve performance of AnnotationMapper (by Keith Kowalczykowski).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-563">XSTR-563</a>: Use ReferenceQueue for cleaning-up WeakReferences in ObjectIdDictionary (by Keith
+    	<li><a href="/jira/552">XSTR-552</a>: Improve performance of ReflectionProvider (by Keith Kowalczykowski).</li>
+    	<li><a href="/jira/559">XSTR-559</a>: Improve performance of Sun14ReflectionProvider (by Keith Kowalczykowski).</li>
+    	<li><a href="/jira/564">XSTR-564</a>: Improve performance of AnnotationMapper (by Keith Kowalczykowski).</li>
+    	<li><a href="/jira/563">XSTR-563</a>: Use ReferenceQueue for cleaning-up WeakReferences in ObjectIdDictionary (by Keith
     	Kowalczykowski).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-646">XSTR-646</a>: Cache of Sun14ReflectionProvider consumes more PermGen space than necessary.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-636">XSTR-636</a>: Ineffective cache in FieldDictionary using WeakHashMap with WeakReference values.</li>
-    	<li>Ineffective cache for SerializationMethodInvoker (related to <a href="http://jira.codehaus.org/browse/XSTR-636">XSTR-636</a>).</li>
+    	<li><a href="/jira/646">XSTR-646</a>: Cache of Sun14ReflectionProvider consumes more PermGen space than necessary.</li>
+    	<li><a href="/jira/636">XSTR-636</a>: Ineffective cache in FieldDictionary using WeakHashMap with WeakReference values.</li>
+    	<li>Ineffective cache for SerializationMethodInvoker (related to <a href="/jira/636">XSTR-636</a>).</li>
     	<li>Introduction of Caching interface implemented by all types in XStream that create local caches that may
     	have to be flushed manually.</li>
     	<li>Avoid excessive creation of AbstractPullReader.Event objects by using a pool.</li>
@@ -516,29 +523,29 @@
     	<li>Cannot reference replaced object using ID references.</li>
     	<li>Implicit collection functionality will no longer use custom collection converters that may write tags that are not
     	recognized at deserialization time again.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-654">XSTR-654</a>: Unmarshal fails when an implicit collection is defined and an element is named equal to the field.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-574">XSTR-574</a>: AbstractReferenceUnmarshaller cannot handle null values for references.</li>
+    	<li><a href="/jira/654">XSTR-654</a>: Unmarshal fails when an implicit collection is defined and an element is named equal to the field.</li>
+    	<li><a href="/jira/574">XSTR-574</a>: AbstractReferenceUnmarshaller cannot handle null values for references.</li>
     	<li>Improve exception output in case of a missing field.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-555">XSTR-555</a>: StAX driver tests do not honor repairing mode.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-570">XSTR-570</a>: The @XStreamConverter provides now also the current type as possible constructor argument.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-629">XSTR-629</a>: Deserialization of Externalizable with non-accessible default constructor fails.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-571">XSTR-571</a>: Cannot serialize synchronized RandomAccessList types.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-583">XSTR-583</a>: BinaryDriver fails to handle Strings with more than 64K bytes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-639">XSTR-639</a>: Cannot omit field at deserialization if the field has a class attribute.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-599">XSTR-599</a>: EncodedByteArrayConverter should implement SingleValueConverter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-584">XSTR-584</a>: Race condition in XmlFriendlyReplacer.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-623">XSTR-623</a>: XmlFriendlyReplacer may write illegal name characters (by Michael Schnell).</li>
+    	<li><a href="/jira/555">XSTR-555</a>: StAX driver tests do not honor repairing mode.</li>
+    	<li><a href="/jira/570">XSTR-570</a>: The @XStreamConverter provides now also the current type as possible constructor argument.</li>
+    	<li><a href="/jira/629">XSTR-629</a>: Deserialization of Externalizable with non-accessible default constructor fails.</li>
+    	<li><a href="/jira/571">XSTR-571</a>: Cannot serialize synchronized RandomAccessList types.</li>
+    	<li><a href="/jira/583">XSTR-583</a>: BinaryDriver fails to handle Strings with more than 64K bytes.</li>
+    	<li><a href="/jira/639">XSTR-639</a>: Cannot omit field at deserialization if the field has a class attribute.</li>
+    	<li><a href="/jira/599">XSTR-599</a>: EncodedByteArrayConverter should implement SingleValueConverter.</li>
+    	<li><a href="/jira/584">XSTR-584</a>: Race condition in XmlFriendlyReplacer.</li>
+    	<li><a href="/jira/623">XSTR-623</a>: XmlFriendlyReplacer may write illegal name characters (by Michael Schnell).</li>
     	<li>The ConversionException hides information if its ErrorWriter contains the added key already.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-598">XSTR-598</a>: Attribute &quot;defined-in&quot; was wrongly evaluated for other attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-650">XSTR-650</a>: Possible NullPointerException at initialization on platforms like Android that do not
+    	<li><a href="/jira/598">XSTR-598</a>: Attribute &quot;defined-in&quot; was wrongly evaluated for other attributes.</li>
+    	<li><a href="/jira/650">XSTR-650</a>: Possible NullPointerException at initialization on platforms like Android that do not
     	support all types of the JDK.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-652">XSTR-652</a>: Initialization of XStream fails if DurationConverter constructor throws a
+    	<li><a href="/jira/652">XSTR-652</a>: Initialization of XStream fails if DurationConverter constructor throws a
     	javax.xml.datatype.DatatypeConfigurationException. Converter will no longer handle Duration types if no
     	instance of the internal DatatypeFactory can be created.</li>
     	<li>Constructor DocumentWriter(Element) forgets the provided element.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-597">XSTR-597</a>: Optimize AbstractReflectionConverter.</li>
+    	<li><a href="/jira/597">XSTR-597</a>: Optimize AbstractReflectionConverter.</li>
     	<li>Introduce Caching interface to flush the internal cache of specific components.</li>
-    	<li>Support <a href="http://jira.codehaus.org/browse/XSTR-407">XSTR-407</a> also for IBM JRE 1.6 and greater.</li>
+    	<li>Support <a href="/jira/407">XSTR-407</a> also for IBM JRE 1.6 and greater.</li>
     	<li>java.nio.charset.Charset's converter was added as immutable type instead of the type itself.</li>
     	<li>java.util.Currency added as immutable type.</li>
     	<li>Fix selection of same parameter types in DependencyInjectionFactory.</li>
@@ -551,7 +558,7 @@
     	<li>Any deprecated stuff of the 1.2.x releases has been removed.</li>
     	<li>Deprecated constructors of c.t.x.converters.reflection.SerializableConverter, c.t.x.converters.reflection.ExternalizableConverter
     	 and c.t.x.converters.reflection.CGLIBEnhancedConverter; new versions take an additional argument for class loader (as a result
-    	 for <a href="http://jira.codehaus.org/browse/XSTR-547">XSTR-547</a>).</li>
+    	 for <a href="/jira/547">XSTR-547</a>).</li>
     	<li>Deprecated constructors of c.t.x.io.xml.XppReader, new versions take an additional argument for the XmlPullParser.</li>
     	<li>Deprecated c.t.x.io.xml.XppReader.createParser(), the XPP parser is now created by the driver.</li>
     	<li>Package c.t.x.io.xml.xppdom is now part of the official API.</li>
@@ -576,7 +583,7 @@
     
     <p class="highlight">CGLIB support must be explicitly activated now. The decision has been made due to possible problems using an own
     classloader and because of ongoing complaints about occurring exceptions in the CGLIBEnhancedConverter at XStream initialization although
-    they are caused by incompatible ASM versions on the user's classpath (<a href="http://jira.codehaus.org/browse/XSTR-469">XSTR-469</a>, <a href="http://jira.codehaus.org/browse/XSTR-513">XSTR-513</a> and <a href="http://jira.codehaus.org/browse/XSTR-518">XSTR-518</a>).</p>
+    they are caused by incompatible ASM versions on the user's classpath (<a href="/jira/469">XSTR-469</a>, <a href="/jira/513">XSTR-513</a> and <a href="/jira/518">XSTR-518</a>).</p>
     
     <p class="highlight">XStream uses some attributes on its own. Until now it was possible to use XStream.aliasAttribute to define a different
     name. This does still work but is deprecated for system attributes. Use the new call XStream.aliasSystemAttribute for such an alias.</p>
@@ -584,47 +591,47 @@
     <h2>Major changes</h2>
 
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-515">XSTR-515</a>: CGLIB support is no longer activated automatically and has to be 
+    	<li><a href="/jira/515">XSTR-515</a>: CGLIB support is no longer activated automatically and has to be 
     	<a href="faq.html#Serialization_CGLIB">explicitly turned on</a>.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-448">XSTR-448</a>: Separated system attributes and user defined attributes for aliases.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-55">XSTR-55</a>: Ability to alias a package name.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-434">XSTR-434</a>: New JsonWriter instead of JsonHierarchicalStreamWriter with mode to strip root node of generated JSON (by Paul Hammant).</li>
+    	<li><a href="/jira/448">XSTR-448</a>: Separated system attributes and user defined attributes for aliases.</li>
+    	<li><a href="/jira/55">XSTR-55</a>: Ability to alias a package name.</li>
+    	<li><a href="/jira/434">XSTR-434</a>: New JsonWriter instead of JsonHierarchicalStreamWriter with mode to strip root node of generated JSON (by Paul Hammant).</li>
     	<li>Support for Diablo JDK on FreeBSD (by Reto Bachmann-Gm&uuml;r).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-495">XSTR-495</a>: New PersistenceStrategy instead of StreamStrategy (based on the code and comments by Alexander Radzin).</li>
+    	<li><a href="/jira/495">XSTR-495</a>: New PersistenceStrategy instead of StreamStrategy (based on the code and comments by Alexander Radzin).</li>
     </ul>
 
     <h2>Minor changes</h2>
 
     <ul>
     	<li>Support special Jettison functionality for JSON to detect collections or arrays with one element introduced with Jettison 1.0.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-493">XSTR-493</a>: Using attributes for fields with XML-unfriendly names results in NPE at deserialization.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-497">XSTR-497</a>: Unsafe operation with WeakHashMap can raise a NPE in Sun14ReflectionProvider.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-423">XSTR-423</a>: Support of CGLIB enhanced proxies with multiple callbacks if the proxy uses a factory (CGLIB default).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-536">XSTR-536</a>: XStream silently ignores unknown elements.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-503">XSTR-503</a>: Omitted properties in JavaBeans are requested at serialization (by Kevin Conaway).</li>
+    	<li><a href="/jira/493">XSTR-493</a>: Using attributes for fields with XML-unfriendly names results in NPE at deserialization.</li>
+    	<li><a href="/jira/497">XSTR-497</a>: Unsafe operation with WeakHashMap can raise a NPE in Sun14ReflectionProvider.</li>
+    	<li><a href="/jira/423">XSTR-423</a>: Support of CGLIB enhanced proxies with multiple callbacks if the proxy uses a factory (CGLIB default).</li>
+    	<li><a href="/jira/536">XSTR-536</a>: XStream silently ignores unknown elements.</li>
+    	<li><a href="/jira/503">XSTR-503</a>: Omitted properties in JavaBeans are requested at serialization (by Kevin Conaway).</li>
     	<li>Fix possible memory leak in ObjectIdMap for JVMs that provide real distinct identity hash codes (happened on amd64 system).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-480">XSTR-480</a>: Aliasing of array types.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-515">XSTR-515</a>: The SubjectConverter and DurationConverter are only registered if the converted class is part of the JDK, 
+    	<li><a href="/jira/480">XSTR-480</a>: Aliasing of array types.</li>
+    	<li><a href="/jira/515">XSTR-515</a>: The SubjectConverter and DurationConverter are only registered if the converted class is part of the JDK, 
     	otherwise they must be registered now explicitly.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-504">XSTR-504</a>: XmlHeaderAwareReader fails with improper sized PushbackInputStream.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-489">XSTR-489</a>: @XStreamConverter supports now also SingleValueConverter implementations.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-481">XSTR-481</a>: @XStreamConverter and @XStreamAsAttribute can be used together (as a result of <a href="http://jira.codehaus.org/browse/XSTR-489">XSTR-489</a>).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-519">XSTR-519</a>: New annotation @XStreamInclude to force annotation detection of included types (by Seven Sparling).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-469">XSTR-469</a>: Support custom converters for enum types.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-502">XSTR-502</a>: ClassNotFoundException even if writeReplace returns proper object.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-529">XSTR-529</a>: NullPointerException for null elements in implicit lists.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-517">XSTR-517</a>: Miscellaneous performance improvements (by Tatu Saloranta).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-525">XSTR-525</a>: JsonHierarchicalStreamDriver writes invalid JSON in case of system attribute.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-535">XSTR-535</a>: Mode to allow plain values as result for JSON without root node.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-531">XSTR-531</a>: Possibility to omit system attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-508">XSTR-508</a>: Fix marshalling error for nested serializable objects with own writeReplace/readResolve methods.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-507">XSTR-507</a>: Advanced ReferenceByIdMarshaller uses id of the current object if available.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-485">XSTR-485</a>: Check reference for valid object when deserializing.</li>
+    	<li><a href="/jira/504">XSTR-504</a>: XmlHeaderAwareReader fails with improper sized PushbackInputStream.</li>
+    	<li><a href="/jira/489">XSTR-489</a>: @XStreamConverter supports now also SingleValueConverter implementations.</li>
+    	<li><a href="/jira/481">XSTR-481</a>: @XStreamConverter and @XStreamAsAttribute can be used together (as a result of <a href="/jira/489">XSTR-489</a>).</li>
+    	<li><a href="/jira/519">XSTR-519</a>: New annotation @XStreamInclude to force annotation detection of included types (by Seven Sparling).</li>
+    	<li><a href="/jira/469">XSTR-469</a>: Support custom converters for enum types.</li>
+    	<li><a href="/jira/502">XSTR-502</a>: ClassNotFoundException even if writeReplace returns proper object.</li>
+    	<li><a href="/jira/529">XSTR-529</a>: NullPointerException for null elements in implicit lists.</li>
+    	<li><a href="/jira/517">XSTR-517</a>: Miscellaneous performance improvements (by Tatu Saloranta).</li>
+    	<li><a href="/jira/525">XSTR-525</a>: JsonHierarchicalStreamDriver writes invalid JSON in case of system attribute.</li>
+    	<li><a href="/jira/535">XSTR-535</a>: Mode to allow plain values as result for JSON without root node.</li>
+    	<li><a href="/jira/531">XSTR-531</a>: Possibility to omit system attributes.</li>
+    	<li><a href="/jira/508">XSTR-508</a>: Fix marshalling error for nested serializable objects with own writeReplace/readResolve methods.</li>
+    	<li><a href="/jira/507">XSTR-507</a>: Advanced ReferenceByIdMarshaller uses id of the current object if available.</li>
+    	<li><a href="/jira/485">XSTR-485</a>: Check reference for valid object when deserializing.</li>
     	<li>Fix classloader problem, Xpp3 parser cannot be loaded within a web application.</li>
     	<li>Dependencies have been updated to latest versions of JDOM, Jettison, Joda Time, and Woodstox. Note for Maven
     	builds that the <em>groupId</em> of JDOM has changed.</li>
     	<li>Fix possible IndexOutOfBoundsException creating returning the message for a ConversionException.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-495">XSTR-495</a>: StreamStrategy cannot handle key with value <em>null</em>.</li>
+    	<li><a href="/jira/495">XSTR-495</a>: StreamStrategy cannot handle key with value <em>null</em>.</li>
     </ul>
     
     <h2>API changes</h2>
@@ -652,29 +659,29 @@
     	<li>Support for Converter definition at field level.</li>
     	<li>Refactoring of Annotation support, invent auto-detection mode.</li>
     	<li>Annotated converters are no longer detected automatically, all annotations are now handled in the same way.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-334">XSTR-334</a>: XStream will deserialize directly from a file or URL. Some parser take advantage of these objects to
+    	<li><a href="/jira/334">XSTR-334</a>: XStream will deserialize directly from a file or URL. Some parser take advantage of these objects to
     	define a SystemId used to resolve further references in XML, schema or DTD. Appropriate createReader methods have been
     	added to c.t.x.io.HierarchicalStreamDriver.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-261">XSTR-261</a>: All c.t.x.io.HierarchicalStreamDriver implementations respect now the encoding of an XML header
+    	<li><a href="/jira/261">XSTR-261</a>: All c.t.x.io.HierarchicalStreamDriver implementations respect now the encoding of an XML header
     	if read from an InputStream.</li>
     	<li>DomDriver does no longer use explicitly UTF-8 by default, DomReader will therefore respect the encoding defined 
     	in the XML header or use native encoding</li> 
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-415">XSTR-415</a>: JavaBeanConverter uses now BeanIntrospection (by Hinse ter Schuur).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-424">XSTR-424</a>: DateConverter uses now by default SimpleDateFormat instances in non-lenient mode.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-386">XSTR-386</a>: SingleValueConverter that utilizes PropertyEditor implementations (by Jukka Lindstr&ouml;m).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-427">XSTR-427</a>: Converter for javax.xml.datatype.Duration (by John Kristian).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-305">XSTR-305</a>: Field alias inheritance (by David Blevins).</li>
+    	<li><a href="/jira/415">XSTR-415</a>: JavaBeanConverter uses now BeanIntrospection (by Hinse ter Schuur).</li>
+    	<li><a href="/jira/424">XSTR-424</a>: DateConverter uses now by default SimpleDateFormat instances in non-lenient mode.</li>
+    	<li><a href="/jira/386">XSTR-386</a>: SingleValueConverter that utilizes PropertyEditor implementations (by Jukka Lindstr&ouml;m).</li>
+    	<li><a href="/jira/427">XSTR-427</a>: Converter for javax.xml.datatype.Duration (by John Kristian).</li>
+    	<li><a href="/jira/305">XSTR-305</a>: Field alias inheritance (by David Blevins).</li>
     	<li>XStream failed to initialize in environments without AWT or SQL classes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-420">XSTR-420</a>: XPath of references are not XmlFriendly encoded.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-473">XSTR-473</a>: String &quot;\0&quot; serialized as invalid XML, support compliant behaviour according XML version.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-431">XSTR-431</a>: Direct support of enhanced mode for SAP JVM (thanks to Norbert Kuck by SAP).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-437">XSTR-437</a>: Static cache in annotation processing causes failing OSGi bundles.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-279">XSTR-279</a>+<a href="http://jira.codehaus.org/browse/XSTR-335">XSTR-335</a>: Annotations are not inherited from parent class.</li>
+    	<li><a href="/jira/420">XSTR-420</a>: XPath of references are not XmlFriendly encoded.</li>
+    	<li><a href="/jira/473">XSTR-473</a>: String &quot;\0&quot; serialized as invalid XML, support compliant behaviour according XML version.</li>
+    	<li><a href="/jira/431">XSTR-431</a>: Direct support of enhanced mode for SAP JVM (thanks to Norbert Kuck by SAP).</li>
+    	<li><a href="/jira/437">XSTR-437</a>: Static cache in annotation processing causes failing OSGi bundles.</li>
+    	<li><a href="/jira/279">XSTR-279</a>+<a href="/jira/335">XSTR-335</a>: Annotations are not inherited from parent class.</li>
     	<li>Fix StringConverter using a WeakHashMap with strong references in its value.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-403">XSTR-403</a>: Attributes are no longer written with JSONHierarchicalStreamDriver if current object is a collection.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-456">XSTR-456</a>: New LookAndFeelConverter handling LookAndFeel implementations with reflection.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-462">XSTR-462</a>: CachingMapper keeps direct class references.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-411">XSTR-411</a>: JsonHierarchicalStreamDriver does not escape characters according RFC 4627.</li>
+    	<li><a href="/jira/403">XSTR-403</a>: Attributes are no longer written with JSONHierarchicalStreamDriver if current object is a collection.</li>
+    	<li><a href="/jira/456">XSTR-456</a>: New LookAndFeelConverter handling LookAndFeel implementations with reflection.</li>
+    	<li><a href="/jira/462">XSTR-462</a>: CachingMapper keeps direct class references.</li>
+    	<li><a href="/jira/411">XSTR-411</a>: JsonHierarchicalStreamDriver does not escape characters according RFC 4627.</li>
     	<li>JsonHierarchicalStreamDriver writes wrong brackets around complex Java types with a single value.</li>
     	<li>JsonHierarchicalStreamDriver writes attribute names with a leading '@'.</li>
     	<li>JsonHierarchicalStreamDriver supports Map implementations.</li>
@@ -685,43 +692,43 @@
     <ul>
     	<li>Added converter for java.lang.StringBuilder instances.</li>
     	<li>Added converter for java.util.UUID instances.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-430">XSTR-430</a>: Fields written as attributes could not be omitted.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-407">XSTR-407</a>: Comparator might access uninitialized elements for TreeSet and TreeMap. A deserialized
+    	<li><a href="/jira/430">XSTR-430</a>: Fields written as attributes could not be omitted.</li>
+    	<li><a href="/jira/407">XSTR-407</a>: Comparator might access uninitialized elements for TreeSet and TreeMap. A deserialized
     	Comparator is no longer called, the converters expect the elements now in a sorted order.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-404">XSTR-404</a>, @XStreamImplicit() for ArrayList&lt;ArrayList&lt;Type&gt;&gt; throws ClassCastException.</li>
+    	<li><a href="/jira/404">XSTR-404</a>, @XStreamImplicit() for ArrayList&lt;ArrayList&lt;Type&gt;&gt; throws ClassCastException.</li>
     	<li>@XStreamContainedType() for ArrayList&lt;ArrayList&lt;Type&gt;&gt; throws ClassCastException.</li>
     	<li>XStreamer did not persist a FieldKeySorter instance.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-241">XSTR-241</a>: JavaBeanConverter now supports customized BeanProvider.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-280">XSTR-280</a>: JavaBeanConverter now supports aliasField and omitField (by Hinse ter Schuur).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-280">XSTR-280</a>: SerializationConverter now supports aliasField and omitField.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-429">XSTR-429</a>: XmlFriendlyReplacer support for SaxWriter and TraxSource (by Adrian Wilkens).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-421">XSTR-421</a>: Characters cannot be written as attribute.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-426">XSTR-426</a>: java.swt.KeyStroke not properly serialized because of a character undefined in unicode.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-352">XSTR-352</a>: Strings with arbitrary ISO control characters are not properly serialized.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-428">XSTR-428</a>: An attribute named like a transient field did abort deserialization of following fields.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-443">XSTR-443</a>: XStream.createObjectOutputStream does not use the given driver to create the HierarchicalStreamWriter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-440">XSTR-440</a>: Implicit collections can be declared for fields that are not of Collection type.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-446">XSTR-446</a>: Handle all primitives and their boxed counterpart for JsonHierarchicalStreamDriver.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-447">XSTR-447</a>: Fix deserialization of Array class types in JDK 6 (see JDK bug 6500212).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-450">XSTR-450</a>: @XStreamAlias is ignored if attributes should be used for the field type.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-418">XSTR-418</a>: Inherited @XStreamAlias is ignored if field should be rendered as attribute.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-393">XSTR-393</a>: Annotation processing is not consistent.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-412">XSTR-412</a>: @XStreamImplicit throws NPE for untyped collections.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-463">XSTR-463</a>: Cannot provide own default Mapper chain.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-464">XSTR-464</a>: Cannot provide a ClassLoader that is used in all cases.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-394">XSTR-394</a>: Allow enums as attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-413">XSTR-413</a>: Support @XStreamAsAttribute for enums.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-478">XSTR-478</a>: Cannot specify default implementation for polymorphic enum.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-419">XSTR-419</a>: Treat enums as immutable types.</li>
+    	<li><a href="/jira/241">XSTR-241</a>: JavaBeanConverter now supports customized BeanProvider.</li>
+    	<li><a href="/jira/280">XSTR-280</a>: JavaBeanConverter now supports aliasField and omitField (by Hinse ter Schuur).</li>
+    	<li><a href="/jira/280">XSTR-280</a>: SerializationConverter now supports aliasField and omitField.</li>
+    	<li><a href="/jira/429">XSTR-429</a>: XmlFriendlyReplacer support for SaxWriter and TraxSource (by Adrian Wilkens).</li>
+    	<li><a href="/jira/421">XSTR-421</a>: Characters cannot be written as attribute.</li>
+    	<li><a href="/jira/426">XSTR-426</a>: java.swt.KeyStroke not properly serialized because of a character undefined in unicode.</li>
+    	<li><a href="/jira/352">XSTR-352</a>: Strings with arbitrary ISO control characters are not properly serialized.</li>
+    	<li><a href="/jira/428">XSTR-428</a>: An attribute named like a transient field did abort deserialization of following fields.</li>
+    	<li><a href="/jira/443">XSTR-443</a>: XStream.createObjectOutputStream does not use the given driver to create the HierarchicalStreamWriter.</li>
+    	<li><a href="/jira/440">XSTR-440</a>: Implicit collections can be declared for fields that are not of Collection type.</li>
+    	<li><a href="/jira/446">XSTR-446</a>: Handle all primitives and their boxed counterpart for JsonHierarchicalStreamDriver.</li>
+    	<li><a href="/jira/447">XSTR-447</a>: Fix deserialization of Array class types in JDK 6 (see JDK bug 6500212).</li>
+    	<li><a href="/jira/450">XSTR-450</a>: @XStreamAlias is ignored if attributes should be used for the field type.</li>
+    	<li><a href="/jira/418">XSTR-418</a>: Inherited @XStreamAlias is ignored if field should be rendered as attribute.</li>
+    	<li><a href="/jira/393">XSTR-393</a>: Annotation processing is not consistent.</li>
+    	<li><a href="/jira/412">XSTR-412</a>: @XStreamImplicit throws NPE for untyped collections.</li>
+    	<li><a href="/jira/463">XSTR-463</a>: Cannot provide own default Mapper chain.</li>
+    	<li><a href="/jira/464">XSTR-464</a>: Cannot provide a ClassLoader that is used in all cases.</li>
+    	<li><a href="/jira/394">XSTR-394</a>: Allow enums as attributes.</li>
+    	<li><a href="/jira/413">XSTR-413</a>: Support @XStreamAsAttribute for enums.</li>
+    	<li><a href="/jira/478">XSTR-478</a>: Cannot specify default implementation for polymorphic enum.</li>
+    	<li><a href="/jira/419">XSTR-419</a>: Treat enums as immutable types.</li>
     	<li>Update annotation tutorial, explain limitations of auto-detection mode.</li>
     	<li>Added copyright notices to all files.</li>
     	<li>StaxWriter.flush did close Stax' XMLStreamWriter instead of flushing it.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-471">XSTR-471</a>: XStream POMs do no longer declare a repository at all.</li>
+    	<li><a href="/jira/471">XSTR-471</a>: XStream POMs do no longer declare a repository at all.</li>
     	<li>Calendar object could not be rendered with JSONHierarchicalStreamDriver.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-476">XSTR-476</a>: Properties can be sorted by key.</li>
+    	<li><a href="/jira/476">XSTR-476</a>: Properties can be sorted by key.</li>
     	<li>XStream.createObjectInputStream and XStream.createObjectOutputStream
     	overloaded to support a binary InputStream or OutputStream.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-470">XSTR-470</a>: Allow transient fields to be optionally deserialized.</li>
+    	<li><a href="/jira/470">XSTR-470</a>: Allow transient fields to be optionally deserialized.</li>
     </ul>
 
     <h2>API changes</h2>
@@ -731,7 +738,7 @@
     	Functionality is integrated in new c.t.x.mapper.AnnotationMapper and accessible with new methods c.t.x.XStream.processAnnotations().</li>
     	<li>New auto-detection mode for annotations, that can be turned on with c.t.x.XStream.autodetectAnnotations()</li>
     	<li>c.t.x.annotation.@XStreamContainedType deprecated, the behaviour is now always active and the annotation therefore superfluous.</li>
-    	<li>Due to <a href="http://jira.codehaus.org/browse/XSTR-421">XSTR-421</a> null characters are no longer written as tag with an attribute (&lt;char null=&quot;true&quot;/&gt;), 
+    	<li>Due to <a href="/jira/421">XSTR-421</a> null characters are no longer written as tag with an attribute (&lt;char null=&quot;true&quot;/&gt;), 
     	but as empty tag.  The old representation is still supported at deserialization.</li>
     	<li>Characters that are not defined in unicode or ISO control characters (expect TAB and LF) are written as numerical entity now.</li>
     	<li>XPath references are now also XML-friendly encoded to match the path exactly.  Unencoded references will normally work anyway,
@@ -774,38 +781,38 @@
     <h2>Major changes</h2>
 
     <ul>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-391">XSTR-391</a>, Support for writing (and reading) JSON by the new JettisonMappedXmlDriver (by Dejan Bosanac).</li>
+        <li><a href="/jira/391">XSTR-391</a>, Support for writing (and reading) JSON by the new JettisonMappedXmlDriver (by Dejan Bosanac).</li>
         <li>New FieldKeySorter interface allows a custom sort order of the XML elements.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-68">XSTR-68</a> and <a href="http://jira.codehaus.org/browse/XSTR-210">XSTR-210</a>, OmitField is now respected at deserialization to ignore removed fields.</li>
+    	<li><a href="/jira/68">XSTR-68</a> and <a href="/jira/210">XSTR-210</a>, OmitField is now respected at deserialization to ignore removed fields.</li>
     </ul>
 
     <h2>Minor changes</h2>
     
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-387">XSTR-387</a>, Fix aliasing of inherited fields.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-395">XSTR-395</a>, Fix StringConverter allocating PermGen space.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-368">XSTR-368</a>, @XStreamConverter converters should be cached inside the AnnotationReflectionConverter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-392">XSTR-392</a>, @XStreamOmitField can be used to omit fields from the resulting XML (contributed by Chung-Onn Cheong).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-371">XSTR-371</a>, Fix JSONWriter that omits a closing bracket for for fields with null value.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-398">XSTR-398</a>, DomDriver ignores given XmlFriendlyReplacer.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-370">XSTR-370</a>, Buildable with JDK 6, fix FontConverter for JDK 6.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-382">XSTR-382</a>, Support hex and octal number values.</li>
+    	<li><a href="/jira/387">XSTR-387</a>, Fix aliasing of inherited fields.</li>
+    	<li><a href="/jira/395">XSTR-395</a>, Fix StringConverter allocating PermGen space.</li>
+    	<li><a href="/jira/368">XSTR-368</a>, @XStreamConverter converters should be cached inside the AnnotationReflectionConverter.</li>
+    	<li><a href="/jira/392">XSTR-392</a>, @XStreamOmitField can be used to omit fields from the resulting XML (contributed by Chung-Onn Cheong).</li>
+    	<li><a href="/jira/371">XSTR-371</a>, Fix JSONWriter that omits a closing bracket for for fields with null value.</li>
+    	<li><a href="/jira/398">XSTR-398</a>, DomDriver ignores given XmlFriendlyReplacer.</li>
+    	<li><a href="/jira/370">XSTR-370</a>, Buildable with JDK 6, fix FontConverter for JDK 6.</li>
+    	<li><a href="/jira/382">XSTR-382</a>, Support hex and octal number values.</li>
     	<li>DateConverter did not respect change in TimeZone after first usage.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-375">XSTR-375</a>, Support for aliasing native types.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-243">XSTR-243</a> again, XML elements for transient fields are now ignored completely at deserialization.</li>
+    	<li><a href="/jira/375">XSTR-375</a>, Support for aliasing native types.</li>
+    	<li><a href="/jira/243">XSTR-243</a> again, XML elements for transient fields are now ignored completely at deserialization.</li>
     	<li>Release unused object references to keep memory print low.</li>
     	<li>Support for AWT and SQL is now optional: XStream now works on embedded virtual machines lacking such APIs (by Nicolas Gros d'Aillon).</li>
     	<li>Support raw bytes read from the ObjectInputStream.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-373">XSTR-373</a>, Support for Hitachi JVM (tested by Yuji Yamano).</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-378">XSTR-378</a> and <a href="http://jira.codehaus.org/browse/XSTR-379">XSTR-379</a>, Fix TextAttributeConverter and EnumSetConverter failing on Apache Harmony.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-363">XSTR-363</a>, Support of native field order i.e. fields are processed in declaration order base classes first.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-320">XSTR-320</a>, Static field in child may hide non-static field in parent.</li>
+    	<li><a href="/jira/373">XSTR-373</a>, Support for Hitachi JVM (tested by Yuji Yamano).</li>
+    	<li><a href="/jira/378">XSTR-378</a> and <a href="/jira/379">XSTR-379</a>, Fix TextAttributeConverter and EnumSetConverter failing on Apache Harmony.</li>
+    	<li><a href="/jira/363">XSTR-363</a>, Support of native field order i.e. fields are processed in declaration order base classes first.</li>
+    	<li><a href="/jira/320">XSTR-320</a>, Static field in child may hide non-static field in parent.</li>
     </ul>
     
     <h2>API changes</h2>
 
     <ul>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-365">XSTR-365</a>, Multiple implicit collections with annotations. Deprecated @XStreamImclicitCollection in favour of @XStreamImplicit
+        <li><a href="/jira/365">XSTR-365</a>, Multiple implicit collections with annotations. Deprecated @XStreamImclicitCollection in favour of @XStreamImplicit
         declared at field level.</li>
     </ul>
 
@@ -825,20 +832,20 @@
     <h2>Minor changes</h2>
     
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-346">XSTR-346</a>, XStream.getClassMapper() does not return a ClassMapper for the current Mapper.</li>
+    	<li><a href="/jira/346">XSTR-346</a>, XStream.getClassMapper() does not return a ClassMapper for the current Mapper.</li>
     	<li>Fix problem with fields containing a double underscore.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-345">XSTR-345</a>, Dom4JWriter adds up attributes.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-336">XSTR-336</a>, XStream fails to reference an implicit element.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-337">XSTR-337</a>, Annotation cycle bug.</li>
+    	<li><a href="/jira/345">XSTR-345</a>, Dom4JWriter adds up attributes.</li>
+    	<li><a href="/jira/336">XSTR-336</a>, XStream fails to reference an implicit element.</li>
+    	<li><a href="/jira/337">XSTR-337</a>, Annotation cycle bug.</li>
     	<li>Fix packaging error for the resulting jar building with Maven2.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-339">XSTR-339</a>, NPE for attribute null values.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-338">XSTR-338</a>, NPE in JSON writer for converters using non-extended HierarchicalStreamWriter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-357">XSTR-357</a>, Fix escaping of values in JSON writer.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-356">XSTR-356</a>, Fix unmarshaling error for fields containing proxies.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-349">XSTR-349</a>, Fix backward compatibility of Dom4jWriter.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-309">XSTR-309</a>, More versatile boolean conversion options (contributed by David Blevins).</li>
+    	<li><a href="/jira/339">XSTR-339</a>, NPE for attribute null values.</li>
+    	<li><a href="/jira/338">XSTR-338</a>, NPE in JSON writer for converters using non-extended HierarchicalStreamWriter.</li>
+    	<li><a href="/jira/357">XSTR-357</a>, Fix escaping of values in JSON writer.</li>
+    	<li><a href="/jira/356">XSTR-356</a>, Fix unmarshaling error for fields containing proxies.</li>
+    	<li><a href="/jira/349">XSTR-349</a>, Fix backward compatibility of Dom4jWriter.</li>
+    	<li><a href="/jira/309">XSTR-309</a>, More versatile boolean conversion options (contributed by David Blevins).</li>
     	<li>Add XStream.getReflectionProvider() to retrieve ReflectionProvider in use.</li>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-358">XSTR-358</a>, @XStreamConverter annotation does not call converter constructor.</li>
+    	<li><a href="/jira/358">XSTR-358</a>, @XStreamConverter annotation does not call converter constructor.</li>
         <li>Website generated using <a href="http://xsite.codehaus.org">XSite</a></li>
     </ul>
 
@@ -856,18 +863,18 @@
     <h2>Major changes</h2>
 
     <ul>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-269">XSTR-269</a>, Using attributes for fields (contributed by Paul Hammant and Ian Cartwright).</li>
+        <li><a href="/jira/269">XSTR-269</a>, Using attributes for fields (contributed by Paul Hammant and Ian Cartwright).</li>
         <li>Aliasing of arbitrary attributes.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-50">XSTR-50</a>, XStream can now serialize another XStream instance.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-227">XSTR-227</a>, XStream has now the XStreamer, that serializes an object together with its XStream instance.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-278">XSTR-278</a>, AnnotationConverter for fields (contributed by Guilherme Silveira).</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-256">XSTR-256</a>, PureJavaReflectionProvider supports now final fields starting with JDK 1.5</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-258">XSTR-258</a>, Any Collection type can now be declared implicit, the default implementation will be respected for unmarshaling.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-88">XSTR-88</a>, XStream can now write all references as absolute XPath expression.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-62">XSTR-62</a> and <a href="http://jira.codehaus.org/browse/XSTR-211">XSTR-211</a>, New SingeValueConverter allows light weight converters if the value can be represented by a unique string.</li>
+        <li><a href="/jira/50">XSTR-50</a>, XStream can now serialize another XStream instance.</li>
+        <li><a href="/jira/227">XSTR-227</a>, XStream has now the XStreamer, that serializes an object together with its XStream instance.</li>
+        <li><a href="/jira/278">XSTR-278</a>, AnnotationConverter for fields (contributed by Guilherme Silveira).</li>
+        <li><a href="/jira/256">XSTR-256</a>, PureJavaReflectionProvider supports now final fields starting with JDK 1.5</li>
+        <li><a href="/jira/258">XSTR-258</a>, Any Collection type can now be declared implicit, the default implementation will be respected for unmarshaling.</li>
+        <li><a href="/jira/88">XSTR-88</a>, XStream can now write all references as absolute XPath expression.</li>
+        <li><a href="/jira/62">XSTR-62</a> and <a href="/jira/211">XSTR-211</a>, New SingeValueConverter allows light weight converters if the value can be represented by a unique string.</li>
         <li>Aliasing of classes of a specific type.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-239">XSTR-239</a>, Support for certain types of proxies generated with the CGLIB Enhancer.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-90">XSTR-90</a> and <a href="http://jira.codehaus.org/browse/XSTR-311">XSTR-311</a>, Support for BEA JRockit starting with R25.1.0 (contributed by Henrik St&aring;hl of BEA).</li>
+        <li><a href="/jira/239">XSTR-239</a>, Support for certain types of proxies generated with the CGLIB Enhancer.</li>
+        <li><a href="/jira/90">XSTR-90</a> and <a href="/jira/311">XSTR-311</a>, Support for BEA JRockit starting with R25.1.0 (contributed by Henrik St&aring;hl of BEA).</li>
     </ul>
 
     <h2>Technology preview</h2>
@@ -881,30 +888,30 @@
     <h2>Minor changes</h2>
 
     <ul>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-266">XSTR-266</a>, XStream fails to serialize elements of a unserializable class, that is a base class of a derived class</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-236">XSTR-236</a>, Priority constants for converter registration are now public</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-215">XSTR-215</a>, XStream writes now fields in declaration order even for JVMs reporting them in reverse order like IBM JDK.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-276">XSTR-276</a> and <a href="http://jira.codehaus.org/browse/XSTR-283">XSTR-283</a>, XStream does no longer attempt to create references to implicit element.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-244">XSTR-244</a>, Closing a Writer can now be done twice, but any write attempt will later on fail.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-243">XSTR-243</a>, Transient fields were unmarshalled from XML.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-250">XSTR-250</a>, Providing a mapper to the XStream constructor will no longer result in a NPE.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-281">XSTR-281</a>, After registering a new converter, the internal converter cache is now cleared.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-284">XSTR-284</a>, XStream checks the object returned by a converter for compatibility.</li>
+        <li><a href="/jira/266">XSTR-266</a>, XStream fails to serialize elements of a unserializable class, that is a base class of a derived class</li>
+        <li><a href="/jira/236">XSTR-236</a>, Priority constants for converter registration are now public</li>
+        <li><a href="/jira/215">XSTR-215</a>, XStream writes now fields in declaration order even for JVMs reporting them in reverse order like IBM JDK.</li>
+        <li><a href="/jira/276">XSTR-276</a> and <a href="/jira/283">XSTR-283</a>, XStream does no longer attempt to create references to implicit element.</li>
+        <li><a href="/jira/244">XSTR-244</a>, Closing a Writer can now be done twice, but any write attempt will later on fail.</li>
+        <li><a href="/jira/243">XSTR-243</a>, Transient fields were unmarshalled from XML.</li>
+        <li><a href="/jira/250">XSTR-250</a>, Providing a mapper to the XStream constructor will no longer result in a NPE.</li>
+        <li><a href="/jira/281">XSTR-281</a>, After registering a new converter, the internal converter cache is now cleared.</li>
+        <li><a href="/jira/284">XSTR-284</a>, XStream checks the object returned by a converter for compatibility.</li>
         <li>XStream no longer fails serializing a Throwable without cause when no references shall be written.</li>
         <li>Converter for java.awt.font.TextAttribute.</li>
         <li>Converter for java.nio.charset.Charset.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-286">XSTR-286</a>, XStream detects impossible self serialization and throws now an appropriate ConversionException.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-291">XSTR-291</a>, XomDriver implementation added.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-299">XSTR-299</a>, Fix for implicit collections with items using the same name as the field name of the underlying collection.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-245">XSTR-245</a>, Broken XML with custom serialization in certain cases (patch contributed by Cyrille Le Clerc).</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-304">XSTR-304</a>, Bad handling of repairing namespace flag for StaxDriver (patch contributed by John Kristian).</li>
+        <li><a href="/jira/286">XSTR-286</a>, XStream detects impossible self serialization and throws now an appropriate ConversionException.</li>
+        <li><a href="/jira/291">XSTR-291</a>, XomDriver implementation added.</li>
+        <li><a href="/jira/299">XSTR-299</a>, Fix for implicit collections with items using the same name as the field name of the underlying collection.</li>
+        <li><a href="/jira/245">XSTR-245</a>, Broken XML with custom serialization in certain cases (patch contributed by Cyrille Le Clerc).</li>
+        <li><a href="/jira/304">XSTR-304</a>, Bad handling of repairing namespace flag for StaxDriver (patch contributed by John Kristian).</li>
     </ul>
 
     <h2>API changes</h2>
 
     <ul>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-252">XSTR-252</a>, Refactored support for XML friendly character mapping.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-69">XSTR-69</a>, Refactored ReflectionConverter allows simpler subclassing.</li>
+        <li><a href="/jira/252">XSTR-252</a>, Refactored support for XML friendly character mapping.</li>
+        <li><a href="/jira/69">XSTR-69</a>, Refactored ReflectionConverter allows simpler subclassing.</li>
         <li>Unmarshalling context has now an overloaded version of the method convertAnother to provide the Converter directly.</li>
         <li>Deprecate ClassMapper for Mapper. All methods with a ClassMapper parameter have now a duplicate taking only a Mapper. The variant with the ClassMapper is deprecated.</li>
         <li>Deprecate c.t.x.alias.CannotResolveClassException for c.t.x.mapper.CannotResolveClassException.</li>
@@ -912,7 +919,7 @@
         <li>Deprecate constructor of DefaultMapper taking an alternative name for the class attribute. Use the aliasAttribute method.</li>
         <li>Deprecate attributeForImplementationClass, attributeForClassDefiningField, attributeForReadResolveField, and attributeForEnumType in favour of the generalized aliasForAttribute in the Mapper interface.</li>
         <li>Removed all deprecated stuff from 1.1.x and 1.0.x</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-211">XSTR-211</a>, A lot of existing (basic) Converters have been refactored to use the new SingleValueConverter interface.</li>
+        <li><a href="/jira/211">XSTR-211</a>, A lot of existing (basic) Converters have been refactored to use the new SingleValueConverter interface.</li>
         <li>Dom4JWriter uses now a DocumentFactory and a XMLWriter as constructor arguments.</li>
     </ul>
 
@@ -926,13 +933,13 @@
         <li>Added XStream.toXML(OutputStream) and XStream.fromXML(InputStream).</li>
         <li>Ability to prevent fields from being serialized by calling XStream.omitField() or by implementing Mapper.shouldSerializeMember().</li>
         <li>Added Converter for Enum, EnumMap and EnumSet</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-186">XSTR-186</a>, Added BeanConverter (contributed by Andrea Aime)</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-246">XSTR-246</a>, Added ISO8601SqlTimestampConverter (contributed by Cheong, Chung-Onn)</li>
+        <li><a href="/jira/186">XSTR-186</a>, Added BeanConverter (contributed by Andrea Aime)</li>
+        <li><a href="/jira/246">XSTR-246</a>, Added ISO8601SqlTimestampConverter (contributed by Cheong, Chung-Onn)</li>
         <li>Added ISO8601GregorianCaledarConverter</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-215">XSTR-215</a>, Fixed support for IBM JVM (contributed by Gabor Liptak)</li>
+        <li><a href="/jira/215">XSTR-215</a>, Fixed support for IBM JVM (contributed by Gabor Liptak)</li>
         <li>Enhanced mode support for Blackdown JDK</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-265">XSTR-265</a>, support for javax.security.auth.Subject</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-233">XSTR-233</a>, support for Integer[] arrays</li>
+        <li><a href="/jira/265">XSTR-265</a>, support for javax.security.auth.Subject</li>
+        <li><a href="/jira/233">XSTR-233</a>, support for Integer[] arrays</li>
     </ul>
 
     <h2>Minor changes</h2>
@@ -941,9 +948,9 @@
         <li>Remove unnecessary PrintWriter wrapper in default writers (pointed out by Mathieu Champlon)</li>
         <li>Bugfix: EnumSet converter can now deal with empty sets (contributed by Baba Buehler)</li>
         <li>Update ISO8601DateConverter to use Joda 1.0</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-242">XSTR-242</a>, GregorianCalenderConverter saves now the timezone</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-247">XSTR-247</a>, ISO8601DateConverter now independent on timezone</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-263">XSTR-263</a>, Circular references with Externalizable objects fail</li>
+        <li><a href="/jira/242">XSTR-242</a>, GregorianCalenderConverter saves now the timezone</li>
+        <li><a href="/jira/247">XSTR-247</a>, ISO8601DateConverter now independent on timezone</li>
+        <li><a href="/jira/263">XSTR-263</a>, Circular references with Externalizable objects fail</li>
     </ul>
 
     <h2>API changes</h2>
@@ -960,24 +967,24 @@
     <h2>Major changes</h2>
 
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-186">XSTR-186</a>, Option to serialize JavaBeans using public accessors, rather than private fields (contributed by Andrea Aime).</li>
+    	<li><a href="/jira/186">XSTR-186</a>, Option to serialize JavaBeans using public accessors, rather than private fields (contributed by Andrea Aime).</li>
 		<li>Ability to alias fields as well as classes, using XStream.addFieldAlias().</li>
-		<li><a href="http://jira.codehaus.org/browse/XSTR-70">XSTR-70</a>, <a href="http://jira.codehaus.org/browse/XSTR-204">XSTR-204</a> Support for JDK 5 enums (contributed by Eric Snell and Bryan Coleman).</li>
-		<li><a href="http://jira.codehaus.org/browse/XSTR-206">XSTR-206</a> Clean representation of JDK 5 EnumMap and EnumSet.</li>
+		<li><a href="/jira/70">XSTR-70</a>, <a href="/jira/204">XSTR-204</a> Support for JDK 5 enums (contributed by Eric Snell and Bryan Coleman).</li>
+		<li><a href="/jira/206">XSTR-206</a> Clean representation of JDK 5 EnumMap and EnumSet.</li>
 		<li>XStream can now be built using JDK 1.3 (previously it required JDK 1.4 to compile, but 1.3 to run).</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-215">XSTR-215</a>, Enhanced mode is now supported on the IBM 1.4 JDK.</li>
+        <li><a href="/jira/215">XSTR-215</a>, Enhanced mode is now supported on the IBM 1.4 JDK.</li>
         <li>The default HierarchicalStreamWriter implementation is supplied by the HierarichicalStreamDriver (as well as the reader).</li>
    	</ul>
 
 	<h2>Minor changes</h2>
 
     <ul>
-    	<li><a href="http://jira.codehaus.org/browse/XSTR-104">XSTR-104</a> HierarchicalStreamReader now exposes all available attributes to the Converter implementations (contributed by Trygve Laugstol).</li>
+    	<li><a href="/jira/104">XSTR-104</a> HierarchicalStreamReader now exposes all available attributes to the Converter implementations (contributed by Trygve Laugstol).</li>
         <li>Bugfix: Externalizable deserialization supported for objects not at the root of tree.</li>
         <li>JavaMethodConverter handles non public methods/constructors (contributed by Kevin Ring).</li>
         <li>PropertiesConverter also serializes default properties, if present (contributed by Kevin Ring).</li>
         <li>Bugfix: In some cases, XppReader and StaxReader would get confused when calling hasMoreChildren() and getValue() on the same node.</li>
-        <li><a href="http://jira.codehaus.org/browse/XSTR-217">XSTR-217</a>, ISO8601DateConverter now requires joda-time-1.2.1</li>
+        <li><a href="/jira/217">XSTR-217</a>, ISO8601DateConverter now requires joda-time-1.2.1</li>
         <li>PrettyPrintWriter and CompactWriter may have their text/attribute escaping rules customized by overriding writeText() and writeAttributeValue().</li>
     </ul>
 
@@ -998,9 +1005,9 @@
 		<li>Converters can be registered with a priority, allowing more <i>generic</i> filters to handle classes that don't have more specific converters.</li>
 		<li>Converters can now access underlying HierarchicalStreamReader/Writer implementations to make implementation specific calls.</li>
 		<li>Improved support for classes using ObjectInputFields to follow the serialization specification.</li>
-		<li><a href="http://jira.codehaus.org/browse/XSTR-179">XSTR-179</a> Support for ObjectInputStream.registerValidation(ObjectInputValidation).</li>
-		<li><a href="http://jira.codehaus.org/browse/XSTR-178">XSTR-178</a> Serialized inner class now maintains reference to outer class.</li>
-		<li><a href="http://jira.codehaus.org/browse/XSTR-199">XSTR-199</a> Default ClassLoader may be changed using XStream.setClassLoader().</li>
+		<li><a href="/jira/179">XSTR-179</a> Support for ObjectInputStream.registerValidation(ObjectInputValidation).</li>
+		<li><a href="/jira/178">XSTR-178</a> Serialized inner class now maintains reference to outer class.</li>
+		<li><a href="/jira/199">XSTR-199</a> Default ClassLoader may be changed using XStream.setClassLoader().</li>
 	</ul>
 
 	<h2>Minor changes</h2>
@@ -1008,17 +1015,17 @@
     <ul>
         <li>Bugfix: Thread context classloader is loaded by the correct thread. (Thanks to Padraic Renaghan for pointing this out).</li>
         <li>Bugfix: Default implementations of aliased classes were not being deserialized by SerializableConverter.</li>
-        <li>Bugfix: <a href="http://jira.codehaus.org/browse/XSTR-180">XSTR-180</a> Serializable objects support defaultReadObject() even when no default fields available.</li>
+        <li>Bugfix: <a href="/jira/180">XSTR-180</a> Serializable objects support defaultReadObject() even when no default fields available.</li>
 		<li>Bugfix: For serialized objects class hierarchy is serialized starting with superclass (as per Java Object Serialization).</li>
 		<li>Bugfix: readObject() is now called for classes containing only transient fields.</li>
 		<li>Bugfix: Order of fields are maintained when calling ObjectOutputStream.putFields().</li>
 		<li>Bugfix: FontConverter extended to support FontUIResource which does some awkward native calls.</li>
 		<li>Bugfix: Deserialization of very complicated graphs (such as Swing components) sometimes resulted in broken object references. Now fixed.</li>
-		<li>Bugfix: <a href="http://jira.codehaus.org/browse/XSTR-188">XSTR-188</a> Classes that use readResolve()/writeReplace() can now return different types.</li>
-		<li>Bugfix: <a href="http://jira.codehaus.org/browse/XSTR-185">XSTR-185</a>, <a href="http://jira.codehaus.org/browse/XSTR-195">XSTR-195</a> Support for loading of array classes for classes that have not yet been loaded. (Thanks to Henri Tremblay and Simon Daniel)</li>
-		<li>Bugfix: <a href="http://jira.codehaus.org/browse/XSTR-190">XSTR-190</a> PrettyPrintWriter and CompactWriter escape characters in XML attributes.</li>
-		<li>Bugfix: <a href="http://jira.codehaus.org/browse/XSTR-176">XSTR-176</a>, <a href="http://jira.codehaus.org/browse/XSTR-196">XSTR-196</a> The XStream ObjectInputStream and ObjectOutputStream implementations now propegate the flush() and close() events to the underlying streams.</li>
-		<li>Bugfix: <a href="http://jira.codehaus.org/browse/XSTR-192">XSTR-192</a> Implicit collection mappings are now supported in inheritance hierarchies.</li>
+		<li>Bugfix: <a href="/jira/188">XSTR-188</a> Classes that use readResolve()/writeReplace() can now return different types.</li>
+		<li>Bugfix: <a href="/jira/185">XSTR-185</a>, <a href="/jira/195">XSTR-195</a> Support for loading of array classes for classes that have not yet been loaded. (Thanks to Henri Tremblay and Simon Daniel)</li>
+		<li>Bugfix: <a href="/jira/190">XSTR-190</a> PrettyPrintWriter and CompactWriter escape characters in XML attributes.</li>
+		<li>Bugfix: <a href="/jira/176">XSTR-176</a>, <a href="/jira/196">XSTR-196</a> The XStream ObjectInputStream and ObjectOutputStream implementations now propegate the flush() and close() events to the underlying streams.</li>
+		<li>Bugfix: <a href="/jira/192">XSTR-192</a> Implicit collection mappings are now supported in inheritance hierarchies.</li>
     </ul>
 
     <h2>API changes</h2>
@@ -1380,7 +1387,7 @@
                                 <li><a href="converters.html">Converters</a></li>
                                 <li><a href="security.html">Security Aspects</a></li>
                                 <li><a href="faq.html">Frequently Asked Questions</a></li>
-                                <li><a href="list-user.html">Users' Mailing List</a></li>
+                                <li><a href="mailing-lists.html">Mailing Lists</a></li>
                                 <li><a href="issues.html">Reporting Issues</a></li>
                     </ul>
                 </div>
@@ -1409,7 +1416,6 @@
                     <h1>Developing XStream</h1>
                     <ul>
                                 <li><a href="how-to-contribute.html">How to Contribute</a></li>
-                                <li><a href="list-dev.html">Developers' Mailing List</a></li>
                                 <li><a href="team.html">Development Team</a></li>
                                 <li><a href="repository.html">Source Repository</a></li>
                                 <li><a href="http://bamboo.ci.codehaus.org/browse/XSTREAM">Continuous Integration</a></li>
