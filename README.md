@@ -1,6 +1,6 @@
 # XStream Documentation
 
-This repository contains the [GitHub pages for XStream](https://github.com/x-stream/xstream)
+This repository contains the GitHub pages for [XStream](https://github.com/x-stream/xstream)
 that are used to render automatically the static [website of XStream](https://x-stream.github.io/). 
 
 # Site Generation
