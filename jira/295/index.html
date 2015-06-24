@@ -533,7 +533,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: first$na
 <p>
             <img src="index_files/improvement.png" title="Improvement - An improvement or enhancement to an existing feature or task." alt="Improvement - An improvement or enhancement to an existing feature or task." height="16" width="16">
         <span title="XSTR-252: Make replacement characters in XmlFriendlyMapper configurable">
-        <a href="252" data-issue-key="XSTR-252" class="issue-link link-title resolution">XSTR-252</a>
+        <a href="../252" data-issue-key="XSTR-252" class="issue-link link-title resolution">XSTR-252</a>
         <span class="link-summary">Make replacement characters in XmlFriendlyMapper configurable</span>
     </span>
 </p>
@@ -567,7 +567,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: first$na
                 <ul id="issue-tabs" class="tabs horizontal">
                                 
             <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-295">
-                            <a class="ajax-activity-content" id="all-tabpanel" href="295"><strong>All</strong></a>
+                            <a class="ajax-activity-content" id="all-tabpanel" href="../295"><strong>All</strong></a>
                         </li>
                                 
             <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-295">
@@ -575,11 +575,11 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: first$na
                         </li>
                                 
             <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-295">
-                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="295"><strong>History</strong></a>
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="../295"><strong>History</strong></a>
                         </li>
                                 
             <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-295">
-                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="295"><strong>Activity</strong></a>
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="../295"><strong>Activity</strong></a>
                         </li>
                 </ul>
     </div>
@@ -609,7 +609,7 @@ Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: first$na
 
 <p>first I want to state, that it is difficult to address two separate topics with one JIRA issue. The state of this issue now reflects the anser to your fist case.</p>
 
-<p>1) You've been hit by an internal mechanism to ensure valid XML tags. Inner classes are named by Java with a dollar sign in their class names. This character is not legal for XML tags. Therefore a dollar is mapped to a minus while serializing the objects and in return mapped back to dollar unserializing the XML. Unfortunately your aliases infer with this mechanism, since they contain also a minus. We admit, that this is not at all obvious for a user, but the culprit is the name mapping mechanism, which is addressed by <a href="252" title="Make replacement characters in XmlFriendlyMapper configurable" class="issue-link" data-issue-key="XSTR-252"><del>XSTR-252</del></a>. Therefore this issue is classified as "duplicate".</p>
+<p>1) You've been hit by an internal mechanism to ensure valid XML tags. Inner classes are named by Java with a dollar sign in their class names. This character is not legal for XML tags. Therefore a dollar is mapped to a minus while serializing the objects and in return mapped back to dollar unserializing the XML. Unfortunately your aliases infer with this mechanism, since they contain also a minus. We admit, that this is not at all obvious for a user, but the culprit is the name mapping mechanism, which is addressed by <a href="../252" title="Make replacement characters in XmlFriendlyMapper configurable" class="issue-link" data-issue-key="XSTR-252"><del>XSTR-252</del></a>. Therefore this issue is classified as "duplicate".</p>
 
 <p>2) The second test is not valid and I would have closed it as "won't fix". We cannot support such an inherited alias mechanism for two main reasons: </p>
 <ul class="alternate" type="square">

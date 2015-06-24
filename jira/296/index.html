@@ -341,7 +341,7 @@
 <p>
             <img src="index_files/newfeature.png" title="New Feature - A new feature of the product, which has yet to be developed." alt="New Feature - A new feature of the product, which has yet to be developed." height="16" width="16">
         <span title="XSTR-76: Don't serialize fields with default values">
-        <a href="76" data-issue-key="XSTR-76" class="issue-link link-title">XSTR-76</a>
+        <a href="../76" data-issue-key="XSTR-76" class="issue-link link-title">XSTR-76</a>
         <span class="link-summary">Don't serialize fields with default values</span>
     </span>
 </p>
@@ -362,7 +362,7 @@
 <p>
             <img src="index_files/improvement.png" title="Improvement - An improvement or enhancement to an existing feature or task." alt="Improvement - An improvement or enhancement to an existing feature or task." height="16" width="16">
         <span title="XSTR-248: Include null values as empty elements in the XML">
-        <a href="248" data-issue-key="XSTR-248" class="issue-link link-title">XSTR-248</a>
+        <a href="../248" data-issue-key="XSTR-248" class="issue-link link-title">XSTR-248</a>
         <span class="link-summary">Include null values as empty elements in the XML</span>
     </span>
 </p>
@@ -396,7 +396,7 @@
                 <ul id="issue-tabs" class="tabs horizontal">
                                 
             <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-296">
-                            <a class="ajax-activity-content" id="all-tabpanel" href="296"><strong>All</strong></a>
+                            <a class="ajax-activity-content" id="all-tabpanel" href="../296"><strong>All</strong></a>
                         </li>
                                 
             <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-296">
@@ -404,11 +404,11 @@
                         </li>
                                 
             <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-296">
-                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="296"><strong>History</strong></a>
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="../296"><strong>History</strong></a>
                         </li>
                                 
             <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-296">
-                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="296"><strong>Activity</strong></a>
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="../296"><strong>Activity</strong></a>
                         </li>
                 </ul>
     </div>
@@ -436,7 +436,7 @@
         </div>
         <div class="action-body flooded"><p>Hi David,</p>
 
-<p>the only reason I did not resolve this issue with "won't fix" is, that you address more than the empty collection with this issue. Regarding your empty collection mapper I don't think this is a valid solution, since XStream can no longer distinguish at deserialization time, wether the collection was empty or null. Even worse it <b>will</b> be initialized with null. We might revisit such a functionality when we start to support <a href="76" title="Don't serialize fields with default values" class="issue-link" data-issue-key="XSTR-76">XSTR-76</a> and <a href="248" title="Include null values as empty elements in the XML" class="issue-link" data-issue-key="XSTR-248">XSTR-248</a> which are somewhat related. Resolving those issues, we might have also the need for passing the real object along with the type to shouldSerializeMember.</p>
+<p>the only reason I did not resolve this issue with "won't fix" is, that you address more than the empty collection with this issue. Regarding your empty collection mapper I don't think this is a valid solution, since XStream can no longer distinguish at deserialization time, wether the collection was empty or null. Even worse it <b>will</b> be initialized with null. We might revisit such a functionality when we start to support <a href="../76" title="Don't serialize fields with default values" class="issue-link" data-issue-key="XSTR-76">XSTR-76</a> and <a href="../248" title="Include null values as empty elements in the XML" class="issue-link" data-issue-key="XSTR-248">XSTR-248</a> which are somewhat related. Resolving those issues, we might have also the need for passing the real object along with the type to shouldSerializeMember.</p>
 
 <p><span class="error">[1]</span> Thanks for heads-up. In fact this is currently just by chance, since the aliasing was added at a later development stage.</p>
 
@@ -528,7 +528,7 @@
     <a class="user-hover user-avatar" rel="dblevins" id="commentauthor_64704_verbose" href="https://jira.codehaus.org/secure/ViewProfile.jspa?name=dblevins"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> David Blevins</a>
  added a comment  - <span class="commentdate_64704_verbose subText"><span class="date user-tz" title="03/May/06 7:12 PM"><time class="livestamp" datetime="2006-05-03T19:12-0500">03/May/06 7:12 PM</time></span></span>  </div>
         </div>
-        <div class="action-body flooded"><p>The patch in <a href="308" title="Conditional Conversion support" class="issue-link" data-issue-key="XSTR-308">XSTR-308</a> (<a href="http://jira.codehaus.org/browse/XSTR-308" class="external-link" rel="nofollow">http://jira.codehaus.org/browse/XSTR-308</a>) is a better solution than the hack attached to this jira.  Closing this one down as duplicate in favor of that item.</p> </div>
+        <div class="action-body flooded"><p>The patch in <a href="../308" title="Conditional Conversion support" class="issue-link" data-issue-key="XSTR-308">XSTR-308</a> (<a href="http://jira.codehaus.org/browse/XSTR-308" class="external-link" rel="nofollow">http://jira.codehaus.org/browse/XSTR-308</a>) is a better solution than the hack attached to this jira.  Closing this one down as duplicate in favor of that item.</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">

@@ -360,15 +360,15 @@ to:<br>
                         </li>
                                 
             <li data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-764">
-                            <a class="ajax-activity-content" id="comment-tabpanel" href="764"><strong>Comments</strong></a>
+                            <a class="ajax-activity-content" id="comment-tabpanel" href="../764"><strong>Comments</strong></a>
                         </li>
                                 
             <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-764">
-                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="764"><strong>History</strong></a>
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="../764"><strong>History</strong></a>
                         </li>
                                 
             <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-764">
-                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="764"><strong>Activity</strong></a>
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="../764"><strong>Activity</strong></a>
                         </li>
                 </ul>
     </div>
@@ -394,7 +394,7 @@ to:<br>
     <a class="user-hover user-avatar" rel="joehni" id="commentauthor_359010_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_359010_verbose subText"><span class="date user-tz" title="12/Dec/14 2:40 PM"><time class="livestamp" datetime="2014-12-12T14:40-0600">12/Dec/14 2:40 PM</time></span></span>  </div>
         </div>
-        <div class="action-body flooded"><p>Originally I though this patch would be a good idea, but null is a valid result from readResolve. At least Java IO serialization has absolutely no problem with it and XStream behaves currently exactly the same. Also it seems that this behavior is actively used as it would break <a href="690" title="Broken deserialization of singleton references using custom readResolve method returning null" class="issue-link" data-issue-key="XSTR-690"><del>XSTR-690</del></a> (and other use cases if you google around). Therefore, many thanks for your patch, but for the sake of compatibility with the Java standard serialization, I cannot apply it. Sorry.</p> </div>
+        <div class="action-body flooded"><p>Originally I though this patch would be a good idea, but null is a valid result from readResolve. At least Java IO serialization has absolutely no problem with it and XStream behaves currently exactly the same. Also it seems that this behavior is actively used as it would break <a href="../690" title="Broken deserialization of singleton references using custom readResolve method returning null" class="issue-link" data-issue-key="XSTR-690"><del>XSTR-690</del></a> (and other use cases if you google around). Therefore, many thanks for your patch, but for the sake of compatibility with the Java standard serialization, I cannot apply it. Sorry.</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">

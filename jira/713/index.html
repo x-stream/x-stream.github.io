@@ -372,7 +372,7 @@ version             : null<br>
                 <ul id="issue-tabs" class="tabs horizontal">
                                 
             <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-713">
-                            <a class="ajax-activity-content" id="all-tabpanel" href="713"><strong>All</strong></a>
+                            <a class="ajax-activity-content" id="all-tabpanel" href="../713"><strong>All</strong></a>
                         </li>
                                 
             <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-713">
@@ -380,11 +380,11 @@ version             : null<br>
                         </li>
                                 
             <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-713">
-                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="713"><strong>History</strong></a>
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="../713"><strong>History</strong></a>
                         </li>
                                 
             <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-713">
-                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="713"><strong>Activity</strong></a>
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="../713"><strong>Activity</strong></a>
                         </li>
                 </ul>
     </div>
@@ -448,7 +448,7 @@ version             : null<br>
         </div>
         <div class="action-body flooded"><p>Hi Scott,</p>
 
-<p>the ConcurrentHashMap was handled in previous XStream version by the reflection-based converters. However, since those converters expose implementation details in the XML, the format was not compatible between JDK versions and JDKs of different vendors. Therefore XStream delivers now since version 1.4.3 a specialized converter for this type to prevent such incompatibilities (see <a href="608" title="Could not call java.util.concurrent.ConcurrentHashMap.writeObject()  with sun14reflectionprovider" class="issue-link" data-issue-key="XSTR-608"><del>XSTR-608</del></a>).</p>
+<p>the ConcurrentHashMap was handled in previous XStream version by the reflection-based converters. However, since those converters expose implementation details in the XML, the format was not compatible between JDK versions and JDKs of different vendors. Therefore XStream delivers now since version 1.4.3 a specialized converter for this type to prevent such incompatibilities (see <a href="../608" title="Could not call java.util.concurrent.ConcurrentHashMap.writeObject()  with sun14reflectionprovider" class="issue-link" data-issue-key="XSTR-608"><del>XSTR-608</del></a>).</p>
 
 <p>Simply use two different XStream instances, if you have to read XML written in the old format and register the SerializationConverter again for unmarshalling the ConcurrentHashMap.</p> </div>
     </div>

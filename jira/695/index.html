@@ -344,7 +344,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
                 <ul id="issue-tabs" class="tabs horizontal">
                                 
             <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-695">
-                            <a class="ajax-activity-content" id="all-tabpanel" href="695"><strong>All</strong></a>
+                            <a class="ajax-activity-content" id="all-tabpanel" href="../695"><strong>All</strong></a>
                         </li>
                                 
             <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-695">
@@ -352,11 +352,11 @@ Using an own converter for BAA circumvents this problem. However, this can get q
                         </li>
                                 
             <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-695">
-                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="695"><strong>History</strong></a>
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="../695"><strong>History</strong></a>
                         </li>
                                 
             <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-695">
-                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="695"><strong>Activity</strong></a>
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="../695"><strong>Activity</strong></a>
                         </li>
                 </ul>
     </div>
@@ -468,7 +468,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
         </div>
         <div class="action-body flooded"><p>The functionality to handle Serializable instances <b>is</b> fragile, just as you already have learned. Therefore we are not very keen to expose a lot more entry points. Again, did you try an instance of the SerilizationProvider using a PureJavaReflectionProvider? This should solve the initialization problem for you with the constructors. As sole concession we can declare marshalUnserializableParent as protected to prevent any of these fields written in an derived converter.</p>
 
-<p>You might also be interested in <a href="670" title="Mappers should be given more context to resolve a class" class="issue-link" data-issue-key="XSTR-670">XSTR-670</a> for a more global approach in an OSGi environment.</p> </div>
+<p>You might also be interested in <a href="../670" title="Mappers should be given more context to resolve a class" class="issue-link" data-issue-key="XSTR-670">XSTR-670</a> for a more global approach in an OSGi environment.</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">
@@ -510,7 +510,7 @@ Using an own converter for BAA circumvents this problem. However, this can get q
 
 <p>Unfortunately, with the PureJavaReflectionProvider XStream still tries to load the field type of an unmarshable parent. But due to OSGi plugin constraints it cannot access this class (ABA, see above).</p>
 
-<p>The global approach of <a href="670" title="Mappers should be given more context to resolve a class" class="issue-link" data-issue-key="XSTR-670">XSTR-670</a> might help, but currently looks a bit overkill to me. However, it would probably render the class-specific serialisation unnecessary which we are using now to circumvent the problem.</p> </div>
+<p>The global approach of <a href="../670" title="Mappers should be given more context to resolve a class" class="issue-link" data-issue-key="XSTR-670">XSTR-670</a> might help, but currently looks a bit overkill to me. However, it would probably render the class-specific serialisation unnecessary which we are using now to circumvent the problem.</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">

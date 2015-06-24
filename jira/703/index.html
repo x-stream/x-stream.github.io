@@ -898,7 +898,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
                 <ul id="issue-tabs" class="tabs horizontal">
                                 
             <li data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/browse/XSTR-703">
-                            <a class="ajax-activity-content" id="all-tabpanel" href="703"><strong>All</strong></a>
+                            <a class="ajax-activity-content" id="all-tabpanel" href="../703"><strong>All</strong></a>
                         </li>
                                 
             <li class="active" id="comment-tabpanel" data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/browse/XSTR-703">
@@ -906,11 +906,11 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
                         </li>
                                 
             <li data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/browse/XSTR-703">
-                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="703"><strong>History</strong></a>
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="../703"><strong>History</strong></a>
                         </li>
                                 
             <li data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/browse/XSTR-703">
-                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="703"><strong>Activity</strong></a>
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="../703"><strong>Activity</strong></a>
                         </li>
                 </ul>
     </div>
@@ -936,7 +936,7 @@ class<span class="error">[1]</span>            : com.sun.org.apache.xerces.inter
     <a class="user-hover user-avatar" rel="joehni" id="commentauthor_304020_verbose" href="https://github.com/joehni"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="index_files/useravatar.png"></span></span> Jörg Schaible</a>
  added a comment  - <span class="commentdate_304020_verbose subText"><span class="date user-tz" title="19/Jul/12 1:32 AM"><time class="livestamp" datetime="2012-07-19T01:32-0500">19/Jul/12 1:32 AM</time></span></span>  </div>
         </div>
-        <div class="action-body flooded"><p>Sorry, but there's nothing XStream can really do for you. You are serializing the objects of a DOM model using the ReflectionConverter. However, this implies, that the generated XML is highly dependent on internal implementation details. These have changed for the DOM classes in the JDK from Java 1.4 to Java 5 and now obviously again from Java 6 to Java 7. To be independent of such changes you will have to write own converters for these classes or take an approach as provided by Ken Arnold in <a href="548" title="Converter for raw XML streams" class="issue-link" data-issue-key="XSTR-548">XSTR-548</a>.</p> </div>
+        <div class="action-body flooded"><p>Sorry, but there's nothing XStream can really do for you. You are serializing the objects of a DOM model using the ReflectionConverter. However, this implies, that the generated XML is highly dependent on internal implementation details. These have changed for the DOM classes in the JDK from Java 1.4 to Java 5 and now obviously again from Java 6 to Java 7. To be independent of such changes you will have to write own converters for these classes or take an approach as provided by Ken Arnold in <a href="../548" title="Converter for raw XML streams" class="issue-link" data-issue-key="XSTR-548">XSTR-548</a>.</p> </div>
     </div>
     <div class="twixi-wrap concise actionContainer">
         <div class="action-head">
