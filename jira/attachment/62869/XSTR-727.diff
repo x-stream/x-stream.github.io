@@ -1,0 +1,63 @@
+diff --git a/xstream/src/java/com/thoughtworks/xstream/converters/reflection/SerializationMethodInvoker.java b/xstream/src/java/com/thoughtworks/xstream/converters/reflection/SerializationMethodInvoker.java
+index 2d8237c..81d58a3 100644
+--- a/xstream/src/java/com/thoughtworks/xstream/converters/reflection/SerializationMethodInvoker.java
++++ b/xstream/src/java/com/thoughtworks/xstream/converters/reflection/SerializationMethodInvoker.java
+@@ -23,6 +23,7 @@ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.Map;
++import java.util.concurrent.ConcurrentHashMap;
+ 
+ 
+ /**
+@@ -45,7 +46,7 @@ public class SerializationMethodInvoker implements Caching {
+         new FastField(Object.class, "readObject"), 
+         new FastField(Object.class, "writeObject")
+     };
+-    private Map cache = Collections.synchronizedMap(new HashMap());
++    private Map cache = new ConcurrentHashMap();
+     {
+         for(int i = 0; i < OBJECT_TYPE_FIELDS.length; ++i) {
+             cache.put(OBJECT_TYPE_FIELDS[i], NO_METHOD);
+diff --git a/xstream/src/java/com/thoughtworks/xstream/converters/reflection/Sun14ReflectionProvider.java b/xstream/src/java/com/thoughtworks/xstream/converters/reflection/Sun14ReflectionProvider.java
+index 5098681..3c7ccd8 100644
+--- a/xstream/src/java/com/thoughtworks/xstream/converters/reflection/Sun14ReflectionProvider.java
++++ b/xstream/src/java/com/thoughtworks/xstream/converters/reflection/Sun14ReflectionProvider.java
+@@ -20,6 +20,7 @@ import java.lang.reflect.InvocationTargetException;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.WeakHashMap;
++import java.util.concurrent.ConcurrentHashMap;
+ 
+ /**
+  * Instantiates a new object on the Sun JVM by bypassing the constructor (meaning code in the constructor
+@@ -59,7 +60,7 @@ public class Sun14ReflectionProvider extends PureJavaReflectionProvider {
+     }
+ 
+     private transient ReflectionFactory reflectionFactory = ReflectionFactory.getReflectionFactory();
+-    private transient Map constructorCache =new HashMap();
++    private transient Map constructorCache =new ConcurrentHashMap();
+ 
+     public Sun14ReflectionProvider() {
+     	super();
+diff --git a/xstream/src/java/com/thoughtworks/xstream/mapper/CachingMapper.java b/xstream/src/java/com/thoughtworks/xstream/mapper/CachingMapper.java
+index 5ec1a05..02dd592 100644
+--- a/xstream/src/java/com/thoughtworks/xstream/mapper/CachingMapper.java
++++ b/xstream/src/java/com/thoughtworks/xstream/mapper/CachingMapper.java
+@@ -15,6 +15,7 @@ import java.lang.ref.WeakReference;
+ import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.Map;
++import java.util.concurrent.ConcurrentHashMap;
+ 
+ import com.thoughtworks.xstream.core.Caching;
+ 
+@@ -52,7 +53,7 @@ public class CachingMapper extends MapperWrapper implements Caching {
+     }
+ 
+     private Object readResolve() {
+-        realClassCache = Collections.synchronizedMap(new HashMap(128));
++        realClassCache = new ConcurrentHashMap();
+         return this;
+     }
+ }

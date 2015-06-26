@@ -1,0 +1,582 @@
+Index: src/test/com/thoughtworks/xstream/mapper/ConditionalConversionMapperTest.java
+===================================================================
+--- src/test/com/thoughtworks/xstream/mapper/ConditionalConversionMapperTest.java	(revision 0)
++++ src/test/com/thoughtworks/xstream/mapper/ConditionalConversionMapperTest.java	(revision 0)
+@@ -0,0 +1,99 @@
++package com.thoughtworks.xstream.mapper;
++
++import junit.framework.TestCase;
++import com.thoughtworks.xstream.core.DefaultConverterLookup;
++import com.thoughtworks.xstream.core.util.CompositeClassLoader;
++import com.thoughtworks.xstream.converters.basic.NullConverter;
++import com.thoughtworks.xstream.converters.basic.IntConverter;
++import com.thoughtworks.xstream.converters.basic.FloatConverter;
++import com.thoughtworks.xstream.converters.basic.DoubleConverter;
++import com.thoughtworks.xstream.converters.basic.LongConverter;
++import com.thoughtworks.xstream.converters.basic.ShortConverter;
++import com.thoughtworks.xstream.converters.basic.CharConverter;
++import com.thoughtworks.xstream.converters.basic.BooleanConverter;
++import com.thoughtworks.xstream.converters.basic.ByteConverter;
++import com.thoughtworks.xstream.converters.basic.StringConverter;
++import com.thoughtworks.xstream.converters.Converter;
++import com.thoughtworks.xstream.converters.SingleValueConverter;
++import com.thoughtworks.xstream.converters.SingleValueConverterWrapper;
++import com.thoughtworks.acceptance.objects.Software;
++
++import java.lang.reflect.Field;
++import java.util.regex.Pattern;
++
++/**
++ * @author David Blevins
++ */
++public class ConditionalConversionMapperTest extends TestCase {
++    private ConditionalConversionMapper mapper;
++    private DefaultConverterLookup converterLookup;
++    private static final int PRIORITY_NORMAL = 1;
++    private static final int PRIORITY_VERY_HIGH = 2;
++
++    protected void setUp() throws Exception {
++        mapper = new ConditionalConversionMapper(new DefaultMapper(new CompositeClassLoader()));
++        converterLookup = new DefaultConverterLookup(mapper);
++        registerConverter(new NullConverter(), PRIORITY_VERY_HIGH);
++        registerConverter(new IntConverter(), PRIORITY_NORMAL);
++        registerConverter(new FloatConverter(), PRIORITY_NORMAL);
++        registerConverter(new DoubleConverter(), PRIORITY_NORMAL);
++        registerConverter(new LongConverter(), PRIORITY_NORMAL);
++        registerConverter(new ShortConverter(), PRIORITY_NORMAL);
++        registerConverter(new CharConverter(), PRIORITY_NORMAL);
++        registerConverter(new BooleanConverter(), PRIORITY_NORMAL);
++        registerConverter(new ByteConverter(), PRIORITY_NORMAL);
++
++        registerConverter(new StringConverter(), PRIORITY_NORMAL);
++        mapper.setConverterLookup(converterLookup);
++    }
++
++    public void registerConverter(Converter converter, int priority) {
++        converterLookup.registerConverter(converter, priority);
++    }
++    public void registerConverter(SingleValueConverter converter, int priority) {
++        converterLookup.registerConverter(new SingleValueConverterWrapper(converter), priority);
++    }
++
++    public void testWillConvert() throws Exception {
++        Software software = new Software("microsoft", "outlook");
++        assertTrue("shouldSerialize",willSerialize(software, "vendor"));
++    }
++
++    public static class FilterStringConverter extends StringConverter {
++        private final Pattern pattern;
++
++        public FilterStringConverter(String regex) {
++            this.pattern = Pattern.compile(regex);
++        }
++
++        public boolean shouldConvert(Class type, Object value) {
++            String str = (String) value;
++            return !pattern.matcher(str).matches();
++        }
++    }
++
++    public void testWillNotConvert() throws Exception {
++        registerConverter(new FilterStringConverter(".*"), PRIORITY_NORMAL);
++
++        Software software = new Software("microsoft", "outlook");
++        assertTrue("shouldSerialize", !willSerialize(software, "vendor"));
++
++    }
++
++    public void testWillConvertSome() throws Exception {
++        registerConverter(new FilterStringConverter("micro.*"), PRIORITY_NORMAL);
++
++        Software software = new Software("microsoft", "outlook");
++
++        assertTrue("dont convert", !willSerialize(software, "vendor"));
++
++        software = new Software("scansoft", "omnipage");
++        assertTrue("do convert", willSerialize(software, "vendor"));
++    }
++
++    private boolean willSerialize(Object object, String fieldName) throws NoSuchFieldException, IllegalAccessException {
++        Field field = object.getClass().getField(fieldName);
++        return mapper.shouldSerializeMember(field.getDeclaringClass(), field.getName(), field.getType(), field.get(object));
++    }
++
++}
+Index: src/test/com/thoughtworks/acceptance/ConditionalConverterTest.java
+===================================================================
+--- src/test/com/thoughtworks/acceptance/ConditionalConverterTest.java	(revision 0)
++++ src/test/com/thoughtworks/acceptance/ConditionalConverterTest.java	(revision 0)
+@@ -0,0 +1,261 @@
++package com.thoughtworks.acceptance;
++
++import com.thoughtworks.xstream.converters.ConditionalConverter;
++import com.thoughtworks.xstream.converters.collections.CollectionConverter;
++import com.thoughtworks.xstream.converters.collections.MapConverter;
++import com.thoughtworks.xstream.converters.basic.IntConverter;
++import com.thoughtworks.xstream.converters.basic.StringConverter;
++import com.thoughtworks.xstream.mapper.Mapper;
++
++import java.util.List;
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.Map;
++import java.util.HashMap;
++
++/**
++ * @author David Blevins
++ */
++public class ConditionalConverterTest extends AbstractAcceptanceTest {
++    private List people;
++
++    public static class Person extends StandardObject {
++        public String name;
++        public String hairColor;
++        public String eyeColor;
++        public int age;
++        public int weight;
++
++        public Person(String name, String hairColor, String eyeColor, int age, int weight) {
++            this.name = name;
++            this.hairColor = hairColor;
++            this.eyeColor = eyeColor;
++            this.age = age;
++            this.weight = weight;
++
++        }
++    }
++
++    protected void setUp() throws Exception {
++        super.setUp();
++
++        people = new ArrayList();
++        people.add(new Person("Susan Snarky", "red", "green", 37, 150));
++        people.add(new Person("Mac Daddy", "brown", "brown", 23, 180));
++        people.add(new Person("Debbie Herbig", "brown", "brown", 56, 190));
++        people.add(new Person("Kenny Little", "blond", "blue", 12, 115));
++
++        xstream.alias("person", Person.class);
++    }
++
++    public void testNormalConversion() {
++        String expectedXml = ""+
++                "<list>\n" +
++                "  <person>\n" +
++                "    <name>Susan Snarky</name>\n" +
++                "    <hairColor>red</hairColor>\n" +
++                "    <eyeColor>green</eyeColor>\n" +
++                "    <age>37</age>\n" +
++                "    <weight>150</weight>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Mac Daddy</name>\n" +
++                "    <hairColor>brown</hairColor>\n" +
++                "    <eyeColor>brown</eyeColor>\n" +
++                "    <age>23</age>\n" +
++                "    <weight>180</weight>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Debbie Herbig</name>\n" +
++                "    <hairColor>brown</hairColor>\n" +
++                "    <eyeColor>brown</eyeColor>\n" +
++                "    <age>56</age>\n" +
++                "    <weight>190</weight>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Kenny Little</name>\n" +
++                "    <hairColor>blond</hairColor>\n" +
++                "    <eyeColor>blue</eyeColor>\n" +
++                "    <age>12</age>\n" +
++                "    <weight>115</weight>\n" +
++                "  </person>\n" +
++                "</list>";
++
++        assertBothWays(people, expectedXml);
++    }
++
++
++    public static class SkipIntConverter extends IntConverter {
++        public boolean shouldConvert(Class type, Object value) {
++            return false;
++        }
++    }
++
++    public void testConditionBasedOnType() {
++        xstream.registerConverter(new SkipIntConverter());
++
++        String expectedXml = ""+
++                "<list>\n" +
++                "  <person>\n" +
++                "    <name>Susan Snarky</name>\n" +
++                "    <hairColor>red</hairColor>\n" +
++                "    <eyeColor>green</eyeColor>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Mac Daddy</name>\n" +
++                "    <hairColor>brown</hairColor>\n" +
++                "    <eyeColor>brown</eyeColor>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Debbie Herbig</name>\n" +
++                "    <hairColor>brown</hairColor>\n" +
++                "    <eyeColor>brown</eyeColor>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Kenny Little</name>\n" +
++                "    <hairColor>blond</hairColor>\n" +
++                "    <eyeColor>blue</eyeColor>\n" +
++                "  </person>\n" +
++                "</list>";
++
++        assertBothWays(people, expectedXml);
++    }
++
++
++    public static class SkipSomeIntsConverter extends IntConverter {
++        public boolean shouldConvert(Class type, Object value) {
++            int i = ((Integer) value).intValue();
++            return (i > 0 && i < 50) || (i > 100 && i < 160);
++        }
++    }
++
++    public void testConditionBasedOnValue() {
++        xstream.registerConverter(new SkipSomeIntsConverter());
++
++        String expectedXml = ""+
++                "<list>\n" +
++                "  <person>\n" +
++                "    <name>Susan Snarky</name>\n" +
++                "    <hairColor>red</hairColor>\n" +
++                "    <eyeColor>green</eyeColor>\n" +
++                "    <age>37</age>\n" +
++                "    <weight>150</weight>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Mac Daddy</name>\n" +
++                "    <hairColor>brown</hairColor>\n" +
++                "    <eyeColor>brown</eyeColor>\n" +
++                "    <age>23</age>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Debbie Herbig</name>\n" +
++                "    <hairColor>brown</hairColor>\n" +
++                "    <eyeColor>brown</eyeColor>\n" +
++                "  </person>\n" +
++                "  <person>\n" +
++                "    <name>Kenny Little</name>\n" +
++                "    <hairColor>blond</hairColor>\n" +
++                "    <eyeColor>blue</eyeColor>\n" +
++                "    <age>12</age>\n" +
++                "    <weight>115</weight>\n" +
++                "  </person>\n" +
++                "</list>";
++
++        assertBothWays(people, expectedXml);
++
++    }
++
++    public static class SkipEmptyCollectionConverter extends CollectionConverter implements ConditionalConverter {
++        public SkipEmptyCollectionConverter(Mapper mapper) {
++            super(mapper);
++        }
++
++        public boolean shouldConvert(Class type, Object value) {
++            return (value != null && ((Collection) value).size() != 0);
++        }
++    }
++
++    public static class SkipEmptyMapConverter extends MapConverter implements ConditionalConverter {
++        public SkipEmptyMapConverter(Mapper mapper) {
++            super(mapper);
++        }
++
++        public boolean shouldConvert(Class type, Object value) {
++            return (value != null && ((Map) value).size() != 0);
++        }
++    }
++
++    public static class SkipEmptyStringConverter extends StringConverter {
++        public boolean shouldConvert(Class type, Object value) {
++            return (value != null && ((String)value).length() != 0);
++        }
++    }
++
++    public static class Contact extends StandardObject {
++        public String name;
++        public String company;
++        public List emailAddresses = new ArrayList();
++        public Map addresses = new HashMap();
++        public Map telephone = new HashMap();
++        public String notes;
++
++        public Contact(String name) {
++            this.name = name;
++        }
++    }
++
++    public void testSkipNonSimpleTypes() {
++        List addressBook = new ArrayList();
++        Contact wallace = new Contact("Wallace");
++        wallace.company = "Window Washing Inventors, Inc.";
++        wallace.addresses.put("home", "62 West Wallaby Street");
++        addressBook.add(wallace);
++
++        Contact gromit = new Contact("Gromit");
++        gromit.emailAddresses.add("gromit@genious-k9s.net");
++        addressBook.add(gromit);
++
++        Contact jenny = new Contact("Jenny");
++        jenny.telephone.put("home", "867-5309");
++        jenny.notes = "Found this number on the bathroom wall.";
++        addressBook.add(jenny);
++
++        xstream.alias("contact", Contact.class);
++        xstream.registerConverter(new SkipEmptyCollectionConverter(xstream.getMapper()));
++        xstream.registerConverter(new SkipEmptyMapConverter(xstream.getMapper()));
++        xstream.registerConverter(new SkipEmptyStringConverter());
++
++        String expectedXml = ""+
++                "<list>\n" +
++                "  <contact>\n" +
++                "    <name>Wallace</name>\n" +
++                "    <company>Window Washing Inventors, Inc.</company>\n" +
++                "    <addresses>\n" +
++                "      <entry>\n" +
++                "        <string>home</string>\n" +
++                "        <string>62 West Wallaby Street</string>\n" +
++                "      </entry>\n" +
++                "    </addresses>\n" +
++                "  </contact>\n" +
++                "  <contact>\n" +
++                "    <name>Gromit</name>\n" +
++                "    <emailAddresses>\n" +
++                "      <string>gromit@genious-k9s.net</string>\n" +
++                "    </emailAddresses>\n" +
++                "  </contact>\n" +
++                "  <contact>\n" +
++                "    <name>Jenny</name>\n" +
++                "    <telephone>\n" +
++                "      <entry>\n" +
++                "        <string>home</string>\n" +
++                "        <string>867-5309</string>\n" +
++                "      </entry>\n" +
++                "    </telephone>\n" +
++                "    <notes>Found this number on the bathroom wall.</notes>\n" +
++                "  </contact>\n" +
++                "</list>";
++
++        assertBothWays(addressBook, expectedXml);
++    }
++
++}
+Index: src/java/com/thoughtworks/xstream/XStream.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/XStream.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/XStream.java	(working copy)
+@@ -121,6 +121,7 @@
+ import com.thoughtworks.xstream.mapper.MapperWrapper;
+ import com.thoughtworks.xstream.mapper.OuterClassMapper;
+ import com.thoughtworks.xstream.mapper.XmlFriendlyMapper;
++import com.thoughtworks.xstream.mapper.ConditionalConversionMapper;
+ 
+ 
+ /**
+@@ -368,6 +369,7 @@
+         if ( useXmlFriendlyMapper ){
+             mapper = new XmlFriendlyMapper(mapper);
+         }
++        mapper = new ConditionalConversionMapper(mapper);
+         mapper = new ClassAliasingMapper(mapper);
+         mapper = new FieldAliasingMapper(mapper);
+         mapper = new AttributeAliasingMapper(mapper);
+@@ -426,6 +428,12 @@
+         if (attributeMapper != null) {
+             attributeMapper.setConverterLookup(converterLookup);
+         }
++
++        ConditionalConversionMapper conditionalConversionMapper = (ConditionalConversionMapper) this.mapper
++                .lookupMapperOfType(ConditionalConversionMapper.class);
++        if (conditionalConversionMapper != null) {
++            conditionalConversionMapper.setConverterLookup(converterLookup);
++        }
+     }
+ 
+     protected void setupAliases() {
+Index: src/java/com/thoughtworks/xstream/mapper/ConditionalConversionMapper.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/mapper/ConditionalConversionMapper.java	(revision 0)
++++ src/java/com/thoughtworks/xstream/mapper/ConditionalConversionMapper.java	(revision 0)
+@@ -0,0 +1,39 @@
++package com.thoughtworks.xstream.mapper;
++
++import com.thoughtworks.xstream.converters.ConverterLookup;
++import com.thoughtworks.xstream.converters.Converter;
++import com.thoughtworks.xstream.converters.ConditionalConverter;
++
++/**
++ * @author David Blevins
++ */
++public class ConditionalConversionMapper extends MapperWrapper {
++
++    private ConverterLookup converterLookup;
++
++    // TODO: Remove this - JS
++    public ConditionalConversionMapper(Mapper wrapped) {
++        this(wrapped, null);
++    }
++
++    public ConditionalConversionMapper(Mapper wrapped, ConverterLookup converterLookup) {
++        super(wrapped);
++        this.converterLookup = converterLookup;
++    }
++
++    // TODO: Is this needed now that it injected in ctor? - MT
++    // YES, but I want to remove it. In the ctor NULL is injected!!! - JS
++    public void setConverterLookup(ConverterLookup converterLookup) {
++        this.converterLookup = converterLookup;
++    }
++
++    public boolean shouldSerializeMember(Class definedIn, String fieldName, Class fieldType, Object value) {
++        Converter converter = converterLookup.lookupConverterForType(fieldType);
++        if (converter instanceof ConditionalConverter) {
++            ConditionalConverter conditionalConverter = (ConditionalConverter) converter;
++            return conditionalConverter.shouldConvert(fieldType, value);
++        }
++        
++        return super.shouldSerializeMember(definedIn, fieldName, fieldType, value);
++    }
++}
+Index: src/java/com/thoughtworks/xstream/mapper/Mapper.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/mapper/Mapper.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/mapper/Mapper.java	(working copy)
+@@ -92,7 +92,7 @@
+      *
+      * @since 1.1.3
+      */
+-    boolean shouldSerializeMember(Class definedIn, String fieldName);
++    boolean shouldSerializeMember(Class definedIn, String fieldName, Class fieldType, Object value);
+ 
+     interface ImplicitCollectionMapping {
+         String getFieldName();
+Index: src/java/com/thoughtworks/xstream/mapper/MapperWrapper.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/mapper/MapperWrapper.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/mapper/MapperWrapper.java	(working copy)
+@@ -78,8 +78,8 @@
+         return wrapped.getImplicitCollectionDefForFieldName(itemType, fieldName);
+     }
+ 
+-    public boolean shouldSerializeMember(Class definedIn, String fieldName) {
+-        return wrapped.shouldSerializeMember(definedIn, fieldName);
++    public boolean shouldSerializeMember(Class definedIn, String fieldName, Class fieldType, Object value) {
++        return wrapped.shouldSerializeMember(definedIn, fieldName, fieldType, value);
+     }
+ 
+     public SingleValueConverter getConverterFromItemType(String fieldName, Class type) {
+Index: src/java/com/thoughtworks/xstream/mapper/DefaultMapper.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/mapper/DefaultMapper.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/mapper/DefaultMapper.java	(working copy)
+@@ -106,7 +106,7 @@
+         return null;
+     }
+ 
+-    public boolean shouldSerializeMember(Class definedIn, String fieldName) {
++    public boolean shouldSerializeMember(Class definedIn, String fieldName, Class fieldType, Object value) {
+         return true;
+     }
+ 
+Index: src/java/com/thoughtworks/xstream/converters/basic/AbstractSingleValueConverter.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/converters/basic/AbstractSingleValueConverter.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/converters/basic/AbstractSingleValueConverter.java	(working copy)
+@@ -1,6 +1,7 @@
+ package com.thoughtworks.xstream.converters.basic;
+ 
+ import com.thoughtworks.xstream.converters.SingleValueConverter;
++import com.thoughtworks.xstream.converters.ConditionalConverter;
+ 
+ /**
+  * Base abstract implementation of  {@link com.thoughtworks.xstream.converters.SingleValueConverter}.
+@@ -12,7 +13,7 @@
+  * @author Mauro Talevi
+  * @see com.thoughtworks.xstream.converters.SingleValueConverter
+  */
+-public abstract class AbstractSingleValueConverter implements SingleValueConverter {
++public abstract class AbstractSingleValueConverter implements SingleValueConverter, ConditionalConverter {
+ 
+     public abstract boolean canConvert(Class type);
+ 
+@@ -22,4 +23,7 @@
+ 
+     public abstract Object fromString(String str);
+ 
++    public boolean shouldConvert(Class type, Object value) {
++        return true;
++    }
+ }
+Index: src/java/com/thoughtworks/xstream/converters/SingleValueConverterWrapper.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/converters/SingleValueConverterWrapper.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/converters/SingleValueConverterWrapper.java	(working copy)
+@@ -11,7 +11,7 @@
+  * @see com.thoughtworks.xstream.converters.Converter
+  * @see com.thoughtworks.xstream.converters.SingleValueConverter
+  */
+-public class SingleValueConverterWrapper implements Converter, SingleValueConverter {
++public class SingleValueConverterWrapper implements Converter, SingleValueConverter, ConditionalConverter {
+ 
+     private final SingleValueConverter wrapped;
+ 
+@@ -39,4 +39,10 @@
+         return fromString(reader.getValue());
+     }
+ 
++    public boolean shouldConvert(Class type, Object value) {
++        if (wrapped instanceof ConditionalConverter) {
++            return ((ConditionalConverter) wrapped).shouldConvert(type, value);
++        }
++        return true;
++    }
+ }
+Index: src/java/com/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter.java	(revision 847)
++++ src/java/com/thoughtworks/xstream/converters/reflection/AbstractReflectionConverter.java	(working copy)
+@@ -84,7 +84,7 @@
+             }
+ 
+             private void writeField(String fieldName, String aliasName, Class fieldType, Class definedIn, Object newObj) {
+-                if (!mapper.shouldSerializeMember(definedIn, aliasName)) {
++                if (!mapper.shouldSerializeMember(definedIn, aliasName, fieldType, newObj)) {
+                     return;
+                 }
+                 writer.startNode(mapper.serializedMember(definedIn, aliasName));
+Index: src/java/com/thoughtworks/xstream/converters/ConditionalConverter.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/converters/ConditionalConverter.java	(revision 0)
++++ src/java/com/thoughtworks/xstream/converters/ConditionalConverter.java	(revision 0)
+@@ -0,0 +1,23 @@
++package com.thoughtworks.xstream.converters;
++
++/**
++ * @author David Blevins
++ */
++public interface ConditionalConverter extends ConverterMatcher {
++
++    /**
++     * Allows the converter for a specific type to conditionally
++     * have values (and their enclosing field element) skipped
++     * when marshalling.
++     *
++     * The value.getClass() can usually be used to determin the exact
++     * type of the object to be converted.  The 'type' parameter is
++     * included in case 'value' may be null.
++     * 
++     * @param type the type as specified by the field or by an implicit collection mapping
++     * @param value the value of the field, may be null
++     * @return true if the value should be converted and the enclosing element written
++     */
++
++    boolean shouldConvert(Class type, Object value);
++}

@@ -1,0 +1,41 @@
+diff --git a/xstream/src/java/com/thoughtworks/xstream/annotations/XStreamSerializable.java b/xstream/src/java/com/thoughtworks/xstream/annotations/XStreamSerializable.java
+new file mode 100644
+index 0000000..22217f8
+--- /dev/null
++++ b/xstream/src/java/com/thoughtworks/xstream/annotations/XStreamSerializable.java
+@@ -0,0 +1,14 @@
++package com.thoughtworks.xstream.annotations;
++
++import static java.lang.annotation.ElementType.FIELD;
++import java.lang.annotation.Retention;
++import static java.lang.annotation.RetentionPolicy.RUNTIME;
++import java.lang.annotation.Target;
++
++/**
++ * @author Kohsuke Kawaguchi
++ */
++@Retention(RUNTIME)
++@Target(FIELD)
++public @interface XStreamSerializable {
++}
+diff --git a/xstream/src/java/com/thoughtworks/xstream/converters/reflection/PureJavaReflectionProvider.java b/xstream/src/java/com/thoughtworks/xstream/converters/reflection/PureJavaReflectionProvider.java
+index 33358c5..ec8bc16 100644
+--- a/xstream/src/java/com/thoughtworks/xstream/converters/reflection/PureJavaReflectionProvider.java
++++ b/xstream/src/java/com/thoughtworks/xstream/converters/reflection/PureJavaReflectionProvider.java
+@@ -12,6 +12,7 @@
+ package com.thoughtworks.xstream.converters.reflection;
+ 
+ import com.thoughtworks.xstream.core.JVM;
++import com.thoughtworks.xstream.annotations.XStreamSerializable;
+ 
+ import java.io.ByteArrayInputStream;
+ import java.io.ByteArrayOutputStream;
+@@ -163,7 +164,7 @@ public class PureJavaReflectionProvider implements ReflectionProvider {
+ 
+     protected boolean fieldModifiersSupported(Field field) {
+         int modifiers = field.getModifiers();
+-        return !(Modifier.isStatic(modifiers) || Modifier.isTransient(modifiers));
++        return !(Modifier.isStatic(modifiers) || (Modifier.isTransient(modifiers) && field.getAnnotation(XStreamSerializable.class)==null));
+     }
+ 
+     protected void validateFieldAccess(Field field) {

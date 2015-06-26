@@ -1,0 +1,116 @@
+Index: src/test/com/thoughtworks/xstream/converters/javabean/JavaBeanConverterTest.java
+===================================================================
+--- src/test/com/thoughtworks/xstream/converters/javabean/JavaBeanConverterTest.java	(revision 1937)
++++ src/test/com/thoughtworks/xstream/converters/javabean/JavaBeanConverterTest.java	(working copy)
+@@ -14,9 +14,12 @@
+ import junit.framework.TestCase;
+ 
+ import java.util.Comparator;
++import java.util.Date;
+ 
+ import com.thoughtworks.acceptance.objects.StandardObject;
+ import com.thoughtworks.xstream.XStream;
++import com.thoughtworks.xstream.annotations.XStreamConverter;
++import com.thoughtworks.xstream.converters.basic.DateConverter;
+ 
+ 
+ public class JavaBeanConverterTest extends TestCase {
+@@ -446,4 +449,59 @@
+             assertEquals("normal", expected.get("property"));
+         }
+     }
++
++    public static class BeanWithDate {
++    	
++    	private Date date;
++
++		public void setDate(Date date) {
++			this.date = date;
++		}
++
++		public Date getDate() {
++			return date;
++		}
++    	
++    }
++    
++    // support local converters (XSTR-601)
++    public void testLocalConvertersMarshalled() {
++    	XStream xstream = new XStream();
++    	xstream.registerConverter(
++                new JavaBeanConverter(xstream.getMapper()));
++    	xstream.registerLocalConverter(BeanWithDate.class, "date", 
++    			new DateConverter("yyyy/MM/dd", null));
++       	xstream.alias("bean", BeanWithDate.class);
++       	
++       	String expected = "" 
++            + "<bean>\n"
++            + "  <date>1982/12/01</date>\n"
++            + "</bean>";
++       	
++       	BeanWithDate dateBean = new BeanWithDate();
++		xstream.toXML(dateBean);
++		Date date = new Date(407548800000l);
++		dateBean.setDate(date);
++		
++		String xml = xstream.toXML(dateBean);
++		assertEquals(expected, xml);
++    }
++    
++    // support local converters (XSTR-601)
++    public void testLocalConvertersUnmarshalled() {
++    	XStream xstream = new XStream();
++    	xstream.registerConverter(
++                new JavaBeanConverter(xstream.getMapper()));
++    	xstream.registerLocalConverter(BeanWithDate.class, "date", 
++    			new DateConverter("yyyy/MM/dd", null));
++       	xstream.alias("bean", BeanWithDate.class);
++       	
++       	String xml = "" 
++            + "<bean>\n"
++            + "  <date>1982/12/01</date>\n"
++            + "</bean>";
++       	
++       	BeanWithDate dateBean = (BeanWithDate) xstream.fromXML(xml);
++		assertEquals(new Date(407548800000l), dateBean.getDate());
++    }
+ }
+Index: src/java/com/thoughtworks/xstream/converters/javabean/JavaBeanConverter.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/converters/javabean/JavaBeanConverter.java	(revision 1937)
++++ src/java/com/thoughtworks/xstream/converters/javabean/JavaBeanConverter.java	(working copy)
+@@ -35,7 +35,7 @@
+      * TODO:
+      *  - support indexed properties
+      *  - support attributes (XSTR-620)
+-     *  - support local converters (XSTR-601)
++     *  Problem: Mappers take definitions based on reflection, they don't know about bean info
+      */
+     protected final Mapper mapper;
+     protected final JavaBeanProvider beanProvider;
+@@ -90,7 +90,7 @@
+                 if (!actualType.equals(defaultType) && classAttributeName != null) {
+                     writer.addAttribute(classAttributeName, mapper.serializedClass(actualType));
+                 }
+-                context.convertAnother(newObj);
++                context.convertAnother(newObj, mapper.getLocalConverter(definedIn, propertyName));
+ 
+                 writer.endNode();
+             }
+@@ -110,6 +110,7 @@
+ 
+         Class resultType = result.getClass();
+         while (reader.hasMoreChildren()) {
++        	Class definedIn = mapper.realClass(reader.getNodeName());
+             reader.moveDown();
+ 
+             String propertyName = mapper.realMember(resultType, reader.getNodeName());
+@@ -119,7 +120,7 @@
+     
+                 if (propertyExistsInClass) {
+                     Class type = determineType(reader, result, propertyName);
+-                    Object value = context.convertAnother(result, type);
++                    Object value = context.convertAnother(result, type, mapper.getLocalConverter(definedIn, propertyName));
+                     beanProvider.writeProperty(result, propertyName, value);
+                     seenProperties.add(new FastField(resultType, propertyName));
+                 } else {

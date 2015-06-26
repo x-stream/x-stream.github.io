@@ -1,0 +1,25 @@
+Index: xstream-distribution/src/content/team.html
+===================================================================
+--- xstream-distribution/src/content/team.html	(revision 2019)
++++ xstream-distribution/src/content/team.html	(working copy)
+@@ -114,6 +114,8 @@
+       <li>Jaime Metcher</li>
+       <li>Michael Schnell</li>
+       <li>Nikita Levyankov</li>
++      <li>Leonardo Wolter</li>
++      <li>Francisco Sokol</li>
+     </ul>
+ 
+     <p>Please direct all correspondence about XStream to the <a href="list-user.html">users' mailing lists</a>
+Index: xstream-distribution/src/content/website.xml
+===================================================================
+--- xstream-distribution/src/content/website.xml	(revision 2019)
++++ xstream-distribution/src/content/website.xml	(working copy)
+@@ -51,6 +51,7 @@
+         <page>objectstream.html</page>
+         <page>persistence-tutorial.html</page>
+         <page>json-tutorial.html</page>
++        <page>constructor-converter-tutorial.html</page>
+     </section>
+     <section>
+         <name>Developing XStream</name>

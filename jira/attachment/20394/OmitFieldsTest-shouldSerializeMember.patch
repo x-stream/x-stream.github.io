@@ -1,0 +1,13 @@
+Index: src/test/com/thoughtworks/acceptance/OmitFieldsTest.java
+===================================================================
+--- src/test/com/thoughtworks/acceptance/OmitFieldsTest.java	(revision 849)
++++ src/test/com/thoughtworks/acceptance/OmitFieldsTest.java	(working copy)
+@@ -113,7 +113,7 @@
+                 super(wrapped);
+             }
+ 
+-            public boolean shouldSerializeMember(Class definedIn, String fieldName) {
++            public boolean shouldSerializeMember(Class definedIn, String fieldName, Class fieldType, Object value) {
+                 return !fieldName.startsWith("my");
+             }
+         }

@@ -1,0 +1,13 @@
+Index: src/java/com/thoughtworks/xstream/mapper/FieldAliasingMapper.java
+===================================================================
+--- src/java/com/thoughtworks/xstream/mapper/FieldAliasingMapper.java	(revision 848)
++++ src/java/com/thoughtworks/xstream/mapper/FieldAliasingMapper.java	(working copy)
+@@ -57,7 +57,7 @@
+         }
+     }
+ 
+-    public boolean shouldSerializeMember(Class definedIn, String fieldName) {
++    public boolean shouldSerializeMember(Class definedIn, String fieldName, Class fieldType, Object value) {
+         return !fieldsToOmit.contains(key(definedIn, fieldName));
+     }
+ 

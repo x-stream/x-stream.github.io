@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Barbier (TNF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="null">
+		<xs:annotation>
+			<xs:documentation>null values. Usually, null fields are left out of the XML, however when used in arrays or the root object they have to be explicitly marked.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:restriction base="xs:anyType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="boolean">
+		<xs:annotation>
+			<xs:documentation>boolean, java.lang.Boolean</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean">
+				<xs:pattern value="true"/>
+				<xs:pattern value="false"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="byte" type="xs:integer">
+		<xs:annotation>
+			<xs:documentation>byte, java.lang.Byte. The byte is represented as an integer.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="char">
+		<xs:annotation>
+			<xs:documentation>char, java.lang.Character.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value=".{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="byte-array" type="xs:base64Binary">
+		<xs:annotation>
+			<xs:documentation>byte[]. Uses Base64 encoding to store binary data in XML.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="char-array" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>char[]. Joins all characters into a single String.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="double" type="xs:double">
+		<xs:annotation>
+			<xs:documentation>double, java.lang.Double</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="float" type="xs:float">
+		<xs:annotation>
+			<xs:documentation>float, java.lang.Float</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="int" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>int, java.lang.Integer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="long" type="xs:long">
+		<xs:annotation>
+			<xs:documentation>long, java.lang.Long</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="short" type="xs:short">
+		<xs:annotation>
+			<xs:documentation>short, java.lang.Short</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="string" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>java.lang.String</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="string-buffer" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>java.lang.StringBuffer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="properties">
+		<xs:annotation>
+			<xs:documentation>java.lang.StringBuffer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="property" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" type="xs:string"/>
+						<xs:attribute name="value" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
