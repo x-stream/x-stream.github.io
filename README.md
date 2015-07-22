@@ -27,8 +27,8 @@ the same base directory and switch to v-1.4.x branch.
  	 
 ## After Release
  
-Typically you want to update the site after a ProxyToys release. In that case you can call: 
+Typically you want to update the site after a XStream release. In that case you can call: 
  
-	rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira ./target/checkout/website/target/xsite/ ../proxytoys.io/
+	rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira ./target/checkout/website/target/xsite/ ../x-stream.io/
 
 Note, that this variant will also replace the javadocs.
