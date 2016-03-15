@@ -14,7 +14,7 @@ To create an update of the site, you have to edit the sources in the XStream rep
  
 ## Steps
 0. Create a clone of the current repository
-0. Create a clone of the [xstream Git repository](https://github.com/x-stream/xstream) using
+0. Create a clone of the [XStream Git repository](https://github.com/x-stream/xstream) using
 the same base directory and switch to v-1.4.x branch.
 0. Edit the sources in xstream.git/xstream-distribution/src/content
 0. From the root of xstream.git call
@@ -29,6 +29,6 @@ the same base directory and switch to v-1.4.x branch.
  
 Typically you want to update the site after a XStream release. In that case you can call: 
  
-	rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira ./target/checkout/website/target/xsite/ ../x-stream.io/
+	rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira ./target/checkout/xstream-distribution/target/xsite/ ../x-stream.io/
 
 Note, that this variant will also replace the javadocs.
