@@ -152,7 +152,7 @@
                 <td>normal</td>
             </tr>
             <tr>
-                <td><a href="javadoc/com/thoughtworks/xstream/converters/extended/NamedCollectionConverter.html">NamedArrayConverter</a></td>
+                <td><a href="javadoc/com/thoughtworks/xstream/converters/extended/NamedArrayConverter.html">NamedArrayConverter</a></td>
                 <td>any kind of array</td>
                 <td class="example">
                     &lt;<i>string</i>-array&gt;<br/>
@@ -277,14 +277,14 @@
                 <td><a href="javadoc/com/thoughtworks/xstream/converters/extended/NamedCollectionConverter.html">NamedCollectionConverter</a></td>
                 <td>java.util.ArrayList<br/>java.util.LinkedList<br/>java.util.HashSet<br/>java.util.Vector<br/>java.util.LinkedHashSet</td>
                 <td class="example">
-                    &lt;linked-list&gt;<br/>
-                    &nbsp;&nbsp;&lt;string&gt;apple&lt;/string&gt;<br/>
-                    &nbsp;&nbsp;&lt;string&gt;banana&lt;/string&gt;<br/>
-                    &nbsp;&nbsp;&lt;big-decimal&gt;12345.4555&lt;/big-decimal&gt;<br/>
-                    &lt;/linked-list&gt;
+                    &lt;fruits&gt;<br/>
+                    &nbsp;&nbsp;&lt;fruit&gt;apple&lt;/fruit&gt;<br/>
+                    &nbsp;&nbsp;&lt;fruit&gt;banana&lt;/fruit&gt;<br/>
+                    &nbsp;&nbsp;&lt;fruit&gt;orange&lt;/fruit&gt;<br/>
+                    &lt;/fruits&gt;
                 </td>
-                <td>The objects inside the collection can be any type of objects, including nested collections.  Should
-                be registered locally or for an individual Collection type.</td>
+                <td>The objects inside the collection can be of any type shared between the objects.  Should be
+                registered locally or for an individual Collection type.</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -304,7 +304,8 @@
                 </td>
                 <td>Both key and values can be any type of objects.  If key or value are written as attributes or if
                 the value is written as text of the entry element, those types must be handled by a
-                SingleValueConverter.  Should be registered locally or for an individual Map type.</td>
+                <a href="javadoc/com/thoughtworks/xstream/converters/SingleValueConverter.html">SingleValueConverter</a>.
+                Should be registered locally or for an individual Map type.</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -633,6 +634,13 @@
                 <td>Available under Java 1.4 or greater.</td>
                 <td>normal</td>
             </tr>
+            <tr>
+                <td><a href="javadoc/com/thoughtworks/xstream/converters/extended/PathConverter.html">PathConverter</a></td>
+                <td>java.nio.file.Path</td>
+                <td class="example">&lt;path&gt;../dir/file.txt&lt;/path&gt;</td>
+                <td>Available under Java 1.7 or greater.</td>
+                <td>normal</td>
+            </tr>
 
             <!-- .................................................................................................. -->
             <tr>
@@ -764,6 +772,31 @@
                 </td>
                 <td>Only automatically registered if runtime has AWT support.<br/>
                 <b>Warning:</b> The AWT toolkit is definitely initialized when a TextAttribute is deserialized.</td>
+                <td>normal</td>
+            </tr>
+            
+            <!-- .................................................................................................. -->
+            <tr>
+                <td colspan="5" class="headerRow"><h1 id="java.awt.font">java.awt.font</h1></td>
+            </tr>
+            <tr>
+                <th>Converter</th>
+                <th>Supported types</th>
+                <th>Example</th>
+                <th>Notes</th>
+                <th>Prio</th>
+            </tr>
+            <tr>
+                <td><a href="javadoc/com/thoughtworks/xstream/converters/extended/ActivationDataFlavorConverter.html">ActivationDataFlavorConverter</a></td>
+                <td>javax.activation.ActivationDataFlavor</td>
+                <td class="example">
+                    &lt;activation-data-flavor&gt;<br/>
+                    &nbsp;&nbsp;&lt;mimeType&gt;application/x-junit&lt;/mimeType&gt;<br/>
+                    &nbsp;&nbsp;&lt;humanRepresentableName&gt;JUnit&lt;/humanRepresentableName&gt;<br/>
+                    &nbsp;&nbsp;&lt;representationClass&gt;java.io.InputStream&lt;/representationClass&gt;<br/>
+                    &lt;/activation-data-flavor&gt;
+                </td>
+                <td>Available under Java 1.6 or greater. Only automatically registered if runtime has AWT support.<br/>
                 <td>normal</td>
             </tr>
             
@@ -1003,7 +1036,7 @@
                                 <li><a href="license.html">License</a></li>
                                 <li><a href="download.html">Download</a></li>
                                 <li><a href="references.html">References</a></li>
-                                <li><a href="parser-benchmarks.html">Parser Benchmarks</a></li>
+                                <li><a href="benchmarks.html">Benchmarks</a></li>
                                 <li><a href="https://www.openhub.net/p/xstream">Code Statistics</a></li>
                     </ul>
                 </div>
@@ -1023,7 +1056,7 @@
                     <ul>
                                 <li><a href="javadoc/index.html">XStream Core</a></li>
                                 <li><a href="hibernate-javadoc/index.html">Hibernate Extensions</a></li>
-                                <li><a href="benchmark-javadoc/index.html">Benchmark Module</a></li>
+                                <li><a href="benchmark-jmh/index.html">JMH Module</a></li>
                     </ul>
                 </div>
                 <div class="MenuGroup">
@@ -1045,7 +1078,7 @@
                                 <li><a href="how-to-contribute.html">How to Contribute</a></li>
                                 <li><a href="team.html">Development Team</a></li>
                                 <li><a href="repository.html">Source Repository</a></li>
-                                <li><a href="http://bamboo.ci.codehaus.org/browse/XSTREAM">Continuous Integration</a></li>
+                                <li><a href="https://travis-ci.org/x-stream/xstream/branches">Continuous Integration</a></li>
                     </ul>
                 </div>
         </div>
