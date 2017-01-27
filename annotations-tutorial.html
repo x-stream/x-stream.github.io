@@ -506,10 +506,10 @@ package com.thoughtworks.xstream;
 public class Tutorial {
 
 	public static void main(String[] args) {
-		XStream stream = new XStream();
+		XStream xstream = new XStream();
 		xstream.autodetectAnnotations(true);
 		RendezvousMessage msg = new RendezvousMessage(15);
-		System.out.println(stream.toXML(msg));
+		System.out.println(xstream.toXML(msg));
 	}
 
 }
@@ -541,7 +541,8 @@ is configured.  If annotations are processed on the fly they can be thrown obvio
 <p>In auto-detection mode XStream will have to examine any unknown class type for annotations.  This will slow down the
 marshalling process until all processed types have been examined once.</p></li>
 </ol>
-<p>Please note, that any call to XStream.processAnnotations will turn off the auto-detection mode.</p>
+<p>Please note, that any call to X
+	Annotations will turn off the auto-detection mode.</p>
 
 <!-- ...................................................... -->
 <h2 id="Summary">Summing up</h2>
