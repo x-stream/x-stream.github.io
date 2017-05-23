@@ -23,12 +23,13 @@ the same base directory and switch to v-1.4.x branch.
 		
 0. Update the repository with the GitHub pages.
 
-		rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira --exclude="*javadoc" ./xstream-distribution/target/xsite/ ../x-stream.io/
+		rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira --exclude 1\\.\* --exclude="*javadoc" ./xstream-distribution/target/xsite/ ../x-stream.io/
  	 
 ## After Release
  
 Typically you want to update the site after a XStream release. In that case you can call: 
  
-	rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira ./target/checkout/xstream-distribution/target/xsite/ ../x-stream.io/
+ 	cp -r target/checkout/xstream-distribution/target/xsite ../x-stream.io/''<version>''
+	rsync -cr --progress --delete --exclude=".*" --exclude="*.md" --exclude=jira --exclude 1\\.\* ./target/checkout/xstream-distribution/target/xsite/ ../x-stream.io/
 
 Note, that this variant will also replace the javadocs.
